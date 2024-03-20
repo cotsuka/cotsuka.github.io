@@ -13,18 +13,19 @@ I recently ran into a situation where I knew one of the hard drives in my Btrfs 
 At this point, I was okay with losing any corrupted/unrecoverable files. You should already be past the point of restoring from backup, attempting other recovery methods, etc. I just wanted to get the dying drive removed from the array since I knew I didn't have critical data on the array.
 
 > **Warning**
+>
 > Make sure you've exhausted all other resources before continuing. Check the [ArchWiki](https://wiki.archlinux.org/title/Btrfs), [Btrfs mailing list](https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html), etc. This will lead to data loss!
 
 ### Scrub the Array
 Start a scrub to identify files blocking the device from getting deleted:
 
-```sh
+```console
 [cameron@host ~]$ sudo btrfs scrub start /mnt/btrfs
 ```
 
 The scrub will take a while. In my case, it took nearly 27 hours:
 
-```sh
+```console
 [cameron@host ~]$ sudo btrfs scrub status /mnt/btrfs
 UUID:             16df0a0e-1dad-439f-aee1-f9961122fe59
 Scrub started:    Tue Jul  4 11:27:56 2023
@@ -41,7 +42,7 @@ Error summary:    read=256
 ### Remove Uncorrectable Errors
 Btrfs was able to correct many of the errors it came across, but in this instance I was left with 18 uncorrectable errors. As the scrub identifies these, it will report them into the kernel ring buffer (`dmesg`). I found it nearly impossible to search through that, since the messages would either fall out of the log by the time I came back to the terminal to search. Instead, `journalctl` keeps a full enough history to search through:
 
-```sh
+```console
 [cameron@host ~]$ sudo journalctl --dmesg --grep 'unable to fixup'
 Jul 04 13:56:48 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 32574079762432 on dev /dev/sdd physical 1251936043008
 Jul 04 13:58:27 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 32615643807744 on dev /dev/sdd physical 1265582800896
@@ -65,7 +66,7 @@ Jul 04 14:17:38 host kernel: BTRFS error (device sdh): unable to fixup (regular)
 
 Now we need to translate those logicals into files we can actually attempt removing:
 
-```sh
+```console
 [cameron@host ~]$ sudo btrfs inspect-internal logical-resolve 32574079762432 /mnt/btrfs
 /mnt/btrfs/P6300090.mov
 ```
@@ -75,14 +76,14 @@ The output shows logical `32574079762432` refers to `/mnt/btrfs/P6300090.mov`. R
 ### Delete the Device
 Now remount the Btrfs array, marking it as degraded. Then, delete the device you want to remove (in my case `/dev/sdd`):
 
-```sh
+```console
 [cameron@host ~]$ sudo mount -o degraded /dev/sdd /mnt/btrfs
 [cameron@host ~]$ sudo btrfs device delete /dev/sdd /mnt/btrfs
 ```
 
 The device deletion will also take a while, but now you should see the used data total on the device you're deleting reduce over time:
 
-```sh
+```console
 [cameron@host ~]$ sudo btrfs fi show
 Label: none  uuid: 16df0a0e-1dad-439f-aee1-f9961122fe59
         Total devices 7 FS bytes used 31.16TiB
@@ -97,7 +98,7 @@ Label: none  uuid: 16df0a0e-1dad-439f-aee1-f9961122fe59
 
 And here's the same a while later:
 
-```sh
+```console
 [cameron@host ~]$ sudo btrfs fi show
 Label: none  uuid: 16df0a0e-1dad-439f-aee1-f9961122fe59
         Total devices 7 FS bytes used 31.16TiB

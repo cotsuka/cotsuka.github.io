@@ -45,5 +45,5 @@ weight = 10
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'monokai'
+    style = 'pygments'
     tabWidth = 4

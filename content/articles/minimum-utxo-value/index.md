@@ -15,6 +15,7 @@ While there is a [technical definition](https://bitcoin.stackexchange.com/a/4108
 Because fee rates are the primary variable determining the dust threshold, whether a UTXO is considered dust can change over time. I took a look at historical fee rates, how fees are calculated, and included qualitative projections of future block space demand to determine a UTXO value that will stay above the dust threshold for myself.
 
 > **TL;DR;**
+>
 > Taproot UTXO, 65k sats
 
 ### Historical Fee Rates
@@ -50,6 +51,7 @@ I've selected 4 blocks to deep dive, based on their proximity to mempool peaks i
 The first visible difference based on the box and whisker plot is the noticeable decrease in fee rate variance, likely attributable to better fee estimations. Second, is the 86% decline in median fee rate with an average 194 sats/vB between blocks 504000 and 680000 vs. 27 sats/vB in block 782400.
 
 > **Note**
+>
 > I'm taking a naïve view of transactions, so transactions pushed through using CPFP aren't coalesced into a single transaction with a blended, "effective" fee rate. In theory, this should reduce fee rate spread, but will be relatively centered around the median.
 
 I don't expect to see major differences in fee rates by script type, but since I have the data available here's what that looks like (it's as expected):
@@ -107,6 +109,7 @@ The table below shows the amount of vBytes required by a transaction consisting 
 So in ideal dust spending conditions, you would hold a P2TR UTXO and spend it to a P2WPKH output. An input requires more vBytes than an output, so the ideal will change if you are spending few inputs to many outputs.
 
 > **Note**
+>
 > Surprisingly, despite P2SH and P2PKH inputs being the most expensive (in terms of total fees), the fee data above doesn't bear that out. Without doing further digging, I assume it's due to multi-sig being more common with other script types.
 
 ### Choosing a Minimum UTXO Value
