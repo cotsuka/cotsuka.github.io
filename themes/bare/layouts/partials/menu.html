@@ -1,0 +1,80 @@
+{{- /*
+Renders a menu for the given menu ID.
+
+@context {page} page The current page.
+@context {string} menuID The menu ID.
+
+@example: {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+*/}}
+
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+
+{{- with index site.Menus $menuID }}
+  {{- if eq $menuID "links" }}
+  <address>
+    [
+      {{- partial "inline/menu/walk-social.html" (dict "page" $page "menuEntries" .) }}
+    ]
+  </address>
+  {{- else }}
+  <nav>
+    [
+      {{- partial "inline/menu/walk-nav.html" (dict "page" $page "menuEntries" .) }}
+    ]
+  </nav>
+  {{- end }}
+{{- end }}
+
+{{- define "partials/inline/menu/walk-nav.html" }}
+  {{- $page := .page }}
+  {{ $length := len .menuEntries }}
+  {{- range $index, $data := .menuEntries }}
+    {{- $attrs := dict "href" .URL }}
+    {{- if $page.IsMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+    {{- else if $page.HasMenuCurrent .Menu .}}
+      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+    {{- end }}
+    {{- $name := .Name }}
+    {{- with .Identifier }}
+      {{- with T . }}
+        {{- $name = . }}
+      {{- end }}
+    {{- end }}
+        <a
+          {{- range $k, $v := $attrs }}
+            {{- with $v }}
+              {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+            {{- end }}
+          {{- end -}}
+        >{{ $name }}</a>
+        {{- if ne (add $index 1) $length }}
+          &centerdot;
+        {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- define "partials/inline/menu/walk-social.html" }}
+  {{- $page := .page }}
+  {{ $length := len .menuEntries }}
+  {{- range $index, $data := .menuEntries }}
+    {{- $attrs := dict "href" .URL }}
+    {{- $name := .Name }}
+    {{- with .Identifier }}
+      {{- with T . }}
+        {{- $name = . }}
+      {{- end }}
+    {{- end }}
+      <a
+        {{- range $k, $v := $attrs }}
+          {{- with $v }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+          {{- end }}
+        {{- end -}}
+      >{{ $name }}</a>
+      {{- if ne (add $index 1) $length }}
+        &centerdot;
+      {{- end }}
+  {{- end }}
+{{- end }}

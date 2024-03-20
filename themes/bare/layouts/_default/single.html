@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article>
+  <h2>{{ .Title }}</h2>
+  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $dateHuman := .Date | time.Format "2006-01-02" }}
+  {{ $lastmodMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $lastmodHuman := .Lastmod | time.Format "2006-01-02" }}
+  <details>
+    <summary><small><em>Metadata</em></small></summary>
+    <ul>
+      <li><small><em>Last Updated:</em> <time datetime="{{ $lastmodMachine }}">{{ $lastmodHuman }}</time></small></li>
+      <li><small><em>Published:</em> <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></small></li>
+      <li><small><em>Tags:</em> {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}</small></li>
+      <li><small><em>Summary:</em> {{ .Summary }}</small></li>
+    </ul>
+  </details>
+  {{ .Content }}
+</article>
+{{ end }}

@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{ .Content }}
+  <h2>Articles</h2>
+  <dl>
+    {{ range site.RegularPages }}
+      <dt><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></dt>
+      {{ $page := . }}
+      <dd>{{ .Summary }} {{ partial "terms.html" (dict "taxonomy" "tags" "page" $page) }}</dd>
+    {{ end }}
+  </dl>
+{{ end }}

@@ -1,0 +1,31 @@
+{{ define "main" }}
+  {{ .Content }}
+  <section>
+    <h2>Recent Articles</h2>
+    <dl>
+      {{ range first 5 site.RegularPages }}
+        <dt><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></dt>
+        {{ $page := . }}
+        <dd>{{ .Summary }} {{ partial "terms.html" (dict "taxonomy" "tags" "page" $page) }}</dd>
+      {{ end }}
+    </dl>
+  </section>
+  <section>
+    <h2>Contributions</h2>
+    <ul>
+      <li>Arch [
+        <a href="https://wiki.archlinux.org/title/Special:Contributions/Cotsuka">Wiki</a>
+        &centerdot; <a href="https://aur.archlinux.org/packages?O=0&SeB=M&K=cotsuka&outdated=&SB=p&SO=d&PP=50&submit=Go">AUR</a>
+      ]</li>
+      <li><a href="https://en.wikipedia.org/wiki/Special:Contributions/Cotsuka">Wikipedia</a></li>
+    </ul>
+  </section>
+  <section>
+    <h2>Background</h2>
+    <ul>
+        <li><small><em>[<time datetime="2019">2019</time> - Current]</em></small> Head of Data and Analytics @ <a href="https://getbuilding.com">Build Asset Management</a>: building a bitcoin-backed direct lending private credit fund and launched a fixed income + options-overlay ETF.</li>
+        <li><small><em>[<time datetime="2017">2017</time> - <time datetime="2017">2019</time>]</em></small> Manager, Business Intelligence @ <a href="https://amazon.com">Amazon</a>: built a global data engineering, business intelligence, and data science team for Amazon Advertising.</li>
+        <li>For everything else, go to LinkedIn 👇</li>
+    </ul>
+</section>
+{{ end }}
