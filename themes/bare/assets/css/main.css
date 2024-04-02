@@ -1,7 +1,7 @@
 html {
-  font-size: 1rem;
+  font-size: 100%;
   line-height: 1.1rem;
-  font-family: sans-serif;
+  font-family: serif;
 }
 body {
   max-width: 40rem;
