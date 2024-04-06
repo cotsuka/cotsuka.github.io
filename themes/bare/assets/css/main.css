@@ -1,7 +1,6 @@
 html {
   font-size: 100%;
   line-height: 1.1rem;
-  font-family: serif;
 }
 body {
   max-width: 40rem;
@@ -25,4 +24,7 @@ th, td {
   text-align: center;
   vertical-align: middle;
   padding: 0.5rem;
+}
+code {
+  font-size: 0.9rem;
 }
