@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Removing a Drive from a Btrfs Array | Cameron Otsuka</title>
+    <meta name="description" content="If a drive is failing in an array, Btrfs could block attempts at removing the drive due to corrupted files. A quick write-up of how to get it removed.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Cameron Otsuka">
+    
+    <style>
+        *,::after,::before{box-sizing:border-box}*{margin:0}body{line-height:1.5;-webkit-font-smoothing:antialiased}canvas,img,picture,svg,video{display:block;max-width:100%}button,input,select,textarea{font:inherit}h1,h2,h3,h4,h5,h6,p{overflow-wrap:break-word}#__next,#root{isolation:isolate}html{background-color:#fff;color:#000;font-family:sans-serif;font-size:100%;line-height:1.1rem}body{max-width:45rem;margin-left:auto;margin-right:auto;font-size:1rem}nav{font-size:2rem;font-weight:700}nav>a{text-decoration:none}details{margin-bottom:1rem}p{margin-bottom:1rem}dl,menu,ol,ul{margin-bottom:1rem}dl dl,dl menu,dl ol,dl ul,menu dl,menu menu,menu ol,menu ul,ol dl,ol menu,ol ol,ol ul,ul dl,ul menu,ul ol,ul ul{margin-bottom:0}dd{margin-bottom:1rem;padding-left:1.5rem}blockquote{margin-bottom:1rem;padding-left:.5rem;border-left:.3rem solid}figure{margin-bottom:1rem}img{height:auto}figcaption{font-style:italic}table{margin-bottom:1rem;border:.1rem solid;border-collapse:collapse}td,th{border:.1rem solid;text-align:center;vertical-align:middle;padding:.5rem}footer{text-align:center;font-style:italic}footer>address>menu{margin-inline-start:0;padding-inline-start:0}footer>address>menu>li{display:inline;padding-right:1rem}code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:0 0;text-shadow:0 1px rgba(0,0,0,.3);font-family:monospace;font-size:.75rem;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1rem;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Cameron Otsuka</a>
+        </nav>
+    </header>
+    <main>
+        
+<h1>Removing a Drive from a Btrfs Array</h1>
+
+<details>
+	<summary>Metadata</summary>
+	<ul>
+		<li>Published: <time datetime="2023-07-05">2023-07-05</time></li>
+		<li>Description: If a drive is failing in an array, Btrfs could block attempts at removing the drive due to corrupted files. A quick write-up of how to get it removed.</li>
+		<li>Tags: articles, linux</li>
+	</ul>
+</details>
+
+<article>
+	<p>I recently ran into a situation where I knew one of the hard drives in my Btrfs array was failing. Simply following the <a href="https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices.html#Removing_devices">Btrfs wiki removing devices instructions</a> was unsuccessful as the <code>btrfs delete device</code> command would throw an error, cancelling the device deletion process.</p>
+<p>At this point, I was okay with losing any corrupted/unrecoverable files. You should already be past the point of restoring from backup, attempting other recovery methods, etc. I just wanted to get the dying drive removed from the array since I knew I didn't have critical data on the array.</p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Make sure you've exhausted all other resources before continuing. Check the <a href="https://wiki.archlinux.org/title/Btrfs">ArchWiki</a>, <a href="https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html">Btrfs mailing list</a>, etc. This will lead to data loss!</p>
+</blockquote>
+<h3>Scrub the Array</h3>
+<p>Start a scrub to identify files blocking the device from getting deleted:</p>
+<pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo btrfs scrub start /mnt/btrfs</code></pre>
+<p>The scrub will take a while. In my case, it took nearly 27 hours:</p>
+<pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo btrfs scrub status /mnt/btrfs
+UUID:             16df0a0e-1dad-439f-aee1-f9961122fe59
+Scrub started:    Tue Jul  4 11:27:56 2023
+Status:           finished
+Duration:         26:55:47
+Total to scrub:   31.20TiB
+Rate:             338.01MiB/s
+Error summary:    read=256
+    Corrected:      238
+    Uncorrectable:  18
+    Unverified:     0</code></pre>
+<h3>Remove Uncorrectable Errors</h3>
+<p>Btrfs was able to correct many of the errors it came across, but in this instance I was left with 18 uncorrectable errors. As the scrub identifies these, it will report them into the kernel ring buffer (<code>dmesg</code>). I found it nearly impossible to search through that, since the messages would either fall out of the log by the time I came back to the terminal to search. Instead, <code>journalctl</code> keeps a full enough history to search through:</p>
+<pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo journalctl --dmesg --grep 'unable to fixup'
+Jul 04 13:56:48 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 32574079762432 on dev /dev/sdd physical 1251936043008
+Jul 04 13:58:27 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 32615643807744 on dev /dev/sdd physical 1265582800896
+Jul 04 14:15:53 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092168253440 on dev /dev/sdd physical 1424279666688
+Jul 04 14:16:08 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092168646656 on dev /dev/sdd physical 1424280059904
+Jul 04 14:16:08 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092168515584 on dev /dev/sdd physical 1424279928832
+Jul 04 14:16:23 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092169498624 on dev /dev/sdd physical 1424280911872
+Jul 04 14:16:23 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092169760768 on dev /dev/sdd physical 1424281174016
+Jul 04 14:16:30 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092169891840 on dev /dev/sdd physical 1424281305088
+Jul 04 14:16:45 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092171005952 on dev /dev/sdd physical 1424282419200
+Jul 04 14:16:45 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092171137024 on dev /dev/sdd physical 1424282550272
+Jul 04 14:16:53 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092172382208 on dev /dev/sdd physical 1424283795456
+Jul 04 14:17:00 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092201283584 on dev /dev/sdd physical 1424312696832
+Jul 04 14:17:07 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092202528768 on dev /dev/sdd physical 1424313942016
+Jul 04 14:17:19 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092203773952 on dev /dev/sdd physical 1424315187200
+Jul 04 14:17:19 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092203773952 on dev /dev/sdd physical 1424315187200
+Jul 04 14:17:26 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092205019136 on dev /dev/sdd physical 1424316432384
+Jul 04 14:17:38 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092209999872 on dev /dev/sdd physical 1424321413120
+Jul 04 14:17:38 host kernel: BTRFS error (device sdh): unable to fixup (regular) error at logical 33092209999872 on dev /dev/sdd physical 1424321413120</code></pre>
+<p>Now we need to translate those logicals into files we can actually attempt removing:</p>
+<pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo btrfs inspect-internal logical-resolve 32574079762432 /mnt/btrfs
+/mnt/btrfs/P6300090.mov</code></pre>
+<p>The output shows logical <code>32574079762432</code> refers to <code>/mnt/btrfs/P6300090.mov</code>. Remove the file, doing the same for all other logicals reported as uncorrectable errors. Several of the errors I received seemed to go away/not refer to a file. I just attempted removing any files that were identified, ignoring logicals that didn't resolve to anything.</p>
+<h3>Delete the Device</h3>
+<p>Now remount the Btrfs array, marking it as degraded. Then, delete the device you want to remove (in my case <code>/dev/sdd</code>):</p>
+<pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo mount -o degraded /dev/sdd /mnt/btrfs
+[cameron@host ~]$ sudo btrfs device delete /dev/sdd /mnt/btrfs</code></pre>
+<p>The device deletion will also take a while, but now you should see the used data total on the device you're deleting reduce over time:</p>
+<pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo btrfs fi show
+Label: none  uuid: 16df0a0e-1dad-439f-aee1-f9961122fe59
+        Total devices 7 FS bytes used 31.16TiB
+        devid    1 size 14.55TiB used 13.96TiB path /dev/sdh
+        devid    2 size 0.00B used 962.01GiB path /dev/sdd
+        devid    3 size 12.73TiB used 12.14TiB path /dev/sda
+        devid    4 size 12.73TiB used 1.05TiB path /dev/sdb
+        devid    5 size 12.73TiB used 1.05TiB path /dev/sdc
+        devid    6 size 12.73TiB used 1.05TiB path /dev/sdf
+        devid    7 size 12.73TiB used 1.05TiB path /dev/sdg</code></pre>
+<p>And here's the same a while later:</p>
+<pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo btrfs fi show
+Label: none  uuid: 16df0a0e-1dad-439f-aee1-f9961122fe59
+        Total devices 7 FS bytes used 31.16TiB
+        devid    1 size 14.55TiB used 13.96TiB path /dev/sdh
+        devid    2 size 0.00B used 874.01GiB path /dev/sdd
+        devid    3 size 12.73TiB used 12.14TiB path /dev/sda
+        devid    4 size 12.73TiB used 1.07TiB path /dev/sdb
+        devid    5 size 12.73TiB used 1.07TiB path /dev/sdc
+        devid    6 size 12.73TiB used 1.07TiB path /dev/sdf
+        devid    7 size 12.73TiB used 1.07TiB path /dev/sdg</code></pre>
+<p>Let that complete, and the device should now be removed from the Btrfs array. You're now missing several files that were unrecoverable, so hopefully those were backed up somewhere else or they weren't critical.</p>
+
+</article>
+
+    </main>
+    <hr>
+    <footer>
+        <address>
+            <menu>
+                <li><a href="https://twitter.com/CameronOtsuka">Twitter</a></li>
+                <li><a href="https://www.linkedin.com/in/cotsuka">LinkedIn</a></li>
+                <li><a href="https://social.otsuka.haus/cameron">Mastodon</a></li>
+                <li><a href="nostr:npub1hzssq7wewjztvglpdvku92htx3sv2x5r9ycvqhvl9xrtt5fn629s3np693">Nostr</a></li>
+                <li><a href="https://github.com/cotsuka">GitHub</a></li>
+            </menu>
+        </address>
+        <section>
+            
+                
+            
+            Last Modified: <time datetime="2024-01-26">2024-01-26</time>
+        </section>
+    </footer>
+</body>
+</html>
