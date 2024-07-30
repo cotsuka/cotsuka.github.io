@@ -2,7 +2,6 @@
 title: Minimum UTXO Value
 date: 2023-08-04
 modified: 2024-01-26
-permalink: 'articles/2023-008-04-minimum-utxo-value/'
 description: A look at what Bitcoin dust is, historical fee rates, how fees are calculated, and a decision on a minimum UTXO value to stay above the dust threshold.
 tags:
 - bitcoin

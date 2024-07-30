@@ -1,7 +1,6 @@
 ---
 title: 'Removing a Drive from a Btrfs Array'
 date: 2023-07-05
-permalink: 'articles/2023-07-05-removing-a-drive-from-a-btrfs-array/'
 modified: 2024-01-26
 description: If a drive is failing in an array, Btrfs could block attempts at removing the drive due to corrupted files. A quick write-up of how to get it removed.
 tags:
