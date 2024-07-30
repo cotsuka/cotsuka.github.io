@@ -1,7 +1,8 @@
 ---
 title: Monetary System Enshittification
 date: 2024-03-01
-description: Is the US monetary system experience enshittification? And how do we solve it?
+modified: 2024-07-30
+description: Is the US monetary system experiencing enshittification? And how do we solve it?
 tags:
 - bitcoin
 ---
