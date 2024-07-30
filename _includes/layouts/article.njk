@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+---
+
+<h1>{{ title }}</h1>
+
+<details>
+	<summary>Metadata</summary>
+	<ul>
+		<li>Published: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | htmlDateString }}</time></li>
+		<li>Description: {{ description }}</li>
+		<li>Tags: {{ tags | sort | join(", ") }}</li>
+	</ul>
+</details>
+
+<article>
+	{{ content | safe }}
+</article>

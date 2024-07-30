@@ -1,0 +1,77 @@
+html {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.1rem;
+}
+body {
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+}
+nav {
+  font-size: 2rem;
+  font-weight: bold;
+}
+nav > a {
+  text-decoration: none;
+}
+details {
+  margin-bottom: 1rem;
+}
+p {
+  margin-bottom: 1rem;
+}
+dl, menu, ol, ul {
+  margin-bottom: 1rem;
+}
+ul ul, ul ol, ul dl, ul menu,
+ol ul, ol ol, ol dl, ol menu,
+dl ul, dl ol, dl dl, dl menu,
+menu ul, menu ol, menu dl, menu menu {
+  /* nested lists won't have margins*/
+  margin-bottom: 0;
+}
+dd {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+blockquote {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  border-left: 0.3rem solid;
+}
+figure {
+  margin-bottom: 1rem;
+}
+img {
+  height: auto;
+}
+figcaption {
+  font-style: italic;
+}
+table {
+  margin-bottom: 1rem;
+  border: 0.1rem solid;
+  border-collapse: collapse;
+}
+th, td {
+  border: 0.1rem solid;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+footer {
+  text-align: center;
+  font-style: italic;
+}
+footer > address > menu {
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+}
+footer > address > menu > li {
+  display: inline;
+  padding-right: 1rem;
+}

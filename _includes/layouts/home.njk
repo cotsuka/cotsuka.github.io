@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+---
+
+<section>
+    {{ content | safe }}
+</section>
+
+<hgroup>
+    <h2>Articles</h2>
+    {% set articleslist = collections.articles %}
+    {% include "articleslist.njk" %}
+</hgroup>
+
+<hgroup>
+    <h2>Contributions</h2>
+    <ul>
+    {% for contribution in contributions %}
+        <li><a href="{{ contribution.url }}">{{ contribution.title }}</a></li>
+    {% endfor %}
+    </ul>
+</hgroup>

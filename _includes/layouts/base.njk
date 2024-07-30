@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | {{ metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+    {% set css %}
+        {% include "css/reset.css" %}
+        {% include "css/style.css" %}
+        {% include "css/prism-okaidia.css" %}
+    {% endset %}
+    <style>
+        {{ css | cssmin | safe }}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">{{ metadata.title }}</a>
+        </nav>
+    </header>
+    <main>
+        {{ content | safe }}
+    </main>
+    <hr>
+    <footer>
+        <address>
+            <menu>
+            {%- for social in socials %}
+                <li><a href="{{ social.url }}">{{ social.title }}</a></li>
+            {%- endfor %}
+            </menu>
+        </address>
+        <section>
+            {% if modified %}
+                {% set updated = modified %}
+            {% else %}
+                {% set updated = date %}
+            {% endif %}
+            Last Modified: <time datetime="{{ updated | htmlDateString }}">{{ updated | htmlDateString }}</time>
+        </section>
+    </footer>
+</body>
+</html>
