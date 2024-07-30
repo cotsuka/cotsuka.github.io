@@ -1,7 +1,9 @@
 {
     "title": "Cameron Otsuka",
     "url": "https://otsuka.haus/",
+    "base": "https://otsuka.haus/",
     "language": "en",
+    "subtitle": "The collection of Cameron's thoughts.",
     "description": "The collection of Cameron's thoughts.",
     "author": {
         "name": "Cameron Otsuka",

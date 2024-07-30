@@ -1,8 +1,9 @@
 const cleanCSS = require("clean-css");
 const { DateTime } = require("luxon");
-const eleventyFeedPlugin = require("@11ty/eleventy-plugin-rss");
+const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const eleventyImagePlugin = require("@11ty/eleventy-img");
 const eleventySyntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+const globalMetadata = require("./_data/metadata.json");
 const path = require("path");
 
 function relativeToInputPath(inputPath, relativeFilePath) {
@@ -33,24 +34,14 @@ module.exports = function (eleventyConfig) {
 		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
 	});
 	eleventyConfig.addPassthroughCopy({ "./static/": "/" });
-	eleventyConfig.addPlugin(eleventyFeedPlugin, {
+	eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom",
 		outputPath: "/feed.xml",
 		collection: {
 			name: "articles",
 			limit: 10,
 		},
-		metadata: {
-			language: "en",
-			title: "Cameron Otsuka",
-			subtitle: "The collection of Cameron's thoughts.",
-			base: "https://otsuka.haus/",
-			author: {
-				name: "Cameron Otsuka",
-				email: "cameron@otsuka.haus",
-				url: "https://otsuka.haus"
-			}
-		}
+		metadata: globalMetadata,
 	});
 	eleventyConfig.addPlugin(eleventySyntaxHighlightPlugin);
 	eleventyConfig.addShortcode("image", async function (src, alt) {
