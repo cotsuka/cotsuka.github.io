@@ -1,7 +1,6 @@
 ---
 layout: layouts/base.njk
 title: "Bitcoin: A Peer-to-Peer Electronic Cash System"
-permalink: bitcoin.html
 date: 2024-07-30
 tags:
 - bitcoin
