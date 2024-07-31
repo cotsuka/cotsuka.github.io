@@ -49,7 +49,7 @@
 &lt;p&gt;The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:&lt;/p&gt;
 &lt;figure&gt;
     &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/-xqddWXXX5-1976.svg 1976w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/-xqddWXXX5-360.avif 360w, https://otsuka.haus/img/-xqddWXXX5-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Historical graph of Bitcoin mempool by vBytes&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/-xqddWXXX5-360.jpeg&quot; width=&quot;720&quot; height=&quot;218&quot; srcset=&quot;https://otsuka.haus/img/-xqddWXXX5-360.jpeg 360w, https://otsuka.haus/img/-xqddWXXX5-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Source: &lt;a href=&quot;https://mempool.space/graphs/mempool#all&quot;&gt;mempool.space&lt;/a&gt;&lt;/figcaption&gt;
+    &lt;figcaption&gt;Source: &lt;cite&gt;&lt;a href=&quot;https://mempool.space/graphs/mempool#all&quot;&gt;mempool.space&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;I&#39;ve selected 4 blocks to deep dive, based on their proximity to mempool peaks in those three years, as well as a more &amp;quot;normal&amp;quot; current block:&lt;/p&gt;
 &lt;ul&gt;
