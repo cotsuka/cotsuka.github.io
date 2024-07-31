@@ -22,7 +22,7 @@ The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:
 
 <figure>
     {% image "./minimum-utxo-value_mempool_vbytes_history.svg", "Historical graph of Bitcoin mempool by vBytes" %}
-    <figcaption>Source: <a href="https://mempool.space/graphs/mempool#all">mempool.space</a></figcaption>
+    <figcaption>Source: <cite><a href="https://mempool.space/graphs/mempool#all">mempool.space</a></cite></figcaption>
 </figure>
 
 I've selected 4 blocks to deep dive, based on their proximity to mempool peaks in those three years, as well as a more "normal" current block:

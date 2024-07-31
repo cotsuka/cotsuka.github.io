@@ -6,17 +6,17 @@ layout: layouts/base.njk
     {{ content | safe }}
 </section>
 
-<hgroup>
+<section>
     <h2>Articles</h2>
     {% set articleslist = collections.articles %}
     {% include "articleslist.njk" %}
-</hgroup>
+</section>
 
-<hgroup>
+<section>
     <h2>Contributions</h2>
     <ul>
     {% for contribution in contributions %}
         <li><a href="{{ contribution.url }}">{{ contribution.title }}</a></li>
     {% endfor %}
     </ul>
-</hgroup>
+</section>

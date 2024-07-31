@@ -9,7 +9,7 @@ layout: layouts/base.njk
 	<ul>
 		<li>Published: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | htmlDateString }}</time></li>
 		<li>Description: {{ description }}</li>
-		<li>Tags: {{ tags | sort | join(", ") }}</li>
+		<li>Tags: {{ tags | reject("equalto", "articles") | sort | join(", ") }}</li>
 	</ul>
 </details>
 

@@ -34,14 +34,15 @@
             {%- endfor %}
             </menu>
         </address>
-        <section>
+        <p>
             {% if modified %}
                 {% set updated = modified %}
             {% else %}
                 {% set updated = date %}
             {% endif %}
             Last Modified: <time datetime="{{ updated | htmlDateString }}">{{ updated | htmlDateString }}</time>
-        </section>
+        </p>
+        <p>All views my own. Not financial advice. Links, citations, and other references are not endorsements.</p>
     </footer>
 </body>
 </html>
