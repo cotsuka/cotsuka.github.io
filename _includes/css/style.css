@@ -64,6 +64,9 @@ th, td {
   vertical-align: middle;
   padding: 0.5rem;
 }
+object {
+  width: 100%;
+}
 footer {
   text-align: center;
   font-style: italic;
