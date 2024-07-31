@@ -9,4 +9,4 @@ tags:
 
 # Bitcoin: A Peer-to-Peer Electronic Cash System
 
-<object data="/public/bitcoin.pdf" height="890"></object>
+<object data="/public/bitcoin.pdf" type="application/pdf" height="890"></object>
