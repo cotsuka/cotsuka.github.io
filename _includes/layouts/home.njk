@@ -9,14 +9,14 @@ layout: layouts/base.njk
 <section>
     <h2>Articles</h2>
     {% set articleslist = collections.articles %}
-    {% include "articleslist.njk" %}
+    {%- include "articleslist.njk" %}
 </section>
 
 <section>
     <h2>Contributions</h2>
     <ul>
-    {% for contribution in contributions %}
+    {%- for contribution in contributions %}
         <li><a href="{{ contribution.url }}">{{ contribution.title }}</a></li>
-    {% endfor %}
+    {%- endfor %}
     </ul>
 </section>

@@ -1,18 +1,46 @@
 <!doctype html>
-<html lang="{{ metadata.language }}">
+<html lang="{{ metadata.language }}" prefix="og: http://ogp.me/ns#">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%- if modified -%}
+        {% set updated = modified %}
+    {%- else -%}
+        {% set updated = date %}
+    {%- endif %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" property="og:title" content="{{ title }}" />
+    <meta name="description" property="og:description" content="{{ description or metadata.description }}" />
+    <meta name="author" content="{{ metadata.author.name }}" />
+    <meta name="generator" content="{{ eleventy.generator }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@CameronOtsuka" />
+    <meta name="twitter:title" content="{{ title }}" />
+    <meta name="twitter:description" content="{{ description or metadata.description }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="{{ metadata.base }}{{ page.url }}" />
+    <meta property="og:site_name" content="{{ metadata.title }}" />
+    <meta property="og:updated_time" content="{{ updated | isoDate }}" />
+    {%- if tags %}
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content="{{ date | isoDate }}" />
+        <meta property="article:modified_time" content="{{ updated | isoDate }}" />
+        <meta property="article:author" content="{{ metadata.author.name }}" />
+        {%- for tag in tags | reject("equalto", "articles") %}
+            <meta property="article:tag" content="{{ tag }}" />
+        {%- endfor %}
+    {%- else %}
+        <meta property="og:type" content="website" />
+    {%- endif %}
     <title>{{ title }} | {{ metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-    {% set css %}
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="canonical" href="{{ metadata.base }}{{ page.url }}" />
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ metadata.title }}" />
+    {%- set css %}
         {% include "css/reset.css" %}
         {% include "css/style.css" %}
         {% include "css/public-sans.css" %}
         {% include "css/prism-okaidia.css" %}
-    {% endset %}
+    {%- endset %}
     <style>
         {{ css | cssmin | safe }}
     </style>
@@ -36,11 +64,6 @@
             </menu>
         </address>
         <p>
-            {% if modified %}
-                {% set updated = modified %}
-            {% else %}
-                {% set updated = date %}
-            {% endif %}
             Last Modified: <time datetime="{{ updated | htmlDateString }}">{{ updated | htmlDateString }}</time>
         </p>
         <p>All views my own. Not financial advice. Links, citations, and other references are not endorsements.</p>
