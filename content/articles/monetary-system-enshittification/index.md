@@ -11,7 +11,7 @@ tags:
 
 Is the US monetary system experiencing enshittification? And how do we solve it? If we think about monetary systems as platforms which facilitate value transfer, I think some of [Cory Doctorow's](https://twitter.com/doctorow) ideas on preventing platform decay can apply.
 
-> "First, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die." - Cory Doctorow
+> "First, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die." — Cory Doctorow
 
 Ultimately, enshittification is a rent-seeking problem: the platform is no longer incentivized to maximize value for the users since they're locked into the network. Rent-seeking continues to drain value from debtors to creditors and leads to heavy stratification of society.
 
