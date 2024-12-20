@@ -25,6 +25,17 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter("cssmin", function (code) {
 		return new cleanCSS({}).minify(code).styles;
 	});
+	eleventyConfig.addFilter("head", (array, n) => {
+		// Get the first `n` elements of a collection.
+		if(!Array.isArray(array) || array.length === 0) {
+			return [];
+		}
+		if( n < 0 ) {
+			return array.slice(n);
+		}
+
+		return array.slice(0, n);
+	});
 	eleventyConfig.addFilter("htmlDateString", (dateObj) => {
 		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
@@ -32,6 +43,10 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter("isoDate", (dateObj) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toISO();
+	});
+	eleventyConfig.addFilter("min", (...numbers) => {
+		// Return the smallest number argument
+		return Math.min.apply(null, numbers);
 	});
 	eleventyConfig.addPassthroughCopy({ "./static/": "/" });
 	eleventyConfig.addPlugin(feedPlugin, {
