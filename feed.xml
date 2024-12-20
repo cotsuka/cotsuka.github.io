@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title>Cameron Otsuka</title>
-  <subtitle>The collection of Cameron&#39;s thoughts.</subtitle>
-  <link href="https://otsuka.haus/feed.xml" rel="self" />
-  <link href="https://otsuka.haus/" />
+  <subtitle>This is a longer description about your blog.</subtitle>
+  <link href="https://example.com/feed.xml" rel="self" />
+  <link href="https://example.com/" />
   <updated>2024-03-01T00:00:00Z</updated>
-  <id>https://otsuka.haus/</id>
+  <id>https://example.com/</id>
   <author>
     <name>Cameron Otsuka</name>
     <email>cameron@otsuka.haus</email>
   </author>
   <entry>
     <title>Monetary System Enshittification</title>
-    <link href="https://otsuka.haus/articles/2024-03-01-monetary-system-enshittification/" />
+    <link href="https://example.com/articles/2024-03-01-monetary-system-enshittification/" />
     <updated>2024-03-01T00:00:00Z</updated>
-    <id>https://otsuka.haus/articles/2024-03-01-monetary-system-enshittification/</id>
-    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/KmTgGsyio3-360.avif 360w, https://otsuka.haus/img/KmTgGsyio3-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Bitcoin honeybadger stomping on the US monetary system.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/KmTgGsyio3-360.jpeg&quot; width=&quot;720&quot; height=&quot;720&quot; srcset=&quot;https://otsuka.haus/img/KmTgGsyio3-360.jpeg 360w, https://otsuka.haus/img/KmTgGsyio3-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+    <id>https://example.com/articles/2024-03-01-monetary-system-enshittification/</id>
+    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/img/KmTgGsyio3-360.avif 360w, https://example.com/img/KmTgGsyio3-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Bitcoin honeybadger stomping on the US monetary system.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/img/KmTgGsyio3-360.jpeg&quot; width=&quot;720&quot; height=&quot;720&quot; srcset=&quot;https://example.com/img/KmTgGsyio3-360.jpeg 360w, https://example.com/img/KmTgGsyio3-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;Is the US monetary system experiencing enshittification? And how do we solve it? If we think about monetary systems as platforms which facilitate value transfer, I think some of &lt;a href=&quot;https://twitter.com/doctorow&quot;&gt;Cory Doctorow&#39;s&lt;/a&gt; ideas on preventing platform decay can apply.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;quot;First, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die.&amp;quot; — Cory Doctorow&lt;/p&gt;
@@ -35,9 +35,9 @@
   </entry>
   <entry>
     <title>Minimum UTXO Value</title>
-    <link href="https://otsuka.haus/articles/2023-08-04-minimum-utxo-value/" />
+    <link href="https://example.com/articles/2023-08-04-minimum-utxo-value/" />
     <updated>2023-08-04T00:00:00Z</updated>
-    <id>https://otsuka.haus/articles/2023-08-04-minimum-utxo-value/</id>
+    <id>https://example.com/articles/2023-08-04-minimum-utxo-value/</id>
     <content type="html">&lt;p&gt;Due to recent high fee rate periods, many were advocating for consolidating low-value UTXOs to ensure they wouldn&#39;t become dust. I was curious whether I had UTXOs that were in danger of becoming dust.&lt;/p&gt;
 &lt;p&gt;While there is a &lt;a href=&quot;https://bitcoin.stackexchange.com/a/41082&quot;&gt;technical definition&lt;/a&gt; of dust built into Bitcoin Core&#39;s code, I am more broadly referring to the colloquial definition of dust: UTXOs with a value less than the transaction fees required to spend them, which have become uneconomical to move.&lt;/p&gt;
 &lt;p&gt;Because fee rates are the primary variable determining the dust threshold, whether a UTXO is considered dust can change over time. I took a look at historical fee rates, how fees are calculated, and included qualitative projections of future block space demand to determine a UTXO value that will stay above the dust threshold for myself.&lt;/p&gt;
@@ -48,7 +48,7 @@
 &lt;h3&gt;Historical Fee Rates&lt;/h3&gt;
 &lt;p&gt;The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:&lt;/p&gt;
 &lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/-xqddWXXX5-1976.svg 1976w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/-xqddWXXX5-360.avif 360w, https://otsuka.haus/img/-xqddWXXX5-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Historical graph of Bitcoin mempool by vBytes&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/-xqddWXXX5-360.jpeg&quot; width=&quot;720&quot; height=&quot;218&quot; srcset=&quot;https://otsuka.haus/img/-xqddWXXX5-360.jpeg 360w, https://otsuka.haus/img/-xqddWXXX5-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://example.com/img/-xqddWXXX5-1976.svg 1976w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/img/-xqddWXXX5-360.avif 360w, https://example.com/img/-xqddWXXX5-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Historical graph of Bitcoin mempool by vBytes&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/img/-xqddWXXX5-360.jpeg&quot; width=&quot;720&quot; height=&quot;218&quot; srcset=&quot;https://example.com/img/-xqddWXXX5-360.jpeg 360w, https://example.com/img/-xqddWXXX5-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
     &lt;figcaption&gt;Source: &lt;cite&gt;&lt;a href=&quot;https://mempool.space/graphs/mempool#all&quot;&gt;mempool.space&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;I&#39;ve selected 4 blocks to deep dive, based on their proximity to mempool peaks in those three years, as well as a more &amp;quot;normal&amp;quot; current block:&lt;/p&gt;
@@ -59,7 +59,7 @@
 &lt;li&gt;801171: July 31, 2023&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/9YCAC3TUYf-2310.svg 2310w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/9YCAC3TUYf-360.avif 360w, https://otsuka.haus/img/9YCAC3TUYf-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whisker plot of fee rates across blocks&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/9YCAC3TUYf-360.jpeg&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/9YCAC3TUYf-360.jpeg 360w, https://otsuka.haus/img/9YCAC3TUYf-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://example.com/img/9YCAC3TUYf-2310.svg 2310w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/img/9YCAC3TUYf-360.avif 360w, https://example.com/img/9YCAC3TUYf-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whisker plot of fee rates across blocks&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/img/9YCAC3TUYf-360.jpeg&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://example.com/img/9YCAC3TUYf-360.jpeg 360w, https://example.com/img/9YCAC3TUYf-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
     &lt;figcaption&gt;Outliers removed&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;table&gt;
@@ -110,7 +110,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;I don&#39;t expect to see major differences in fee rates by script type, but since I have the data available here&#39;s what that looks like (it&#39;s as expected):&lt;/p&gt;
 &lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/1JltYBXtti-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/1JltYBXtti-360.avif 360w, https://otsuka.haus/img/1JltYBXtti-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whiskper plot of fee rates by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/1JltYBXtti-360.jpeg&quot; width=&quot;720&quot; height=&quot;309&quot; srcset=&quot;https://otsuka.haus/img/1JltYBXtti-360.jpeg 360w, https://otsuka.haus/img/1JltYBXtti-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://example.com/img/1JltYBXtti-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/img/1JltYBXtti-360.avif 360w, https://example.com/img/1JltYBXtti-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whiskper plot of fee rates by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/img/1JltYBXtti-360.jpeg&quot; width=&quot;720&quot; height=&quot;309&quot; srcset=&quot;https://example.com/img/1JltYBXtti-360.jpeg 360w, https://example.com/img/1JltYBXtti-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
     &lt;figcaption&gt;Fee Rate axis capped at 50 sats/vB to better show the differences between script types.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Transactions are shifting towards the newer P2WPKH, P2WSH, and P2TR script types:&lt;/p&gt;
@@ -164,12 +164,12 @@
 &lt;/table&gt;
 &lt;p&gt;Where the script types do differ is in the total size of the transaction and therefore, the total fees paid.&lt;/p&gt;
 &lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/7edhxUmZer-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/7edhxUmZer-360.avif 360w, https://otsuka.haus/img/7edhxUmZer-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whisker plot of total fees by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/7edhxUmZer-360.jpeg&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/7edhxUmZer-360.jpeg 360w, https://otsuka.haus/img/7edhxUmZer-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://example.com/img/7edhxUmZer-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/img/7edhxUmZer-360.avif 360w, https://example.com/img/7edhxUmZer-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whisker plot of total fees by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/img/7edhxUmZer-360.jpeg&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://example.com/img/7edhxUmZer-360.jpeg 360w, https://example.com/img/7edhxUmZer-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
     &lt;figcaption&gt;Fee Rate axis capped at 300000 sats/vB to better show the differences between script types.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;P2WSH and P2TR transactions appear to be paying higher median fees than other script types.&lt;/p&gt;
 &lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/9ItHBYthVh-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/9ItHBYthVh-360.avif 360w, https://otsuka.haus/img/9ItHBYthVh-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whisker plot of total fees by script type, zoomed&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/9ItHBYthVh-360.jpeg&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/9ItHBYthVh-360.jpeg 360w, https://otsuka.haus/img/9ItHBYthVh-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://example.com/img/9ItHBYthVh-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://example.com/img/9ItHBYthVh-360.avif 360w, https://example.com/img/9ItHBYthVh-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whisker plot of total fees by script type, zoomed&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://example.com/img/9ItHBYthVh-360.jpeg&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://example.com/img/9ItHBYthVh-360.jpeg 360w, https://example.com/img/9ItHBYthVh-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
     &lt;figcaption&gt;Fee Rate axis capped at 18000 sats/vB to better show the differences between script types.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;To better understand the cause of this, we have to know how vBytes are allocated during the construction of a transaction.&lt;/p&gt;
@@ -252,9 +252,9 @@
   </entry>
   <entry>
     <title>Removing a Drive from a Btrfs Array</title>
-    <link href="https://otsuka.haus/articles/2023-07-05-removing-a-drive-from-a-btrfs-array/" />
+    <link href="https://example.com/articles/2023-07-05-removing-a-drive-from-a-btrfs-array/" />
     <updated>2023-07-05T00:00:00Z</updated>
-    <id>https://otsuka.haus/articles/2023-07-05-removing-a-drive-from-a-btrfs-array/</id>
+    <id>https://example.com/articles/2023-07-05-removing-a-drive-from-a-btrfs-array/</id>
     <content type="html">&lt;p&gt;I recently ran into a situation where I knew one of the hard drives in my Btrfs array was failing. Simply following the &lt;a href=&quot;https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices.html#Removing_devices&quot;&gt;Btrfs wiki removing devices instructions&lt;/a&gt; was unsuccessful as the &lt;code&gt;btrfs delete device&lt;/code&gt; command would throw an error, cancelling the device deletion process.&lt;/p&gt;
 &lt;p&gt;At this point, I was okay with losing any corrupted/unrecoverable files. You should already be past the point of restoring from backup, attempting other recovery methods, etc. I just wanted to get the dying drive removed from the array since I knew I didn&#39;t have critical data on the array.&lt;/p&gt;
 &lt;blockquote&gt;
