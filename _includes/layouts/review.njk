@@ -8,7 +8,7 @@ layout: layouts/base.njk
 	<summary>Metadata</summary>
 	<ul>
 		<li>Published: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | htmlDateString }}</time></li>
-		<li>Description: {{ description }}</li>
+		<li>Rating: {{ description }}</li>
 		<li>Tags: {{ tags | reject("equalto", "articles") | sort | join(", ") }}</li>
 		{% if posse %}
 			<li>
