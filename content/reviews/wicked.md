@@ -2,7 +2,7 @@
 title: 'Wicked'
 date: 2024-11-29
 modified: 2024-12-22
-description: ★★★★⯪
+description: ★★★★½
 tags:
 - movie
 posse:
