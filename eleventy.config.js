@@ -22,6 +22,17 @@ function isFullUrl(url) {
 }
 
 module.exports = function (eleventyConfig) {
+	eleventyConfig.addCollection("activities", function(collectionApi) {
+		let collectionSubset = [
+			...collectionApi.getFilteredByTag("articles"),
+			...collectionApi.getFilteredByTag("reviews"),
+		];
+		let sortedSubset = collectionSubset.sort(function(a, b) {
+			// maintain sort order when working with default collections objects
+			return a.date - b.date;
+		});
+		return sortedSubset;
+	});
 	eleventyConfig.addFilter("cssmin", function (code) {
 		return new cleanCSS({}).minify(code).styles;
 	});

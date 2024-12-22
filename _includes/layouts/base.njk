@@ -58,9 +58,14 @@
 <body>
     <header>
         <nav>
-            <a href="/">{{ metadata.title }}</a>
+            <h1><a href="/">{{ metadata.title }}</a></h1>
+            <menu>
+                <li><a href="/articles">Articles</a></li>
+                <li><a href="/reviews">Reviews</a></li>
+            </menu>
         </nav>
     </header>
+    <hr>
     <main>
         {{ content | safe }}
     </main>

@@ -13,11 +13,22 @@ body {
   font-size: 1rem;
 }
 nav {
+  margin-bottom: 1rem;
+}
+nav > h1 {
   font-size: 2rem;
   font-weight: bold;
 }
-nav > a {
+nav > h1 > a {
   text-decoration: none;
+}
+nav > menu {
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+}
+nav > menu > li {
+  display: inline;
+  padding-right: 1rem;
 }
 details {
   margin-bottom: 1rem;
@@ -67,6 +78,9 @@ th, td {
 object {
   width: 100%;
 }
+hr {
+  margin-bottom: 1rem;
+}
 footer {
   text-align: center;
   font-style: italic;
@@ -78,4 +92,7 @@ footer > address > menu {
 footer > address > menu > li {
   display: inline;
   padding-right: 1rem;
+}
+.collectiontag {
+  font-variant: small-caps;
 }

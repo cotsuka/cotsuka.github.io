@@ -1,0 +1,19 @@
+<dl>
+{% if maxPosts %}
+    {% set numPosts = collections.activities | length | min(maxPosts) %}
+    {% set activitieslist = collections.activities | reverse | head(numPosts) %}
+{% else %}
+    {% set activitieslist = collections.activities | reverse %}
+{% endif %}
+{%- for item in activitieslist %}
+    <dt><a href="{{ item.url }}">{{ item.data.title }}</a></dt>
+    <dd>
+        {% if "articles" in item.data.tags %}
+            <small class="collectiontag">article</small>
+        {% elseif "reviews" in item.data.tags %}
+            <small class="collectiontag">review</small>
+        {% endif %}
+        {{ item.data.description }}
+    </dd>
+{%- endfor %}
+</dl>
