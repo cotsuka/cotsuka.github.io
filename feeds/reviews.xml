@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Cameron Otsuka - Reviews</title>
+  <subtitle>The collection of Cameron&#39;s thoughts.</subtitle>
+  <link href="https://otsuka.haus/feeds/reviews.xml" rel="self" />
+  <link href="https://otsuka.haus/" />
+  <updated>2024-11-29T00:00:00Z</updated>
+  <id>https://otsuka.haus/</id>
+  <author>
+    <name>Cameron Otsuka</name>
+    <email>cameron@otsuka.haus</email>
+  </author>
+  <entry>
+    <title>Wicked</title>
+    <link href="https://otsuka.haus/reviews/2024-11-29-wicked/" />
+    <updated>2024-11-29T00:00:00Z</updated>
+    <id>https://otsuka.haus/reviews/2024-11-29-wicked/</id>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;they&#39;ve got pipes&lt;/li&gt;
+&lt;li&gt;fiyero&#39;s &amp;quot;dancing through life&amp;quot; is changed for the better&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+</feed>
