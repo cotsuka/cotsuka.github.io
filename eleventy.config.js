@@ -64,10 +64,42 @@ module.exports = function (eleventyConfig) {
 		type: "atom",
 		outputPath: "/feed.xml",
 		collection: {
-			name: "articles",
+			name: "activities",
 			limit: 10,
 		},
 		metadata: globalMetadata,
+	});
+	eleventyConfig.addPlugin(feedPlugin, {
+		type: "atom",
+		outputPath: "/feeds/articles.xml",
+		inputPath: "eleventy-plugin-feed-cameron-otsuka-articles-atom.njk",
+		collection: {
+			name: "articles",
+			limit: 10,
+		},
+		metadata: {
+			language: globalMetadata['language'],
+			title: globalMetadata['title'].concat(" - Articles"),
+			subtitle: globalMetadata['subtitle'],
+			base: globalMetadata['base'],
+			author: globalMetadata['author'],
+		},
+	});
+	eleventyConfig.addPlugin(feedPlugin, {
+		type: "atom",
+		outputPath: "/feeds/reviews.xml",
+		inputPath: "eleventy-plugin-feed-cameron-otsuka-reviews-atom.njk",
+		collection: {
+			name: "reviews",
+			limit: 10,
+		},
+		metadata: {
+			language: globalMetadata['language'],
+			title: globalMetadata['title'].concat(" - Reviews"),
+			subtitle: globalMetadata['subtitle'],
+			base: globalMetadata['base'],
+			author: globalMetadata['author'],
+		},
 	});
 	eleventyConfig.addPlugin(eleventySyntaxHighlightPlugin);
 	eleventyConfig.addShortcode("image", async function (src, alt) {

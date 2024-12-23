@@ -10,20 +10,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; frame-src 'none'" />
     <meta name="title" property="og:title" content="{{ title }}" />
-    <meta name="description" property="og:description" content="{{ description or metadata.description }}" />
+    <meta name="description" property="og:description" content="{{ description or metadata.subtitle }}" />
     <meta name="author" content="{{ metadata.author.name }}" />
     <meta name="generator" content="{{ eleventy.generator }}" />
     <meta name="fediverse:creator" content="@cameron@otsuka.social" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@CameronOtsuka" />
     <meta name="twitter:title" content="{{ title }}" />
-    <meta name="twitter:description" content="{{ description or metadata.description }}" />
-    <meta name="twitter:image" property="og:image" content="https://v1.screenshot.11ty.dev/{{ metadata.url | urlencode }}{{ page.url | urlencode }}/opengraph/9:16/" />
+    <meta name="twitter:description" content="{{ description or metadata.subtitle }}" />
+    <meta name="twitter:image" property="og:image" content="https://v1.screenshot.11ty.dev/{{ metadata.base | urlencode }}{{ page.url | urlencode }}/opengraph/9:16/" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}" />
+    <meta property="og:url" content="{{ metadata.base }}{{ page.url }}" />
     <meta property="og:site_name" content="{{ metadata.title }}" />
     <meta property="og:updated_time" content="{{ updated | isoDate }}" />
     {%- if tags %}
@@ -39,7 +39,7 @@
     {%- endif %}
     <title>{{ title }} | {{ metadata.title }}</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="canonical" href="{{ metadata.url }}{{ page.url }}" />
+    <link rel="canonical" href="{{ metadata.base }}{{ page.url }}" />
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ metadata.title }}" />
     <link rel="preload" href="/fonts/PublicSans-Bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/PublicSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
