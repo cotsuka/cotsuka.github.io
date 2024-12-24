@@ -41,10 +41,9 @@
     <content type="html">&lt;p&gt;Due to recent high fee rate periods, many were advocating for consolidating low-value UTXOs to ensure they wouldn&#39;t become dust. I was curious whether I had UTXOs that were in danger of becoming dust.&lt;/p&gt;
 &lt;p&gt;While there is a &lt;a href=&quot;https://bitcoin.stackexchange.com/a/41082&quot;&gt;technical definition&lt;/a&gt; of dust built into Bitcoin Core&#39;s code, I am more broadly referring to the colloquial definition of dust: UTXOs with a value less than the transaction fees required to spend them, which have become uneconomical to move.&lt;/p&gt;
 &lt;p&gt;Because fee rates are the primary variable determining the dust threshold, whether a UTXO is considered dust can change over time. I took a look at historical fee rates, how fees are calculated, and included qualitative projections of future block space demand to determine a UTXO value that will stay above the dust threshold for myself.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;TL;DR;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Taproot UTXO, 65k sats&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;🛈 Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
+&lt;strong&gt;TL;DR:&lt;/strong&gt; Taproot UTXO, 65k sats
+&lt;/div&gt;&lt;/div&gt;
 &lt;h3&gt;Historical Fee Rates&lt;/h3&gt;
 &lt;p&gt;The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:&lt;/p&gt;
 &lt;figure&gt;
@@ -104,10 +103,9 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;The first visible difference based on the box and whisker plot is the noticeable decrease in fee rate variance, likely attributable to better fee estimations. Second, is the 86% decline in median fee rate with an average 194 sats/vB between blocks 504000 and 680000 vs. 27 sats/vB in block 782400.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;I&#39;m taking a naïve view of transactions, so transactions pushed through using CPFP aren&#39;t coalesced into a single transaction with a blended, &amp;quot;effective&amp;quot; fee rate. In theory, this should reduce fee rate spread, but will be relatively centered around the median.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;🛈 Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
+I&#39;m taking a naïve view of transactions, so transactions pushed through using CPFP aren&#39;t coalesced into a single transaction with a blended, &amp;quot;effective&amp;quot; fee rate. In theory, this should reduce fee rate spread, but will be relatively centered around the median.
+&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;I don&#39;t expect to see major differences in fee rates by script type, but since I have the data available here&#39;s what that looks like (it&#39;s as expected):&lt;/p&gt;
 &lt;figure&gt;
     &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/1JltYBXtti-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/1JltYBXtti-360.avif 360w, https://otsuka.haus/img/1JltYBXtti-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whiskper plot of fee rates by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/1JltYBXtti-360.jpeg&quot; width=&quot;720&quot; height=&quot;309&quot; srcset=&quot;https://otsuka.haus/img/1JltYBXtti-360.jpeg 360w, https://otsuka.haus/img/1JltYBXtti-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
@@ -231,10 +229,9 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;So in ideal dust spending conditions, you would hold a P2TR UTXO and spend it to a P2WPKH output. An input requires more vBytes than an output, so the ideal will change if you are spending few inputs to many outputs.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Surprisingly, despite P2SH and P2PKH inputs being the most expensive (in terms of total fees), the fee data above doesn&#39;t bear that out. Without doing further digging, I assume it&#39;s due to multi-sig being more common with other script types.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;🛈 Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
+Surprisingly, despite P2SH and P2PKH inputs being the most expensive (in terms of total fees), the fee data above doesn&#39;t bear that out. Without doing further digging, I assume it&#39;s due to multi-sig being more common with other script types.
+&lt;/div&gt;&lt;/div&gt;
 &lt;h3&gt;Choosing a Minimum UTXO Value&lt;/h3&gt;
 &lt;p&gt;Putting everything together, here are my assumptions for choosing my minimum UTXO value:&lt;/p&gt;
 &lt;ol&gt;
@@ -257,10 +254,9 @@
     <id>https://otsuka.haus/articles/2023-07-05-removing-a-drive-from-a-btrfs-array/</id>
     <content type="html">&lt;p&gt;I recently ran into a situation where I knew one of the hard drives in my Btrfs array was failing. Simply following the &lt;a href=&quot;https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices.html#Removing_devices&quot;&gt;Btrfs wiki removing devices instructions&lt;/a&gt; was unsuccessful as the &lt;code&gt;btrfs delete device&lt;/code&gt; command would throw an error, cancelling the device deletion process.&lt;/p&gt;
 &lt;p&gt;At this point, I was okay with losing any corrupted/unrecoverable files. You should already be past the point of restoring from backup, attempting other recovery methods, etc. I just wanted to get the dying drive removed from the array since I knew I didn&#39;t have critical data on the array.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Make sure you&#39;ve exhausted all other resources before continuing. Check the &lt;a href=&quot;https://wiki.archlinux.org/title/Btrfs&quot;&gt;ArchWiki&lt;/a&gt;, &lt;a href=&quot;https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html&quot;&gt;Btrfs mailing list&lt;/a&gt;, etc. This will lead to data loss!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;div class=&quot;callout callout-warn&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;⚠ Warning&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
+Make sure you&#39;ve exhausted all other resources before continuing. Check the &lt;a href=&quot;https://wiki.archlinux.org/title/Btrfs&quot;&gt;ArchWiki&lt;/a&gt;, &lt;a href=&quot;https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html&quot;&gt;Btrfs mailing list&lt;/a&gt;, etc. This will lead to data loss!
+&lt;/div&gt;&lt;/div&gt;
 &lt;h3&gt;Scrub the Array&lt;/h3&gt;
 &lt;p&gt;Start a scrub to identify files blocking the device from getting deleted:&lt;/p&gt;
 &lt;pre class=&quot;language-console&quot;&gt;&lt;code class=&quot;language-console&quot;&gt;[cameron@host ~]$ sudo btrfs scrub start /mnt/btrfs&lt;/code&gt;&lt;/pre&gt;
