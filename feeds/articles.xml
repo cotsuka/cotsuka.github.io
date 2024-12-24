@@ -41,7 +41,7 @@
     <content type="html">&lt;p&gt;Due to recent high fee rate periods, many were advocating for consolidating low-value UTXOs to ensure they wouldn&#39;t become dust. I was curious whether I had UTXOs that were in danger of becoming dust.&lt;/p&gt;
 &lt;p&gt;While there is a &lt;a href=&quot;https://bitcoin.stackexchange.com/a/41082&quot;&gt;technical definition&lt;/a&gt; of dust built into Bitcoin Core&#39;s code, I am more broadly referring to the colloquial definition of dust: UTXOs with a value less than the transaction fees required to spend them, which have become uneconomical to move.&lt;/p&gt;
 &lt;p&gt;Because fee rates are the primary variable determining the dust threshold, whether a UTXO is considered dust can change over time. I took a look at historical fee rates, how fees are calculated, and included qualitative projections of future block space demand to determine a UTXO value that will stay above the dust threshold for myself.&lt;/p&gt;
-&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;🛈 Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
+&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
 &lt;strong&gt;TL;DR:&lt;/strong&gt; Taproot UTXO, 65k sats
 &lt;/div&gt;&lt;/div&gt;
 &lt;h3&gt;Historical Fee Rates&lt;/h3&gt;
@@ -103,7 +103,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;The first visible difference based on the box and whisker plot is the noticeable decrease in fee rate variance, likely attributable to better fee estimations. Second, is the 86% decline in median fee rate with an average 194 sats/vB between blocks 504000 and 680000 vs. 27 sats/vB in block 782400.&lt;/p&gt;
-&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;🛈 Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
+&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
 I&#39;m taking a naïve view of transactions, so transactions pushed through using CPFP aren&#39;t coalesced into a single transaction with a blended, &amp;quot;effective&amp;quot; fee rate. In theory, this should reduce fee rate spread, but will be relatively centered around the median.
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;I don&#39;t expect to see major differences in fee rates by script type, but since I have the data available here&#39;s what that looks like (it&#39;s as expected):&lt;/p&gt;
@@ -229,7 +229,7 @@ I&#39;m taking a naïve view of transactions, so transactions pushed through usi
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;So in ideal dust spending conditions, you would hold a P2TR UTXO and spend it to a P2WPKH output. An input requires more vBytes than an output, so the ideal will change if you are spending few inputs to many outputs.&lt;/p&gt;
-&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;🛈 Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
+&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
 Surprisingly, despite P2SH and P2PKH inputs being the most expensive (in terms of total fees), the fee data above doesn&#39;t bear that out. Without doing further digging, I assume it&#39;s due to multi-sig being more common with other script types.
 &lt;/div&gt;&lt;/div&gt;
 &lt;h3&gt;Choosing a Minimum UTXO Value&lt;/h3&gt;
