@@ -73,7 +73,7 @@ module.exports = function (eleventyConfig) {
 			if (customLabel) {
 				label = customLabel;
 			} else if (level === "info") {
-				label = "🛈 Info"
+				label = "ⓘ Info"
 			} else if (level === "warn") {
 				label = "⚠ Warning";
 			} else if (level === "error") {
