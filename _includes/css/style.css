@@ -93,6 +93,32 @@ footer > address > menu > li {
   display: inline;
   padding-right: 1rem;
 }
+.callout {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  border-left: 0.2rem solid;
+}
+.callout-info {
+  border-left: 0.2rem solid #086ddd;
+}
+.callout-info > .callout-label {
+  color: #086ddd;
+  font-weight: bold;
+}
+.callout-warn {
+  border-left: 0.2rem solid #ec7500;
+}
+.callout-warn > .callout-label {
+  color: #ec7500;
+  font-weight: bold;
+}
+.callout-error {
+  border-left: 0.2rem solid #e93147;
+}
+.callout-error > .callout-label {
+  color: #e93147;
+  font-weight: bold;
+}
 .collectiontag {
   font-variant: small-caps;
 }

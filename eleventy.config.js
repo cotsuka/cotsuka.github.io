@@ -4,6 +4,7 @@ const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const eleventyImagePlugin = require("@11ty/eleventy-img");
 const eleventySyntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const globalMetadata = require("./_data/metadata.json");
+const markdownIt = require("markdown-it")();
 const path = require("path");
 
 function relativeToInputPath(inputPath, relativeFilePath) {
@@ -59,6 +60,38 @@ module.exports = function (eleventyConfig) {
 		// Return the smallest number argument
 		return Math.min.apply(null, numbers);
 	});
+	eleventyConfig.addPairedShortcode(
+		"callout",
+		function (content, level = "", format = "md", customLabel = "") {
+			if (format === "md") {
+				content = markdownIt.renderInline(content);
+			} else if (format === "md-block") {
+				content = markdownIt.render(content);
+			} else if (format === "html") {
+				content = content
+			}
+			if (customLabel) {
+				label = customLabel;
+			} else if (level === "info") {
+				label = "🛈 Info"
+			} else if (level === "warn") {
+				label = "⚠ Warning";
+			} else if (level === "error") {
+				label = "! Error"
+			}
+			let labelHtml = label
+				? `<div class="callout-label">${customLabel || label}</div>`
+				: "";
+			let contentHtml =
+				(content || "").trim().length > 0
+					? `<div class="callout-content">${content}</div>`
+					: "";
+
+			return `<div class="callout${
+				level ? ` callout-${level}` : ""
+			}">${labelHtml}${contentHtml}</div>`;
+		}
+	);
 	eleventyConfig.addPassthroughCopy({ "./static/": "/" });
 	eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom",

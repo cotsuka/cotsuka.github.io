@@ -1,7 +1,7 @@
 ---
 title: 'Removing a Drive from a Btrfs Array'
 date: 2023-07-05
-modified: 2024-01-26
+modified: 2024-12-23
 description: If a drive is failing in an array, Btrfs could block attempts at removing the drive due to corrupted files. A quick write-up of how to get it removed.
 tags:
 - linux
@@ -11,9 +11,9 @@ I recently ran into a situation where I knew one of the hard drives in my Btrfs 
 
 At this point, I was okay with losing any corrupted/unrecoverable files. You should already be past the point of restoring from backup, attempting other recovery methods, etc. I just wanted to get the dying drive removed from the array since I knew I didn't have critical data on the array.
 
-> **Warning**
->
-> Make sure you've exhausted all other resources before continuing. Check the [ArchWiki](https://wiki.archlinux.org/title/Btrfs), [Btrfs mailing list](https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html), etc. This will lead to data loss!
+{% callout "warn" %}
+Make sure you've exhausted all other resources before continuing. Check the [ArchWiki](https://wiki.archlinux.org/title/Btrfs), [Btrfs mailing list](https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html), etc. This will lead to data loss!
+{% endcallout %}
 
 ### Scrub the Array
 Start a scrub to identify files blocking the device from getting deleted:
