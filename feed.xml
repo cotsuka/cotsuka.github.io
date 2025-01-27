@@ -4,12 +4,72 @@
   <subtitle>The collection of Cameron&#39;s thoughts.</subtitle>
   <link href="https://otsuka.haus/feed.xml" rel="self" />
   <link href="https://otsuka.haus/" />
-  <updated>2024-12-25T00:00:00Z</updated>
+  <updated>2025-01-27T00:00:00Z</updated>
   <id>https://otsuka.haus/</id>
   <author>
     <name>Cameron Otsuka</name>
     <email>cameron@otsuka.haus</email>
   </author>
+  <entry>
+    <title>R1 vs. o1: AI as Commodity or Moat</title>
+    <link href="https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/" />
+    <updated>2025-01-27T00:00:00Z</updated>
+    <id>https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/</id>
+    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/Vkj2bo2TiD-360.avif 360w, https://otsuka.haus/img/Vkj2bo2TiD-568.avif 568w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://otsuka.haus/img/Vkj2bo2TiD-360.gif 360w, https://otsuka.haus/img/Vkj2bo2TiD-568.gif 568w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/Vkj2bo2TiD-360.jpeg&quot; alt=&quot;US - China AI model enjoyers Dabbing Dude meme&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;568&quot; height=&quot;439&quot; srcset=&quot;https://otsuka.haus/img/Vkj2bo2TiD-360.jpeg 360w, https://otsuka.haus/img/Vkj2bo2TiD-568.jpeg 568w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;DeepSeek announced the release of its R1 reasoning model&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt; a day before the US announced it would use its executive power to secure the infrastructure needs for a joint venture between OpenAI (developers of the o1 reasoning model), Microsoft, Oracle, and Softbank, titled &amp;quot;Stargate&amp;quot;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn2&quot; id=&quot;fnref2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;A few days later, markets have taken this as an existential threat to OpenAI&#39;s dominance and energy/compute demand. This is a shot across the bow from DeepSeek and zooming out, represents the economic tug-of-war between China and the US, but I don&#39;t think it spells disaster for the US&#39; ambitions -- if US companies can continue pushing the performance frontier.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/WSrs4ZC7kN-360.avif 360w, https://otsuka.haus/img/WSrs4ZC7kN-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/WSrs4ZC7kN-360.gif&quot; alt=&quot;NVDA price action on 2025-01-27&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;305&quot; srcset=&quot;https://otsuka.haus/img/WSrs4ZC7kN-360.gif 360w, https://otsuka.haus/img/WSrs4ZC7kN-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;figcaption&gt;Nvidia was down ~17% by end of day on the news.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2&gt;The Facts&lt;/h2&gt;
+&lt;p&gt;DeepSeek trained R1 for an estimated $5.6MM on A100 and H800 GPUs (not the latest-and-greatest GPUs available). End-user inference pricing is an order of magnitude cheaper than o1.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/_iheqoqYp--360.avif 360w, https://otsuka.haus/img/_iheqoqYp--720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://otsuka.haus/img/_iheqoqYp--360.gif 360w, https://otsuka.haus/img/_iheqoqYp--720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/_iheqoqYp--360.jpeg&quot; alt=&quot;Input/Output Pricing for o1-Class Inference Models ($/1M Tokens)&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;353&quot; srcset=&quot;https://otsuka.haus/img/_iheqoqYp--360.jpeg 360w, https://otsuka.haus/img/_iheqoqYp--720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;figcaption&gt;Source: &lt;cite&gt;&lt;a href=&quot;https://x.com/RnaudBertrand/status/1881709223152878000/photo/1&quot;&gt;@RnaudBertrand&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Despite less capital expenditure, R1 has comparable performance to o1 due to several technical innovations. I don&#39;t pretend to deeply understand everything on this front, so instead I&#39;ll direct you to this post by XX, who made a good breakdown of what&#39;s happening under the hood. Ultimately, R1 is essentially a drop-in replacement for o1.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.avif 360w, https://otsuka.haus/img/S1fgCb2pAG-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.gif 360w, https://otsuka.haus/img/S1fgCb2pAG-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.jpeg&quot; alt=&quot;Accuracy / Percentile (%) by Benchmark&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;426&quot; srcset=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.jpeg 360w, https://otsuka.haus/img/S1fgCb2pAG-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;figcaption&gt;Source: &lt;cite&gt;&lt;a href=&quot;https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf&quot;&gt;DeepSeek-AI&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;This is incredible for the little guy: run your own model, privately, without the need for massive infrastructure.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&quot;https://otsuka.haus/img/MNT2uYz6Yi-360.gif&quot; alt=&quot;R1 running locally on an iPhone&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;405&quot; srcset=&quot;https://otsuka.haus/img/MNT2uYz6Yi-360.gif 360w, https://otsuka.haus/img/MNT2uYz6Yi-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;
+    &lt;figcaption&gt;A distilled version of R1 running locally on an iPhone. Source: &lt;cite&gt;&lt;a href=&quot;https://x.com/localghost/status/1882109711732154387&quot;&gt;@localghost&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2&gt;Is OpenAI Cooked?&lt;/h2&gt;
+&lt;p&gt;First, the threshold for publicly available, open-source reasoning models will never be lower than this. HuggingFace is attempting to reproduce R1 fully in the open&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn3&quot; id=&quot;fnref3&quot;&gt;[3]&lt;/a&gt;&lt;/sup&gt; which would make it an end-to-end public frontier model. I think this is a win for society.&lt;/p&gt;
+&lt;p&gt;Second, everyone should be significantly shortening their anticipated AI development timelines. The initial market reaction was a first order reaction (80% less compute! 80% less chip demand!) but I don&#39;t see why energy infrastructure and chip manufacturing demand would be negatively impacted. I&#39;d more likely guess this is a &lt;a href=&quot;https://en.wikipedia.org/wiki/Jevons_paradox&quot;&gt;Jevon&#39;s paradox&lt;/a&gt; situation, where the excess capacity is immediately saturated to advance model performance at a now more rapid pace.&lt;/p&gt;
+&lt;p&gt;It&#39;s clear with the amount of investment the US and companies are ploughing into OpenAI, their vision for the future is one where OpenAI has the highest horsepower model and defends its moat simply by having the smartest, fastest, best model. Value capture in this version of the world accrues to the model developers.&lt;/p&gt;
+&lt;p&gt;China&#39;s approach, exemplified by R1, envisions a future with commodity AI models used as building blocks within other applications. Incentivizing open development of models with comparable performance to private frontier models ensures the US &lt;em&gt;can&#39;t&lt;/em&gt; develop an AI moat. China codified this objective in 2017 with the release of their, &lt;a href=&quot;https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/&quot;&gt;&amp;quot;New Generation Artificial Intelligence Development Plan&amp;quot; (translated)&lt;/a&gt;. Some sections that stood out to me:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Open-Source and Open.&lt;/em&gt; Advocate the concept of open-source sharing, and promote the concept of industry, academia, research, and production units each innovating and in principal pursuing joint innovation and sharing. Follow the coordinated development law for economic and national defense construction; promote two-way conversion and application for military and civilian scientific and technological achievements and co-construction and sharing of military and civilian innovation resources; form an all-element, multi-domain, highly efficient new pattern of civil-military integration.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn4&quot; id=&quot;fnref4&quot;&gt;[4]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;(2) Optimize arrangements to build AI innovation bases&lt;/strong&gt;&lt;br&gt;
+Guide existing AI-related national focus laboratories, corporate national focus laboratories, national engineering laboratories, and other such bases, and conduct research focused on an advanced direction of a new generation of AI.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn5&quot; id=&quot;fnref5&quot;&gt;[5]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I don&#39;t think it&#39;s a stretch to compare OpenAI&#39;s business model with that of IBM in the 80s and 90s&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn6&quot; id=&quot;fnref6&quot;&gt;[6]&lt;/a&gt;&lt;/sup&gt;. History shows tech advancements trend towards commoditization. We&#39;ll see if the US&#39; investments can buck the trend.&lt;/p&gt;
+&lt;hr class=&quot;footnotes-sep&quot;&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+&lt;ol class=&quot;footnotes-list&quot;&gt;
+&lt;li id=&quot;fn1&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://x.com/deepseek_ai/status/1881318130334814301&quot;&gt;🚀 DeepSeek-R1 is here!&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref1&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn2&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://openai.com/index/announcing-the-stargate-project/&quot;&gt;Announcing the Stargate Project&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref2&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn3&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/huggingface/open-r1&quot;&gt;Open R1&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref3&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn4&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/#:~:text=Open-Source%20and,a%20global%20scale.&quot;&gt;Full Translation: China’s ‘New Generation Artificial Intelligence Development Plan’ (2017)&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref4&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn5&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/#:~:text=(2)%20optimize%20arrangements%20to%20build%20ai%20innovation%20bases&quot;&gt;Full Translation: China’s ‘New Generation Artificial Intelligence Development Plan’ (2017)&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref5&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn6&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/History_of_IBM#1975%E2%80%931992:_Information_revolution,_rise_of_software_and_PC_industries&quot;&gt;History of IBM - 1975–1992: Information revolution, rise of software and PC industries&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref6&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content>
+  </entry>
   <entry>
     <title>Subservience</title>
     <link href="https://otsuka.haus/reviews/2024-12-25-subservience/" />
@@ -65,7 +125,7 @@
     <link href="https://otsuka.haus/articles/2024-03-01-monetary-system-enshittification/" />
     <updated>2024-03-01T00:00:00Z</updated>
     <id>https://otsuka.haus/articles/2024-03-01-monetary-system-enshittification/</id>
-    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/KmTgGsyio3-360.avif 360w, https://otsuka.haus/img/KmTgGsyio3-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Bitcoin honeybadger stomping on the US monetary system.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/KmTgGsyio3-360.jpeg&quot; width=&quot;720&quot; height=&quot;720&quot; srcset=&quot;https://otsuka.haus/img/KmTgGsyio3-360.jpeg 360w, https://otsuka.haus/img/KmTgGsyio3-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/cfuR7r1OKS-360.avif 360w, https://otsuka.haus/img/cfuR7r1OKS-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://otsuka.haus/img/cfuR7r1OKS-360.gif 360w, https://otsuka.haus/img/cfuR7r1OKS-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/cfuR7r1OKS-360.jpeg&quot; alt=&quot;Bitcoin honeybadger stomping on the US monetary system.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;720&quot; srcset=&quot;https://otsuka.haus/img/cfuR7r1OKS-360.jpeg 360w, https://otsuka.haus/img/cfuR7r1OKS-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;Is the US monetary system experiencing enshittification? And how do we solve it? If we think about monetary systems as platforms which facilitate value transfer, I think some of &lt;a href=&quot;https://twitter.com/doctorow&quot;&gt;Cory Doctorow&#39;s&lt;/a&gt; ideas on preventing platform decay can apply.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;quot;First, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die.&amp;quot; — Cory Doctorow&lt;/p&gt;
@@ -91,13 +151,13 @@
     <content type="html">&lt;p&gt;Due to recent high fee rate periods, many were advocating for consolidating low-value UTXOs to ensure they wouldn&#39;t become dust. I was curious whether I had UTXOs that were in danger of becoming dust.&lt;/p&gt;
 &lt;p&gt;While there is a &lt;a href=&quot;https://bitcoin.stackexchange.com/a/41082&quot;&gt;technical definition&lt;/a&gt; of dust built into Bitcoin Core&#39;s code, I am more broadly referring to the colloquial definition of dust: UTXOs with a value less than the transaction fees required to spend them, which have become uneconomical to move.&lt;/p&gt;
 &lt;p&gt;Because fee rates are the primary variable determining the dust threshold, whether a UTXO is considered dust can change over time. I took a look at historical fee rates, how fees are calculated, and included qualitative projections of future block space demand to determine a UTXO value that will stay above the dust threshold for myself.&lt;/p&gt;
-&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
-&lt;strong&gt;TL;DR:&lt;/strong&gt; Taproot UTXO, 65k sats
+&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;&lt;br&gt;
+&lt;strong&gt;TL;DR:&lt;/strong&gt; Taproot UTXO, 65k sats&lt;br&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;h3&gt;Historical Fee Rates&lt;/h3&gt;
 &lt;p&gt;The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:&lt;/p&gt;
 &lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/-xqddWXXX5-1976.svg 1976w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/-xqddWXXX5-360.avif 360w, https://otsuka.haus/img/-xqddWXXX5-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Historical graph of Bitcoin mempool by vBytes&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/-xqddWXXX5-360.jpeg&quot; width=&quot;720&quot; height=&quot;218&quot; srcset=&quot;https://otsuka.haus/img/-xqddWXXX5-360.jpeg 360w, https://otsuka.haus/img/-xqddWXXX5-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/jlj-NSVbJD-1976.svg 1976w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/jlj-NSVbJD-360.avif 360w, https://otsuka.haus/img/jlj-NSVbJD-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/jlj-NSVbJD-360.gif&quot; alt=&quot;Historical graph of Bitcoin mempool by vBytes&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;218&quot; srcset=&quot;https://otsuka.haus/img/jlj-NSVbJD-360.gif 360w, https://otsuka.haus/img/jlj-NSVbJD-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
     &lt;figcaption&gt;Source: &lt;cite&gt;&lt;a href=&quot;https://mempool.space/graphs/mempool#all&quot;&gt;mempool.space&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;I&#39;ve selected 4 blocks to deep dive, based on their proximity to mempool peaks in those three years, as well as a more &amp;quot;normal&amp;quot; current block:&lt;/p&gt;
@@ -108,7 +168,7 @@
 &lt;li&gt;801171: July 31, 2023&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/9YCAC3TUYf-2310.svg 2310w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/9YCAC3TUYf-360.avif 360w, https://otsuka.haus/img/9YCAC3TUYf-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whisker plot of fee rates across blocks&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/9YCAC3TUYf-360.jpeg&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/9YCAC3TUYf-360.jpeg 360w, https://otsuka.haus/img/9YCAC3TUYf-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/FRvxlTw5GS-2310.svg 2310w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/FRvxlTw5GS-360.avif 360w, https://otsuka.haus/img/FRvxlTw5GS-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/FRvxlTw5GS-360.gif&quot; alt=&quot;Box and whisker plot of fee rates across blocks&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/FRvxlTw5GS-360.gif 360w, https://otsuka.haus/img/FRvxlTw5GS-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
     &lt;figcaption&gt;Outliers removed&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;table&gt;
@@ -153,12 +213,12 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;The first visible difference based on the box and whisker plot is the noticeable decrease in fee rate variance, likely attributable to better fee estimations. Second, is the 86% decline in median fee rate with an average 194 sats/vB between blocks 504000 and 680000 vs. 27 sats/vB in block 782400.&lt;/p&gt;
-&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
-I&#39;m taking a naïve view of transactions, so transactions pushed through using CPFP aren&#39;t coalesced into a single transaction with a blended, &amp;quot;effective&amp;quot; fee rate. In theory, this should reduce fee rate spread, but will be relatively centered around the median.
+&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;&lt;br&gt;
+I&#39;m taking a naïve view of transactions, so transactions pushed through using CPFP aren&#39;t coalesced into a single transaction with a blended, &amp;quot;effective&amp;quot; fee rate. In theory, this should reduce fee rate spread, but will be relatively centered around the median.&lt;br&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;I don&#39;t expect to see major differences in fee rates by script type, but since I have the data available here&#39;s what that looks like (it&#39;s as expected):&lt;/p&gt;
 &lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/1JltYBXtti-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/1JltYBXtti-360.avif 360w, https://otsuka.haus/img/1JltYBXtti-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whiskper plot of fee rates by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/1JltYBXtti-360.jpeg&quot; width=&quot;720&quot; height=&quot;309&quot; srcset=&quot;https://otsuka.haus/img/1JltYBXtti-360.jpeg 360w, https://otsuka.haus/img/1JltYBXtti-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/B6jFHpTD8O-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/B6jFHpTD8O-360.avif 360w, https://otsuka.haus/img/B6jFHpTD8O-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/B6jFHpTD8O-360.gif&quot; alt=&quot;Box and whiskper plot of fee rates by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;309&quot; srcset=&quot;https://otsuka.haus/img/B6jFHpTD8O-360.gif 360w, https://otsuka.haus/img/B6jFHpTD8O-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
     &lt;figcaption&gt;Fee Rate axis capped at 50 sats/vB to better show the differences between script types.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Transactions are shifting towards the newer P2WPKH, P2WSH, and P2TR script types:&lt;/p&gt;
@@ -212,12 +272,12 @@ I&#39;m taking a naïve view of transactions, so transactions pushed through usi
 &lt;/table&gt;
 &lt;p&gt;Where the script types do differ is in the total size of the transaction and therefore, the total fees paid.&lt;/p&gt;
 &lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/7edhxUmZer-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/7edhxUmZer-360.avif 360w, https://otsuka.haus/img/7edhxUmZer-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whisker plot of total fees by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/7edhxUmZer-360.jpeg&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/7edhxUmZer-360.jpeg 360w, https://otsuka.haus/img/7edhxUmZer-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/3ZxRIMGSVo-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/3ZxRIMGSVo-360.avif 360w, https://otsuka.haus/img/3ZxRIMGSVo-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/3ZxRIMGSVo-360.gif&quot; alt=&quot;Box and whisker plot of total fees by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/3ZxRIMGSVo-360.gif 360w, https://otsuka.haus/img/3ZxRIMGSVo-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
     &lt;figcaption&gt;Fee Rate axis capped at 300000 sats/vB to better show the differences between script types.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;P2WSH and P2TR transactions appear to be paying higher median fees than other script types.&lt;/p&gt;
 &lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/9ItHBYthVh-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/9ItHBYthVh-360.avif 360w, https://otsuka.haus/img/9ItHBYthVh-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img alt=&quot;Box and whisker plot of total fees by script type, zoomed&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://otsuka.haus/img/9ItHBYthVh-360.jpeg&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/9ItHBYthVh-360.jpeg 360w, https://otsuka.haus/img/9ItHBYthVh-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
+    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/UyLAS0PAdF-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/UyLAS0PAdF-360.avif 360w, https://otsuka.haus/img/UyLAS0PAdF-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/UyLAS0PAdF-360.gif&quot; alt=&quot;Box and whisker plot of total fees by script type, zoomed&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/UyLAS0PAdF-360.gif 360w, https://otsuka.haus/img/UyLAS0PAdF-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
     &lt;figcaption&gt;Fee Rate axis capped at 18000 sats/vB to better show the differences between script types.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;To better understand the cause of this, we have to know how vBytes are allocated during the construction of a transaction.&lt;/p&gt;
@@ -279,8 +339,8 @@ I&#39;m taking a naïve view of transactions, so transactions pushed through usi
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;So in ideal dust spending conditions, you would hold a P2TR UTXO and spend it to a P2WPKH output. An input requires more vBytes than an output, so the ideal will change if you are spending few inputs to many outputs.&lt;/p&gt;
-&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
-Surprisingly, despite P2SH and P2PKH inputs being the most expensive (in terms of total fees), the fee data above doesn&#39;t bear that out. Without doing further digging, I assume it&#39;s due to multi-sig being more common with other script types.
+&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;&lt;br&gt;
+Surprisingly, despite P2SH and P2PKH inputs being the most expensive (in terms of total fees), the fee data above doesn&#39;t bear that out. Without doing further digging, I assume it&#39;s due to multi-sig being more common with other script types.&lt;br&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;h3&gt;Choosing a Minimum UTXO Value&lt;/h3&gt;
 &lt;p&gt;Putting everything together, here are my assumptions for choosing my minimum UTXO value:&lt;/p&gt;
@@ -304,8 +364,8 @@ Surprisingly, despite P2SH and P2PKH inputs being the most expensive (in terms o
     <id>https://otsuka.haus/articles/2023-07-05-removing-a-drive-from-a-btrfs-array/</id>
     <content type="html">&lt;p&gt;I recently ran into a situation where I knew one of the hard drives in my Btrfs array was failing. Simply following the &lt;a href=&quot;https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices.html#Removing_devices&quot;&gt;Btrfs wiki removing devices instructions&lt;/a&gt; was unsuccessful as the &lt;code&gt;btrfs delete device&lt;/code&gt; command would throw an error, cancelling the device deletion process.&lt;/p&gt;
 &lt;p&gt;At this point, I was okay with losing any corrupted/unrecoverable files. You should already be past the point of restoring from backup, attempting other recovery methods, etc. I just wanted to get the dying drive removed from the array since I knew I didn&#39;t have critical data on the array.&lt;/p&gt;
-&lt;div class=&quot;callout callout-warn&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;⚠ Warning&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
-Make sure you&#39;ve exhausted all other resources before continuing. Check the &lt;a href=&quot;https://wiki.archlinux.org/title/Btrfs&quot;&gt;ArchWiki&lt;/a&gt;, &lt;a href=&quot;https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html&quot;&gt;Btrfs mailing list&lt;/a&gt;, etc. This will lead to data loss!
+&lt;div class=&quot;callout callout-warn&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;⚠ Warning&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;&lt;br&gt;
+Make sure you&#39;ve exhausted all other resources before continuing. Check the &lt;a href=&quot;https://wiki.archlinux.org/title/Btrfs&quot;&gt;ArchWiki&lt;/a&gt;, &lt;a href=&quot;https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html&quot;&gt;Btrfs mailing list&lt;/a&gt;, etc. This will lead to data loss!&lt;br&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;h3&gt;Scrub the Array&lt;/h3&gt;
 &lt;p&gt;Start a scrub to identify files blocking the device from getting deleted:&lt;/p&gt;

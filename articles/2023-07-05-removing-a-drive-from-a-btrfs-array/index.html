@@ -65,8 +65,8 @@
 <article>
 	<p>I recently ran into a situation where I knew one of the hard drives in my Btrfs array was failing. Simply following the <a href="https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices.html#Removing_devices">Btrfs wiki removing devices instructions</a> was unsuccessful as the <code>btrfs delete device</code> command would throw an error, cancelling the device deletion process.</p>
 <p>At this point, I was okay with losing any corrupted/unrecoverable files. You should already be past the point of restoring from backup, attempting other recovery methods, etc. I just wanted to get the dying drive removed from the array since I knew I didn't have critical data on the array.</p>
-<div class="callout callout-warn"><div class="callout-label">⚠ Warning</div><div class="callout-content">
-Make sure you've exhausted all other resources before continuing. Check the <a href="https://wiki.archlinux.org/title/Btrfs">ArchWiki</a>, <a href="https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html">Btrfs mailing list</a>, etc. This will lead to data loss!
+<div class="callout callout-warn"><div class="callout-label">⚠ Warning</div><div class="callout-content"><br>
+Make sure you've exhausted all other resources before continuing. Check the <a href="https://wiki.archlinux.org/title/Btrfs">ArchWiki</a>, <a href="https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html">Btrfs mailing list</a>, etc. This will lead to data loss!<br>
 </div></div>
 <h3>Scrub the Array</h3>
 <p>Start a scrub to identify files blocking the device from getting deleted:</p>

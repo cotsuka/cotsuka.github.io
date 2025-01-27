@@ -66,13 +66,13 @@
 	<p>Due to recent high fee rate periods, many were advocating for consolidating low-value UTXOs to ensure they wouldn't become dust. I was curious whether I had UTXOs that were in danger of becoming dust.</p>
 <p>While there is a <a href="https://bitcoin.stackexchange.com/a/41082">technical definition</a> of dust built into Bitcoin Core's code, I am more broadly referring to the colloquial definition of dust: UTXOs with a value less than the transaction fees required to spend them, which have become uneconomical to move.</p>
 <p>Because fee rates are the primary variable determining the dust threshold, whether a UTXO is considered dust can change over time. I took a look at historical fee rates, how fees are calculated, and included qualitative projections of future block space demand to determine a UTXO value that will stay above the dust threshold for myself.</p>
-<div class="callout callout-info"><div class="callout-label">ⓘ Info</div><div class="callout-content">
-<strong>TL;DR:</strong> Taproot UTXO, 65k sats
+<div class="callout callout-info"><div class="callout-label">ⓘ Info</div><div class="callout-content"><br>
+<strong>TL;DR:</strong> Taproot UTXO, 65k sats<br>
 </div></div>
 <h3>Historical Fee Rates</h3>
 <p>The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:</p>
 <figure>
-    <picture><source type="image/svg+xml" srcset="/img/-xqddWXXX5-1976.svg 1976w" sizes="360w, 720w"><source type="image/avif" srcset="/img/-xqddWXXX5-360.avif 360w, /img/-xqddWXXX5-720.avif 720w" sizes="360w, 720w"><img alt="Historical graph of Bitcoin mempool by vBytes" loading="lazy" decoding="async" src="/img/-xqddWXXX5-360.jpeg" width="720" height="218" srcset="/img/-xqddWXXX5-360.jpeg 360w, /img/-xqddWXXX5-720.jpeg 720w" sizes="360w, 720w"></picture>
+    <picture><source type="image/svg+xml" srcset="/img/jlj-NSVbJD-1976.svg 1976w" sizes="360w, 720w"><source type="image/avif" srcset="/img/jlj-NSVbJD-360.avif 360w, /img/jlj-NSVbJD-720.avif 720w" sizes="360w, 720w"><img src="/img/jlj-NSVbJD-360.gif" alt="Historical graph of Bitcoin mempool by vBytes" loading="lazy" decoding="async" eleventy:ignore="" width="720" height="218" srcset="/img/jlj-NSVbJD-360.gif 360w, /img/jlj-NSVbJD-720.gif 720w" sizes="360w, 720w"></picture>
     <figcaption>Source: <cite><a href="https://mempool.space/graphs/mempool#all">mempool.space</a></cite></figcaption>
 </figure>
 <p>I've selected 4 blocks to deep dive, based on their proximity to mempool peaks in those three years, as well as a more &quot;normal&quot; current block:</p>
@@ -83,7 +83,7 @@
 <li>801171: July 31, 2023</li>
 </ul>
 <figure>
-    <picture><source type="image/svg+xml" srcset="/img/9YCAC3TUYf-2310.svg 2310w" sizes="360w, 720w"><source type="image/avif" srcset="/img/9YCAC3TUYf-360.avif 360w, /img/9YCAC3TUYf-720.avif 720w" sizes="360w, 720w"><img alt="Box and whisker plot of fee rates across blocks" loading="lazy" decoding="async" src="/img/9YCAC3TUYf-360.jpeg" width="720" height="308" srcset="/img/9YCAC3TUYf-360.jpeg 360w, /img/9YCAC3TUYf-720.jpeg 720w" sizes="360w, 720w"></picture>
+    <picture><source type="image/svg+xml" srcset="/img/FRvxlTw5GS-2310.svg 2310w" sizes="360w, 720w"><source type="image/avif" srcset="/img/FRvxlTw5GS-360.avif 360w, /img/FRvxlTw5GS-720.avif 720w" sizes="360w, 720w"><img src="/img/FRvxlTw5GS-360.gif" alt="Box and whisker plot of fee rates across blocks" loading="lazy" decoding="async" eleventy:ignore="" width="720" height="308" srcset="/img/FRvxlTw5GS-360.gif 360w, /img/FRvxlTw5GS-720.gif 720w" sizes="360w, 720w"></picture>
     <figcaption>Outliers removed</figcaption>
 </figure>
 <table>
@@ -128,12 +128,12 @@
 </tbody>
 </table>
 <p>The first visible difference based on the box and whisker plot is the noticeable decrease in fee rate variance, likely attributable to better fee estimations. Second, is the 86% decline in median fee rate with an average 194 sats/vB between blocks 504000 and 680000 vs. 27 sats/vB in block 782400.</p>
-<div class="callout callout-info"><div class="callout-label">ⓘ Info</div><div class="callout-content">
-I'm taking a naïve view of transactions, so transactions pushed through using CPFP aren't coalesced into a single transaction with a blended, &quot;effective&quot; fee rate. In theory, this should reduce fee rate spread, but will be relatively centered around the median.
+<div class="callout callout-info"><div class="callout-label">ⓘ Info</div><div class="callout-content"><br>
+I'm taking a naïve view of transactions, so transactions pushed through using CPFP aren't coalesced into a single transaction with a blended, &quot;effective&quot; fee rate. In theory, this should reduce fee rate spread, but will be relatively centered around the median.<br>
 </div></div>
 <p>I don't expect to see major differences in fee rates by script type, but since I have the data available here's what that looks like (it's as expected):</p>
 <figure>
-    <picture><source type="image/svg+xml" srcset="/img/1JltYBXtti-2311.svg 2311w" sizes="360w, 720w"><source type="image/avif" srcset="/img/1JltYBXtti-360.avif 360w, /img/1JltYBXtti-720.avif 720w" sizes="360w, 720w"><img alt="Box and whiskper plot of fee rates by script type" loading="lazy" decoding="async" src="/img/1JltYBXtti-360.jpeg" width="720" height="309" srcset="/img/1JltYBXtti-360.jpeg 360w, /img/1JltYBXtti-720.jpeg 720w" sizes="360w, 720w"></picture>
+    <picture><source type="image/svg+xml" srcset="/img/B6jFHpTD8O-2311.svg 2311w" sizes="360w, 720w"><source type="image/avif" srcset="/img/B6jFHpTD8O-360.avif 360w, /img/B6jFHpTD8O-720.avif 720w" sizes="360w, 720w"><img src="/img/B6jFHpTD8O-360.gif" alt="Box and whiskper plot of fee rates by script type" loading="lazy" decoding="async" eleventy:ignore="" width="720" height="309" srcset="/img/B6jFHpTD8O-360.gif 360w, /img/B6jFHpTD8O-720.gif 720w" sizes="360w, 720w"></picture>
     <figcaption>Fee Rate axis capped at 50 sats/vB to better show the differences between script types.</figcaption>
 </figure>
 <p>Transactions are shifting towards the newer P2WPKH, P2WSH, and P2TR script types:</p>
@@ -187,12 +187,12 @@ I'm taking a naïve view of transactions, so transactions pushed through using C
 </table>
 <p>Where the script types do differ is in the total size of the transaction and therefore, the total fees paid.</p>
 <figure>
-    <picture><source type="image/svg+xml" srcset="/img/7edhxUmZer-2311.svg 2311w" sizes="360w, 720w"><source type="image/avif" srcset="/img/7edhxUmZer-360.avif 360w, /img/7edhxUmZer-720.avif 720w" sizes="360w, 720w"><img alt="Box and whisker plot of total fees by script type" loading="lazy" decoding="async" src="/img/7edhxUmZer-360.jpeg" width="720" height="308" srcset="/img/7edhxUmZer-360.jpeg 360w, /img/7edhxUmZer-720.jpeg 720w" sizes="360w, 720w"></picture>
+    <picture><source type="image/svg+xml" srcset="/img/3ZxRIMGSVo-2311.svg 2311w" sizes="360w, 720w"><source type="image/avif" srcset="/img/3ZxRIMGSVo-360.avif 360w, /img/3ZxRIMGSVo-720.avif 720w" sizes="360w, 720w"><img src="/img/3ZxRIMGSVo-360.gif" alt="Box and whisker plot of total fees by script type" loading="lazy" decoding="async" eleventy:ignore="" width="720" height="308" srcset="/img/3ZxRIMGSVo-360.gif 360w, /img/3ZxRIMGSVo-720.gif 720w" sizes="360w, 720w"></picture>
     <figcaption>Fee Rate axis capped at 300000 sats/vB to better show the differences between script types.</figcaption>
 </figure>
 <p>P2WSH and P2TR transactions appear to be paying higher median fees than other script types.</p>
 <figure>
-    <picture><source type="image/svg+xml" srcset="/img/9ItHBYthVh-2311.svg 2311w" sizes="360w, 720w"><source type="image/avif" srcset="/img/9ItHBYthVh-360.avif 360w, /img/9ItHBYthVh-720.avif 720w" sizes="360w, 720w"><img alt="Box and whisker plot of total fees by script type, zoomed" loading="lazy" decoding="async" src="/img/9ItHBYthVh-360.jpeg" width="720" height="308" srcset="/img/9ItHBYthVh-360.jpeg 360w, /img/9ItHBYthVh-720.jpeg 720w" sizes="360w, 720w"></picture>
+    <picture><source type="image/svg+xml" srcset="/img/UyLAS0PAdF-2311.svg 2311w" sizes="360w, 720w"><source type="image/avif" srcset="/img/UyLAS0PAdF-360.avif 360w, /img/UyLAS0PAdF-720.avif 720w" sizes="360w, 720w"><img src="/img/UyLAS0PAdF-360.gif" alt="Box and whisker plot of total fees by script type, zoomed" loading="lazy" decoding="async" eleventy:ignore="" width="720" height="308" srcset="/img/UyLAS0PAdF-360.gif 360w, /img/UyLAS0PAdF-720.gif 720w" sizes="360w, 720w"></picture>
     <figcaption>Fee Rate axis capped at 18000 sats/vB to better show the differences between script types.</figcaption>
 </figure>
 <p>To better understand the cause of this, we have to know how vBytes are allocated during the construction of a transaction.</p>
@@ -254,8 +254,8 @@ I'm taking a naïve view of transactions, so transactions pushed through using C
 </tbody>
 </table>
 <p>So in ideal dust spending conditions, you would hold a P2TR UTXO and spend it to a P2WPKH output. An input requires more vBytes than an output, so the ideal will change if you are spending few inputs to many outputs.</p>
-<div class="callout callout-info"><div class="callout-label">ⓘ Info</div><div class="callout-content">
-Surprisingly, despite P2SH and P2PKH inputs being the most expensive (in terms of total fees), the fee data above doesn't bear that out. Without doing further digging, I assume it's due to multi-sig being more common with other script types.
+<div class="callout callout-info"><div class="callout-label">ⓘ Info</div><div class="callout-content"><br>
+Surprisingly, despite P2SH and P2PKH inputs being the most expensive (in terms of total fees), the fee data above doesn't bear that out. Without doing further digging, I assume it's due to multi-sig being more common with other script types.<br>
 </div></div>
 <h3>Choosing a Minimum UTXO Value</h3>
 <p>Putting everything together, here are my assumptions for choosing my minimum UTXO value:</p>
