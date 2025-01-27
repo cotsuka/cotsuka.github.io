@@ -26,7 +26,7 @@ DeepSeek trained R1 for an estimated $5.6MM on A100 and H800 GPUs (not the lates
     <figcaption>Source: <cite><a href="https://x.com/RnaudBertrand/status/1881709223152878000/photo/1">@RnaudBertrand</a></cite></figcaption>
 </figure>
 
-Despite less capital expenditure, R1 has comparable performance to o1 due to several technical innovations. I don't pretend to deeply understand everything on this front, so instead I'll direct you [to this paper](https://arxiv.org/abs/2501.12948), which breaks down what's happening under the hood. Ultimately, R1 is essentially a drop-in replacement for o1.
+Despite less capital expenditure, R1 has comparable performance to o1 due to several technical innovations. I don't pretend to deeply understand everything on this front, so instead I'll direct you [to this paper](https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf), which breaks down what's happening under the hood. Ultimately, R1 is essentially a drop-in replacement for o1.
 
 <figure>
     {% image "./r1-o1-benchmarks.jpg", "Accuracy / Percentile (%) by Benchmark" %}
