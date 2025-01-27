@@ -4,8 +4,16 @@ const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const eleventyImagePlugin = require("@11ty/eleventy-img");
 const eleventySyntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 const globalMetadata = require("./_data/metadata.json");
-const markdownIt = require("markdown-it")();
+const markdownIt = require("markdown-it");
+const markdownItFootnote = require('markdown-it-footnote');
 const path = require("path");
+
+let markdownOptions = {
+	html: true,
+	breaks: true,
+	linkify: true,
+};
+let mdLibrary = markdownIt(markdownOptions).use(markdownItFootnote);
 
 function relativeToInputPath(inputPath, relativeFilePath) {
 	let split = inputPath.split("/");
@@ -64,9 +72,9 @@ module.exports = function (eleventyConfig) {
 		"callout",
 		function (content, level = "", format = "md", customLabel = "") {
 			if (format === "md") {
-				content = markdownIt.renderInline(content);
+				content = mdLibrary.renderInline(content);
 			} else if (format === "md-block") {
-				content = markdownIt.render(content);
+				content = mdLibrary.render(content);
 			} else if (format === "html") {
 				content = content
 			}
@@ -145,7 +153,11 @@ module.exports = function (eleventyConfig) {
 
 		let metadata = await eleventyImagePlugin(input, {
 			widths: [360, 720],
-			formats: ["svg", "avif", "jpeg"],
+			formats: ["svg", "avif", "jpeg", "gif"],
+			sharpOptions: {
+				animated: true,
+				limitInputPixels: false,
+			},
 			urlPath: "/img/",
 			outputDir: path.join(eleventyConfig.dir.output, "img"),
 		});
@@ -155,15 +167,16 @@ module.exports = function (eleventyConfig) {
 			sizes: "360w, 720w",
 			loading: "lazy",
 			decoding: "async",
+			"eleventy:ignore": "",
 		};
 
 		let options = {
 			pictureAttributes: {},
 			whitespaceMode: "inline",
 		};
-
 		return eleventyImagePlugin.generateHTML(metadata, imageAttributes, options);
 	});
+	eleventyConfig.setLibrary("md", mdLibrary);
 	return {
 		templateFormats: [
 			"md",
