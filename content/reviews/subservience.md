@@ -6,7 +6,7 @@ description: ★★
 tags:
 - movie
 posse:
-- letterboxd: https://letterboxd.com/cotsuka/film/subservience-2024/
+  Letterboxd: https://letterboxd.com/cotsuka/film/subservience-2024/
 ---
 
 - could see the plot points coming from a mile away

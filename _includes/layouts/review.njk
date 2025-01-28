@@ -13,12 +13,8 @@ layout: layouts/base.njk
 		{% if posse %}
 			<li>
 				Also Posted To: 
-				{% for item in posse %}
-					{% if item["letterboxd"] %}
-						<a href="{{ item["letterboxd"] }}">Letterboxd</a>
-					{% elseif item["goodreads"] %}
-						<a href="{{ item["goodreads"] }}">Goodreads</a>
-					{% endif %}
+				{% for posse_location, posse_url in posse %}
+					<a href="{{ posse_url }}">{{ posse_location }}</a>
 				{% endfor %}
 			</li>
 		{% endif %}

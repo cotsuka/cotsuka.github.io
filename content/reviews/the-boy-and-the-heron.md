@@ -6,7 +6,7 @@ description: ★★★★★
 tags:
 - movie
 posse:
-- letterboxd: https://letterboxd.com/cotsuka/film/the-boy-and-the-heron/
+  Letterboxd: https://letterboxd.com/cotsuka/film/the-boy-and-the-heron/
 ---
 
 - ghibli will ultimately crumble without a worthy leader, but the journey was worth it

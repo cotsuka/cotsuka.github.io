@@ -6,7 +6,7 @@ description: ★★★★½
 tags:
 - movie
 posse:
-- letterboxd: https://letterboxd.com/cotsuka/film/wicked-2024/
+  Letterboxd: https://letterboxd.com/cotsuka/film/wicked-2024/
 ---
 
 - they've got pipes

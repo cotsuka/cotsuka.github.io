@@ -6,7 +6,7 @@ description: ★★★
 tags:
 - movie
 posse:
-- letterboxd: https://letterboxd.com/cotsuka/film/challengers/
+  Letterboxd: https://letterboxd.com/cotsuka/film/challengers/
 ---
 
 - ads everywhere

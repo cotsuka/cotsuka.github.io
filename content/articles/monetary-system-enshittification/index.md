@@ -1,10 +1,12 @@
 ---
 title: Monetary System Enshittification
 date: 2024-03-01
-modified: 2024-07-30
+modified: 2025-01-27
 description: Is the US monetary system experiencing enshittification? And how do we solve it?
 tags:
 - bitcoin
+posse:
+  𝕏: https://x.com/CameronOtsuka/status/1763677048814616669
 ---
 
 {% image "./monetary-system-enshittification_honeybadger.jpg", "Bitcoin honeybadger stomping on the US monetary system." %}
