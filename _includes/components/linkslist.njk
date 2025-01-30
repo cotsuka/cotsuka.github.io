@@ -8,6 +8,11 @@
 {%- for link in linkslist %}
     <dt><a href="{{ link.url }}">{{ link.data.title }}</a></dt>
     <dd>
+        {% if "livestream" in link.data.tags %}
+            <small class="collectiontag">livestream</small>
+        {% elseif "podcast" in link.data.tags %}
+            <small class="collectiontag">podcast</small>
+        {% endif %}
         {{ link.data.description }}
     </dd>
 {%- endfor %}
