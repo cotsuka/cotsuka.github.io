@@ -12,6 +12,8 @@
             <small class="collectiontag">article</small>
         {% elseif "reviews" in item.data.tags %}
             <small class="collectiontag">review</small>
+        {% elseif "links" in item.data.tags %}
+            <small class="collectiontag">link</small>
         {% endif %}
         {{ item.data.description }}
     </dd>

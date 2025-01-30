@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+---
+
+<h1><a href="{{ href }}">{{ title }}</a></h1>
+
+<details>
+	<summary>Metadata</summary>
+	<ul>
+		<li>Published: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | htmlDateString }}</time></li>
+		<li>Description: {{ description }}</li>
+		<li>Tags: {{ tags | reject("equalto", "links") | sort | join(", ") }}</li>
+		{% if posse %}
+			<li>
+				Also Posted To: 
+				{% for posse_location, posse_url in posse %}
+					<a href="{{ posse_url }}">{{ posse_location }}</a>
+				{% endfor %}
+			</li>
+		{% endif %}
+	</ul>
+</details>
+
+<article>
+	{{ content | safe }}
+</article>

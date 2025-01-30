@@ -1,0 +1,14 @@
+<dl>
+{% if maxPosts %}
+    {% set numPosts = collections.links | length | min(maxPosts) %}
+    {% set linkslist = collections.links | reverse | head(numPosts) %}
+{% else %}
+    {% set linkslist = collections.links | reverse %}
+{% endif %}
+{%- for link in linkslist %}
+    <dt><a href="{{ link.url }}">{{ link.data.title }}</a></dt>
+    <dd>
+        {{ link.data.description }}
+    </dd>
+{%- endfor %}
+</dl>

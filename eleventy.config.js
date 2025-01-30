@@ -10,8 +10,9 @@ const path = require("path");
 
 let markdownOptions = {
 	html: true,
-	breaks: true,
+	breaks: false,
 	linkify: true,
+	typographer: true,
 };
 let mdLibrary = markdownIt(markdownOptions).use(markdownItFootnote);
 
@@ -34,6 +35,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addCollection("activities", function(collectionApi) {
 		let collectionSubset = [
 			...collectionApi.getFilteredByTag("articles"),
+			...collectionApi.getFilteredByTag("links"),
 			...collectionApi.getFilteredByTag("reviews"),
 		];
 		let sortedSubset = collectionSubset.sort(function(a, b) {
@@ -121,6 +123,22 @@ module.exports = function (eleventyConfig) {
 		metadata: {
 			language: globalMetadata['language'],
 			title: globalMetadata['title'].concat(" - Articles"),
+			subtitle: globalMetadata['subtitle'],
+			base: globalMetadata['base'],
+			author: globalMetadata['author'],
+		},
+	});
+	eleventyConfig.addPlugin(feedPlugin, {
+		type: "atom",
+		outputPath: "/feeds/links.xml",
+		inputPath: "eleventy-plugin-feed-cameron-otsuka-links-atom.njk",
+		collection: {
+			name: "links",
+			limit: 10,
+		},
+		metadata: {
+			language: globalMetadata['language'],
+			title: globalMetadata['title'].concat(" - Links"),
 			subtitle: globalMetadata['subtitle'],
 			base: globalMetadata['base'],
 			author: globalMetadata['author'],
