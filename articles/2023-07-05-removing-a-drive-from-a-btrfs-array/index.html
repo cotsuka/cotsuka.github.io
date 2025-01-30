@@ -44,6 +44,7 @@
             <h1><a href="/">Cameron Otsuka</a></h1>
             <menu>
                 <li><a href="/articles">Articles</a></li>
+                <li><a href="/links">Links</a></li>
                 <li><a href="/reviews">Reviews</a></li>
             </menu>
         </nav>
@@ -65,9 +66,9 @@
 
 <article>
 	<p>I recently ran into a situation where I knew one of the hard drives in my Btrfs array was failing. Simply following the <a href="https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices.html#Removing_devices">Btrfs wiki removing devices instructions</a> was unsuccessful as the <code>btrfs delete device</code> command would throw an error, cancelling the device deletion process.</p>
-<p>At this point, I was okay with losing any corrupted/unrecoverable files. You should already be past the point of restoring from backup, attempting other recovery methods, etc. I just wanted to get the dying drive removed from the array since I knew I didn't have critical data on the array.</p>
-<div class="callout callout-warn"><div class="callout-label">⚠ Warning</div><div class="callout-content"><br>
-Make sure you've exhausted all other resources before continuing. Check the <a href="https://wiki.archlinux.org/title/Btrfs">ArchWiki</a>, <a href="https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html">Btrfs mailing list</a>, etc. This will lead to data loss!<br>
+<p>At this point, I was okay with losing any corrupted/unrecoverable files. You should already be past the point of restoring from backup, attempting other recovery methods, etc. I just wanted to get the dying drive removed from the array since I knew I didn’t have critical data on the array.</p>
+<div class="callout callout-warn"><div class="callout-label">⚠ Warning</div><div class="callout-content">
+Make sure you’ve exhausted all other resources before continuing. Check the <a href="https://wiki.archlinux.org/title/Btrfs">ArchWiki</a>, <a href="https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html">Btrfs mailing list</a>, etc. This will lead to data loss!
 </div></div>
 <h3>Scrub the Array</h3>
 <p>Start a scrub to identify files blocking the device from getting deleted:</p>
@@ -108,12 +109,12 @@ Jul 04 14:17:38 host kernel: BTRFS error (device sdh): unable to fixup (regular)
 <p>Now we need to translate those logicals into files we can actually attempt removing:</p>
 <pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo btrfs inspect-internal logical-resolve 32574079762432 /mnt/btrfs
 /mnt/btrfs/P6300090.mov</code></pre>
-<p>The output shows logical <code>32574079762432</code> refers to <code>/mnt/btrfs/P6300090.mov</code>. Remove the file, doing the same for all other logicals reported as uncorrectable errors. Several of the errors I received seemed to go away/not refer to a file. I just attempted removing any files that were identified, ignoring logicals that didn't resolve to anything.</p>
+<p>The output shows logical <code>32574079762432</code> refers to <code>/mnt/btrfs/P6300090.mov</code>. Remove the file, doing the same for all other logicals reported as uncorrectable errors. Several of the errors I received seemed to go away/not refer to a file. I just attempted removing any files that were identified, ignoring logicals that didn’t resolve to anything.</p>
 <h3>Delete the Device</h3>
 <p>Now remount the Btrfs array, marking it as degraded. Then, delete the device you want to remove (in my case <code>/dev/sdd</code>):</p>
 <pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo mount -o degraded /dev/sdd /mnt/btrfs
 [cameron@host ~]$ sudo btrfs device delete /dev/sdd /mnt/btrfs</code></pre>
-<p>The device deletion will also take a while, but now you should see the used data total on the device you're deleting reduce over time:</p>
+<p>The device deletion will also take a while, but now you should see the used data total on the device you’re deleting reduce over time:</p>
 <pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo btrfs fi show
 Label: none  uuid: 16df0a0e-1dad-439f-aee1-f9961122fe59
         Total devices 7 FS bytes used 31.16TiB
@@ -124,7 +125,7 @@ Label: none  uuid: 16df0a0e-1dad-439f-aee1-f9961122fe59
         devid    5 size 12.73TiB used 1.05TiB path /dev/sdc
         devid    6 size 12.73TiB used 1.05TiB path /dev/sdf
         devid    7 size 12.73TiB used 1.05TiB path /dev/sdg</code></pre>
-<p>And here's the same a while later:</p>
+<p>And here’s the same a while later:</p>
 <pre class="language-console"><code class="language-console">[cameron@host ~]$ sudo btrfs fi show
 Label: none  uuid: 16df0a0e-1dad-439f-aee1-f9961122fe59
         Total devices 7 FS bytes used 31.16TiB
@@ -135,7 +136,7 @@ Label: none  uuid: 16df0a0e-1dad-439f-aee1-f9961122fe59
         devid    5 size 12.73TiB used 1.07TiB path /dev/sdc
         devid    6 size 12.73TiB used 1.07TiB path /dev/sdf
         devid    7 size 12.73TiB used 1.07TiB path /dev/sdg</code></pre>
-<p>Let that complete, and the device should now be removed from the Btrfs array. You're now missing several files that were unrecoverable, so hopefully those were backed up somewhere else or they weren't critical.</p>
+<p>Let that complete, and the device should now be removed from the Btrfs array. You’re now missing several files that were unrecoverable, so hopefully those were backed up somewhere else or they weren’t critical.</p>
 
 </article>
 
