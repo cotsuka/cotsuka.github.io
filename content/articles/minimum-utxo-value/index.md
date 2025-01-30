@@ -7,6 +7,7 @@ tags:
 - bitcoin
 posse:
   𝕏: https://x.com/CameronOtsuka/status/1687510820417363968
+  Nostr: https://primal.net//e/note1r0ht4gkxpg8hddyxflfzw0w0rv6qxchc6s836pt9lsqeqwxahj9sgrrgpw
 ---
 
 Due to recent high fee rate periods, many were advocating for consolidating low-value UTXOs to ensure they wouldn't become dust. I was curious whether I had UTXOs that were in danger of becoming dust.
