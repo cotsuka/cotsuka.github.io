@@ -1,13 +1,13 @@
 ---
 title: "R1 vs. o1: AI as Commodity or Moat"
 date: 2025-01-27
-modified: 2025-01-27
+modified: 2025-01-30
 description: Is DeepSeek's R1 an existential threat to OpenAI?
 tags:
 - ai
 posse:
   𝕏: https://x.com/CameronOtsuka/status/1884001595282907401
-  Mastodon: https://otsuka.social/@cameron/statuses/01JJN5WVS1ZMZ56SK4T3YQ3J8Z
+  ActivityPub: https://otsuka.social/@cameron/statuses/01JJN5WVS1ZMZ56SK4T3YQ3J8Z
   Bluesky: https://bsky.app/profile/otsuka.haus/post/3lgradsawkc2v
 ---
 
