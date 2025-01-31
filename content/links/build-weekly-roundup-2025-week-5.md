@@ -10,7 +10,6 @@ tags:
 - macro
 posse:
   𝕏: https://x.com/CameronOtsuka/status/1885111055158042704
-  YouTube: https://www.youtube.com/live/pqYUqJ_xsaA?si=UdAiz89cKHlY8DRL
 ---
 
 > BUILD WEEKLY ROUNDUP - 2025 WEEK #5 https://x.com/i/broadcasts/1ZkKzRZzqjaKv
