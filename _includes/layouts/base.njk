@@ -31,7 +31,7 @@
         <meta property="article:published_time" content="{{ date | isoDate }}" />
         <meta property="article:modified_time" content="{{ updated | isoDate }}" />
         <meta property="article:author" content="{{ metadata.author.name }}" />
-        {%- for tag in tags | reject("equalto", "articles") %}
+        {%- for tag in tags | reject("equalto", "articles") | reject("equalto", "links") | reject("equalto", "reviews") %}
             <meta property="article:tag" content="{{ tag }}" />
         {%- endfor %}
     {%- else %}
@@ -41,6 +41,9 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="canonical" href="{{ metadata.base }}{{ page.url }}" />
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ metadata.title }}" />
+    <link rel="alternate" href="/feeds/articles.xml" type="application/atom+xml" title="{{ metadata.title }} - Articles" />
+    <link rel="alternate" href="/feeds/links.xml" type="application/atom+xml" title="{{ metadata.title }} - Links" />
+    <link rel="alternate" href="/feeds/reviews.xml" type="application/atom+xml" title="{{ metadata.title }} - Reviews" />
     <link rel="preload" href="/fonts/PublicSans-Bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/PublicSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/PublicSans-Italic.woff2" as="font" type="font/woff2" crossorigin />
