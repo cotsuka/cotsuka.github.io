@@ -1,16 +1,25 @@
 {
   "name": "cotsuka.github.io",
+  "description": "The collection of Cameron's thoughts.",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build-ghpages": "npx @11ty/eleventy"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cotsuka/cotsuka.github.io.git"
+  },
+  "author": {
+    "name": "Cameron Otsuka",
+    "url": "https://otsuka.haus"
+  },
   "license": "ISC",
-  "description": "",
-  "dependencies": {
+  "homepage": "https://github.com/cotsuka/cotsuka.github.io",
+  "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^6.0.1",
     "@11ty/eleventy-plugin-rss": "^2.0.1",
