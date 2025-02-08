@@ -1,7 +1,7 @@
 ---
 title: Minimum UTXO Value
 date: 2023-08-04
-modified: 2025-01-27
+modified: 2025-02-07
 description: A look at what Bitcoin dust is, historical fee rates, how fees are calculated, and a decision on a minimum UTXO value to stay above the dust threshold.
 tags:
 - bitcoin
@@ -25,7 +25,7 @@ The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:
 
 <figure>
     {% image "./minimum-utxo-value_mempool_vbytes_history.svg", "Historical graph of Bitcoin mempool by vBytes" %}
-    <figcaption>Source: <cite><a href="https://mempool.space/graphs/mempool#all">mempool.space</a></cite></figcaption>
+    <figcaption>Source: <a href="https://mempool.space/graphs/mempool#all">mempool.space</a></figcaption>
 </figure>
 
 I've selected 4 blocks to deep dive, based on their proximity to mempool peaks in those three years, as well as a more "normal" current block:

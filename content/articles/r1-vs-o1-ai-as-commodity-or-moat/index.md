@@ -1,7 +1,7 @@
 ---
 title: "R1 vs. o1: AI as Commodity or Moat"
 date: 2025-01-27
-modified: 2025-01-30
+modified: 2025-02-07
 description: Is DeepSeek's R1 an existential threat to OpenAI?
 tags:
 - ai
@@ -27,21 +27,21 @@ DeepSeek trained R1 for an estimated $5.6MM on A100 and H800 GPUs (not the lates
 
 <figure>
     {% image "./input-output-pricing.jpg", "Input/Output Pricing for o1-Class Inference Models ($/1M Tokens)" %}
-    <figcaption>Source: <cite><a href="https://x.com/RnaudBertrand/status/1881709223152878000/photo/1">@RnaudBertrand</a></cite></figcaption>
+    <figcaption>Source: <a href="https://x.com/RnaudBertrand/status/1881709223152878000/photo/1">@RnaudBertrand</a></figcaption>
 </figure>
 
 Despite less capital expenditure, R1 has comparable performance to o1 due to several technical innovations. I don't pretend to deeply understand everything on this front, so instead I'll direct you [to this paper](https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf), which breaks down what's happening under the hood. Ultimately, R1 is essentially a drop-in replacement for o1.
 
 <figure>
     {% image "./r1-o1-benchmarks.jpg", "Accuracy / Percentile (%) by Benchmark" %}
-    <figcaption>Source: <cite><a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf">DeepSeek-AI</a></cite></figcaption>
+    <figcaption>Source: <a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf">DeepSeek-AI</a></figcaption>
 </figure>
 
 This is incredible for the little guy: run your own model, privately, without the need for massive infrastructure.
 
 <figure>
     {% image "./r1-on-iphone-localghost.gif", "R1 running locally on an iPhone" %}
-    <figcaption>A distilled version of R1 running locally on an iPhone. Source: <cite><a href="https://x.com/localghost/status/1882109711732154387">@localghost</a></cite></figcaption>
+    <figcaption>A distilled version of R1 running locally on an iPhone. Source: <a href="https://x.com/localghost/status/1882109711732154387">@localghost</a></figcaption>
 </figure>
 
 ## Is OpenAI Cooked?
