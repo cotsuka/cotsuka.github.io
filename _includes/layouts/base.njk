@@ -61,11 +61,11 @@
 <body>
     <header>
         <nav>
-            <h1><a href="/">{{ metadata.title }}</a></h1>
+            <h1><a href="{{ "index.md" | inputPathToUrl }}">{{ metadata.title }}</a></h1>
             <menu>
-                <li><a href="/articles">Articles</a></li>
-                <li><a href="/links">Links</a></li>
-                <li><a href="/reviews">Reviews</a></li>
+                <li><a href="{{ "articles.njk" | inputPathToUrl }}">Articles</a></li>
+                <li><a href="{{ "links.njk" | inputPathToUrl }}">Links</a></li>
+                <li><a href="{{ "reviews.njk" | inputPathToUrl }}">Reviews</a></li>
             </menu>
         </nav>
     </header>
