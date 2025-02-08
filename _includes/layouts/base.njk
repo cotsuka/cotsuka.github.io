@@ -78,7 +78,7 @@
         <address>
             <menu>
             {%- for social in socials %}
-                <li><a href="{{ social.url }}">{{ social.title }}</a></li>
+                <li><a href="{{ social.url }}" rel="me">{{ social.title }}</a></li>
             {%- endfor %}
             </menu>
         </address>
