@@ -37,17 +37,17 @@
 &lt;p&gt;DeepSeek trained R1 for an estimated $5.6MM on A100 and H800 GPUs (not the latest-and-greatest GPUs available). End-user inference pricing is an order of magnitude cheaper than o1.&lt;/p&gt;
 &lt;figure&gt;
     &lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/_iheqoqYp--360.avif 360w, https://otsuka.haus/img/_iheqoqYp--720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://otsuka.haus/img/_iheqoqYp--360.gif 360w, https://otsuka.haus/img/_iheqoqYp--720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/_iheqoqYp--360.jpeg&quot; alt=&quot;Input/Output Pricing for o1-Class Inference Models ($/1M Tokens)&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;353&quot; srcset=&quot;https://otsuka.haus/img/_iheqoqYp--360.jpeg 360w, https://otsuka.haus/img/_iheqoqYp--720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Source: &lt;a href=&quot;https://x.com/RnaudBertrand/status/1881709223152878000/photo/1&quot;&gt;@RnaudBertrand&lt;/a&gt;&lt;/figcaption&gt;
+    &lt;figcaption&gt;Source: &lt;a href=&quot;https://x.com/RnaudBertrand/status/1881709223152878000/photo/1&quot;&gt;@RnaudBertrand&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Despite less capital expenditure, R1 has comparable performance to o1 due to several technical innovations. I don’t pretend to deeply understand everything on this front, so instead I’ll direct you &lt;a href=&quot;https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf&quot;&gt;to this paper&lt;/a&gt;, which breaks down what’s happening under the hood. Ultimately, R1 is essentially a drop-in replacement for o1.&lt;/p&gt;
 &lt;figure&gt;
     &lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.avif 360w, https://otsuka.haus/img/S1fgCb2pAG-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.gif 360w, https://otsuka.haus/img/S1fgCb2pAG-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.jpeg&quot; alt=&quot;Accuracy / Percentile (%) by Benchmark&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;426&quot; srcset=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.jpeg 360w, https://otsuka.haus/img/S1fgCb2pAG-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Source: &lt;a href=&quot;https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf&quot;&gt;DeepSeek-AI&lt;/a&gt;&lt;/figcaption&gt;
+    &lt;figcaption&gt;Source: &lt;a href=&quot;https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf&quot;&gt;DeepSeek-AI&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;This is incredible for the little guy: run your own model, privately, without the need for massive infrastructure.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src=&quot;https://otsuka.haus/img/MNT2uYz6Yi-360.gif&quot; alt=&quot;R1 running locally on an iPhone&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;405&quot; srcset=&quot;https://otsuka.haus/img/MNT2uYz6Yi-360.gif 360w, https://otsuka.haus/img/MNT2uYz6Yi-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;
-    &lt;figcaption&gt;A distilled version of R1 running locally on an iPhone. Source: &lt;a href=&quot;https://x.com/localghost/status/1882109711732154387&quot;&gt;@localghost&lt;/a&gt;&lt;/figcaption&gt;
+    &lt;figcaption&gt;A distilled version of R1 running locally on an iPhone. Source: &lt;a href=&quot;https://x.com/localghost/status/1882109711732154387&quot;&gt;@localghost&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;h2&gt;Is OpenAI Cooked?&lt;/h2&gt;
 &lt;p&gt;First, the threshold for publicly available, open-source reasoning models will never be lower than this. HuggingFace is attempting to reproduce R1 fully in the open&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn3&quot; id=&quot;fnref3&quot;&gt;[3]&lt;/a&gt;&lt;/sup&gt; which would make it an end-to-end public frontier model. I think this is a win for society.&lt;/p&gt;
@@ -180,7 +180,7 @@ Guide existing AI-related national focus laboratories, corporate national focus 
 &lt;p&gt;The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:&lt;/p&gt;
 &lt;figure&gt;
     &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/jlj-NSVbJD-1976.svg 1976w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/jlj-NSVbJD-360.avif 360w, https://otsuka.haus/img/jlj-NSVbJD-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/jlj-NSVbJD-360.gif&quot; alt=&quot;Historical graph of Bitcoin mempool by vBytes&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;218&quot; srcset=&quot;https://otsuka.haus/img/jlj-NSVbJD-360.gif 360w, https://otsuka.haus/img/jlj-NSVbJD-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Source: &lt;a href=&quot;https://mempool.space/graphs/mempool#all&quot;&gt;mempool.space&lt;/a&gt;&lt;/figcaption&gt;
+    &lt;figcaption&gt;Source: &lt;a href=&quot;https://mempool.space/graphs/mempool#all&quot;&gt;mempool.space&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;I’ve selected 4 blocks to deep dive, based on their proximity to mempool peaks in those three years, as well as a more “normal” current block:&lt;/p&gt;
 &lt;ul&gt;
@@ -191,7 +191,7 @@ Guide existing AI-related national focus laboratories, corporate national focus 
 &lt;/ul&gt;
 &lt;figure&gt;
     &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/FRvxlTw5GS-2310.svg 2310w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/FRvxlTw5GS-360.avif 360w, https://otsuka.haus/img/FRvxlTw5GS-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/FRvxlTw5GS-360.gif&quot; alt=&quot;Box and whisker plot of fee rates across blocks&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/FRvxlTw5GS-360.gif 360w, https://otsuka.haus/img/FRvxlTw5GS-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Outliers removed&lt;/figcaption&gt;
+    &lt;figcaption&gt;Outliers removed.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;table&gt;
 &lt;thead&gt;
