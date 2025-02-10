@@ -5,6 +5,10 @@ modified: 2025-02-11
 description: Bitcoin mempools have cleared before and there's no immediate reason to panic.
 tags:
 - bitcoin
+posse:
+  𝕏: https://x.com/CameronOtsuka/status/1889014482145579457
+  ActivityPub: https://otsuka.social/@cameron/statuses/01JKRH19PJ7HMABRE4A1F8ZYMV
+  Bluesky: https://bsky.app/profile/otsuka.haus/post/3lhtqq2u5ck2h
 ---
 
 {% callout "info" %}
