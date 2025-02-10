@@ -1,6 +1,6 @@
 ---
 title: "Bitcoin Mempools Cleared: Is Nobody Using Bitcoin?"
-date: 2025-02-11
+date: 2025-02-09
 modified: 2025-02-11
 description: Bitcoin mempools have cleared before and there's no immediate reason to panic.
 tags:
