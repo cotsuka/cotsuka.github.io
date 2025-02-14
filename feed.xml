@@ -4,12 +4,23 @@
   <subtitle>The collection of Cameron&#39;s thoughts.</subtitle>
   <link href="https://otsuka.haus/feed.xml" rel="self" />
   <link href="https://otsuka.haus/" />
-  <updated>2025-02-09T00:00:00Z</updated>
+  <updated>2025-02-13T00:00:00Z</updated>
   <id>https://otsuka.haus/</id>
   <author>
     <name>Cameron Otsuka</name>
     <email>cameron@otsuka.haus</email>
   </author>
+  <entry>
+    <title>🚨 the penny peg has broken, new 6-week t-bills, ukraine peace talks, and more</title>
+    <link href="https://otsuka.haus/links/2025-02-13-the-penny-peg-has-broken-new-6-week-t-bills-ukraine-peace-talks-and-more/" />
+    <updated>2025-02-13T00:00:00Z</updated>
+    <id>https://otsuka.haus/links/2025-02-13-the-penny-peg-has-broken-new-6-week-t-bills-ukraine-peace-talks-and-more/</id>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;BUILD WEEKLY ROUNDUP - 2025 WEEK #6 &lt;a href=&quot;https://x.com/i/broadcasts/1jMJgkgryzqJL&quot;&gt;https://x.com/i/broadcasts/1jMJgkgryzqJL&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— Cameron Otsuka (@CameronOtsuka) &lt;a href=&quot;https://x.com/CameronOtsuka/status/1890159220974362824&quot;&gt;February 6, 2025&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
   <entry>
     <title>Bitcoin Mempools Cleared: Is Nobody Using Bitcoin?</title>
     <link href="https://otsuka.haus/articles/2025-02-09-bitcoin-mempools-cleared-is-nobody-using-bitcoin/" />
@@ -110,6 +121,17 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Listen in as we break down Treasury yields, bond liquidity, potential regulatory changes, Bitcoin&#39;s mempools, and alternative investments 👇</title>
+    <link href="https://otsuka.haus/links/2025-02-06-listen-in-as-we-break-down-treasury-yields-bond-liquidity-potential-regulatory-changes-bitcoins-mempools-and-alternative-investments/" />
+    <updated>2025-02-06T00:00:00Z</updated>
+    <id>https://otsuka.haus/links/2025-02-06-listen-in-as-we-break-down-treasury-yields-bond-liquidity-potential-regulatory-changes-bitcoins-mempools-and-alternative-investments/</id>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;BUILD WEEKLY ROUNDUP - 2025 WEEK #6 &lt;a href=&quot;https://x.com/i/broadcasts/1jMJgkgryzqJL&quot;&gt;https://x.com/i/broadcasts/1jMJgkgryzqJL&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— Cameron Otsuka (@CameronOtsuka) &lt;a href=&quot;https://x.com/CameronOtsuka/status/1887613004839329827&quot;&gt;February 6, 2025&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 </content>
   </entry>
   <entry>
@@ -242,243 +264,6 @@ Guide existing AI-related national focus laboratories, corporate national focus 
 &lt;li&gt;they’ve got pipes&lt;/li&gt;
 &lt;li&gt;fiyero’s “dancing through life” is changed for the better&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Monetary System Enshittification</title>
-    <link href="https://otsuka.haus/articles/2024-03-01-monetary-system-enshittification/" />
-    <updated>2024-03-01T00:00:00Z</updated>
-    <id>https://otsuka.haus/articles/2024-03-01-monetary-system-enshittification/</id>
-    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/cfuR7r1OKS-360.avif 360w, https://otsuka.haus/img/cfuR7r1OKS-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://otsuka.haus/img/cfuR7r1OKS-360.gif 360w, https://otsuka.haus/img/cfuR7r1OKS-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/cfuR7r1OKS-360.jpeg&quot; alt=&quot;Bitcoin honeybadger stomping on the US monetary system.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;720&quot; srcset=&quot;https://otsuka.haus/img/cfuR7r1OKS-360.jpeg 360w, https://otsuka.haus/img/cfuR7r1OKS-720.jpeg 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;p&gt;Is the US monetary system experiencing enshittification? And how do we solve it? If we think about monetary systems as platforms which facilitate value transfer, I think some of &lt;a href=&quot;https://twitter.com/doctorow&quot;&gt;Cory Doctorow’s&lt;/a&gt; ideas on preventing platform decay can apply.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“First, they are good to their users; then they abuse their users to make things better for their business customers; finally, they abuse those business customers to claw back all the value for themselves. Then, they die.” — Cory Doctorow&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ultimately, enshittification is a rent-seeking problem: the platform is no longer incentivized to maximize value for the users since they’re locked into the network. Rent-seeking continues to drain value from debtors to creditors and leads to heavy stratification of society.&lt;/p&gt;
-&lt;p&gt;Currently, the dollar is king. With the world locked into the US monetary system, the US governmental apparatus (policymakers, interest groups, etc.) is not incentivized to improve the system of tariffs, subsidies, and regulations for the net benefit of society.&lt;/p&gt;
-&lt;p&gt;The Jubilee, as described in Leviticus, attempted to solve societal stratification as value accreted to creditors over time. Every 50 years, debts were forgiven and property was returned to its original owner, “resetting” the scale between creditors and debtors.&lt;/p&gt;
-&lt;p&gt;There are two principles Doctorow believes can solve platform decay:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;End-to-End Principle: the role of a network is to reliably deliver data from willing senders to willing receivers.&lt;/li&gt;
-&lt;li&gt;Right of Exit: users can easily go elsewhere if they are dissatisfied with it.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The end-to-end principle, when applied to monetary systems, is about the reliable delivery of information about value. Distorting the value information about a good or service through monetary policy, regulation, and laws violates this principle.&lt;/p&gt;
-&lt;p&gt;With the invention of Bitcoin, there is now a way to easily move off the US monetary system and satisfy the Right of Exit principle, by limiting exposure to trusted third-parties, and self-custodying personal wealth.&lt;/p&gt;
-&lt;p&gt;While Bitcoin is just part of the solution to the US monetary system’s enshittification problem, it is necessary to maintain its value for the people, and not the rent-seekers.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Minimum UTXO Value</title>
-    <link href="https://otsuka.haus/articles/2023-08-04-minimum-utxo-value/" />
-    <updated>2023-08-04T00:00:00Z</updated>
-    <id>https://otsuka.haus/articles/2023-08-04-minimum-utxo-value/</id>
-    <content type="html">&lt;p&gt;Due to recent high fee rate periods, many were advocating for consolidating low-value UTXOs to ensure they wouldn’t become dust. I was curious whether I had UTXOs that were in danger of becoming dust.&lt;/p&gt;
-&lt;p&gt;While there is a &lt;a href=&quot;https://bitcoin.stackexchange.com/a/41082&quot;&gt;technical definition&lt;/a&gt; of dust built into Bitcoin Core’s code, I am more broadly referring to the colloquial definition of dust: UTXOs with a value less than the transaction fees required to spend them, which have become uneconomical to move.&lt;/p&gt;
-&lt;p&gt;Because fee rates are the primary variable determining the dust threshold, whether a UTXO is considered dust can change over time. I took a look at historical fee rates, how fees are calculated, and included qualitative projections of future block space demand to determine a UTXO value that will stay above the dust threshold for myself.&lt;/p&gt;
-&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
-&lt;strong&gt;TL;DR:&lt;/strong&gt; Taproot UTXO, 65k sats
-&lt;/div&gt;&lt;/div&gt;
-&lt;h3&gt;Historical Fee Rates&lt;/h3&gt;
-&lt;p&gt;The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:&lt;/p&gt;
-&lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/jlj-NSVbJD-1976.svg 1976w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/jlj-NSVbJD-360.avif 360w, https://otsuka.haus/img/jlj-NSVbJD-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/jlj-NSVbJD-360.gif&quot; alt=&quot;Historical graph of Bitcoin mempool by vBytes&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;218&quot; srcset=&quot;https://otsuka.haus/img/jlj-NSVbJD-360.gif 360w, https://otsuka.haus/img/jlj-NSVbJD-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Source: &lt;a href=&quot;https://mempool.space/graphs/mempool#all&quot;&gt;mempool.space&lt;/a&gt;.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;I’ve selected 4 blocks to deep dive, based on their proximity to mempool peaks in those three years, as well as a more “normal” current block:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;504000: January 12, 2018&lt;/li&gt;
-&lt;li&gt;680000: April 21, 2021&lt;/li&gt;
-&lt;li&gt;782400: March 24, 2023&lt;/li&gt;
-&lt;li&gt;801171: July 31, 2023&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/FRvxlTw5GS-2310.svg 2310w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/FRvxlTw5GS-360.avif 360w, https://otsuka.haus/img/FRvxlTw5GS-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/FRvxlTw5GS-360.gif&quot; alt=&quot;Box and whisker plot of fee rates across blocks&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/FRvxlTw5GS-360.gif 360w, https://otsuka.haus/img/FRvxlTw5GS-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Outliers removed.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;Fee Rate (sats/vB)&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;504000&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;680000&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;782400&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;801171&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Minimum&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;11&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;19&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;5&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Median&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;119&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;269&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;27&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;12&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Mode&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;118&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;269&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;27&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;12&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;Maximum&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;1099&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;3578&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;301&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;1280&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;The first visible difference based on the box and whisker plot is the noticeable decrease in fee rate variance, likely attributable to better fee estimations. Second, is the 86% decline in median fee rate with an average 194 sats/vB between blocks 504000 and 680000 vs. 27 sats/vB in block 782400.&lt;/p&gt;
-&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
-I’m taking a naïve view of transactions, so transactions pushed through using CPFP aren’t coalesced into a single transaction with a blended, “effective” fee rate. In theory, this should reduce fee rate spread, but will be relatively centered around the median.
-&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;I don’t expect to see major differences in fee rates by script type, but since I have the data available here’s what that looks like (it’s as expected):&lt;/p&gt;
-&lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/B6jFHpTD8O-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/B6jFHpTD8O-360.avif 360w, https://otsuka.haus/img/B6jFHpTD8O-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/B6jFHpTD8O-360.gif&quot; alt=&quot;Box and whiskper plot of fee rates by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;309&quot; srcset=&quot;https://otsuka.haus/img/B6jFHpTD8O-360.gif 360w, https://otsuka.haus/img/B6jFHpTD8O-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Fee Rate axis capped at 50 sats/vB to better show the differences between script types.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;Transactions are shifting towards the newer P2WPKH, P2WSH, and P2TR script types:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;Transactions (%)&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;504000&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;680000&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;782400&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;801171&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;P2PKH&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;97%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;51%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;22%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;32%&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;P2SH&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;3%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;41%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;28%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;26%&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;P2WPKH&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;0%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;7%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;38%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;38%&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;P2WSH&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;0%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;0%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;1%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;1%&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;P2TR&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;0%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;0%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;12%&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;3%&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Where the script types do differ is in the total size of the transaction and therefore, the total fees paid.&lt;/p&gt;
-&lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/3ZxRIMGSVo-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/3ZxRIMGSVo-360.avif 360w, https://otsuka.haus/img/3ZxRIMGSVo-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/3ZxRIMGSVo-360.gif&quot; alt=&quot;Box and whisker plot of total fees by script type&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/3ZxRIMGSVo-360.gif 360w, https://otsuka.haus/img/3ZxRIMGSVo-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Fee Rate axis capped at 300000 sats/vB to better show the differences between script types.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;P2WSH and P2TR transactions appear to be paying higher median fees than other script types.&lt;/p&gt;
-&lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/svg+xml&quot; srcset=&quot;https://otsuka.haus/img/UyLAS0PAdF-2311.svg 2311w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/UyLAS0PAdF-360.avif 360w, https://otsuka.haus/img/UyLAS0PAdF-720.avif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/UyLAS0PAdF-360.gif&quot; alt=&quot;Box and whisker plot of total fees by script type, zoomed&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;308&quot; srcset=&quot;https://otsuka.haus/img/UyLAS0PAdF-360.gif 360w, https://otsuka.haus/img/UyLAS0PAdF-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Fee Rate axis capped at 18000 sats/vB to better show the differences between script types.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;To better understand the cause of this, we have to know how vBytes are allocated during the construction of a transaction.&lt;/p&gt;
-&lt;h3&gt;Calculating Transaction Size&lt;/h3&gt;
-&lt;p&gt;The total fees paid to move a given UTXO depend on the vBytes needed to construct a transaction. Jameson Lopp has a &lt;a href=&quot;https://jlopp.github.io/bitcoin-transaction-size-calculator/&quot;&gt;transaction size calculator&lt;/a&gt; you can use to see how differing script types, numbers of inputs/outputs, and other variables will impact the resulting transaction size. Bitcoin OpTech has a &lt;a href=&quot;https://bitcoinops.org/en/tools/calc-size/&quot;&gt;transaction size calculator&lt;/a&gt; that breaks out how each component of a transaction relates to an amount of vBytes.&lt;/p&gt;
-&lt;p&gt;The table below shows the amount of vBytes required by a transaction consisting of a single input being spent to a single output.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;Output →&lt;br&gt;Input ↓&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;P2PKH&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;P2SH&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;P2WPKH&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;P2WSH&lt;/strong&gt;&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;strong&gt;P2TR&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;P2PKH&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;192&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;190&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;189&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;201&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;201&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;P2SH (2-of-3)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;341&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;339&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;338&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;350&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;350&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;P2WPKH&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;112.5&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;110.5&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;109.5&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;121.5&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;121.5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;P2WSH (2-of-3)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;149&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;147&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;146&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;158&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;158&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;P2TR (Keypath)&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;102&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;100&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;99&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;111&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;111&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;So in ideal dust spending conditions, you would hold a P2TR UTXO and spend it to a P2WPKH output. An input requires more vBytes than an output, so the ideal will change if you are spending few inputs to many outputs.&lt;/p&gt;
-&lt;div class=&quot;callout callout-info&quot;&gt;&lt;div class=&quot;callout-label&quot;&gt;ⓘ Info&lt;/div&gt;&lt;div class=&quot;callout-content&quot;&gt;
-Surprisingly, despite P2SH and P2PKH inputs being the most expensive (in terms of total fees), the fee data above doesn’t bear that out. Without doing further digging, I assume it’s due to multi-sig being more common with other script types.
-&lt;/div&gt;&lt;/div&gt;
-&lt;h3&gt;Choosing a Minimum UTXO Value&lt;/h3&gt;
-&lt;p&gt;Putting everything together, here are my assumptions for choosing my minimum UTXO value:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;I want to be able to send the UTXO to any type of output: assume I’m spending to a P2WSH or P2TR output which are the most expensive&lt;/li&gt;
-&lt;li&gt;Although median fee rates have come down since the last peaks, I’ll assume a pretty high fee rate: 300 sats/vB
-&lt;ol&gt;
-&lt;li&gt;Additional Bitcoin adoption in the future will put upward pressure on block space demand. Current adoption is estimated in the low single-digit percentage (~2.5%) &lt;a href=&quot;https://bitcoinmagazine.com/markets/an-objective-look-at-bitcoin-adoption&quot;&gt;of the world’s population&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Non-Bitcoin changes could also affect block space demand (e.g., Ordinals)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Bitcoin changes slowly and updates that reduce vBytes needed to spend a UTXO may not come. They could require &lt;strong&gt;more&lt;/strong&gt; vBytes.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Given the above, I want to hold a P2TR UTXO so my projected dust threshold would be 33,301 sats. That’s just the threshold at which I’m able to spend the UTXO without requiring an additional input. To make the UTXO useful, it requires excess value. I’ve settled on 65,000 sats as a minimum UTXO value for a round number that (at current USD exchange rates) would leave me with ~$10 in spending power.&lt;/p&gt;
 </content>
   </entry>
 </feed>
