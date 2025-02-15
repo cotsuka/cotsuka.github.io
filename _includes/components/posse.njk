@@ -1,0 +1,6 @@
+<li>
+    Also Posted To: 
+    {%- for posse_location, posse_url in posse %}
+        <a href="{{ posse_url }}">{{ posse_location }}</a>
+    {%- endfor %}
+</li>

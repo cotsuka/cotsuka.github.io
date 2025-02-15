@@ -7,5 +7,22 @@
         "name": "Cameron Otsuka",
         "email": "cameron@otsuka.haus",
         "url": "https://otsuka.haus"
+    },
+    "categories": {
+        "articles": [],
+        "links": [
+            "livestream",
+            "podcast"
+        ],
+        "reviews": [
+            "movie",
+            "music",
+            "show"
+        ]
+    },
+    "calloutLabels": {
+        "info": "ⓘ Info",
+        "warn": "⚠ Warning",
+        "error": "! Error"
     }
 }

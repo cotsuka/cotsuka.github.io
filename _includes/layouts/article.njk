@@ -11,12 +11,7 @@ layout: layouts/base.njk
 		<li>Description: {{ description }}</li>
 		<li>Tags: {{ tags | reject("equalto", "articles") | sort | join(", ") }}</li>
 		{%- if posse %}
-			<li>
-				Also Posted To: 
-				{%- for posse_location, posse_url in posse %}
-					<a href="{{ posse_url }}">{{ posse_location }}</a>
-				{%- endfor %}
-			</li>
+			{%- include "components/posse.njk" %}
 		{%- endif %}
 	</ul>
 </details>
