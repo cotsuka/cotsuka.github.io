@@ -32,10 +32,18 @@ function isFullUrl(url) {
 }
 
 module.exports = async function (eleventyConfig) {
-	eleventyConfig.addCollection("activities", function(collectionApi) {
-		return collectionApi.getFilteredByTag(
-			...Object.keys(globalMetadata['categories'])
-		).sort((a, b) => a.date - b.date)
+	eleventyConfig.addCollection("activities", async (collectionApi) => {
+		const categories = Object.keys(globalMetadata['categories']);
+		let collectionSubset = [];
+		// getFilteredByTag matches ALL tags its passed, not any, so we have to do this
+		for (category in categories) {
+			collectionSubset.push(...collectionApi.getFilteredByTag(categories[category]))
+		}
+		let sortedSubset = collectionSubset.sort(function(a, b) {
+			// maintain sort order when working with default collections objects
+			return a.date - b.date;
+		});
+		return sortedSubset;
 	});
 	eleventyConfig.addFilter("cssmin", function (code) {
 		return new cleanCSS({}).minify(code).styles;
