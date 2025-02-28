@@ -128,6 +128,7 @@ module.exports = async function (eleventyConfig) {
 		const metadata = await eleventyImagePlugin(input, {
 			widths: [360, 720, 1440],
 			formats: ["svg", "avif", "jpeg", "gif"],
+			svgAllowUpscale: true,
 			sharpOptions: {
 				animated: true,
 				limitInputPixels: false,
@@ -135,9 +136,14 @@ module.exports = async function (eleventyConfig) {
 			urlPath: "/img/",
 			outputDir: path.join(eleventyConfig.dir.output, "img"),
 		});
+		const sizes = new Set(
+			Object.values(metadata).flatMap(format =>
+				Object.values(format).map(size => `${size.width}w`)
+			)
+		);
 		const imageAttributes = {
 			alt,
-			sizes: "360w, 720w",
+			sizes: Array.from(sizes).join(", "),
 			loading: "lazy",
 			decoding: "async",
 			"eleventy:ignore": "",
