@@ -80,7 +80,7 @@
 <h3>Historical Fee Rates</h3>
 <p>The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:</p>
 <figure>
-    <picture><source type="image/svg+xml" srcset="/img/jlj-NSVbJD-1976.svg 1976w" sizes="360w, 720w"><source type="image/avif" srcset="/img/jlj-NSVbJD-360.avif 360w, /img/jlj-NSVbJD-720.avif 720w, /img/jlj-NSVbJD-1440.avif 1440w" sizes="360w, 720w"><img src="/img/jlj-NSVbJD-360.gif" alt="Historical graph of Bitcoin mempool by vBytes" loading="lazy" decoding="async" eleventy:ignore="" width="1440" height="437" srcset="/img/jlj-NSVbJD-360.gif 360w, /img/jlj-NSVbJD-720.gif 720w, /img/jlj-NSVbJD-1440.gif 1440w" sizes="360w, 720w"></picture>
+    <picture><source type="image/svg+xml" srcset="/img/jlj-NSVbJD-1976.svg 1976w" sizes="1976w, 360w, 720w, 1440w"><source type="image/avif" srcset="/img/jlj-NSVbJD-360.avif 360w, /img/jlj-NSVbJD-720.avif 720w, /img/jlj-NSVbJD-1440.avif 1440w" sizes="1976w, 360w, 720w, 1440w"><img src="/img/jlj-NSVbJD-360.gif" alt="Historical graph of Bitcoin mempool by vBytes" loading="lazy" decoding="async" eleventy:ignore="" width="1440" height="437" srcset="/img/jlj-NSVbJD-360.gif 360w, /img/jlj-NSVbJD-720.gif 720w, /img/jlj-NSVbJD-1440.gif 1440w" sizes="1976w, 360w, 720w, 1440w"></picture>
     <figcaption>Source: <a href="https://mempool.space/graphs/mempool#all">mempool.space</a>.</figcaption>
 </figure>
 <p>I’ve selected 4 blocks to deep dive, based on their proximity to mempool peaks in those three years, as well as a more “normal” current block:</p>
@@ -91,7 +91,7 @@
 <li>801171: July 31, 2023</li>
 </ul>
 <figure>
-    <picture><source type="image/svg+xml" srcset="/img/FRvxlTw5GS-2310.svg 2310w" sizes="360w, 720w"><source type="image/avif" srcset="/img/FRvxlTw5GS-360.avif 360w, /img/FRvxlTw5GS-720.avif 720w, /img/FRvxlTw5GS-1440.avif 1440w" sizes="360w, 720w"><img src="/img/FRvxlTw5GS-360.gif" alt="Box and whisker plot of fee rates across blocks" loading="lazy" decoding="async" eleventy:ignore="" width="1440" height="617" srcset="/img/FRvxlTw5GS-360.gif 360w, /img/FRvxlTw5GS-720.gif 720w, /img/FRvxlTw5GS-1440.gif 1440w" sizes="360w, 720w"></picture>
+    <picture><source type="image/svg+xml" srcset="/img/FRvxlTw5GS-2310.svg 2310w" sizes="2310w, 360w, 720w, 1440w"><source type="image/avif" srcset="/img/FRvxlTw5GS-360.avif 360w, /img/FRvxlTw5GS-720.avif 720w, /img/FRvxlTw5GS-1440.avif 1440w" sizes="2310w, 360w, 720w, 1440w"><img src="/img/FRvxlTw5GS-360.gif" alt="Box and whisker plot of fee rates across blocks" loading="lazy" decoding="async" eleventy:ignore="" width="1440" height="617" srcset="/img/FRvxlTw5GS-360.gif 360w, /img/FRvxlTw5GS-720.gif 720w, /img/FRvxlTw5GS-1440.gif 1440w" sizes="2310w, 360w, 720w, 1440w"></picture>
     <figcaption>Outliers removed.</figcaption>
 </figure>
 <table>
@@ -141,7 +141,7 @@ I’m taking a naïve view of transactions, so transactions pushed through using
 </div></div>
 <p>I don’t expect to see major differences in fee rates by script type, but since I have the data available here’s what that looks like (it’s as expected):</p>
 <figure>
-    <picture><source type="image/svg+xml" srcset="/img/B6jFHpTD8O-2311.svg 2311w" sizes="360w, 720w"><source type="image/avif" srcset="/img/B6jFHpTD8O-360.avif 360w, /img/B6jFHpTD8O-720.avif 720w, /img/B6jFHpTD8O-1440.avif 1440w" sizes="360w, 720w"><img src="/img/B6jFHpTD8O-360.gif" alt="Box and whiskper plot of fee rates by script type" loading="lazy" decoding="async" eleventy:ignore="" width="1440" height="619" srcset="/img/B6jFHpTD8O-360.gif 360w, /img/B6jFHpTD8O-720.gif 720w, /img/B6jFHpTD8O-1440.gif 1440w" sizes="360w, 720w"></picture>
+    <picture><source type="image/svg+xml" srcset="/img/B6jFHpTD8O-2311.svg 2311w" sizes="2311w, 360w, 720w, 1440w"><source type="image/avif" srcset="/img/B6jFHpTD8O-360.avif 360w, /img/B6jFHpTD8O-720.avif 720w, /img/B6jFHpTD8O-1440.avif 1440w" sizes="2311w, 360w, 720w, 1440w"><img src="/img/B6jFHpTD8O-360.gif" alt="Box and whiskper plot of fee rates by script type" loading="lazy" decoding="async" eleventy:ignore="" width="1440" height="619" srcset="/img/B6jFHpTD8O-360.gif 360w, /img/B6jFHpTD8O-720.gif 720w, /img/B6jFHpTD8O-1440.gif 1440w" sizes="2311w, 360w, 720w, 1440w"></picture>
     <figcaption>Fee Rate axis capped at 50 sats/vB to better show the differences between script types.</figcaption>
 </figure>
 <p>Transactions are shifting towards the newer P2WPKH, P2WSH, and P2TR script types:</p>
@@ -195,12 +195,12 @@ I’m taking a naïve view of transactions, so transactions pushed through using
 </table>
 <p>Where the script types do differ is in the total size of the transaction and therefore, the total fees paid.</p>
 <figure>
-    <picture><source type="image/svg+xml" srcset="/img/3ZxRIMGSVo-2311.svg 2311w" sizes="360w, 720w"><source type="image/avif" srcset="/img/3ZxRIMGSVo-360.avif 360w, /img/3ZxRIMGSVo-720.avif 720w, /img/3ZxRIMGSVo-1440.avif 1440w" sizes="360w, 720w"><img src="/img/3ZxRIMGSVo-360.gif" alt="Box and whisker plot of total fees by script type" loading="lazy" decoding="async" eleventy:ignore="" width="1440" height="617" srcset="/img/3ZxRIMGSVo-360.gif 360w, /img/3ZxRIMGSVo-720.gif 720w, /img/3ZxRIMGSVo-1440.gif 1440w" sizes="360w, 720w"></picture>
+    <picture><source type="image/svg+xml" srcset="/img/3ZxRIMGSVo-2311.svg 2311w" sizes="2311w, 360w, 720w, 1440w"><source type="image/avif" srcset="/img/3ZxRIMGSVo-360.avif 360w, /img/3ZxRIMGSVo-720.avif 720w, /img/3ZxRIMGSVo-1440.avif 1440w" sizes="2311w, 360w, 720w, 1440w"><img src="/img/3ZxRIMGSVo-360.gif" alt="Box and whisker plot of total fees by script type" loading="lazy" decoding="async" eleventy:ignore="" width="1440" height="617" srcset="/img/3ZxRIMGSVo-360.gif 360w, /img/3ZxRIMGSVo-720.gif 720w, /img/3ZxRIMGSVo-1440.gif 1440w" sizes="2311w, 360w, 720w, 1440w"></picture>
     <figcaption>Fee Rate axis capped at 300000 sats/vB to better show the differences between script types.</figcaption>
 </figure>
 <p>P2WSH and P2TR transactions appear to be paying higher median fees than other script types.</p>
 <figure>
-    <picture><source type="image/svg+xml" srcset="/img/UyLAS0PAdF-2311.svg 2311w" sizes="360w, 720w"><source type="image/avif" srcset="/img/UyLAS0PAdF-360.avif 360w, /img/UyLAS0PAdF-720.avif 720w, /img/UyLAS0PAdF-1440.avif 1440w" sizes="360w, 720w"><img src="/img/UyLAS0PAdF-360.gif" alt="Box and whisker plot of total fees by script type, zoomed" loading="lazy" decoding="async" eleventy:ignore="" width="1440" height="617" srcset="/img/UyLAS0PAdF-360.gif 360w, /img/UyLAS0PAdF-720.gif 720w, /img/UyLAS0PAdF-1440.gif 1440w" sizes="360w, 720w"></picture>
+    <picture><source type="image/svg+xml" srcset="/img/UyLAS0PAdF-2311.svg 2311w" sizes="2311w, 360w, 720w, 1440w"><source type="image/avif" srcset="/img/UyLAS0PAdF-360.avif 360w, /img/UyLAS0PAdF-720.avif 720w, /img/UyLAS0PAdF-1440.avif 1440w" sizes="2311w, 360w, 720w, 1440w"><img src="/img/UyLAS0PAdF-360.gif" alt="Box and whisker plot of total fees by script type, zoomed" loading="lazy" decoding="async" eleventy:ignore="" width="1440" height="617" srcset="/img/UyLAS0PAdF-360.gif 360w, /img/UyLAS0PAdF-720.gif 720w, /img/UyLAS0PAdF-1440.gif 1440w" sizes="2311w, 360w, 720w, 1440w"></picture>
     <figcaption>Fee Rate axis capped at 18000 sats/vB to better show the differences between script types.</figcaption>
 </figure>
 <p>To better understand the cause of this, we have to know how vBytes are allocated during the construction of a transaction.</p>
