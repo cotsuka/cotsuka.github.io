@@ -126,7 +126,7 @@ module.exports = async function (eleventyConfig) {
 			input = relativeToInputPath(this.page.inputPath, src);
 		}
 		const metadata = await eleventyImagePlugin(input, {
-			widths: [360, 720],
+			widths: [360, 720, 1440],
 			formats: ["svg", "avif", "jpeg", "gif"],
 			sharpOptions: {
 				animated: true,
