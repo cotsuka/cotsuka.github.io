@@ -4,12 +4,29 @@
   <subtitle>The collection of Cameron&#39;s thoughts.</subtitle>
   <link href="https://otsuka.haus/feed.xml" rel="self" />
   <link href="https://otsuka.haus/" />
-  <updated>2025-03-02T00:00:00Z</updated>
+  <updated>2025-03-13T00:00:00Z</updated>
   <id>https://otsuka.haus/</id>
   <author>
     <name>Cameron Otsuka</name>
     <email>cameron@otsuka.haus</email>
   </author>
+  <entry>
+    <title>Fork in the road for Treasury yields</title>
+    <link href="https://otsuka.haus/links/2025-03-13-fork-in-the-road-for-treasury-yields/" />
+    <updated>2025-03-13T00:00:00Z</updated>
+    <id>https://otsuka.haus/links/2025-03-13-fork-in-the-road-for-treasury-yields/</id>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;Fork in the road for Treasury yields&lt;/li&gt;
+&lt;li&gt;What would a Mar-a-Lago Accord mean for Bitcoin and Treasury yield correlation&lt;/li&gt;
+&lt;li&gt;Bitcoin bonds&lt;/li&gt;
+&lt;li&gt;Tariff whiplash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;BUILD WEEKLY ROUNDUP - 2025 WEEK #11 &lt;a href=&quot;https://x.com/i/broadcasts/1OwxWXgnrpDKQ&quot;&gt;https://x.com/i/broadcasts/1OwxWXgnrpDKQ&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— Build Markets (@BuildMarkets) &lt;a href=&quot;https://x.com/BuildMarkets/status/1900265390279917813&quot;&gt;March 13, 2025&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
   <entry>
     <title>Conclave</title>
     <link href="https://otsuka.haus/reviews/2025-03-02-conclave/" />
@@ -223,66 +240,6 @@
 &lt;p&gt;BUILD WEEKLY ROUNDUP - 2025 WEEK #5 &lt;a href=&quot;https://x.com/i/broadcasts/1ZkKzRZzqjaKv&quot;&gt;https://x.com/i/broadcasts/1ZkKzRZzqjaKv&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;— Cameron Otsuka (@CameronOtsuka) &lt;a href=&quot;https://x.com/CameronOtsuka/status/1885111055158042704&quot;&gt;January 30, 2025&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-</content>
-  </entry>
-  <entry>
-    <title>R1 vs. o1: AI as Commodity or Moat</title>
-    <link href="https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/" />
-    <updated>2025-01-27T00:00:00Z</updated>
-    <id>https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/</id>
-    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/Vkj2bo2TiD-360.avif 360w, https://otsuka.haus/img/Vkj2bo2TiD-568.avif 568w&quot; sizes=&quot;360w, 568w&quot;&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://otsuka.haus/img/Vkj2bo2TiD-360.gif 360w, https://otsuka.haus/img/Vkj2bo2TiD-568.gif 568w&quot; sizes=&quot;360w, 568w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/Vkj2bo2TiD-360.jpeg&quot; alt=&quot;US - China AI model enjoyers Dabbing Dude meme&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;568&quot; height=&quot;439&quot; srcset=&quot;https://otsuka.haus/img/Vkj2bo2TiD-360.jpeg 360w, https://otsuka.haus/img/Vkj2bo2TiD-568.jpeg 568w&quot; sizes=&quot;360w, 568w&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;p&gt;DeepSeek announced the release of its R1 reasoning model&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt; a day before the US announced it would use its executive power to secure the infrastructure needs for a joint venture between OpenAI (developers of the o1 reasoning model), Microsoft, Oracle, and Softbank, titled “Stargate”&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn2&quot; id=&quot;fnref2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;p&gt;A few days later, markets have taken this as an existential threat to OpenAI’s dominance and energy/compute demand. This is a shot across the bow from DeepSeek and zooming out, represents the economic tug-of-war between China and the US, but I don’t think it spells disaster for the US’ ambitions – if US companies can continue pushing the performance frontier.&lt;/p&gt;
-&lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/WSrs4ZC7kN-360.avif 360w, https://otsuka.haus/img/WSrs4ZC7kN-720.avif 720w, https://otsuka.haus/img/WSrs4ZC7kN-1026.avif 1026w&quot; sizes=&quot;360w, 720w, 1026w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/WSrs4ZC7kN-360.gif&quot; alt=&quot;NVDA price action on 2025-01-27&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;1026&quot; height=&quot;436&quot; srcset=&quot;https://otsuka.haus/img/WSrs4ZC7kN-360.gif 360w, https://otsuka.haus/img/WSrs4ZC7kN-720.gif 720w, https://otsuka.haus/img/WSrs4ZC7kN-1026.gif 1026w&quot; sizes=&quot;360w, 720w, 1026w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Nvidia was down ~17% by end of day on the news.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;h2&gt;The Facts&lt;/h2&gt;
-&lt;p&gt;DeepSeek trained R1 for an estimated $5.6MM on A100 and H800 GPUs (not the latest-and-greatest GPUs available). End-user inference pricing is an order of magnitude cheaper than o1.&lt;/p&gt;
-&lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/_iheqoqYp--360.avif 360w, https://otsuka.haus/img/_iheqoqYp--720.avif 720w, https://otsuka.haus/img/_iheqoqYp--1440.avif 1440w&quot; sizes=&quot;360w, 720w, 1440w&quot;&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://otsuka.haus/img/_iheqoqYp--360.gif 360w, https://otsuka.haus/img/_iheqoqYp--720.gif 720w, https://otsuka.haus/img/_iheqoqYp--1440.gif 1440w&quot; sizes=&quot;360w, 720w, 1440w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/_iheqoqYp--360.jpeg&quot; alt=&quot;Input/Output Pricing for o1-Class Inference Models ($/1M Tokens)&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;1440&quot; height=&quot;706&quot; srcset=&quot;https://otsuka.haus/img/_iheqoqYp--360.jpeg 360w, https://otsuka.haus/img/_iheqoqYp--720.jpeg 720w, https://otsuka.haus/img/_iheqoqYp--1440.jpeg 1440w&quot; sizes=&quot;360w, 720w, 1440w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Source: &lt;a href=&quot;https://x.com/RnaudBertrand/status/1881709223152878000/photo/1&quot;&gt;@RnaudBertrand&lt;/a&gt;.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;Despite less capital expenditure, R1 has comparable performance to o1 due to several technical innovations. I don’t pretend to deeply understand everything on this front, so instead I’ll direct you &lt;a href=&quot;https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf&quot;&gt;to this paper&lt;/a&gt;, which breaks down what’s happening under the hood. Ultimately, R1 is essentially a drop-in replacement for o1.&lt;/p&gt;
-&lt;figure&gt;
-    &lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.avif 360w, https://otsuka.haus/img/S1fgCb2pAG-720.avif 720w, https://otsuka.haus/img/S1fgCb2pAG-1440.avif 1440w&quot; sizes=&quot;360w, 720w, 1440w&quot;&gt;&lt;source type=&quot;image/gif&quot; srcset=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.gif 360w, https://otsuka.haus/img/S1fgCb2pAG-720.gif 720w, https://otsuka.haus/img/S1fgCb2pAG-1440.gif 1440w&quot; sizes=&quot;360w, 720w, 1440w&quot;&gt;&lt;img src=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.jpeg&quot; alt=&quot;Accuracy / Percentile (%) by Benchmark&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;1440&quot; height=&quot;853&quot; srcset=&quot;https://otsuka.haus/img/S1fgCb2pAG-360.jpeg 360w, https://otsuka.haus/img/S1fgCb2pAG-720.jpeg 720w, https://otsuka.haus/img/S1fgCb2pAG-1440.jpeg 1440w&quot; sizes=&quot;360w, 720w, 1440w&quot;&gt;&lt;/picture&gt;
-    &lt;figcaption&gt;Source: &lt;a href=&quot;https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf&quot;&gt;DeepSeek-AI&lt;/a&gt;.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;This is incredible for the little guy: run your own model, privately, without the need for massive infrastructure.&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img src=&quot;https://otsuka.haus/img/MNT2uYz6Yi-360.gif&quot; alt=&quot;R1 running locally on an iPhone&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; eleventy:ignore=&quot;&quot; width=&quot;720&quot; height=&quot;405&quot; srcset=&quot;https://otsuka.haus/img/MNT2uYz6Yi-360.gif 360w, https://otsuka.haus/img/MNT2uYz6Yi-720.gif 720w&quot; sizes=&quot;360w, 720w&quot;&gt;
-    &lt;figcaption&gt;A distilled version of R1 running locally on an iPhone. Source: &lt;a href=&quot;https://x.com/localghost/status/1882109711732154387&quot;&gt;@localghost&lt;/a&gt;.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;h2&gt;Is OpenAI Cooked?&lt;/h2&gt;
-&lt;p&gt;First, the threshold for publicly available, open-source reasoning models will never be lower than this. HuggingFace is attempting to reproduce R1 fully in the open&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn3&quot; id=&quot;fnref3&quot;&gt;[3]&lt;/a&gt;&lt;/sup&gt; which would make it an end-to-end public frontier model. I think this is a win for society.&lt;/p&gt;
-&lt;p&gt;Second, everyone should be significantly shortening their anticipated AI development timelines. The initial market reaction was a first order reaction (80% less compute! 80% less chip demand!) but I don’t see why energy infrastructure and chip manufacturing demand would be negatively impacted. I’d more likely guess this is a &lt;a href=&quot;https://en.wikipedia.org/wiki/Jevons_paradox&quot;&gt;Jevon’s paradox&lt;/a&gt; situation, where the excess capacity is immediately saturated to advance model performance at a now more rapid pace.&lt;/p&gt;
-&lt;p&gt;It’s clear with the amount of investment the US and companies are ploughing into OpenAI, their vision for the future is one where OpenAI has the highest horsepower model and defends its moat simply by having the smartest, fastest, best model. Value capture in this version of the world accrues to the model developers.&lt;/p&gt;
-&lt;p&gt;China’s approach, exemplified by R1, envisions a future with commodity AI models used as building blocks within other applications. Incentivizing open development of models with comparable performance to private frontier models ensures the US &lt;em&gt;can’t&lt;/em&gt; develop an AI moat. China codified this objective in 2017 with the release of their, &lt;a href=&quot;https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/&quot;&gt;“New Generation Artificial Intelligence Development Plan” (translated)&lt;/a&gt;. Some sections that stood out to me:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;Open-Source and Open.&lt;/em&gt; Advocate the concept of open-source sharing, and promote the concept of industry, academia, research, and production units each innovating and in principal pursuing joint innovation and sharing. Follow the coordinated development law for economic and national defense construction; promote two-way conversion and application for military and civilian scientific and technological achievements and co-construction and sharing of military and civilian innovation resources; form an all-element, multi-domain, highly efficient new pattern of civil-military integration.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn4&quot; id=&quot;fnref4&quot;&gt;[4]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;(2) Optimize arrangements to build AI innovation bases&lt;/strong&gt;
-Guide existing AI-related national focus laboratories, corporate national focus laboratories, national engineering laboratories, and other such bases, and conduct research focused on an advanced direction of a new generation of AI.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn5&quot; id=&quot;fnref5&quot;&gt;[5]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I don’t think it’s a stretch to compare OpenAI’s business model with that of IBM in the 80s and 90s&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fn6&quot; id=&quot;fnref6&quot;&gt;[6]&lt;/a&gt;&lt;/sup&gt;. History shows tech advancements trend towards commoditization. We’ll see if the US’ investments can buck the trend.&lt;/p&gt;
-&lt;hr class=&quot;footnotes-sep&quot;&gt;
-&lt;section class=&quot;footnotes&quot;&gt;
-&lt;ol class=&quot;footnotes-list&quot;&gt;
-&lt;li id=&quot;fn1&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://x.com/deepseek_ai/status/1881318130334814301&quot;&gt;🚀 DeepSeek-R1 is here!&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref1&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&quot;fn2&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://openai.com/index/announcing-the-stargate-project/&quot;&gt;Announcing the Stargate Project&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref2&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&quot;fn3&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/huggingface/open-r1&quot;&gt;Open R1&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref3&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&quot;fn4&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/#:~:text=Open-Source%20and,a%20global%20scale.&quot;&gt;Full Translation: China’s ‘New Generation Artificial Intelligence Development Plan’ (2017)&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref4&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&quot;fn5&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/#:~:text=(2)%20optimize%20arrangements%20to%20build%20ai%20innovation%20bases&quot;&gt;Full Translation: China’s ‘New Generation Artificial Intelligence Development Plan’ (2017)&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref5&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&quot;fn6&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/History_of_IBM#1975%E2%80%931992:_Information_revolution,_rise_of_software_and_PC_industries&quot;&gt;History of IBM - 1975–1992: Information revolution, rise of software and PC industries&lt;/a&gt; &lt;a href=&quot;https://otsuka.haus/articles/2025-01-27-r1-vs-o1-ai-as-commodity-or-moat/#fnref6&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
 </content>
   </entry>
 </feed>
