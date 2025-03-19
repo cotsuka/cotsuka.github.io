@@ -1,12 +1,12 @@
-const cleanCSS = require("clean-css");
-const { DateTime } = require("luxon");
-const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
-const eleventyImagePlugin = require("@11ty/eleventy-img");
-const eleventySyntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
-const globalMetadata = require("./_data/metadata.json");
-const markdownIt = require("markdown-it");
-const markdownItFootnote = require('markdown-it-footnote');
-const path = require("path");
+import cleanCSS from "clean-css";
+import { DateTime } from "luxon";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import eleventyImagePlugin, { generateHTML } from "@11ty/eleventy-img";
+import eleventySyntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
+import globalMetadata from "./_data/metadata.json" with { type: "json" };
+import markdownIt from "markdown-it";
+import markdownItFootnote from 'markdown-it-footnote';
+import { resolve, sep, join } from "path";
 
 const markdownOptions = {
 	html: true,
@@ -19,7 +19,7 @@ const mdLibrary = markdownIt(markdownOptions).use(markdownItFootnote);
 function relativeToInputPath(inputPath, relativeFilePath) {
 	const split = inputPath.split("/");
 	split.pop();
-	return path.resolve(split.join(path.sep), relativeFilePath);
+	return resolve(split.join(sep), relativeFilePath);
 }
 
 function isFullUrl(url) {
@@ -31,12 +31,12 @@ function isFullUrl(url) {
 	}
 }
 
-module.exports = async function (eleventyConfig) {
+export default async function (eleventyConfig) {
 	eleventyConfig.addCollection("activities", async (collectionApi) => {
 		const categories = Object.keys(globalMetadata['categories']);
 		let collectionSubset = [];
 		// getFilteredByTag matches ALL tags its passed, not any, so we have to do this
-		for (category in categories) {
+		for (const category in categories) {
 			collectionSubset.push(...collectionApi.getFilteredByTag(categories[category]))
 		}
 		let sortedSubset = collectionSubset.sort(function(a, b) {
@@ -100,7 +100,7 @@ module.exports = async function (eleventyConfig) {
 		},
 		metadata: globalMetadata,
 	});
-	for (category in globalMetadata['categories']) {
+	for (const category in globalMetadata['categories']) {
 		eleventyConfig.addPlugin(feedPlugin, {
 			type: "atom",
 			outputPath: `/feeds/${category}.xml`,
@@ -134,7 +134,7 @@ module.exports = async function (eleventyConfig) {
 				limitInputPixels: false,
 			},
 			urlPath: "/img/",
-			outputDir: path.join(eleventyConfig.dir.output, "img"),
+			outputDir: join(eleventyConfig.dir.output, "img"),
 		});
 		const sizes = new Set(
 			Object.values(metadata).flatMap(format =>
@@ -152,7 +152,7 @@ module.exports = async function (eleventyConfig) {
 			pictureAttributes: {},
 			whitespaceMode: "inline",
 		};
-		return eleventyImagePlugin.generateHTML(metadata, imageAttributes, options);
+		return generateHTML(metadata, imageAttributes, options);
 	});
 	eleventyConfig.setLibrary("md", mdLibrary);
 	return {
