@@ -17,7 +17,7 @@
     "name": "Cameron Otsuka",
     "url": "https://otsuka.haus"
   },
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/cotsuka/cotsuka.github.io",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

@@ -154,6 +154,9 @@ export default async function (eleventyConfig) {
 		};
 		return generateHTML(metadata, imageAttributes, options);
 	});
+	eleventyConfig.addShortcode("currentYear", () => {
+		return `${new Date().getFullYear()}`;
+	});
 	eleventyConfig.setLibrary("md", mdLibrary);
 	return {
 		templateFormats: [
