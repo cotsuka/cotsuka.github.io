@@ -68,6 +68,9 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addFilter("min", (...numbers) => {
 		return Math.min.apply(null, numbers);
 	});
+	eleventyConfig.addFilter("startsWith", (str, prefix) => {
+		return str.startsWith(prefix);
+	});
 	eleventyConfig.addPairedShortcode(
 		"callout",
 		function (content, level = "", format = "md", customLabel = "") {

@@ -16,7 +16,9 @@
     <dt><a href="{{ item.url }}">{{ item.data.title }}</a></dt>
     <dd>
         {% set tag = false %}
-        {% if page.filePathStem === "/links" %}
+        {% if page.filePathStem === "/articles" %}
+            {% set tag = "" %}
+        {% elseif page.filePathStem === "/links" %}
             {% if "livestream" in item.data.tags %}
                 {% set tag = "livestream" %}
             {% elseif "podcast" in item.data.tags %}

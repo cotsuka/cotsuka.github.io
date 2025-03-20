@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+---
+
+<h1>
+	{% if page.filePathStem | startsWith("/links") %}
+		<a href="{{ href }}">{{ title }}</a>
+	{% else %}
+		{{ title }}
+	{% endif %}
+</h1>
+
+<details>
+	<summary>Metadata</summary>
+	<ul>
+		<li>Published: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | htmlDateString }}</time></li>
+		<li>
+			{% if page.filePathStem | startsWith("/reviews") %}
+				Rating:
+			{% else %}
+				Description:
+			{% endif %}
+			{{ description }}
+		</li>
+		<li>
+			Tags:
+			{% if page.filePathStem | startsWith("/articles") %}
+				{{ tags | reject("equalto", "articles") | sort | join(", ") }}
+			{% elseif page.filePathStem | startsWith("/links") %}
+				{{ tags | reject("equalto", "links") | sort | join(", ") }}
+			{% elseif page.filePathStem | startsWith("/reviews") %}
+				{{ tags | reject("equalto", "reviews") | sort | join(", ") }}
+			{% else %}
+				{{ tags | sort | join(", ") }}
+			{% endif %}
+		</li>
+		{%- if posse %}
+			{%- include "components/posse.njk" %}
+		{%- endif %}
+	</ul>
+</details>
+
+<article>
+	{{ content | safe }}
+</article>

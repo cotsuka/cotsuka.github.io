@@ -1,5 +1,5 @@
 {
     "tags": ["reviews"],
-    "layout": "layouts/review.njk",
+    "layout": "layouts/post.njk",
     "permalink": "reviews/{{ date | htmlDateString }}-{{ title | slugify }}/"
 }
