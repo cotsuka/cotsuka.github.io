@@ -7,7 +7,6 @@ description: "Build Weekly Roundup - 2025 Week #12"
 tags:
 - livestream
 - macro
-- bitcoin
 posse:
   𝕏: https://x.com/BuildMarkets/status/1902821735764004882
   LinkedIn: https://www.linkedin.com/posts/build-asset-management_build-weekly-roundup-2025-week-12-post-fomc-ugcPost-7308584378203353088-RIO9
