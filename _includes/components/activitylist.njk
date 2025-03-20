@@ -1,19 +1,47 @@
 <dl>
-{% if maxPosts %}
-    {% set numPosts = collections.activities | length | min(maxPosts) %}
-    {% set activitieslist = collections.activities | reverse | head(numPosts) %}
+{% if page.filePathStem === "/articles" %}
+    {% set activitiescollection = collections.articles %}
+{% elseif page.filePathStem === "/links" %}
+    {% set activitiescollection = collections.links %}
+{% elseif page.filePathStem === "/reviews" %}
+    {% set activitiescollection = collections.reviews %}
 {% else %}
-    {% set activitieslist = collections.activities | reverse %}
+    {% set activitiescollection = collections.activities %}
 {% endif %}
+
+{% set numPosts = maxPosts | default(activitiescollection | length) %}
+{% set activitieslist = activitiescollection | reverse | head(numPosts) %}
+
 {%- for item in activitieslist %}
     <dt><a href="{{ item.url }}">{{ item.data.title }}</a></dt>
     <dd>
-        {% if "articles" in item.data.tags %}
-            <small class="collectiontag">article</small>
-        {% elseif "reviews" in item.data.tags %}
-            <small class="collectiontag">review</small>
-        {% elseif "links" in item.data.tags %}
-            <small class="collectiontag">link</small>
+        {% set tag = false %}
+        {% if page.filePathStem === "/links" %}
+            {% if "livestream" in item.data.tags %}
+                {% set tag = "livestream" %}
+            {% elseif "podcast" in item.data.tags %}
+                {% set tag = "podcast" %}
+            {% endif %}
+        {% elseif page.filePathStem === "/reviews" %}
+            {% if "movie" in item.data.tags %}
+                {% set tag = "movie" %}
+            {% elseif "music" in item.data.tags %}
+                {% set tag = "music" %}
+            {% elseif "show" in item.data.tags %}
+                {% set tag = "show" %}
+            {% endif %}
+        {% else %}
+            {% if "articles" in item.data.tags %}
+                {% set tag = "article" %}
+            {% elseif "reviews" in item.data.tags %}
+                {% set tag = "review" %}
+            {% elseif "links" in item.data.tags %}
+                {% set tag = "link" %}
+            {% endif %}
+        {% endif %}
+
+        {% if tag %}
+            <small class="collectiontag">{{ tag }}</small>
         {% endif %}
         {{ item.data.description }}
     </dd>
