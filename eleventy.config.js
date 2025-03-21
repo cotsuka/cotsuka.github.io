@@ -120,7 +120,7 @@ export default async function (eleventyConfig) {
 			metadata: {
 				...globalMetadata,
 				title: globalMetadata['title'].concat(
-					` - ${category.charAt(0).toUpperCase()}`
+					` - ${category.charAt(0).toUpperCase() + category.slice(1)}`
 				),
 			},
 		});
