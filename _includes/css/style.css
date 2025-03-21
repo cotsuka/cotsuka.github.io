@@ -91,7 +91,7 @@ footer > address > menu {
 }
 footer > address > menu > li {
   display: inline;
-  padding-right: 1rem;
+  padding-right: 0.2rem;
 }
 .callout {
   margin-bottom: 1rem;
