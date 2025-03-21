@@ -64,8 +64,14 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addFilter("isoDate", (dateObj) => {
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toISO();
 	});
+	eleventyConfig.addFilter("keys", function (obj) {
+		return Object.keys(obj);
+	});
 	eleventyConfig.addFilter("min", (...numbers) => {
 		return Math.min.apply(null, numbers);
+	});
+	eleventyConfig.addFilter("notIn", (stringList, rejectList) => {
+		return stringList.filter(str => !rejectList.includes(str));
 	});
 	eleventyConfig.addFilter("startsWith", (str, prefix) => {
 		return str.startsWith(prefix);
