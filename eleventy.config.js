@@ -33,11 +33,10 @@ function isFullUrl(url) {
 
 export default async function (eleventyConfig) {
 	eleventyConfig.addCollection("activities", async (collectionApi) => {
-		const categories = Object.keys(globalMetadata['categories']);
 		let collectionSubset = [];
 		// getFilteredByTag matches ALL tags its passed, not any, so we have to do this
-		for (const category in categories) {
-			collectionSubset.push(...collectionApi.getFilteredByTag(categories[category]))
+		for (const category in globalMetadata['categories']) {
+			collectionSubset.push(...collectionApi.getFilteredByTag(category))
 		}
 		let sortedSubset = collectionSubset.sort(function(a, b) {
 			// maintain sort order when working with default collections objects
