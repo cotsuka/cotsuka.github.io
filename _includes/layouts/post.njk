@@ -3,11 +3,11 @@ layout: layouts/base.njk
 ---
 
 <h1>
-	{% if page.filePathStem | startsWith("/links") %}
+	{%- if page.filePathStem | startsWith("/links") -%}
 		<a href="{{ href }}">{{ title }}</a>
-	{% else %}
+	{%- else -%}
 		{{ title }}
-	{% endif %}
+	{%- endif %}
 </h1>
 
 <details>
@@ -15,24 +15,24 @@ layout: layouts/base.njk
 	<ul>
 		<li>Published: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | htmlDateString }}</time></li>
 		<li>
-			{% if page.filePathStem | startsWith("/reviews") %}
+			{%- if page.filePathStem | startsWith("/reviews") -%}
 				Rating:
-			{% else %}
+			{%- else -%}
 				Description:
-			{% endif %}
+			{%- endif %}
 			{{ description }}
 		</li>
 		<li>
 			Tags:
-			{% if page.filePathStem | startsWith("/articles") %}
+			{%- if page.filePathStem | startsWith("/articles") -%}
 				{{ tags | reject("equalto", "articles") | sort | join(", ") }}
-			{% elseif page.filePathStem | startsWith("/links") %}
+			{%- elseif page.filePathStem | startsWith("/links") -%}
 				{{ tags | reject("equalto", "links") | sort | join(", ") }}
-			{% elseif page.filePathStem | startsWith("/reviews") %}
+			{%- elseif page.filePathStem | startsWith("/reviews") -%}
 				{{ tags | reject("equalto", "reviews") | sort | join(", ") }}
-			{% else %}
+			{%- else -%}
 				{{ tags | sort | join(", ") }}
-			{% endif %}
+			{%- endif %}
 		</li>
 		{%- if posse %}
 			{%- include "components/posse.njk" %}
