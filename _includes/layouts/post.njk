@@ -23,7 +23,7 @@ layout: layouts/base.njk
 			{{ description }}
 		</li>
 		<li>
-			Tags:
+			Tags:&nbsp;
 			{%- if page.filePathStem | startsWith("/articles") -%}
 				{{ tags | reject("equalto", "articles") | sort | join(", ") }}
 			{%- elseif page.filePathStem | startsWith("/links") -%}
