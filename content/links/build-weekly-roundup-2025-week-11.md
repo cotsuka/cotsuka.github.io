@@ -2,7 +2,7 @@
 title: "Fork in the road for Treasury yields"
 href: https://x.com/BuildMarkets/status/1900265390279917813
 date: 2025-03-13
-modified: 2025-03-18
+modified: 2025-05-08
 description: "Build Weekly Roundup - 2025 Week #11"
 tags:
 - livestream
@@ -19,6 +19,4 @@ posse:
 - Bitcoin bonds
 - Tariff whiplash
 
-> BUILD WEEKLY ROUNDUP - 2025 WEEK #11 https://x.com/i/broadcasts/1OwxWXgnrpDKQ
->
-> — Build Markets (@BuildMarkets) [March 13, 2025](https://x.com/BuildMarkets/status/1900265390279917813)
+{% youtube "https://www.youtube.com/watch?v=SbpNbMR9HdM", "BUILD WEEKLY ROUNDUP - 2025 WEEK #11" %}

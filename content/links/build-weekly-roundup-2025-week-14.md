@@ -2,7 +2,7 @@
 title: "Liberation Day in America"
 href: https://x.com/BuildMarkets/status/1907904612491026601
 date: 2025-04-03
-modified: 2025-04-03
+modified: 2025-05-08
 description: "Build Weekly Roundup - 2025 Week #14"
 tags:
 - livestream
@@ -17,6 +17,4 @@ posse:
 - Will tariffs improve GDP outlook?
 - CoreWeave IPO
 
-> BUILD WEEKLY ROUNDUP - 2025 WEEK #14 https://x.com/i/broadcasts/1OwGWXbRpApJQ
->
-> — Build Markets (@BuildMarkets) [April 3, 2025](https://x.com/BuildMarkets/status/1907904612491026601)
+{% youtube "https://www.youtube.com/watch?v=2Mny_aaCciw", "BUILD WEEKLY ROUNDUP - 2025 WEEK #14" %}

@@ -165,6 +165,11 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addShortcode("currentYear", () => {
 		return `${new Date().getFullYear()}`;
 	});
+	eleventyConfig.addShortcode("youtube", (videoURL, title) => {
+		const url = new URL(videoURL);
+		const videoID = url.searchParams.get("v");
+		return `<iframe class="youtube-shortcode" src="https://www.youtube-nocookie.com/embed/${videoID}" title="${title}" loading="lazy" allow="fullscreen"></iframe>`;
+	});
 	eleventyConfig.setLibrary("md", mdLibrary);
 	return {
 		templateFormats: [

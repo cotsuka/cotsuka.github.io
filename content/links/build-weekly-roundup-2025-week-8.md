@@ -2,7 +2,7 @@
 title: "Talking DOGE cuts 🐶"
 href: https://x.com/CameronOtsuka/status/1892711833943081227
 date: 2025-02-20
-modified: 2025-03-18
+modified: 2025-05-08
 description: "Build Weekly Roundup - 2025 Week #8"
 tags:
 - livestream
@@ -16,6 +16,4 @@ posse:
 
 Talking DOGE cuts 🐶
 
-> BUILD WEEKLY ROUNDUP - 2025 WEEK #8 https://x.com/i/broadcasts/1lPJqMNBddEJb
->
-> — Matt Dines (@LeveredUSTs) [February 20, 2025](https://x.com/LeveredUSTs/status/1892699814770704435)
+{% youtube "https://www.youtube.com/watch?v=-3IfnpazO4A", "BUILD WEEKLY ROUNDUP - 2025 WEEK #8" %}
