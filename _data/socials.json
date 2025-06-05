@@ -4,6 +4,16 @@
         "url": "https://x.com/CameronOtsuka",
         "username": "@CameronOtsuka"
     },
+    "linkedin": {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/cotsuka",
+        "username": "cotsuka"
+    },
+    "github": {
+        "title": "GitHub",
+        "url": "https://github.com/cotsuka",
+        "username": "cotsuka"
+    },
     "activitypub": {
         "title": "ActivityPub",
         "url": "https://otsuka.social/@cameron",
@@ -18,15 +28,5 @@
         "title": "Nostr",
         "url": "https://primal.net/profile/npub1hzssq7wewjztvglpdvku92htx3sv2x5r9ycvqhvl9xrtt5fn629s3np693",
         "username": "cameron@otsuka.haus"
-    },
-    "linkedin": {
-        "title": "LinkedIn",
-        "url": "https://www.linkedin.com/in/cotsuka",
-        "username": "cotsuka"
-    },
-    "github": {
-        "title": "GitHub",
-        "url": "https://github.com/cotsuka",
-        "username": "cotsuka"
     }
 }
