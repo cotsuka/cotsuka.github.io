@@ -4,12 +4,25 @@
   <subtitle>The collection of Cameron&#39;s thoughts.</subtitle>
   <link href="https://otsuka.haus/feed.xml" rel="self" />
   <link href="https://otsuka.haus/" />
-  <updated>2025-05-22T00:00:00Z</updated>
+  <updated>2025-06-04T00:00:00Z</updated>
   <id>https://otsuka.haus/</id>
   <author>
     <name>Cameron Otsuka</name>
     <email>cameron@otsuka.haus</email>
   </author>
+  <entry>
+    <title>A Complete Unknown</title>
+    <link href="https://otsuka.haus/reviews/2025-06-04-a-complete-unknown/" />
+    <updated>2025-06-04T00:00:00Z</updated>
+    <id>https://otsuka.haus/reviews/2025-06-04-a-complete-unknown/</id>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;if i was rating timothée chalamet, edward norton, and monica barbaro for their performances, this would be ★★★★★&lt;/li&gt;
+&lt;li&gt;bob dylan is self-absorbed, johnny cash likes him for it?&lt;/li&gt;
+&lt;li&gt;maybe stop introducing new musicians every 2 scenes&lt;/li&gt;
+&lt;li&gt;honestly not sure what more there is to this movie besides being a vehicle to let timmy tim perform dylan songs&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry>
     <title>A Pivotal Week</title>
     <link href="https://otsuka.haus/links/2025-05-22-a-pivotal-week/" />
@@ -122,18 +135,6 @@
 &lt;li&gt;CoreWeave IPO&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe class=&quot;youtube-shortcode&quot; src=&quot;https://www.youtube-nocookie.com/embed/2Mny_aaCciw&quot; title=&quot;BUILD WEEKLY ROUNDUP - 2025 WEEK #14&quot; loading=&quot;lazy&quot; allow=&quot;fullscreen&quot;&gt;&lt;/iframe&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Post-FOMC Landscape and the EU Savings &amp; Investments Union</title>
-    <link href="https://otsuka.haus/links/2025-03-20-post-fomc-landscape-and-the-eu-savings-and-investments-union/" />
-    <updated>2025-03-20T00:00:00Z</updated>
-    <id>https://otsuka.haus/links/2025-03-20-post-fomc-landscape-and-the-eu-savings-and-investments-union/</id>
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;Post-FOMC landscape&lt;/li&gt;
-&lt;li&gt;EU Savings &amp;amp; Investments Union&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe class=&quot;youtube-shortcode&quot; src=&quot;https://www.youtube-nocookie.com/embed/dX0VjqLCZVQ&quot; title=&quot;BUILD WEEKLY ROUNDUP - 2025 WEEK #12&quot; loading=&quot;lazy&quot; allow=&quot;fullscreen&quot;&gt;&lt;/iframe&gt;
 </content>
   </entry>
 </feed>
