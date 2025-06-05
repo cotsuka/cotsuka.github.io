@@ -1,4 +1,4 @@
-import cleanCSS from "clean-css";
+import { transform } from "lightningcss";
 import { DateTime } from "luxon";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import eleventyImagePlugin, { generateHTML } from "@11ty/eleventy-img";
@@ -44,8 +44,13 @@ export default async function (eleventyConfig) {
 		});
 		return sortedSubset;
 	});
-	eleventyConfig.addFilter("cssmin", function (code) {
-		return new cleanCSS({}).minify(code).styles;
+	eleventyConfig.addFilter("cssmin", function (originalCSS) {
+		let { code } = transform({
+			code: Buffer.from(originalCSS),
+			minify: true,
+			sourceMap: false
+		});
+		return code;
 	});
 	eleventyConfig.addFilter("head", (array, n) => {
 		// Get the first `n` elements of a collection.
