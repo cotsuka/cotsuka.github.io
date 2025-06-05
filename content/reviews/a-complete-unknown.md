@@ -1,0 +1,15 @@
+---
+title: A Complete Unknown
+date: 2025-06-04
+modified: 2025-06-04
+description: ★★★
+tags:
+- movie
+posse:
+  Letterboxd: https://letterboxd.com/cotsuka/film/a-complete-unknown/
+---
+
+- if i was rating timothée chalamet, edward norton, and monica barbaro for their performances, this would be ★★★★★
+- bob dylan is self-absorbed, johnny cash likes him for it?
+- maybe stop introducing new musicians every 2 scenes
+- honestly not sure what more there is to this movie besides being a vehicle to let timmy tim perform dylan songs
