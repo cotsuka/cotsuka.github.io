@@ -2,7 +2,7 @@
 title: "Post-FOMC Landscape and the EU Savings & Investments Union"
 href: https://x.com/BuildMarkets/status/1902821735764004882
 date: 2025-03-20
-modified: 2025-05-08
+modified: 2025-06-06
 description: "Build Weekly Roundup - 2025 Week #12"
 tags:
 - livestream
@@ -11,6 +11,7 @@ posse:
   𝕏: https://x.com/BuildMarkets/status/1902821735764004882
   LinkedIn: https://www.linkedin.com/posts/build-asset-management_build-weekly-roundup-2025-week-12-post-fomc-ugcPost-7308584378203353088-RIO9
   YouTube: https://www.youtube.com/watch?v=dX0VjqLCZVQ
+  Spotify: https://creators.spotify.com/pod/show/buildmarkets/episodes/BUILD-WEEKLY-ROUNDUP---2025-WEEK-12-e32jcqi
 ---
 
 - Post-FOMC landscape
