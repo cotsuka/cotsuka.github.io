@@ -5,7 +5,7 @@ date: 2025-01-30
 modified: 2025-01-30
 description: Yield curve updates, looking forward to Yen meeting, more DeepSeek analysis
 tags:
-- livestream
+- video
 - ai
 - macro
 posse:

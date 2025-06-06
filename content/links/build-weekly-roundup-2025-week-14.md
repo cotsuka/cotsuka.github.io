@@ -5,7 +5,7 @@ date: 2025-04-03
 modified: 2025-06-06
 description: "Build Weekly Roundup - 2025 Week #14"
 tags:
-- livestream
+- video
 - macro
 posse:
   𝕏: https://x.com/BuildMarkets/status/1907904612491026601

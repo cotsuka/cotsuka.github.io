@@ -19,8 +19,8 @@
         {%- if page.filePathStem === "/articles" -%}
             {% set tag = "" %}
         {%- elseif page.filePathStem === "/links" -%}
-            {%- if "livestream" in item.data.tags -%}
-                {% set tag = "livestream" %}
+            {%- if "video" in item.data.tags -%}
+                {% set tag = "video" %}
             {%- elseif "podcast" in item.data.tags -%}
                 {% set tag = "podcast" %}
             {%- endif %}

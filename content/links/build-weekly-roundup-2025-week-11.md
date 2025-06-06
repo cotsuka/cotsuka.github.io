@@ -5,7 +5,7 @@ date: 2025-03-13
 modified: 2025-06-06
 description: "Build Weekly Roundup - 2025 Week #11"
 tags:
-- livestream
+- video
 - macro
 - bitcoin
 posse:

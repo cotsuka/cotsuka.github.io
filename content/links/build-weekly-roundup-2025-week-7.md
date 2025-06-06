@@ -5,7 +5,7 @@ date: 2025-02-13
 modified: 2025-06-06
 description: "Build Weekly Roundup - 2025 Week #7"
 tags:
-- livestream
+- video
 - macro
 posse:
   𝕏: https://x.com/CameronOtsuka/status/1890159220974362824
