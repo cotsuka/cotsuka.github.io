@@ -4,12 +4,25 @@
   <subtitle>The collection of Cameron&#39;s thoughts.</subtitle>
   <link href="https://otsuka.haus/feeds/links.xml" rel="self" />
   <link href="https://otsuka.haus/" />
-  <updated>2025-05-22T00:00:00Z</updated>
+  <updated>2025-06-06T00:00:00Z</updated>
   <id>https://otsuka.haus/</id>
   <author>
     <name>Cameron Otsuka</name>
     <email>cameron@otsuka.haus</email>
   </author>
+  <entry>
+    <title>JPM Bends the Knee to Bitcoin</title>
+    <link href="https://otsuka.haus/links/2025-06-06-jpm-bends-the-knee-to-bitcoin/" />
+    <updated>2025-06-06T00:00:00Z</updated>
+    <id>https://otsuka.haus/links/2025-06-06-jpm-bends-the-knee-to-bitcoin/</id>
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;May Nonfarm Payrolls&lt;/li&gt;
+&lt;li&gt;Circle IPO&lt;/li&gt;
+&lt;li&gt;J.P. Morgan x Bitcoin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe class=&quot;youtube-shortcode&quot; src=&quot;https://www.youtube-nocookie.com/embed/y0fzFUhvPSs&quot; title=&quot;JPM BENDS THE KNEE TO BITCOIN - BUILD WEEKLY ROUNDUP - 2025 WEEK #23&quot; loading=&quot;lazy&quot; allow=&quot;fullscreen&quot;&gt;&lt;/iframe&gt;
+</content>
+  </entry>
   <entry>
     <title>A Pivotal Week</title>
     <link href="https://otsuka.haus/links/2025-05-22-a-pivotal-week/" />
@@ -123,15 +136,6 @@
 &lt;li&gt;Tariff whiplash&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe class=&quot;youtube-shortcode&quot; src=&quot;https://www.youtube-nocookie.com/embed/SbpNbMR9HdM&quot; title=&quot;BUILD WEEKLY ROUNDUP - 2025 WEEK #11&quot; loading=&quot;lazy&quot; allow=&quot;fullscreen&quot;&gt;&lt;/iframe&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Talking DOGE cuts 🐶</title>
-    <link href="https://otsuka.haus/links/2025-02-20-talking-doge-cuts/" />
-    <updated>2025-02-20T00:00:00Z</updated>
-    <id>https://otsuka.haus/links/2025-02-20-talking-doge-cuts/</id>
-    <content type="html">&lt;p&gt;Talking DOGE cuts 🐶&lt;/p&gt;
-&lt;iframe class=&quot;youtube-shortcode&quot; src=&quot;https://www.youtube-nocookie.com/embed/-3IfnpazO4A&quot; title=&quot;BUILD WEEKLY ROUNDUP - 2025 WEEK #8&quot; loading=&quot;lazy&quot; allow=&quot;fullscreen&quot;&gt;&lt;/iframe&gt;
 </content>
   </entry>
 </feed>
