@@ -1,0 +1,16 @@
+---
+interface Props {
+    posse: Record<string, string>
+}
+
+const { posse } = Astro.props;
+---
+{Object.entries(posse).map((site) => {
+    const url = site[1];
+    const label = site[0]
+    return (
+        <Fragment>
+            <a href={url}>{label}</a>&nbsp;
+        </Fragment>
+    )
+})}

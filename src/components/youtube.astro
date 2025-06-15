@@ -1,0 +1,19 @@
+---
+interface Props {
+	title: string;
+	videoURL: string;
+}
+
+const { title, videoURL } = Astro.props;
+
+const url = new URL(videoURL);
+const videoID = url.searchParams.get("v");
+---
+
+<iframe
+    class="w-full aspect-video"
+    src={`https://www.youtube-nocookie.com/embed/${videoID}`}
+    title={title}
+    loading="lazy"
+    allow="fullscreen"
+></iframe>

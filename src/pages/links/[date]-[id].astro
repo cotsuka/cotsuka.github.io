@@ -1,0 +1,42 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import { formatDate } from '@utils/format.ts';
+import Article from '@layouts/article.astro';
+import POSSE from '@components/posse.astro';
+
+interface Props {
+    link: CollectionEntry<'links'>
+}
+
+export async function getStaticPaths() {
+    const links = await getCollection('links');
+    return links.map(link => ({
+        params: { date: formatDate(link.data.date), id: link.id },
+        props: { link },
+    }));
+}
+
+const { link } = Astro.props;
+const date = formatDate(link.data.date);
+const { Content } = await render(link);
+---
+<Article
+     title={link.data.title}
+     description={link.data.description}
+     publishedTime={link.data.date.toISOString()}
+     modifiedTime={link.data.modified ? link.data.modified.toISOString() : link.data.date.toISOString()}
+     tags={link.data.tags}
+>
+    <a href={link.data.href}><h2>{link.data.title}</h2></a>
+    <details class="mb-4">
+        <summary>Metadata</summary>
+        <ul class="mt-0">
+            <li class="mt-0 mb-0">Description: {link.data.description}</li>
+            <li class="mt-0 mb-0">Published: <time datetime="">{date}</time></li>
+            <li class="mt-0 mb-0">Last Modified: <time datetime="">{link.data.modified ? formatDate(link.data.modified) : date}</time></li>
+            <li class="mt-0 mb-0">Tags: {link.data.tags.join(', ')}</li>
+            {link.data.posse && <li class="mt-0 mb-0">POSSE: <POSSE posse={link.data.posse} /></li>}
+        </ul>
+    </details>
+    <Content />
+</Article>

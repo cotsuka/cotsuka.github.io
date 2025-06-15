@@ -1,0 +1,25 @@
+---
+import Base from '@layouts/base.astro';
+import Callout from '@components/ui/callout.astro';
+import Contributions from '@data/contributions.json';
+---
+
+<Base title="Home" description="Description">
+	<section>
+		<p>I am <strong>Head of Data and Analytics</strong> at Build Asset Management, where I've helped launch a <a href="https://buildbitcoin.com/">private credit fund</a> investing into over-collateralized bitcoin-backed loans, a <a href="https://bfix.fund/">fixed income ETF</a> and related vehicles, and built the internal tech stack that glues everything together.</p>
+		<Callout level="info">
+			Some topics currently holding my interest: data, analytics, economics, <a href="/bitcoin/">Bitcoin</a>, cryptography, privacy, security, urbanism, skiing &hellip;
+		</Callout>
+		<p>Articles will tend towards serious. Other activities are likely more frivolous.</p>
+	</section>
+    <section>
+		<h2>Contributions</h2>
+		<ul>
+			{Contributions.map((contribution) => {
+				return (
+					<li><a href={contribution.url}>{contribution.title}</a></li>
+				)
+			})}
+		</ul>
+	</section>
+</Base>

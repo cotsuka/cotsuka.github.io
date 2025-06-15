@@ -1,0 +1,42 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import { formatDate } from '@utils/format.ts';
+import Article from '@layouts/article.astro';
+import POSSE from '@components/posse.astro';
+
+interface Props {
+    article: CollectionEntry<'articles'>
+}
+
+export async function getStaticPaths() {
+    const articles = await getCollection('articles');
+    return articles.map(article => ({
+        params: { date: formatDate(article.data.date), id: article.id },
+        props: { article },
+    }));
+}
+
+const { article } = Astro.props;
+const date = formatDate(article.data.date);
+const { Content } = await render(article);
+---
+<Article
+     title={article.data.title}
+     description={article.data.description}
+     publishedTime={article.data.date.toISOString()}
+     modifiedTime={article.data.modified ? article.data.modified.toISOString() : article.data.date.toISOString()}
+     tags={article.data.tags}
+>
+    <h2>{article.data.title}</h2>
+    <details class="mb-4">
+        <summary>Metadata</summary>
+        <ul class="mt-0">
+            <li class="mt-0 mb-0">Description: {article.data.description}</li>
+            <li class="mt-0 mb-0">Published: <time datetime="">{date}</time></li>
+            <li class="mt-0 mb-0">Last Modified: <time datetime="">{article.data.modified ? formatDate(article.data.modified) : date}</time></li>
+            <li class="mt-0 mb-0">Tags: {article.data.tags.join(', ')}</li>
+            {article.data.posse && <li class="mt-0 mb-0">POSSE: <POSSE posse={article.data.posse} /></li>}
+        </ul>
+    </details>
+    <Content />
+</Article>

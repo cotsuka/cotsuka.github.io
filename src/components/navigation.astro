@@ -1,0 +1,12 @@
+---
+import Metadata from '@data/metadata.json';
+---
+<nav class="text-center">
+    <menu>
+        {Metadata.navMenu.map((menuItem) => {
+            return (
+                <li class="inline-block mx-4"><a href={menuItem.url}>{menuItem.title}</a></li>
+            )
+        })}
+    </menu>
+</nav>

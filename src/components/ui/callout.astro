@@ -1,0 +1,37 @@
+---
+type CalloutLevel = 'info' | 'warn' | 'error';
+
+interface Props {
+    level: CalloutLevel
+    label?: string
+}
+
+const { level, label } = Astro.props;
+
+let calloutLabel = label;
+let textColor = ''
+let calloutColor = '';
+if (label == null) {
+    switch(level) {
+        case 'info':
+            calloutLabel = 'ⓘ Info';
+            textColor = 'text-blue-500';
+            calloutColor = 'border-blue-500';
+            break;
+        case 'warn':
+            calloutLabel = '⚠ Warning';
+            textColor = 'text-orange-500';
+            calloutColor = 'border-orange-500';
+            break;
+        case 'error':
+            calloutLabel = '! Error';
+            textColor = 'text-red-500';
+            calloutColor = 'border-red-500';
+            break;
+    }
+};
+---
+<div class={`callout callout-${level} pl-[0.5rem] border-l-[0.2rem] border-solid ${calloutColor}`}>
+    <div class={`callout-label font-bold ${textColor}`}>{calloutLabel}</div>
+    <div class="callout-content"><slot /></div>
+</div>

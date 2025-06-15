@@ -1,0 +1,15 @@
+---
+import { Picture } from 'astro:assets';
+
+interface Props {
+    image: ImageMetadata
+    alt: string
+    formats?: string[]
+}
+
+const { image, alt, formats = ['avif', 'webp'] } = Astro.props;
+---
+<figure>
+    <Picture src={image} alt={alt} formats={formats} />
+    <figcaption class="mt-0"><slot /></figcaption>
+</figure>

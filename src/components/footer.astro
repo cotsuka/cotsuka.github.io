@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Metadata from '@data/metadata.json';
+
+const socials = await getCollection('socials');
+const currentYear = new Date().getFullYear();
+---
+<div class="text-center">
+    <hr class="w-48 h-1 mx-auto bg-black border-0" />
+    <address>
+        <menu>
+            {socials.map((social) => (
+                <li class="inline-block mx-1"><a href={social.data.url} rel="me">{social.data.title}</a></li>
+            ))}
+        </menu>
+    </address>
+    <p>
+        &copy; {currentYear} {Metadata.author.name}.<br>
+        All views my own. Not financial advice. Links, citations, and other references are not endorsements. Content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+    </p>
+</div>

@@ -1,0 +1,15 @@
+{
+    "title": "Cameron Otsuka",
+    "subtitle": "The collection of Cameron's thoughts.",
+    "base": "https://otsuka.haus",
+    "language": "en",
+    "author": {
+        "name": "Cameron Otsuka",
+        "email": "cameron@otsuka.haus"
+    },
+    "navMenu": [
+        { "title": "Articles", "url": "/articles/" },
+        { "title": "Links", "url": "/links/" },
+        { "title": "Reviews", "url": "/reviews/" }
+    ]
+}
