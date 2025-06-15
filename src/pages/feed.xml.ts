@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/format.ts';
 import Metadata from '@data/metadata.json';
 
-export async function GET(context) {
+export async function GET(context: any) {
   const articles = await getCollection('articles');
   const articleItems = articles.map((article) => ({
     title: article.data.title,
