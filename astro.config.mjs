@@ -6,8 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 import Metadata from 'data/metadata.json';
 
 export default defineConfig({
-  site: Metadata.base,
-  trailingSlash: "always",
+  site: 'https://otsuka.haus',
+  trailingSlash: 'always',
   integrations: [mdx()],
   vite: {
     plugins: [tailwindcss()],
