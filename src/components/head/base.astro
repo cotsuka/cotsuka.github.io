@@ -42,3 +42,5 @@ const { title, description } = Astro.props;
 <meta property="og:updated_time" content={new Date().toISOString()} />
 <title>{`${title} | ${Metadata.title}`}</title>
 <link rel="canonical" href={canonicalURL} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title={Metadata.title} href={new URL("feed.xml", Astro.site)} />
