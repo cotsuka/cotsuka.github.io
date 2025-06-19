@@ -25,10 +25,7 @@
     "@astrojs/sitemap": "^3.4.1",
     "@fontsource-variable/public-sans": "^5.2.6",
     "@fontsource-variable/source-code-pro": "^5.2.6",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.10",
-    "astro": "^5.9.3",
-    "tailwindcss": "^4.1.10"
+    "astro": "^5.10.0"
   },
   "devDependencies": {
     "@types/bun": "^1.2.16"

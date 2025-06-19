@@ -1,7 +1,7 @@
 ---
+import SiteMetadata from '@data/metadata.json';
 import Base from '@layouts/base.astro';
 import Callout from '@components/ui/callout.astro';
-import Contributions from '@data/contributions.json';
 ---
 
 <Base title="Home" description="Description">
@@ -15,7 +15,7 @@ import Contributions from '@data/contributions.json';
     <section>
 		<h2>Contributions</h2>
 		<ul>
-			{Contributions.map((contribution) => {
+			{SiteMetadata.contributions.map((contribution) => {
 				return (
 					<li><a href={contribution.url}>{contribution.title}</a></li>
 				)

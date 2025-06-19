@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import { formatDate } from '@utils/format.ts';
 import Article from '@layouts/article.astro';
-import POSSE from '@components/posse.astro';
+import Metadata from '@components/metadata.astro';
 
 interface Props {
     article: CollectionEntry<'articles'>
@@ -17,7 +17,6 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props;
-const date = formatDate(article.data.date);
 const { Content } = await render(article);
 ---
 <Article
@@ -28,15 +27,6 @@ const { Content } = await render(article);
      tags={article.data.tags}
 >
     <h2>{article.data.title}</h2>
-    <details class="mb-4">
-        <summary>Metadata</summary>
-        <ul class="mt-0">
-            <li class="mt-0 mb-0">Description: {article.data.description}</li>
-            <li class="mt-0 mb-0">Published: <time datetime="">{date}</time></li>
-            <li class="mt-0 mb-0">Last Modified: <time datetime="">{article.data.modified ? formatDate(article.data.modified) : date}</time></li>
-            <li class="mt-0 mb-0">Tags: {article.data.tags.join(', ')}</li>
-            {article.data.posse && <li class="mt-0 mb-0">POSSE: <POSSE posse={article.data.posse} /></li>}
-        </ul>
-    </details>
+    <Metadata entry={article} />
     <Content />
 </Article>

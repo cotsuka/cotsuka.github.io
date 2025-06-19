@@ -11,5 +11,55 @@
         { "title": "Articles", "url": "/articles/" },
         { "title": "Links", "url": "/links/" },
         { "title": "Reviews", "url": "/reviews/" }
-    ]
+    ],
+    "contributions": [
+        {
+            "title": "Arch User Repository",
+            "url": "https://aur.archlinux.org/packages?O=0&SeB=M&K=cotsuka&outdated=&SB=p&SO=d&PP=50&submit=Go"
+        },
+        {
+            "title": "ArchWiki",
+            "url": "https://wiki.archlinux.org/title/Special:Contributions/Cotsuka"
+        },
+        {
+            "title": "GitHub",
+            "url": "https://github.com/search?q=author%3Acotsuka&type=pullrequests"
+        },
+        {
+            "title": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Special:Contributions/Cotsuka"
+        }
+    ],
+    "socials": {
+        "x": {
+            "title": "𝕏",
+            "url": "https://x.com/CameronOtsuka",
+            "username": "@CameronOtsuka"
+        },
+        "linkedin": {
+            "title": "LinkedIn",
+            "url": "https://www.linkedin.com/in/cotsuka",
+            "username": "cotsuka"
+        },
+        "github": {
+            "title": "GitHub",
+            "url": "https://github.com/cotsuka",
+            "username": "cotsuka"
+        },
+        "activitypub": {
+            "title": "ActivityPub",
+            "url": "https://otsuka.social/@cameron",
+            "username": "@cameron@otsuka.social"
+        },
+        "bluesky": {
+            "title": "Bluesky",
+            "url": "https://bsky.app/profile/otsuka.haus",
+            "username": "@otsuka.haus"
+        },
+        "nostr": {
+            "title": "Nostr",
+            "url": "https://primal.net/profile/npub1hzssq7wewjztvglpdvku92htx3sv2x5r9ycvqhvl9xrtt5fn629s3np693",
+            "username": "cameron@otsuka.haus"
+        }
+    }
 }

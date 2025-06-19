@@ -1,0 +1,61 @@
+html {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  line-height: 1.1rem;
+}
+body {
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+strong {
+  font-weight: 700;
+}
+p {
+  margin-bottom: 1rem;
+}
+a {
+  text-decoration: none;
+  color: #086ddd;
+}
+a:hover {
+  text-decoration: underline;
+}
+dl, menu, ol, ul {
+  margin-bottom: 1rem;
+}
+ul ul, ul ol, ul dl, ul menu,
+ol ul, ol ol, ol dl, ol menu,
+dl ul, dl ol, dl dl, dl menu,
+menu ul, menu ol, menu dl, menu menu {
+  /* nested lists won't have margins*/
+  margin-bottom: 0;
+}
+dd {
+  margin-bottom: 0.2rem;
+  padding-left: 1.5rem;
+}
+blockquote {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  border-left: 0.2rem solid;
+}
+table {
+  margin-bottom: 1rem;
+  border: 0.1rem solid;
+  border-collapse: collapse;
+}
+th, td {
+  border: 0.1rem solid;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.5rem;
+}

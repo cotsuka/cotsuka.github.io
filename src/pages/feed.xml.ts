@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/format.ts';
-import Metadata from '@data/metadata.json';
+import SiteMetadata from '@data/metadata.json';
 
 export async function GET(context: any) {
   const articles = await getCollection('articles');
@@ -28,8 +28,8 @@ export async function GET(context: any) {
   const feedItems = [ ...articleItems, ...linkItems, ...reviewItems ];
   const sortedFeedItems = feedItems.sort((a, b) => b.pubDate - a.pubDate);
   return rss({
-    title: Metadata.title,
-    description: Metadata.subtitle,
+    title: SiteMetadata.title,
+    description: SiteMetadata.subtitle,
     site: context.site,
     items: sortedFeedItems
   });

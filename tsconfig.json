@@ -24,5 +24,7 @@
         "src/utils/*"
       ]
     },
-  }
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+  },
 }

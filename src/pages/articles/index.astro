@@ -14,7 +14,7 @@ const sortedArticles = articles.sort((a, b) => b.data.date - a.data.date);
             const date = formatDate(article.data.date);
             return (
                 <dt><a href={`/articles/${date}-${article.id}/`}>{article.data.title}</a></dt>
-                <dd class="mt-0">
+                <dd>
                     {article.data.description}
                 </dd>
             )

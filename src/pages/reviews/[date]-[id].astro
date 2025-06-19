@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import { formatDate } from '@utils/format.ts';
 import Article from '@layouts/article.astro';
-import POSSE from '@components/posse.astro';
+import Metadata from '@components/metadata.astro';
 
 interface Props {
     review: CollectionEntry<'reviews'>
@@ -28,15 +28,6 @@ const { Content } = await render(review);
      tags={review.data.tags}
 >
     <h2>{review.data.title}</h2>
-    <details class="mb-4">
-        <summary>Metadata</summary>
-        <ul class="mt-0">
-            <li class="mt-0 mb-0">Description: {review.data.description}</li>
-            <li class="mt-0 mb-0">Published: <time datetime="">{date}</time></li>
-            <li class="mt-0 mb-0">Last Modified: <time datetime="">{review.data.modified ? formatDate(review.data.modified) : date}</time></li>
-            <li class="mt-0 mb-0">Tags: {review.data.tags.join(', ')}</li>
-            {review.data.posse && <li class="mt-0 mb-0">POSSE: <POSSE posse={review.data.posse} /></li>}
-        </ul>
-    </details>
+    <Metadata entry={review} />
     <Content />
 </Article>

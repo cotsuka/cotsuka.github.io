@@ -1,0 +1,32 @@
+---
+import { type CollectionEntry } from 'astro:content';
+import { formatDate } from '@utils/format.ts';
+
+interface Props {
+    entry: CollectionEntry<'articles'> | CollectionEntry<'links'> | CollectionEntry<'reviews'>
+}
+
+const { entry } = Astro.props;
+const date = formatDate(entry.data.date);
+---
+<details>
+    <summary>Metadata</summary>
+    <ul>
+        <li>{entry.collection == 'reviews' ? `Rating` : `Description`}: {entry.data.description}</li>
+        <li>Published: <time datetime="">{date}</time></li>
+        <li>Last Modified: <time datetime="">{entry.data.modified ? formatDate(entry.data.modified) : date}</time></li>
+        <li>Tags: {entry.data.tags.join(', ')}</li>
+        {entry.data.posse && <li>POSSE: {Object.entries(entry.data.posse).map((site) => (
+            <Fragment>
+                <a href={site[1]}>{site[0]}</a>&nbsp;
+            </Fragment>
+        ))}</li>}
+    </ul>
+</details>
+
+<style>
+    details {
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
+    }
+</style>

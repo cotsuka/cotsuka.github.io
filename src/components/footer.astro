@@ -1,21 +1,37 @@
 ---
-import { getCollection } from 'astro:content';
-import Metadata from '@data/metadata.json';
+import SiteMetadata from '@data/metadata.json';
 
-const socials = await getCollection('socials');
 const currentYear = new Date().getFullYear();
 ---
-<div class="text-center">
-    <hr class="w-48 h-1 mx-auto bg-black dark:bg-white border-0" />
+<footer>
+    <hr />
     <address>
         <menu>
-            {socials.map((social) => (
-                <li class="inline-block mx-1"><a href={social.data.url} rel="me">{social.data.title}</a></li>
+            {Object.keys(SiteMetadata.socials).map((social) => (
+                <li><a href={SiteMetadata.socials[social].url} rel="me">{SiteMetadata.socials[social].title}</a></li>
             ))}
         </menu>
     </address>
     <p>
-        &copy; {currentYear} {Metadata.author.name}.<br>
+        &copy; {currentYear} {SiteMetadata.author.name}.<br>
         All views my own. Not financial advice. Links, citations, and other references are not endorsements. Content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
     </p>
-</div>
+</footer>
+
+<style>
+    footer {
+        text-align: center;
+    }
+    menu {
+        margin-inline-start: 0;
+        padding-inline-start: 0;
+    }
+    li {
+        display: inline;
+        padding-right: 0.5rem;
+    }
+    hr {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+</style>

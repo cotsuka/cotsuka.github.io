@@ -1,14 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import { glob, file } from 'astro/loaders';
-
-const socials = defineCollection({
-    loader: file('data/socials.json'),
-    schema: z.object({
-        title: z.string(),
-        url: z.string(),
-        username: z.string()
-    })
-});
+import { glob } from 'astro/loaders';
 
 const articles = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/articles' }),
@@ -18,7 +9,7 @@ const articles = defineCollection({
         date: z.coerce.date(),
         modified: z.coerce.date().optional(),
         tags: z.array(z.string()).optional(),
-        posse: z.record(z.string(), z.string()).optional()
+        posse: z.record(z.string(), z.string().url()).optional()
     })
 });
 
@@ -26,12 +17,12 @@ const links = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/links' }),
     schema: z.object({
         title: z.string(),
-        href: z.string(),
+        href: z.string().url(),
         description: z.string(),
         date: z.coerce.date(),
         modified: z.coerce.date().optional(),
         tags: z.array(z.string()).optional(),
-        posse: z.record(z.string(), z.string()).optional()
+        posse: z.record(z.string(), z.string().url()).optional()
     })
 });
 
@@ -43,8 +34,8 @@ const reviews = defineCollection({
         date: z.coerce.date(),
         modified: z.coerce.date().optional(),
         tags: z.array(z.string()).optional(),
-        posse: z.record(z.string(), z.string()).optional()
+        posse: z.record(z.string(), z.string().url()).optional()
     })
 });
 
-export const collections = { socials, articles, links, reviews };
+export const collections = { articles, links, reviews };

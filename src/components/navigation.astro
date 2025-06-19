@@ -1,12 +1,26 @@
 ---
-import Metadata from '@data/metadata.json';
+import SiteMetadata from '@data/metadata.json';
 ---
-<nav class="text-center">
+<nav>
     <menu>
-        {Metadata.navMenu.map((menuItem) => {
+        {SiteMetadata.navMenu.map((menuItem) => {
             return (
-                <li class="inline-block mx-4"><a href={menuItem.url}>{menuItem.title}</a></li>
+                <li><a href={menuItem.url}>{menuItem.title}</a></li>
             )
         })}
     </menu>
 </nav>
+
+<style>
+    nav {
+        margin-bottom: 1rem;
+    }
+    menu {
+        margin-inline-start: 0;
+        padding-inline-start: 0;
+    }
+    li {
+        display: inline;
+        padding-right: 1rem;
+    }
+</style>

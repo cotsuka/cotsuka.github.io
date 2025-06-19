@@ -14,7 +14,7 @@ const sortedReviews = reviews.sort((a, b) => b.data.date - a.data.date);
             const date = formatDate(review.data.date);
             return (
                 <dt><a href={`/reviews/${date}-${review.id}/`}>{review.data.title}</a></dt>
-                <dd class="mt-0">
+                <dd>
                     {review.data.description}
                 </dd>
             )

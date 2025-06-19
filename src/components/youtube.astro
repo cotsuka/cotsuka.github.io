@@ -11,9 +11,17 @@ const videoID = url.searchParams.get("v");
 ---
 
 <iframe
-    class="w-full aspect-video"
+    class="youtube-embed"
     src={`https://www.youtube-nocookie.com/embed/${videoID}`}
     title={title}
     loading="lazy"
     allow="fullscreen"
 ></iframe>
+
+<style>
+    iframe.youtube-embed {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        display: block;
+    }
+</style>

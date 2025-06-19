@@ -11,5 +11,20 @@ const { image, alt, formats = ['avif', 'webp'] } = Astro.props;
 ---
 <figure>
     <Picture src={image} alt={alt} formats={formats} />
-    <figcaption class="mt-0"><slot /></figcaption>
+    <figcaption><slot /></figcaption>
 </figure>
+
+<style>
+    figure {
+        margin-bottom: 1rem;
+    }
+    figcaption {
+        font-size: 0.8rem;
+    }
+    img {
+        height: auto;
+    }
+    figcaption {
+        font-style: italic;
+    }
+</style>

@@ -1,7 +1,8 @@
 ---
-import '@styles/global.css';
+import '@styles/reset.css';
 import '@fontsource-variable/public-sans';
 import '@fontsource-variable/source-code-pro';
+import '@styles/style.css';
 import HeadBase from '@components/head/base.astro';
 import HeadPage from '@components/head/page.astro';
 import Heading from '@components/heading.astro';
@@ -18,23 +19,16 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
-		<slot name="pre-head" />
 		<HeadBase title={title} description={description} />
 		<slot name="post-head">
 			<HeadPage />
 		</slot>
 	</head>
-	<body class="antialiased md:subpixel-antialiased w-screen p-4 bg-white dark:bg-gray-900">
-		<div id="container" class="max-w-3xl mx-auto prose dark:prose-invert prose-headings:mb-0">
-			<Heading />
-			<main>
-				<slot />
-			</main>
-			<footer>
-				<slot name="pre-footer" />
-				<Footer />
-				<slot name="post-footer" />
-			</footer>
-		</div>
+	<body>
+		<Heading />
+		<main>
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>

@@ -4,5 +4,11 @@ import Base from '@layouts/base.astro';
 
 <Base title="Bitcoin" description="Description">
     <h2>Bitcoin</h2>
-    <object class="w-full" data="/public/bitcoin.pdf" type="application/pdf" height="890" />
+    <object data="/public/bitcoin.pdf" type="application/pdf" height="890" />
 </Base>
+
+<style>
+    object {
+        width: 100%;
+    }
+</style>
