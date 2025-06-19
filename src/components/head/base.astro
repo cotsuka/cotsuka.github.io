@@ -31,8 +31,8 @@ const { title, description } = Astro.props;
 <meta name="twitter:creator" content={SiteMetadata.socials.x.username} />
 <meta name="twitter:title" content={`${title} | ${SiteMetadata.title}`} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" property="og:image" content={`https://v1.screenshot.11ty.dev/${canonicalURL}opengraph/9:16/`} />
-<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:image" property="og:image" content={new URL(`opengraph/?title=${title}`, Astro.site)} />
+<meta property="og:image:type" content="image/svg+xml" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="en_US" />
@@ -41,5 +41,5 @@ const { title, description } = Astro.props;
 <meta property="og:updated_time" content={new Date().toISOString()} />
 <title>{`${title} | ${SiteMetadata.title}`}</title>
 <link rel="canonical" href={canonicalURL} />
-<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="sitemap" href={new URL("sitemap-index.xml", Astro.site)} />
 <link rel="alternate" type="application/rss+xml" title={SiteMetadata.title} href={new URL("feed.xml", Astro.site)} />
