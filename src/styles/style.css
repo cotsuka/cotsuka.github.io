@@ -1,7 +1,9 @@
 html {
   background-color: #ffffff;
   color: #000000;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans Variable", sans-serif;
+  font-feature-settings: "kern" 1, "kern";
+  font-kerning: normal;
   font-weight: 400;
   font-size: 100%;
   line-height: 1.1rem;
@@ -39,6 +41,9 @@ menu ul, menu ol, menu dl, menu menu {
   /* nested lists won't have margins*/
   margin-bottom: 0;
 }
+img {
+  height: auto;
+}
 dd {
   margin-bottom: 0.2rem;
   padding-left: 1.5rem;
@@ -50,6 +55,8 @@ blockquote {
 }
 table {
   margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   border: 0.1rem solid;
   border-collapse: collapse;
 }
@@ -58,4 +65,12 @@ th, td {
   text-align: center;
   vertical-align: middle;
   padding: 0.5rem;
+}
+code {
+  font-family: "Source Code Variable", monospace;
+}
+.astro-code, .astro-code span {
+  font-family: "Source Code Variable", monospace;
+  margin-bottom: 1rem;
+  padding: 0.1rem;
 }
