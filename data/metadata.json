@@ -8,9 +8,9 @@
         "email": "cameron@otsuka.haus"
     },
     "navMenu": [
-        { "title": "Articles", "url": "/articles/" },
-        { "title": "Links", "url": "/links/" },
-        { "title": "Reviews", "url": "/reviews/" }
+        { "title": "Articles", "url": "/articles" },
+        { "title": "Links", "url": "/links" },
+        { "title": "Reviews", "url": "/reviews" }
     ],
     "contributions": [
         {

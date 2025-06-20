@@ -14,7 +14,7 @@ export async function getStaticPaths() {
         params: { date: formatDate(article.data.date), id: article.id },
         props: { article },
     }));
-}
+};
 
 const { article } = Astro.props;
 const { Content } = await render(article);
