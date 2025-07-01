@@ -30,7 +30,8 @@ const reviews = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/reviews' }),
     schema: z.object({
         title: z.string(),
-        description: z.string(),
+        description: z.string().optional(),
+        rating: z.number().gt(0).lte(5).step(1),
         date: z.coerce.date(),
         modified: z.coerce.date().optional(),
         tags: z.array(z.string()).optional(),

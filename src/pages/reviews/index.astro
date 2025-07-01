@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/format.ts';
 import Base from '@layouts/base.astro';
+import RatingDistribution from '@components/ratingdistribution/component.astro';
+import Rating from '@components/ui/rating.astro';
 
 const reviews = await getCollection('reviews');
 const sortedReviews = reviews.sort((a, b) => b.data.date - a.data.date);
@@ -9,15 +11,21 @@ const sortedReviews = reviews.sort((a, b) => b.data.date - a.data.date);
 
 <Base title="Reviews" description="Description">
     <h2>Reviews</h2>
-    <dl>
-        {sortedReviews.map((review) => {
-            const date = formatDate(review.data.date);
-            return (
-                <dt><a href={`/reviews/${date}-${review.id}/`}>{review.data.title}</a></dt>
-                <dd>
-                    {review.data.description}
-                </dd>
-            )
-        })}
-    </dl>
+    <section>
+        <h3>Rating Distribution</h3>
+        <RatingDistribution />
+    </section>
+    <section>
+        <dl>
+            {sortedReviews.map((review) => {
+                const date = formatDate(review.data.date);
+                return (
+                    <dt><a href={`/reviews/${date}-${review.id}/`}>{review.data.title}</a></dt>
+                    <dd>
+                        <Rating rating={review.data.rating} />
+                    </dd>
+                )
+            })}
+        </dl>
+    </section>
 </Base>

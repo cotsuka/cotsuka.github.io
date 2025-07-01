@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry } from 'astro:content';
 import { formatDate } from '@utils/format.ts';
+import Rating from '@components/ui/rating.astro';
 
 interface Props {
     entry: CollectionEntry<'articles'> | CollectionEntry<'links'> | CollectionEntry<'reviews'>
@@ -12,7 +13,8 @@ const date = formatDate(entry.data.date);
 <details>
     <summary>Metadata</summary>
     <ul>
-        <li>{entry.collection == 'reviews' ? `Rating` : `Description`}: {entry.data.description}</li>
+        {entry.data.description && <li>Description: {entry.data.description}</li>}
+        {entry.data.rating && <li>Rating: <Rating rating={entry.data.rating} /></li>}
         <li>Published: <time datetime="">{date}</time></li>
         <li>Last Modified: <time datetime="">{entry.data.modified ? formatDate(entry.data.modified) : date}</time></li>
         <li>Tags: {entry.data.tags.join(', ')}</li>

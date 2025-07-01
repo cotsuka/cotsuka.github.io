@@ -1,0 +1,12 @@
+---
+interface Props {
+    rating: number
+}
+
+const { rating } = Astro.props;
+const filledStars = '★'.repeat(rating);
+const unfilledStars = '☆'.repeat(5 - rating);
+---
+<Fragment>
+    {filledStars}{unfilledStars}
+</Fragment>
