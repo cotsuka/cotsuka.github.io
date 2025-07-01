@@ -67,10 +67,11 @@ th, td {
   padding: 0.5rem;
 }
 code {
-  font-family: "Source Code Variable", monospace;
+  font-family: "Source Code Pro Variable", monospace;
+  font-size: 0.9rem;
 }
 .astro-code, .astro-code span {
-  font-family: "Source Code Variable", monospace;
+  font-family: "Source Code Pro Variable", monospace;
   margin-bottom: 1rem;
   padding: 0.1rem;
 }
