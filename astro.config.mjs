@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 
 export default defineConfig({
-  site: 'https://otsuka.haus',
+  site: 'https://cameron.otsuka.systems',
   integrations: [mdx(), sitemap(), react()],
   markdown: {
     shikiConfig: {
