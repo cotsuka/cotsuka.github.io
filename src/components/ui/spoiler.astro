@@ -1,0 +1,18 @@
+<details class="spoiler">
+  <summary>Spoiler</summary>
+  <slot />
+</details>
+
+<style>
+    details.spoiler {
+        color: #ffffff;
+        background-color: #000000;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+    }
+    details.spoiler[open] {
+        color: unset;
+        background-color: unset;
+        border: 0.1rem solid;
+    }
+</style>
