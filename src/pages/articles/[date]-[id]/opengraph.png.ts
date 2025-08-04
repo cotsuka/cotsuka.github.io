@@ -13,13 +13,12 @@ export async function getStaticPaths() {
 };
 
 async function loadFont() {
-  const url = `https://cdn.jsdelivr.net/fontsource/fonts/public-sans@latest/latin-400-normal.ttf`
-  const font = await fetch(url);
-  if (font) {
-      return await font.arrayBuffer()
+    const url = `https://cdn.jsdelivr.net/fontsource/fonts/public-sans@latest/latin-400-normal.ttf`
+    const font = await fetch(url);
+    if (font) {
+        return await font.arrayBuffer();
     }
-
-  throw new Error('failed to load font data')
+    throw new Error('failed to load font data');
 };
 
 export const GET: APIRoute = async ({ props }) => {
@@ -94,15 +93,15 @@ export const GET: APIRoute = async ({ props }) => {
             ],
         },
     }
-  return new ImageResponse(element, {
-    width: 1200,
-    height: 630,
-    fonts: [
-        {
-            name: 'Public Sans Variable',
-            data: await loadFont(),
-            style: 'normal'
-        }
-    ]
-  });
+    return new ImageResponse(element, {
+        width: 1200,
+        height: 630,
+        fonts: [
+            {
+                name: 'Public Sans Variable',
+                data: await loadFont(),
+                style: 'normal'
+            }
+        ]
+    });
 };
