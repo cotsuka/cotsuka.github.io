@@ -48,8 +48,8 @@
         },
         "activitypub": {
             "title": "ActivityPub",
-            "url": "https://otsuka.social/@cameron",
-            "username": "@cameron@otsuka.social"
+            "url": "https://otsuka.systems/@cameron",
+            "username": "@cameron@otsuka.systems"
         },
         "bluesky": {
             "title": "Bluesky",
