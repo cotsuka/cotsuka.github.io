@@ -26,15 +26,15 @@
     "@astrojs/sitemap": "3.6.0",
     "@fontsource-variable/public-sans": "^5.2.7",
     "@fontsource-variable/source-code-pro": "^5.2.7",
-    "@types/react": "^19.1.14",
-    "@types/react-dom": "^19.1.9",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
     "@vercel/og": "^0.6.8",
     "astro": "5.14.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "recharts": "^3.2.1"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.22"
+    "@types/bun": "^1.2.23"
   }
 }
