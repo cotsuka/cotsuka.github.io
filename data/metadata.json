@@ -14,6 +14,10 @@
     ],
     "contributions": [
         {
+            "title": "Git",
+            "url": "https://git.otsuka.systems"
+        },
+        {
             "title": "Arch User Repository",
             "url": "https://aur.archlinux.org/packages?O=0&SeB=M&K=cotsuka&outdated=&SB=p&SO=d&PP=50&submit=Go"
         },
