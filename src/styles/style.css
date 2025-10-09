@@ -43,6 +43,12 @@ menu ul, menu ol, menu dl, menu menu {
 }
 img {
   height: auto;
+  filter: grayscale(1);
+  transition: all 0.2s linear;
+}
+img:hover {
+  filter: grayscale(0);
+  transition: all 0.5s linear;
 }
 dd {
   margin-bottom: 0.5rem;
