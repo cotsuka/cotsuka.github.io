@@ -6,7 +6,7 @@ rating: 2
 tags:
 - movie
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/burning-2018/
+  Letterboxd: https://letterboxd.com/cotsuka/film/f1/
 ---
 
 - this is brad pitt's top gun
