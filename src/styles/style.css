@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 html {
   background-color: #ffffff;
   color: #000000;
@@ -6,6 +10,7 @@ html {
   font-kerning: normal;
   font-weight: 400;
   font-size: 100%;
+  scrollbar-gutter: stable both-edges;
 }
 body {
   max-width: 45rem;
@@ -48,7 +53,7 @@ img {
 }
 img:hover {
   filter: grayscale(0);
-  transition: all 0.5s linear;
+  transition: all 0.4s linear;
 }
 dd {
   margin-bottom: 0.5rem;
