@@ -7,8 +7,13 @@ export default function Chart({ chartData }) {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
-                <Tooltip />
-                <Bar dataKey="count" />
+                <Tooltip          
+                    contentStyle={{ color: "light-dark(#000000, #000000)" }}
+                    itemStyle={{ color: "light-dark(#000000, #000000)" }}
+                    labelStyle={{ color: "light-dark(#000000, #000000)" }}
+                    wrapperStyle={{ color: "light-dark(#000000, #000000)" }}
+                />
+                <Bar dataKey="count" fill="light-dark(#000000, #ffffff)" />
             </BarChart>
         </ResponsiveContainer>
     )
