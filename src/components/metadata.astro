@@ -32,12 +32,10 @@ const date = formatDate(entry.data.date);
         font-size: 0.8rem;
         &::details-content {
             opacity: 0;
-            block-size: 0;
         }
         &[open]::details-content {
             opacity: 1;
-            block-size: auto;
-            transition: content-visibility 0.4s allow-discrete, opacity 0.4s, block-size 0.4s;
+            transition: all 0.4s linear;
         }
     }
     summary:hover {
