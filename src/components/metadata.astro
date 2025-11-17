@@ -1,24 +1,24 @@
 ---
-import { type CollectionEntry } from 'astro:content';
+import { type InferEntrySchema } from 'astro:content';
 import { formatDate } from '@utils/format.ts';
 import Rating from '@components/ui/rating.astro';
 
 interface Props {
-    entry: CollectionEntry<'articles'> | CollectionEntry<'links'> | CollectionEntry<'reviews'>
+    entryData: InferEntrySchema<'articles'> | InferEntrySchema<'roundups'> | InferEntrySchema<'reviews'>
 }
 
-const { entry } = Astro.props;
-const date = formatDate(entry.data.date);
+const { entryData } = Astro.props;
+const date = formatDate(entryData.date);
 ---
 <details>
     <summary>Metadata</summary>
     <ul>
-        {entry.data.description && <li>Description: {entry.data.description}</li>}
-        {entry.data.rating && <li>Rating: <Rating rating={entry.data.rating} /></li>}
+        {entryData.description && <li>Description: {entryData.description}</li>}
+        {entryData.rating && <li>Rating: <Rating rating={entryData.rating} /></li>}
         <li>Published: <time datetime="">{date}</time></li>
-        <li>Last Modified: <time datetime="">{entry.data.modified ? formatDate(entry.data.modified) : date}</time></li>
-        <li>Tags: {entry.data.tags.join(', ')}</li>
-        {entry.data.posse && <li>POSSE: {Object.entries(entry.data.posse).map((site) => (
+        <li>Last Modified: <time datetime="">{entryData.modified ? formatDate(entryData.modified) : date}</time></li>
+        {entryData.tags && <li>Tags: {entryData.tags.join(', ')}</li>}
+        {entryData.posse && <li>POSSE: {Object.entries(entryData.posse).map((site) => (
             <Fragment>
                 <a href={site[1]}>{site[0]}</a>&nbsp;
             </Fragment>

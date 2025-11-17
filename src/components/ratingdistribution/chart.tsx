@@ -1,6 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip } from 'recharts';
 
-export default function Chart({ chartData }) {
+export default function Chart({ chartData }: { chartData: { name: string, count: number }[] }) {
     return (
         <ResponsiveContainer width="100%" height={150}>
             <BarChart data={chartData}>

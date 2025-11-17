@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Materialists
 date: 2025-08-14
 modified: 2025-08-15
 rating: 2
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/materialists/
 ---

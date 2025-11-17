@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Jurassic Park
 date: 2025-09-10
 modified: 2025-09-13
 rating: 5
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/jurassic-park/
 ---

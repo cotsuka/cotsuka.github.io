@@ -1,9 +1,9 @@
 ---
-import SiteMetadata from '@data/metadata.json';
+import { menuItems } from '@utils/globals.ts';
 ---
 <nav>
     <menu>
-        {SiteMetadata.navMenu.map((menuItem) => {
+        {menuItems.map((menuItem) => {
             return (
                 <li><a href={menuItem.url}>{menuItem.title}</a></li>
             )

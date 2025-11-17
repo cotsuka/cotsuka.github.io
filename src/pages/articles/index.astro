@@ -4,7 +4,7 @@ import { formatDate } from '@utils/format.ts';
 import Base from '@layouts/base.astro';
 
 const articles = await getCollection('articles');
-const sortedArticles = articles.sort((a, b) => b.data.date - a.data.date);
+const sortedArticles = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Base title="Articles" description="Description">

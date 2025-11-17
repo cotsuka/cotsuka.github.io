@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Caught Stealing
 date: 2025-09-12
 modified: 2025-09-13
 rating: 2
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/caught-stealing/
 ---

@@ -13,8 +13,8 @@ const articles = defineCollection({
     })
 });
 
-const links = defineCollection({
-    loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/links' }),
+const roundups = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/build-weekly-roundup' }),
     schema: z.object({
         title: z.string(),
         href: z.string().url(),
@@ -26,9 +26,17 @@ const links = defineCollection({
     })
 });
 
+const ReviewType = z.enum([
+    "game",
+    "movie",
+    "music",
+    "show"
+])
+
 const reviews = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/reviews' }),
     schema: z.object({
+        type: ReviewType,
         title: z.string(),
         description: z.string().optional(),
         rating: z.number().gt(0).lte(5).step(1),
@@ -39,4 +47,4 @@ const reviews = defineCollection({
     })
 });
 
-export const collections = { articles, links, reviews };
+export const collections = { articles, roundups, reviews };

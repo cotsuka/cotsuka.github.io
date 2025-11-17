@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Warfare
 date: 2025-04-11
 modified: 2025-04-11
 rating: 4
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/warfare/
 ---

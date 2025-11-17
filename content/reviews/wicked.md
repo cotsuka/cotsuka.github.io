@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Wicked
 date: 2024-11-29
 modified: 2025-06-04
 rating: 4
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/wicked-2024/
 ---

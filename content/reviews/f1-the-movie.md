@@ -1,10 +1,9 @@
 ---
+type: movie
 title: "F1: The Movie"
 date: 2025-10-16
 modified: 2025-10-17
 rating: 2
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/f1/
 ---

@@ -1,5 +1,5 @@
 ---
-import SiteMetadata from '@data/metadata.json';
+import { siteAuthor, socials } from '@utils/globals.ts';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -7,13 +7,13 @@ const currentYear = new Date().getFullYear();
     <hr />
     <address>
         <menu>
-            {Object.keys(SiteMetadata.socials).map((social) => (
-                <li><a href={SiteMetadata.socials[social].url} rel="me">{SiteMetadata.socials[social].title}</a></li>
+            {Object.keys(socials).map((platform) => (
+                <li><a href={socials[platform].url} rel="me">{socials[platform].title}</a></li>
             ))}
         </menu>
     </address>
     <p>
-        &copy; {currentYear} {SiteMetadata.author.name}.<br>
+        &copy; {currentYear} {siteAuthor.name}.<br>
         All views my own. Not financial advice. Links, citations, and other references are not endorsements. Content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
     </p>
 </footer>

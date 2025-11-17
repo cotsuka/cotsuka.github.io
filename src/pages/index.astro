@@ -1,7 +1,29 @@
 ---
-import SiteMetadata from '@data/metadata.json';
 import Base from '@layouts/base.astro';
 import Callout from '@components/ui/callout.astro';
+
+const contributions = [
+	{
+		"title": "Git",
+		"url": "https://git.otsuka.systems"
+	},
+	{
+		"title": "Arch User Repository",
+		"url": "https://aur.archlinux.org/packages?O=0&SeB=M&K=cotsuka&outdated=&SB=p&SO=d&PP=50&submit=Go"
+	},
+	{
+		"title": "ArchWiki",
+		"url": "https://wiki.archlinux.org/title/Special:Contributions/Cotsuka"
+	},
+	{
+		"title": "GitHub",
+		"url": "https://github.com/search?q=author%3Acotsuka&type=pullrequests"
+	},
+	{
+		"title": "Wikipedia",
+		"url": "https://en.wikipedia.org/wiki/Special:Contributions/Cotsuka"
+	}
+];
 ---
 
 <Base title="Home" description="Description">
@@ -15,7 +37,7 @@ import Callout from '@components/ui/callout.astro';
     <section>
 		<h2>Contributions</h2>
 		<ul>
-			{SiteMetadata.contributions.map((contribution) => {
+			{contributions.map((contribution) => {
 				return (
 					<li><a href={contribution.url}>{contribution.title}</a></li>
 				)

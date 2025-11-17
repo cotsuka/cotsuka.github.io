@@ -1,10 +1,9 @@
 ---
+type: movie
 title: It's What's Inside
 date: 2025-03-01
 modified: 2025-03-02
 rating: 2
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/its-whats-inside/
 ---

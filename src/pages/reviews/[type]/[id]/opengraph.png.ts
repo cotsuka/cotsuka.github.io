@@ -1,14 +1,13 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { formatDate } from '@utils/format.ts';
 import { ImageResponse } from '@vercel/og';
-import SiteMetadata from '@data/metadata.json';
+import { siteAuthor } from '@utils/globals.ts';
 
 export async function getStaticPaths() {
     const reviews = await getCollection('reviews');
-    return reviews.map(article => ({
-        params: { date: formatDate(article.data.date), id: article.id },
-        props: { article },
+    return reviews.map(review => ({
+        params: { type: review.data.type, id: review.id },
+        props: { review },
     }));
 };
 
@@ -46,7 +45,7 @@ export const GET: APIRoute = async ({ props }) => {
                             fontWeight: 600,
                             marginBottom: 20,
                         },
-                        children: props.article.data.title,
+                        children: props.review.data.title,
                     },
                 },
                 {
@@ -56,7 +55,7 @@ export const GET: APIRoute = async ({ props }) => {
                             fontSize: 32,
                             marginBottom: 40,
                         },
-                        children: props.article.data.description,
+                        children: props.review.data.description,
                     },
                 },
                 {
@@ -86,13 +85,15 @@ export const GET: APIRoute = async ({ props }) => {
                                     },
                                 },
                             },
-                            SiteMetadata.author.name,
+                            siteAuthor.name,
                         ],
                     },
                 },
             ],
         },
+        key: null
     }
+
     return new ImageResponse(element, {
         width: 1200,
         height: 630,

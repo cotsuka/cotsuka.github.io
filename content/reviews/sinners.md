@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Sinners
 date: 2025-05-02
 modified: 2025-05-02
 rating: 4
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/sinners-2025/
 ---

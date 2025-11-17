@@ -4,7 +4,7 @@ import Chart from './chart.tsx';
 
 const reviews = await getCollection('reviews');
 
-const ratingCounts = {
+const ratingCounts: { [rating: number]: number } = {
     1: 0,
     2: 0,
     3: 0,
@@ -16,8 +16,8 @@ reviews.forEach(review => {
     ratingCounts[rating]++;
 });
 const chartData = Object.keys(ratingCounts).map(rating => ({
-    name: `${rating}`,
-    count: ratingCounts[rating]
+    name: rating,
+    count: ratingCounts[parseInt(rating)]
 }));
 ---
 <Chart chartData={chartData} client:load />

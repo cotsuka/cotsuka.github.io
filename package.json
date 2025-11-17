@@ -1,7 +1,7 @@
 {
   "name": "cotsuka.github.io",
   "description": "The collection of Cameron's thoughts.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -20,21 +20,21 @@
   "license": "MIT",
   "homepage": "https://github.com/cotsuka/cotsuka.github.io",
   "dependencies": {
-    "@astrojs/mdx": "4.3.7",
-    "@astrojs/react": "4.4.0",
-    "@astrojs/rss": "^4.0.12",
+    "@astrojs/mdx": "4.3.10",
+    "@astrojs/react": "4.4.2",
+    "@astrojs/rss": "4.0.13",
     "@astrojs/sitemap": "3.6.0",
     "@fontsource-variable/public-sans": "^5.2.7",
     "@fontsource-variable/source-code-pro": "^5.2.7",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
     "@vercel/og": "^0.6.8",
-    "astro": "5.14.5",
+    "astro": "5.15.8",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "recharts": "^3.2.1"
+    "recharts": "^3.4.1"
   },
   "devDependencies": {
-    "@types/bun": "^1.3.0"
+    "@types/bun": "^1.3.2"
   }
 }

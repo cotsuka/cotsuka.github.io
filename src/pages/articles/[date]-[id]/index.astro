@@ -27,6 +27,6 @@ const { Content } = await render(article);
      tags={article.data.tags}
 >
     <h2>{article.data.title}</h2>
-    <Metadata entry={article} />
+    <Metadata entryData={article.data} />
     <Content />
 </Article>

@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/format.ts';
-import SiteMetadata from '@data/metadata.json';
+import { siteSubtitle, siteTitle } from '@utils/globals.ts';
 
 export async function GET(context: any) {
   const articles = await getCollection('articles');
@@ -11,25 +11,28 @@ export async function GET(context: any) {
     description: article.data.description,
     link: `/articles/${formatDate(article.data.date)}-${article.id}/`
   }));
-  const links = await getCollection('links');
-  const linkItems = links.map((link) => ({
-    title: link.data.title,
-    pubDate: link.data.date,
-    description: link.data.description,
-    link: `/links/${formatDate(link.data.date)}-${link.id}/`
+
+  const roundups = await getCollection('roundups');
+  const roundupItems = roundups.map((roundup) => ({
+    title: roundup.data.title,
+    pubDate: roundup.data.date,
+    description: roundup.data.description,
+    link: `/build-weekly-roundup/${roundup.id}/`
   }));
+
   const reviews = await getCollection('reviews');
   const reviewItems = reviews.map((review) => ({
     title: review.data.title,
     pubDate: review.data.date,
     description: review.data.description,
-    link: `/reviews/${formatDate(review.data.date)}-${review.id}/`
+    link: `/reviews/${review.data.type}/${review.id}/`
   }));
-  const feedItems = [ ...articleItems, ...linkItems, ...reviewItems ];
-  const sortedFeedItems = feedItems.sort((a, b) => b.pubDate - a.pubDate);
+
+  const feedItems = [ ...articleItems, ...roundupItems, ...reviewItems ];
+  const sortedFeedItems = feedItems.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
   return rss({
-    title: SiteMetadata.title,
-    description: SiteMetadata.subtitle,
+    title: siteTitle,
+    description: siteSubtitle,
     site: context.site,
     items: sortedFeedItems
   });

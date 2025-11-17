@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Challengers
 date: 2024-12-24
 modified: 2024-12-26
 rating: 3
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/challengers/
 ---

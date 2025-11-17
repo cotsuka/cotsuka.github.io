@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Nosferatu
 date: 2025-09-09
 modified: 2025-09-13
 rating: 4
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/nosferatu-2024/
 ---

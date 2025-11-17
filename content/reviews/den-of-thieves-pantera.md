@@ -1,10 +1,9 @@
 ---
+type: movie
 title: "Den of Thieves: Pantera"
 date: 2025-10-18
 modified: 2025-10-19
 rating: 1
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/den-of-thieves-2-pantera/
 ---

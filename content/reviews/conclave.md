@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Conclave
 date: 2025-03-02
 modified: 2025-03-18
 rating: 4
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/conclave/
 ---

@@ -1,10 +1,9 @@
 ---
+type: movie
 title: The Boy and the Heron
 date: 2024-12-21
 modified: 2024-12-23
 rating: 5
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/the-boy-and-the-heron/
 ---

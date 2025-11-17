@@ -1,7 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
+import { siteAuthor, siteTitle, socials } from '@utils/globals.ts';
 import FavIcon from '@assets/favicon.ico';
-import SiteMetadata from '@data/metadata.json';
 
 interface Props {
     title: string
@@ -22,15 +22,14 @@ const { title, description } = Astro.props;
 <link rel="icon" type="image/x-icon" href={favIcon.src} />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="light dark" />
-<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; frame-src youtube.com www.youtube.com youtube-noocookie.com www.youtube-nocookie.com" /> -->
-<meta name="title" property="og:title" content={`${title} | ${SiteMetadata.title}`} />
+<meta name="title" property="og:title" content={`${title} | ${siteTitle}`} />
 <meta name="description" property="og:description" content={description} />
-<meta name="author" content={SiteMetadata.author.name} />
+<meta name="author" content={siteAuthor.name} />
 <meta name="generator" content={Astro.generator} />
-<meta name="fediverse:creator" content={SiteMetadata.socials.activitypub.username} />
+<meta name="fediverse:creator" content={socials.activitypub.username} />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:creator" content={SiteMetadata.socials.x.username} />
-<meta name="twitter:title" content={`${title} | ${SiteMetadata.title}`} />
+<meta name="twitter:creator" content={socials.x.username} />
+<meta name="twitter:title" content={`${title} | ${siteTitle}`} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" property="og:image" content={new URL("opengraph.png", canonicalURL)}  />
 <meta property="og:image:type" content="image/png" />
@@ -38,9 +37,9 @@ const { title, description } = Astro.props;
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:url" content={canonicalURL} />
-<meta property="og:site_name" content={`${title} | ${SiteMetadata.title}`} />
+<meta property="og:site_name" content={`${title} | ${siteTitle}`} />
 <meta property="og:updated_time" content={new Date().toISOString()} />
-<title>{`${title} | ${SiteMetadata.title}`}</title>
+<title>{`${title} | ${siteTitle}`}</title>
 <link rel="canonical" href={canonicalURL} />
 <link rel="sitemap" href={new URL("sitemap-index.xml", Astro.site)} />
-<link rel="alternate" type="application/rss+xml" title={SiteMetadata.title} href={new URL("feed.xml", Astro.site)} />
+<link rel="alternate" type="application/rss+xml" title={siteTitle} href={new URL("feed.xml", Astro.site)} />

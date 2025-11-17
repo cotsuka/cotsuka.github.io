@@ -6,7 +6,7 @@ import RatingDistribution from '@components/ratingdistribution/component.astro';
 import Rating from '@components/ui/rating.astro';
 
 const reviews = await getCollection('reviews');
-const sortedReviews = reviews.sort((a, b) => b.data.date - a.data.date);
+const sortedReviews = reviews.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Base title="Reviews" description="Description">
@@ -20,7 +20,7 @@ const sortedReviews = reviews.sort((a, b) => b.data.date - a.data.date);
             {sortedReviews.map((review) => {
                 const date = formatDate(review.data.date);
                 return (
-                    <dt><a href={`/reviews/${date}-${review.id}/`}>{review.data.title}</a></dt>
+                    <dt><a href={`/reviews/${review.data.type}/${review.id}/`}>{review.data.title}</a></dt>
                     <dd>
                         <Rating rating={review.data.rating} />
                     </dd>

@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/format.ts';
 import { ImageResponse } from '@vercel/og';
-import SiteMetadata from '@data/metadata.json';
+import { siteAuthor } from '@utils/globals.ts';
 
 export async function getStaticPaths() {
     const articles = await getCollection('articles');
@@ -86,13 +86,15 @@ export const GET: APIRoute = async ({ props }) => {
                                     },
                                 },
                             },
-                            SiteMetadata.author.name,
+                            siteAuthor.name,
                         ],
                     },
                 },
             ],
         },
+        key: null
     }
+
     return new ImageResponse(element, {
         width: 1200,
         height: 630,

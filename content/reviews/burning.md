@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Burning
 date: 2025-02-28
 modified: 2025-03-02
 rating: 3
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/burning-2018/
 ---

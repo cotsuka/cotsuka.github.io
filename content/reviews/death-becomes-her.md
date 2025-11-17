@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Death Becomes Her
 date: 2025-10-02
 modified: 2025-10-07
 rating: 3
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/death-becomes-her/
 ---

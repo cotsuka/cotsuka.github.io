@@ -1,10 +1,9 @@
 ---
+type: movie
 title: Problemista
 date: 2025-11-04
 modified: 2025-11-06
 rating: 3
-tags:
-- movie
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/problemista/
 ---

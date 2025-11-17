@@ -1,6 +1,5 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import { formatDate } from '@utils/format.ts';
 import Article from '@layouts/article.astro';
 import Metadata from '@components/metadata.astro';
 
@@ -11,23 +10,22 @@ interface Props {
 export async function getStaticPaths() {
     const reviews = await getCollection('reviews');
     return reviews.map(review => ({
-        params: { date: formatDate(review.data.date), id: review.id },
+        params: { type: review.data.type, id: review.id },
         props: { review },
     }));
 }
 
 const { review } = Astro.props;
-const date = formatDate(review.data.date);
 const { Content } = await render(review);
 ---
 <Article
      title={review.data.title}
-     description={review.data.description}
+     description={review.data.description ? review.data.description : ""}
      publishedTime={review.data.date.toISOString()}
      modifiedTime={review.data.modified ? review.data.modified.toISOString() : review.data.date.toISOString()}
      tags={review.data.tags}
 >
     <h2>{review.data.title}</h2>
-    <Metadata entry={review} />
+    <Metadata entryData={review.data} />
     <Content />
 </Article>
