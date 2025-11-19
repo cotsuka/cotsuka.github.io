@@ -10,6 +10,9 @@ export default defineConfig({
   site: 'https://cameron.otsuka.systems',
   integrations: [mdx(), react(), sitemap()],
   markdown: {
+    remarkRehype: {
+      footnoteBackContent: "↩︎",
+    },
     shikiConfig: {
       theme: 'monokai'
     },

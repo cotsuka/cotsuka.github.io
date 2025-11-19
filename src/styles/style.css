@@ -90,3 +90,19 @@ code {
   margin-bottom: 1rem;
   padding: 0.1rem;
 }
+.footnotes {
+  font-size: 0.9rem;
+  border-top: 1px dashed light-dark(#000000, #ffffff);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  word-wrap: normal;
+  border: 0;
+}
