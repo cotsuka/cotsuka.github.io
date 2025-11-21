@@ -13,8 +13,8 @@ const articles = defineCollection({
     })
 });
 
-const roundups = defineCollection({
-    loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/build-weekly-roundup' }),
+const podcasts = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/podcasts' }),
     schema: z.object({
         title: z.string(),
         href: z.string().url(),
@@ -47,4 +47,4 @@ const reviews = defineCollection({
     })
 });
 
-export const collections = { articles, roundups, reviews };
+export const collections = { articles, podcasts, reviews };

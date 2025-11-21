@@ -13,13 +13,13 @@ export async function GET(context: any) {
     categories: (article.data.tags ?? []).concat('articles')
   }));
 
-  const roundups = await getCollection('roundups');
-  const roundupItems = roundups.map((roundup) => ({
-    title: roundup.data.title,
-    link: `/build-weekly-roundup/${roundup.id}/`,
-    pubDate: roundup.data.date,
-    description: roundup.data.description,
-    categories: (roundup.data.tags ?? []).concat('roundups')
+  const podcasts = await getCollection('podcasts');
+  const podcastItems = podcasts.map((podcast) => ({
+    title: podcast.data.title,
+    link: `/podcasts/${podcast.id}/`,
+    pubDate: podcast.data.date,
+    description: podcast.data.description,
+    categories: (podcast.data.tags ?? []).concat('podcasts')
   }));
 
   const reviews = await getCollection('reviews');
@@ -31,7 +31,7 @@ export async function GET(context: any) {
     categories: (review.data.tags ?? []).concat(review.data.type).concat('reviews')
   }));
 
-  const feedItems = [ ...articleItems, ...roundupItems, ...reviewItems ];
+  const feedItems = [ ...articleItems, ...podcastItems, ...reviewItems ];
   const sortedFeedItems = feedItems.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
   return rss({
     title: siteTitle,

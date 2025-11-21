@@ -6,7 +6,7 @@ export const siteAuthor = {
 }
 
 export const menuItems: {title: string, url: string}[] = [
-    { "title": "Podcast", "url": "/build-weekly-roundup" },
+    { "title": "Podcasts", "url": "/podcasts" },
     { "title": "Articles", "url": "/articles" },
     { "title": "Reviews", "url": "/reviews" }
 ];

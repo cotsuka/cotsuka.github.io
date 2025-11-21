@@ -4,10 +4,10 @@ import { ImageResponse } from '@vercel/og';
 import { siteAuthor } from '@utils/globals.ts';
 
 export async function getStaticPaths() {
-    const roundups = await getCollection('roundups');
-    return roundups.map(roundup => ({
-        params: { id: roundup.id },
-        props: { roundup },
+    const podcasts = await getCollection('podcasts');
+    return podcasts.map(podcast => ({
+        params: { id: podcast.id },
+        props: { podcast },
     }));
 };
 
@@ -45,7 +45,7 @@ export const GET: APIRoute = async ({ props }) => {
                             fontWeight: 600,
                             marginBottom: 20,
                         },
-                        children: props.roundup.data.title,
+                        children: props.podcast.data.title,
                     },
                 },
                 {
@@ -55,7 +55,7 @@ export const GET: APIRoute = async ({ props }) => {
                             fontSize: 32,
                             marginBottom: 40,
                         },
-                        children: props.roundup.data.description,
+                        children: props.podcast.data.description,
                     },
                 },
                 {

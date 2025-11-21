@@ -4,7 +4,7 @@ import { formatDate } from '@utils/format.ts';
 import Rating from '@components/ui/rating.astro';
 
 interface Props {
-    entryData: InferEntrySchema<'articles'> | InferEntrySchema<'roundups'> | InferEntrySchema<'reviews'>
+    entryData: InferEntrySchema<'articles'> | InferEntrySchema<'podcasts'> | InferEntrySchema<'reviews'>
 }
 
 const { entryData } = Astro.props;

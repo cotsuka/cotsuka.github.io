@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import { formatDate } from '@utils/format.ts';
+import Base from '@layouts/base.astro';
+
+const podcasts = await getCollection('podcasts');
+const sortedPodcasts = podcasts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Base title="Podcasts" description="Description">
+    <h2>Podcasts</h2>
+    <dl>
+        {sortedPodcasts.map((podcast) => {
+            const date = formatDate(podcast.data.date);
+            return (
+                <dt><a href={`/podcasts/${podcast.id}/`}>{podcast.data.title}</a></dt>
+                <dd>
+                    {podcast.data.description}
+                </dd>
+            )
+        })}
+    </dl>
+</Base>
