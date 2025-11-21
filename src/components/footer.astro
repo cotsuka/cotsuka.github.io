@@ -2,7 +2,6 @@
 import { siteAuthor, socials } from '@utils/globals.ts';
 import { Icon } from 'astro-icon/components';
 
-const feedURL = new URL("feed.xml", Astro.site);
 const currentYear = new Date().getFullYear();
 ---
 <footer>
@@ -15,7 +14,7 @@ const currentYear = new Date().getFullYear();
         </menu>
     </address>
     <p>
-        &copy; {currentYear} {siteAuthor.name}. <a href={feedURL}><Icon name="mdi:rss" /></a>
+        &copy; {currentYear} {siteAuthor.name}. <a href="/feed.xml"><Icon name="mdi:rss" /></a>
     </p>
     <p>
         All views my own. Not financial advice. Links, citations, and other references are not endorsements. Content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
