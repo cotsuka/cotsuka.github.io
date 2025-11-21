@@ -23,7 +23,6 @@ const podcasts = defineCollection({
     schema: z.object({
         type: PodcastType,
         title: z.string(),
-        href: z.string().url(),
         description: z.string(),
         date: z.coerce.date(),
         modified: z.coerce.date().optional(),

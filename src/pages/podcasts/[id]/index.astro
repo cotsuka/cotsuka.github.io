@@ -25,7 +25,7 @@ const { Content } = await render(podcast);
      modifiedTime={podcast.data.modified ? podcast.data.modified.toISOString() : podcast.data.date.toISOString()}
      tags={podcast.data.tags}
 >
-    <a href={podcast.data.href}><h2>{podcast.data.title}</h2></a>
+    <h2>{podcast.data.title}</h2>
     <Metadata entryData={podcast.data} />
     <Content />
 </Article>
