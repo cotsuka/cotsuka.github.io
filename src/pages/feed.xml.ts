@@ -2,6 +2,7 @@ import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { formatDate } from '@utils/format.ts';
 import { siteSubtitle, siteTitle } from '@utils/globals.ts';
+import createSlug from '@utils/createSlug.ts';
 
 export async function GET(context: any) {
   const articles = await getCollection('articles');
@@ -16,10 +17,10 @@ export async function GET(context: any) {
   const podcasts = await getCollection('podcasts');
   const podcastItems = podcasts.map((podcast) => ({
     title: podcast.data.title,
-    link: `/podcasts/${podcast.id}/`,
+    link: `/podcasts/${createSlug(podcast.data.show)}/${podcast.id}/`,
     pubDate: podcast.data.date,
-    description: podcast.data.description,
-    categories: (podcast.data.tags ?? []).concat(podcast.data.type).concat('podcasts')
+    description: `${podcast.data.show} - ${podcast.data.description}`,
+    categories: (podcast.data.tags ?? []).concat(podcast.data.type).concat(podcast.data.show).concat('podcasts')
   }));
 
   const reviews = await getCollection('reviews');

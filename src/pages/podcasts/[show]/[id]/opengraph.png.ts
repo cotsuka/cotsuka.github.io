@@ -2,11 +2,12 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { ImageResponse } from '@vercel/og';
 import { siteAuthor } from '@utils/globals.ts';
+import createSlug from '@utils/createSlug.ts';
 
 export async function getStaticPaths() {
     const podcasts = await getCollection('podcasts');
     return podcasts.map(podcast => ({
-        params: { id: podcast.id },
+        params: { show: createSlug(podcast.data.show), id: podcast.id },
         props: { podcast },
     }));
 };
@@ -55,7 +56,7 @@ export const GET: APIRoute = async ({ props }) => {
                             fontSize: 32,
                             marginBottom: 40,
                         },
-                        children: props.podcast.data.description,
+                        children: `${props.podcast.data.show} - ${props.podcast.data.description}`,
                     },
                 },
                 {

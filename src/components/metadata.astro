@@ -13,6 +13,7 @@ const date = formatDate(entryData.date);
 <details>
     <summary>Metadata</summary>
     <ul>
+        {entryData.show && <li>Show: {entryData.show}</li>}
         {entryData.description && <li>Description: {entryData.description}</li>}
         {entryData.rating && <li>Rating: <Rating rating={entryData.rating} /></li>}
         <li>Published: <time datetime="">{date}</time></li>
