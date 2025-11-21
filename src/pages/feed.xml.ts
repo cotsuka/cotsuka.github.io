@@ -17,7 +17,7 @@ export async function GET(context: any) {
   const podcasts = await getCollection('podcasts');
   const podcastItems = podcasts.map((podcast) => ({
     title: podcast.data.title,
-    link: `/podcasts/${createSlug(podcast.data.show)}/${podcast.id}/`,
+    link: `/podcasts/${createSlug(podcast.data.show)}-${podcast.id}/`,
     pubDate: podcast.data.date,
     description: `${podcast.data.show} - ${podcast.data.description}`,
     categories: (podcast.data.tags ?? []).concat(podcast.data.type).concat(podcast.data.show).concat('podcasts')

@@ -14,7 +14,7 @@ const sortedPodcasts = podcasts.sort((a, b) => b.data.date.getTime() - a.data.da
         {sortedPodcasts.map((podcast) => {
             const date = formatDate(podcast.data.date);
             return (
-                <dt><a href={`/podcasts/${createSlug(podcast.data.show)}/${podcast.id}/`}>{podcast.data.title}</a></dt>
+                <dt><a href={`/podcasts/${createSlug(podcast.data.show)}-${podcast.id}/`}>{podcast.data.title}</a></dt>
                 <dd>
                     {podcast.data.show} - {podcast.data.description}
                 </dd>
