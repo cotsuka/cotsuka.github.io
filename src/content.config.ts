@@ -13,9 +13,15 @@ const articles = defineCollection({
     })
 });
 
+const PodcastType = z.enum([
+    "audio",
+    "video"
+])
+
 const podcasts = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/podcasts' }),
     schema: z.object({
+        type: PodcastType,
         title: z.string(),
         href: z.string().url(),
         description: z.string(),

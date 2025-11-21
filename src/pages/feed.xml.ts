@@ -19,7 +19,7 @@ export async function GET(context: any) {
     link: `/podcasts/${podcast.id}/`,
     pubDate: podcast.data.date,
     description: podcast.data.description,
-    categories: (podcast.data.tags ?? []).concat('podcasts')
+    categories: (podcast.data.tags ?? []).concat(podcast.data.type).concat('podcasts')
   }));
 
   const reviews = await getCollection('reviews');
