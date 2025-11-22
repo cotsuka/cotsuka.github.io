@@ -1,6 +1,6 @@
 {
   "name": "cotsuka.github.io",
-  "description": "The collection of Cameron's thoughts.",
+  "description": "Cameron Otsuka's personal site featuring Bitcoin analysis, capital market insights, and thoughtful commentary on technology, privacy, and culture.",
   "version": "2.1.0",
   "type": "module",
   "scripts": {

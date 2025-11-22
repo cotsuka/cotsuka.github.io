@@ -7,7 +7,7 @@ const articles = await getCollection('articles');
 const sortedArticles = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Base title="Articles" description="Description">
+<Base title="Articles" description="Cameron Otsuka's articles exploring Bitcoin, technology, monetary systems, and technical insights.">
     <h2>Articles</h2>
     <dl>
         {sortedArticles.map((article) => {

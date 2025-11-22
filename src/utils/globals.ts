@@ -1,5 +1,5 @@
 export const siteTitle = "Cameron Otsuka";
-export const siteSubtitle = "The collection of Cameron's thoughts."
+export const siteDescription = "Cameron Otsuka's personal site featuring Bitcoin analysis, capital market insights, and thoughtful commentary on technology, privacy, and culture."
 export const siteAuthor = {
   "name": "Cameron Otsuka",
   "email": "cameron@otsuka.haus"

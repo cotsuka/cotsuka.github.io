@@ -8,7 +8,7 @@ const podcasts = await getCollection('podcasts');
 const sortedPodcasts = podcasts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Base title="Podcasts" description="Description">
+<Base title="Podcasts" description="Weekly podcast episodes covering capital markets, Bitcoin, economic policy, and geopolitical events. Join Cameron Otsuka in his podcast appearances.">
     <h2>Podcasts</h2>
     <dl>
         {sortedPodcasts.map((podcast) => {
