@@ -1,6 +1,6 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { formatDate } from '@utils/format.ts';
+import formatDate from '@utils/formatDate.ts';
 import { siteSubtitle, siteTitle } from '@utils/globals.ts';
 import createSlug from '@utils/createSlug.ts';
 

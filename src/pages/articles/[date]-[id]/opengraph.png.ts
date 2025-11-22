@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { formatDate } from '@utils/format.ts';
+import formatDate from '@utils/formatDate.ts';
 import { ImageResponse } from '@vercel/og';
 import { siteAuthor } from '@utils/globals.ts';
 
