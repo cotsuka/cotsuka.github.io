@@ -1,0 +1,8 @@
+version: 2
+updates:
+  - package-ecosystem: "bun"
+    cooldown:
+      default-days: 3
+    directory: "/"
+    schedule:
+      interval: "daily"
