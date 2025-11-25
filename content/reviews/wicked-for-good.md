@@ -1,0 +1,24 @@
+---
+type: movie
+title: "Wicked: For Good"
+date: 2025-11-25
+modified: 2025-11-25
+rating: 2
+posse:
+  Letterboxd: https://letterboxd.com/cotsuka/film/wicked-for-good/
+---
+import Spoiler from '@components/ui/spoiler.astro';
+
+- act ii was always the worse act, so i expected this to be worse than the first movie going in
+- they expanded the story in the wrong places and kept the original in the wrong places
+- i kept checking my watch throughout
+- at some point i just wanted to skip ahead to the singing scenes
+- set and costume design were spectacular
+- michelle yeoh's singing (in)ability really stood out in this one
+- i really liked the cinematography during, "the girl in the bubble"
+
+<Spoiler>
+  - are we supposed to assume boq wanted elphaba to let him die? i mean, sure i doubt being a tin man is a great life
+  - fiyero when he first sees elphaba's hideout: "girl, you live like this?"
+  - how did fiyero know elphaba would be hiding under the floor?
+</Spoiler>
