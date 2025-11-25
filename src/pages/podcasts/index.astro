@@ -10,15 +10,36 @@ const sortedPodcasts = podcasts.sort((a, b) => b.data.date.getTime() - a.data.da
 
 <Base title="Podcasts" description="Weekly podcast episodes covering capital markets, Bitcoin, economic policy, and geopolitical events. Join Cameron Otsuka in his podcast appearances.">
     <h2>Podcasts</h2>
-    <dl>
-        {sortedPodcasts.map((podcast) => {
-            const date = formatDate(podcast.data.date);
-            return (
-                <dt><a href={`/podcasts/${createSlug(podcast.data.show)}-${podcast.id}/`}>{podcast.data.title}</a></dt>
-                <dd>
-                    {podcast.data.show} - {podcast.data.description}
-                </dd>
-            )
-        })}
-    </dl>
+    <table>
+        <thead>
+            <tr>
+                <th>Show</th>
+                <th>Title</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {sortedPodcasts.map((podcast) => (
+                <tr>
+                    <td>{podcast.data.show}</td>
+                    <td>
+                        <dl>
+                            <dt><a href={`/podcasts/${createSlug(podcast.data.show)}-${podcast.id}/`}>{podcast.data.title}</a></dt>
+                            <dd>{podcast.data.description}</dd>
+                        </dl>
+                    </td>
+                    <td>{formatDate(podcast.data.date)}</td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
 </Base>
+
+<style>
+    table {
+        width: 100%;
+    }
+    td:nth-child(2) {
+        text-align: left;
+    }
+</style>
