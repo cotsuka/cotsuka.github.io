@@ -6,9 +6,9 @@ export const siteAuthor = {
 }
 
 export const menuItems: {title: string, url: string}[] = [
-    { "title": "Podcasts", "url": "/podcasts" },
-    { "title": "Articles", "url": "/articles" },
-    { "title": "Reviews", "url": "/reviews" }
+  { "title": "Articles", "url": "/articles" },
+  { "title": "Podcasts", "url": "/podcasts" },
+  { "title": "Reviews", "url": "/reviews" }
 ];
 
 export const socials: { [platform: string]: { title: string, url: string, username: string } } = {
