@@ -23,7 +23,7 @@ const { Content } = await render(podcast);
      title={podcast.data.title}
      description={`${podcast.data.show} - ${podcast.data.description}`}
      publishedTime={podcast.data.date.toISOString()}
-     modifiedTime={podcast.data.modified ? podcast.data.modified.toISOString() : podcast.data.date.toISOString()}
+     modifiedTime={podcast.data.modified?.toISOString() ?? podcast.data.date.toISOString()}
      tags={podcast.data.tags}
 >
     <h2>{podcast.data.title}</h2>

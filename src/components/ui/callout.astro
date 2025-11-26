@@ -8,20 +8,13 @@ interface Props {
 
 const { level, label } = Astro.props;
 
-let calloutLabel = label;
-if (label == null) {
-    switch(level) {
-        case 'info':
-            calloutLabel = 'ⓘ Info';
-            break;
-        case 'warn':
-            calloutLabel = '⚠ Warning';
-            break;
-        case 'error':
-            calloutLabel = '! Error';
-            break;
-    }
+const calloutLabels: Record<CalloutLevel, string> = {
+    info: 'ⓘ Info',
+    warn: '⚠ Warning',
+    error: '! Error'
 };
+
+const calloutLabel = label ?? calloutLabels[level];
 ---
 <div class={`callout callout-${level}`}>
     <div class={`callout-label`}>{calloutLabel}</div>

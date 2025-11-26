@@ -44,6 +44,7 @@ const reviews = defineCollection({
     schema: z.object({
         type: ReviewType,
         title: z.string(),
+        description: z.string().optional(),
         rating: z.number().gt(0).lte(5).step(1),
         date: z.coerce.date(),
         modified: z.coerce.date().optional(),

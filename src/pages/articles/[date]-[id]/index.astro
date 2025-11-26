@@ -23,7 +23,7 @@ const { Content } = await render(article);
      title={article.data.title}
      description={article.data.description}
      publishedTime={article.data.date.toISOString()}
-     modifiedTime={article.data.modified ? article.data.modified.toISOString() : article.data.date.toISOString()}
+     modifiedTime={article.data.modified?.toISOString() ?? article.data.date.toISOString()}
      tags={article.data.tags}
 >
     <h2>{article.data.title}</h2>

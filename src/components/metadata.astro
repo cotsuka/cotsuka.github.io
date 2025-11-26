@@ -4,20 +4,21 @@ import formatDate from '@utils/formatDate.ts';
 import Rating from '@components/ui/rating.astro';
 
 interface Props {
-    entryData: InferEntrySchema<'articles'> | InferEntrySchema<'podcasts'> | InferEntrySchema<'reviews'>
+    entryData: InferEntrySchema<'articles' | 'podcasts' | 'reviews'>
 }
 
 const { entryData } = Astro.props;
-const date = formatDate(entryData.date);
+const publishedDate = formatDate(entryData.date);
+const modifiedDate = entryData.modified ? formatDate(entryData.modified) : publishedDate
 ---
 <details>
     <summary>Metadata</summary>
     <ul>
-        {entryData.show && <li>Show: {entryData.show}</li>}
+        {'show' in entryData && entryData.show && <li>Show: {entryData.show}</li>}
         {entryData.description && <li>Description: {entryData.description}</li>}
-        {entryData.rating && <li>Rating: <Rating rating={entryData.rating} /></li>}
-        <li>Published: <time datetime="">{date}</time></li>
-        <li>Last Modified: <time datetime="">{entryData.modified ? formatDate(entryData.modified) : date}</time></li>
+        {'rating' in entryData && entryData.rating && <li>Rating: <Rating rating={entryData.rating} /></li>}
+        <li>Published: <time datetime={publishedDate}>{publishedDate}</time></li>
+        <li>Last Modified: <time datetime={modifiedDate}>{modifiedDate}</time></li>
         {entryData.tags && <li>Tags: {entryData.tags.join(', ')}</li>}
         {entryData.posse && <li>POSSE: {Object.entries(entryData.posse).map((site) => (
             <Fragment>

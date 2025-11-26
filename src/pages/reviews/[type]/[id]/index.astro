@@ -20,9 +20,9 @@ const { Content } = await render(review);
 ---
 <Article
      title={review.data.title}
-     description={review.data.description ? review.data.description : ""}
+     description={review.data.description ?? ""}
      publishedTime={review.data.date.toISOString()}
-     modifiedTime={review.data.modified ? review.data.modified.toISOString() : review.data.date.toISOString()}
+     modifiedTime={review.data.modified?.toISOString() ?? review.data.date.toISOString()}
      tags={review.data.tags}
 >
     <h2>{review.data.title}</h2>

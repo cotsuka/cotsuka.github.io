@@ -2,10 +2,11 @@
 import { getCollection } from 'astro:content';
 import formatDate from '@utils/formatDate.ts';
 import Base from '@layouts/base.astro';
-import createSlug from '@utils/createSlug.ts';
+import sortByDate from '@utils/sortByDate.ts';
+import generateContentUrl from '@utils/generateContentUrl';
 
 const podcasts = await getCollection('podcasts');
-const sortedPodcasts = podcasts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const sortedPodcasts = sortByDate(podcasts);
 ---
 
 <Base title="Podcasts" description="Weekly podcast episodes covering capital markets, Bitcoin, economic policy, and geopolitical events. Join Cameron Otsuka in his podcast appearances.">
@@ -24,7 +25,7 @@ const sortedPodcasts = podcasts.sort((a, b) => b.data.date.getTime() - a.data.da
                     <td>{podcast.data.show}</td>
                     <td>
                         <dl>
-                            <dt><a href={`/podcasts/${createSlug(podcast.data.show)}-${podcast.id}/`}>{podcast.data.title}</a></dt>
+                            <dt><a href={generateContentUrl(podcast)}>{podcast.data.title}</a></dt>
                             <dd>{podcast.data.description}</dd>
                         </dl>
                     </td>
