@@ -76,7 +76,7 @@ table {
   border-collapse: collapse;
 }
 th, td {
-  border: 0.1rem solid;
+  border: 0.1rem solid light-dark(#000000, #2F3336);
   text-align: center;
   vertical-align: middle;
   padding: 0.5rem;
