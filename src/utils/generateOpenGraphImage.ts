@@ -1,8 +1,19 @@
 import { ImageResponse } from '@vercel/og';
 import { siteAuthor } from '@utils/globals.ts';
 
-async function loadFont() {
-    const url = `https://cdn.jsdelivr.net/fontsource/fonts/public-sans@latest/latin-400-normal.ttf`
+async function loadFont(fontName: string) {
+    var url: string
+    switch (fontName) {
+        case 'Public Sans Variable':
+            url = `https://cdn.jsdelivr.net/fontsource/fonts/public-sans@latest/latin-400-normal.ttf`;
+            break;
+        case 'DejaVu Mono':
+            url = `https://cdn.jsdelivr.net/fontsource/fonts/dejavu-mono@latest/latin-400-normal.ttf`;
+            break;
+        default:
+            throw new Error('font url not defined');
+    }
+    
     const font = await fetch(url);
     if (font) {
         return await font.arrayBuffer();
@@ -24,7 +35,7 @@ export default async function (title: string, description: string) {
                 width: '100%',
                 height: '100%',
                 padding: 80,
-                fontFamily: 'Public Sans Variable',
+                fontFamily: 'Public Sans Variable'
             },
             children: [
                 {
@@ -44,6 +55,7 @@ export default async function (title: string, description: string) {
                         style: {
                             fontSize: 32,
                             marginBottom: 40,
+                            fontFamily: 'DejaVu Mono'
                         },
                         children: description,
                     },
@@ -90,7 +102,12 @@ export default async function (title: string, description: string) {
         fonts: [
             {
                 name: 'Public Sans Variable',
-                data: await loadFont(),
+                data: await loadFont('Public Sans Variable'),
+                style: 'normal'
+            },
+            {
+                name: 'DejaVu Mono',
+                data: await loadFont('DejaVu Mono'),
                 style: 'normal'
             }
         ]

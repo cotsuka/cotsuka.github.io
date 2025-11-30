@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import generateOpenGraphImage from '@utils/generateOpenGraphImage.ts';
+import generateStarRating from '@utils/generateStarRating.ts';
 
 export async function getStaticPaths() {
     const reviews = await getCollection('reviews');
@@ -13,6 +14,6 @@ export async function getStaticPaths() {
 export const GET: APIRoute = async ({ props }) => {
     return generateOpenGraphImage(
         props.review.data.title,
-        props.review.data.description ?? ""
+        generateStarRating(props.review.data.rating) ?? ""
     )
 };

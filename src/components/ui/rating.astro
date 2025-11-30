@@ -1,12 +1,13 @@
 ---
+import generateStarRating from '@utils/generateStarRating.ts';
+
 interface Props {
     rating: number
 }
 
 const { rating } = Astro.props;
-const filledStars = '★'.repeat(rating);
-const unfilledStars = '☆'.repeat(5 - rating);
+const starRating = generateStarRating(rating);
 ---
 <Fragment>
-    {filledStars}{unfilledStars}
+    {starRating}
 </Fragment>
