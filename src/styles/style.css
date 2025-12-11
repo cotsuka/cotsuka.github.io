@@ -9,8 +9,7 @@
 html {
   background-color: light-dark(#ffffff, #000000);
   color: light-dark(#000000, #ffffff);
-  font-family: "Public Sans Variable", sans-serif;
-  font-feature-settings: "kern" 1, "kern";
+  font-family: "Source Serif 4 Variable", serif;
   font-kerning: normal;
   font-weight: 400;
   font-size: 100%;
@@ -25,6 +24,7 @@ body {
   line-height: 1.6;
 }
 h1, h2, h3, h4, h5, h6 {
+  font-family: "Public Sans Variable", sans-serif;
   font-weight: 700;
 }
 strong {
