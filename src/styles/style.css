@@ -7,8 +7,8 @@
 }
 
 html {
-  background-color: light-dark(#ffffff, #000000);
-  color: light-dark(#000000, #ffffff);
+  background-color: light-dark(#e6e2d6, #000000);
+  color: light-dark(#000000, #e6e2d6);
   font-family: "Source Serif 4 Variable", serif;
   font-kerning: normal;
   font-weight: 400;
@@ -35,7 +35,7 @@ p {
 }
 a {
   text-decoration: none;
-  color: light-dark(#086ddd, #398ae3);
+  color: light-dark(#8b2942, #d4637a);
 }
 a:hover {
   text-decoration: underline;
@@ -76,7 +76,7 @@ table {
   border-collapse: collapse;
 }
 th, td {
-  border: 0.1rem solid light-dark(#000000, #2F3336);
+  border: 0.1rem solid light-dark(#000000, #e6e2d6);
   text-align: center;
   vertical-align: middle;
   padding: 0.5rem;
@@ -92,7 +92,7 @@ code {
 }
 .footnotes {
   font-size: 0.9rem;
-  border-top: 1px dashed light-dark(#000000, #ffffff);
+  border-top: 1px dashed light-dark(#000000, #e6e2d6);
   margin-top: 1rem;
   padding-top: 1rem;
 }
