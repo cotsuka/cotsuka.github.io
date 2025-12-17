@@ -1,5 +1,5 @@
 ---
-import generateStarRating from '@utils/generateStarRating.ts';
+import generateStarRating from '@utils/generateStarRating';
 
 interface Props {
     rating: number
@@ -8,6 +8,5 @@ interface Props {
 const { rating } = Astro.props;
 const starRating = generateStarRating(rating);
 ---
-<Fragment>
-    {starRating}
-</Fragment>
+
+{starRating}

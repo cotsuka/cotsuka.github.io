@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: The Boy and the Heron
 date: 2024-12-21
 modified: 2024-12-23

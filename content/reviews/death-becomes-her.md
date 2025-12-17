@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: Death Becomes Her
 date: 2025-10-02
 modified: 2025-10-07

@@ -1,8 +1,8 @@
 import { ImageResponse } from '@vercel/og';
-import { siteAuthor } from '@utils/globals.ts';
+import { siteAuthor } from '@utils/globals';
 
 async function loadFont(fontName: string) {
-    var url: string
+    let url: string
     switch (fontName) {
         case 'Public Sans Variable':
             url = `https://cdn.jsdelivr.net/fontsource/fonts/public-sans@latest/latin-400-normal.ttf`;
@@ -15,13 +15,13 @@ async function loadFont(fontName: string) {
     }
     
     const font = await fetch(url);
-    if (font) {
+    if (font.ok) {
         return await font.arrayBuffer();
     }
     throw new Error('failed to load font data');
 }
 
-export default async function (title: string, description: string) {
+export default async function generateOpenGraphImage(title: string, description: string) {
     const element = {
         type: 'div',
         props: {

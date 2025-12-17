@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: Challengers
 date: 2024-12-24
 modified: 2024-12-26

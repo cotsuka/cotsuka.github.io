@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: Caught Stealing
 date: 2025-09-12
 modified: 2025-09-13

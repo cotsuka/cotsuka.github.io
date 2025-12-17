@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: Subservience
 date: 2024-12-25
 modified: 2024-12-26

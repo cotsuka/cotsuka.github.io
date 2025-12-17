@@ -1,12 +1,12 @@
 import { getContainerRenderer as getMDXRenderer } from '@astrojs/mdx';
 import rss, { type RSSFeedItem } from '@astrojs/rss';
-import { siteDescription, siteTitle } from '@utils/globals.ts';
+import { siteDescription, siteTitle } from '@utils/globals';
 import { type APIContext } from 'astro';
 import { getCollection, render } from 'astro:content';
 import { loadRenderers } from 'astro:container';
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import generateContentUrl from '@utils/generateContentUrl';
-import generateStarRating from '@utils/generateStarRating.ts';
+import generateStarRating from '@utils/generateStarRating';
 
 export async function GET(context: APIContext) {
   const articles = await getCollection('articles');
@@ -23,26 +23,26 @@ export async function GET(context: APIContext) {
     const { Content } = await render(item);
     const content = await container.renderToString(Content);
     const categories = (item.data.tags ?? []).concat(item.collection)
-    if ('type' in item.data) {
-      categories.push(item.data.type);
-    }
-    if ('show' in item.data) {
-      categories.push(item.data.show);
+    if ('category' in item.data) {
+      categories.push(item.data.category);
     }
 
-    var description: string;
+    let title: string;
+    let description: string;
     switch (item.collection) {
       case 'reviews':
         const starRating = generateStarRating(item.data.rating);
-        description = starRating
+        title = `${item.data.title} - ${starRating}`;
+        description = starRating;
         break;
       default:
-        description = item.data.description;
+        title = item.data.title;
+        description = item.data.description ?? '';
         break;
     }
 
     feedItems.push({
-      title: item.data.title,
+      title: title,
       link: link,
       pubDate: item.data.date,
       description: description,

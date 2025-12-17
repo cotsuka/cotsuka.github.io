@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: Wake Up Dead Man
 date: 2025-12-15
 modified: 2025-12-16

@@ -1,8 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import formatDate from '@utils/formatDate.ts';
 import Base from '@layouts/base.astro';
-import sortByDate from '@utils/sortByDate.ts';
+import sortByDate from '@utils/sortByDate';
 import generateContentUrl from '@utils/generateContentUrl';
 
 const articles = await getCollection('articles');
@@ -13,12 +12,9 @@ const sortedArticles = sortByDate(articles);
     <h2>Articles</h2>
     <dl>
         {sortedArticles.map((article) => {
-            const date = formatDate(article.data.date);
             return (
                 <dt><a href={generateContentUrl(article)}>{article.data.title}</a></dt>
-                <dd>
-                    {article.data.description}
-                </dd>
+                <dd>{article.data.description}</dd>
             )
         })}
     </dl>

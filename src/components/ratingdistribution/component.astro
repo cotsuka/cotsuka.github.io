@@ -15,9 +15,9 @@ reviews.forEach(review => {
     const rating = review.data.rating;
     ratingCounts[rating]++;
 });
-const chartData = Object.keys(ratingCounts).map(rating => ({
+const chartData = Object.entries(ratingCounts).map(([rating, count]) => ({
     name: rating,
-    count: ratingCounts[parseInt(rating)]
+    count: count
 }));
 ---
 <Chart chartData={chartData} client:load />

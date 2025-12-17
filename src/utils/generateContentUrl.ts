@@ -1,14 +1,13 @@
-import formatDate from '@utils/formatDate.ts';
-import createSlug from '@utils/createSlug.ts';
-import { type CollectionEntry } from 'astro:content';
+import formatDate from '@utils/formatDate';
+import { type SiteCollectionEntry } from '@utils/globals';
 
-export default function (item: CollectionEntry<'articles' | 'podcasts' | 'reviews'>): string {
+export default function generateContentUrl(item: SiteCollectionEntry): string {
     switch (item.collection) {
         case 'articles':
             return `/articles/${formatDate(item.data.date)}-${item.id}/`
         case 'podcasts':
-            return `/podcasts/${createSlug(item.data.show)}-${item.id}/`
+            return `/podcasts/${item.id}/`
         case 'reviews':
-            return `/reviews/${item.data.type}/${item.id}/`
+            return `/reviews/${item.data.category}/${item.id}/`
     }
 }

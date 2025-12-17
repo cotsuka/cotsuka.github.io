@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: 28 Days Later
 date: 2025-06-06
 modified: 2025-12-07

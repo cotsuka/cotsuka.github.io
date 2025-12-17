@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: The Godfather
 date: 2025-11-16
 modified: 2025-11-19

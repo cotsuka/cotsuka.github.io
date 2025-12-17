@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: Jurassic Park
 date: 2025-09-10
 modified: 2025-09-13

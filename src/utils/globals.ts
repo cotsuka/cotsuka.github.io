@@ -1,9 +1,13 @@
+import type { CollectionEntry, InferEntrySchema } from 'astro:content';
+
 export const siteTitle = "Cameron Otsuka";
 export const siteDescription = "Cameron Otsuka's personal site featuring Bitcoin analysis, capital market insights, and thoughtful commentary on technology, privacy, and culture."
 export const siteAuthor = {
   "name": "Cameron Otsuka",
   "email": "cameron@otsuka.haus"
 }
+export type SiteCollectionEntry = CollectionEntry<'articles' | 'podcasts' | 'reviews'>;
+export type SiteEntrySchema = InferEntrySchema<'articles' | 'podcasts' | 'reviews'>;
 
 export const menuItems: {title: string, url: string}[] = [
   { "title": "Articles", "url": "/articles" },

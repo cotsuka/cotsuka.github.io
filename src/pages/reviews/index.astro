@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '@layouts/base.astro';
 import RatingDistribution from '@components/ratingdistribution/component.astro';
 import Rating from '@components/ui/rating.astro';
-import sortByDate from '@utils/sortByDate.ts';
+import sortByDate from '@utils/sortByDate';
 import generateContentUrl from '@utils/generateContentUrl';
 
 const reviews = await getCollection('reviews');
@@ -20,7 +20,7 @@ const sortedReviews = sortByDate(reviews);
         <table>
             <thead>
                 <tr>
-                    <th>Type</th>
+                    <th>Category</th>
                     <th>Title</th>
                     <th>Rating</th>
                 </tr>
@@ -28,7 +28,7 @@ const sortedReviews = sortByDate(reviews);
             <tbody>
                 {sortedReviews.map((review) => (
                     <tr>
-                        <td>{review.data.type}</td>
+                        <td>{review.data.category}</td>
                         <td><a href={generateContentUrl(review)}>{review.data.title}</a></td>
                         <td><Rating rating={review.data.rating} /></td>
                     </tr>

@@ -1,4 +1,4 @@
-export default function (text: string): string {
+export default function createSlug(text: string): string {
     return (
         text
             .trim()

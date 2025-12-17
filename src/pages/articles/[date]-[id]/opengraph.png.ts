@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import formatDate from '@utils/formatDate.ts';
-import generateOpenGraphImage from '@utils/generateOpenGraphImage.ts';
+import formatDate from '@utils/formatDate';
+import generateOpenGraphImage from '@utils/generateOpenGraphImage';
 
 export async function getStaticPaths() {
     const articles = await getCollection('articles');

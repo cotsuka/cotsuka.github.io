@@ -1,56 +1,50 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
+
+const baseSchema = z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    date: z.coerce.date(),
+    modified: z.coerce.date().optional(),
+    tags: z.array(z.string()).optional(),
+    posse: z.record(
+        z.string(),
+        z.string().url()
+    ).optional()
+});
 
 const articles = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/articles' }),
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        date: z.coerce.date(),
-        modified: z.coerce.date().optional(),
-        tags: z.array(z.string()).optional(),
-        posse: z.record(z.string(), z.string().url()).optional()
-    })
+    schema: baseSchema
 });
-
-const PodcastType = z.enum([
-    "audio",
-    "video"
-])
 
 const podcasts = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/podcasts' }),
-    schema: z.object({
-        type: PodcastType,
-        title: z.string(),
-        show: z.string(),
-        description: z.string(),
-        date: z.coerce.date(),
-        modified: z.coerce.date().optional(),
-        tags: z.array(z.string()).optional(),
-        posse: z.record(z.string(), z.string().url()).optional()
+    schema: baseSchema.extend({
+        type: z.enum([
+            'audio',
+            'video'
+        ]),
+        enclosure: z.object({
+            url: z.string().url(),
+            length: z.number(),
+            type: z.string()
+        }).optional()
     })
 });
-
-const ReviewType = z.enum([
-    "game",
-    "movie",
-    "music",
-    "show"
-])
 
 const reviews = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/reviews' }),
-    schema: z.object({
-        type: ReviewType,
-        title: z.string(),
-        description: z.string().optional(),
+    schema: baseSchema.extend({
         rating: z.number().gt(0).lte(5).step(1),
-        date: z.coerce.date(),
-        modified: z.coerce.date().optional(),
-        tags: z.array(z.string()).optional(),
-        posse: z.record(z.string(), z.string().url()).optional()
+        category: z.enum([
+            'game',
+            'movie',
+            'music',
+            'show'
+        ])
     })
 });
 
-export const collections = { articles, podcasts, reviews };
+export const collections = { articles, podcasts, reviews }

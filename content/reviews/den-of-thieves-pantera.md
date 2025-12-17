@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: "Den of Thieves: Pantera"
 date: 2025-10-18
 modified: 2025-10-19

@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: Burning
 date: 2025-02-28
 modified: 2025-03-02

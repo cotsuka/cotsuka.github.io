@@ -1,5 +1,5 @@
 ---
-type: movie
+category: movie
 title: The Hunchback of Notre Dame
 date: 2025-03-04
 modified: 2025-03-22

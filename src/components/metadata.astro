@@ -1,10 +1,10 @@
 ---
-import { type InferEntrySchema } from 'astro:content';
-import formatDate from '@utils/formatDate.ts';
+import { type SiteEntrySchema } from '@utils/globals';
+import formatDate from '@utils/formatDate';
 import Rating from '@components/ui/rating.astro';
 
 interface Props {
-    entryData: InferEntrySchema<'articles' | 'podcasts' | 'reviews'>
+    entryData: SiteEntrySchema
 }
 
 const { entryData } = Astro.props;
@@ -14,7 +14,6 @@ const modifiedDate = entryData.modified ? formatDate(entryData.modified) : publi
 <details>
     <summary>Metadata</summary>
     <ul>
-        {'show' in entryData && entryData.show && <li>Show: {entryData.show}</li>}
         {entryData.description && <li>Description: {entryData.description}</li>}
         {'rating' in entryData && entryData.rating && <li>Rating: <Rating rating={entryData.rating} /></li>}
         <li>Published: <time datetime={publishedDate}>{publishedDate}</time></li>
