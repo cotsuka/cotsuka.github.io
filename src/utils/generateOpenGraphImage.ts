@@ -7,8 +7,8 @@ async function loadFont(fontName: string) {
         case 'Public Sans Variable':
             url = `https://cdn.jsdelivr.net/fontsource/fonts/public-sans@latest/latin-400-normal.ttf`;
             break;
-        case 'DejaVu Mono':
-            url = `https://cdn.jsdelivr.net/fontsource/fonts/dejavu-mono@latest/latin-400-normal.ttf`;
+        case 'Source Serif 4':
+            url = `https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4@latest/latin-400-normal.ttf`;
             break;
         default:
             throw new Error('font url not defined');
@@ -30,8 +30,8 @@ export default async function generateOpenGraphImage(title: string, description:
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                backgroundColor: '#555555',
-                color: '#ffffff',
+                backgroundColor: '#e6e2d6',
+                color: '#000000',
                 width: '100%',
                 height: '100%',
                 padding: 80,
@@ -55,7 +55,7 @@ export default async function generateOpenGraphImage(title: string, description:
                         style: {
                             fontSize: 32,
                             marginBottom: 40,
-                            fontFamily: 'DejaVu Mono'
+                            fontFamily: 'Source Serif 4'
                         },
                         children: description,
                     },
@@ -79,7 +79,7 @@ export default async function generateOpenGraphImage(title: string, description:
                                 type: 'div',
                                 props: {
                                     style: {
-                                        borderTop: '2px solid #ffffff',
+                                        borderTop: '2px solid #8b2942',
                                         width: 240,
                                         margin: '0 auto 8px',
                                         display: 'flex',
@@ -106,8 +106,8 @@ export default async function generateOpenGraphImage(title: string, description:
                 style: 'normal'
             },
             {
-                name: 'DejaVu Mono',
-                data: await loadFont('DejaVu Mono'),
+                name: 'Source Serif 4',
+                data: await loadFont('Source Serif 4'),
                 style: 'normal'
             }
         ]
