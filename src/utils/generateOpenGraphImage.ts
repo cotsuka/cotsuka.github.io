@@ -1,4 +1,5 @@
 import { ImageResponse } from '@vercel/og';
+import { type SatoriOptions } from 'satori';
 import { siteAuthor } from '@utils/globals';
 
 async function loadFont(fontName: string) {
@@ -10,6 +11,9 @@ async function loadFont(fontName: string) {
         case 'Source Serif 4':
             url = `https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4@latest/latin-400-normal.ttf`;
             break;
+        case 'DejaVu Mono':
+            url = `https://cdn.jsdelivr.net/fontsource/fonts/dejavu-mono@latest/latin-400-normal.ttf`;
+            break;
         default:
             throw new Error('font url not defined');
     }
@@ -19,6 +23,28 @@ async function loadFont(fontName: string) {
         return await font.arrayBuffer();
     }
     throw new Error('failed to load font data');
+}
+
+const satoriOptions: SatoriOptions = {
+    width: 1200,
+    height: 630,
+    fonts: [
+        {
+            name: 'Public Sans Variable',
+            data: await loadFont('Public Sans Variable'),
+            style: 'normal'
+        },
+        {
+            name: 'Source Serif 4',
+            data: await loadFont('Source Serif 4'),
+            style: 'normal'
+        },
+        {
+            name: 'DejaVu Mono',
+            data: await loadFont('DejaVu Mono'),
+            style: 'normal'
+        }
+    ]
 }
 
 export default async function generateOpenGraphImage(title: string, description: string) {
@@ -55,7 +81,7 @@ export default async function generateOpenGraphImage(title: string, description:
                         style: {
                             fontSize: 32,
                             marginBottom: 40,
-                            fontFamily: 'Source Serif 4'
+                            fontFamily: 'Source Serif 4, DejaVu Mono'
                         },
                         children: description,
                     },
@@ -96,20 +122,5 @@ export default async function generateOpenGraphImage(title: string, description:
         key: null
     }
 
-    return new ImageResponse(element, {
-        width: 1200,
-        height: 630,
-        fonts: [
-            {
-                name: 'Public Sans Variable',
-                data: await loadFont('Public Sans Variable'),
-                style: 'normal'
-            },
-            {
-                name: 'Source Serif 4',
-                data: await loadFont('Source Serif 4'),
-                style: 'normal'
-            }
-        ]
-    });
+    return new ImageResponse(element, satoriOptions);
 }
