@@ -106,3 +106,9 @@ code {
   word-wrap: normal;
   border: 0;
 }
+details > summary {
+  list-style-type: "▸";
+}
+details[open] > summary {
+  list-style-type: "▾";
+}
