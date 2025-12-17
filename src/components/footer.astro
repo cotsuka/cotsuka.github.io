@@ -5,7 +5,6 @@ import { Icon } from 'astro-icon/components';
 const currentYear = new Date().getFullYear();
 ---
 <footer>
-    <hr />
     <address>
         <menu>
             {Object.keys(socials).map((platform) => (
@@ -24,6 +23,9 @@ const currentYear = new Date().getFullYear();
 <style>
     footer {
         text-align: center;
+        border-top: 1px solid light-dark(#000000, #e6e2d6);
+        margin-top: 1rem;
+        padding-top: 1rem;
     }
     address {
         font-family: "Public Sans Variable", sans-serif;
@@ -35,10 +37,6 @@ const currentYear = new Date().getFullYear();
     li {
         display: inline;
         padding-right: 0.5rem;
-    }
-    hr {
-        margin-bottom: 1rem;
-        margin-top: 1rem;
     }
     [data-icon="mdi:rss"] {
         display: inline-block;
