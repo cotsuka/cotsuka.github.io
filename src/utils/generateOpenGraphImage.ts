@@ -105,7 +105,7 @@ export default async function generateOpenGraphImage(title: string, description:
                                 type: 'div',
                                 props: {
                                     style: {
-                                        borderTop: '2px solid #8b2942',
+                                        borderTop: '2px solid #82273d',
                                         width: 240,
                                         margin: '0 auto 8px',
                                         display: 'flex',

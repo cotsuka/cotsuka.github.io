@@ -35,7 +35,7 @@ p {
 }
 a {
   text-decoration: none;
-  color: light-dark(#8b2942, #d4637a);
+  color: light-dark(#82273d, #db7b8e);
 }
 a:hover {
   text-decoration: underline;
