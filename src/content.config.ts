@@ -39,6 +39,7 @@ const reviews = defineCollection({
     schema: baseSchema.extend({
         rating: z.number().gt(0).lte(5).step(1),
         category: z.enum([
+            'book',
             'game',
             'movie',
             'music',
