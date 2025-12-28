@@ -2,10 +2,10 @@
 category: book
 title: House of Huawei
 date: 2025-07-13
-modified: 2025-12-22
+modified: 2025-12-27
 rating: 4
 posse:
-  StoryGraph: https://app.thestorygraph.com/reviews/662a6e95-a036-4d8d-a4c0-8401bd6775ad
+  Goodreads: https://www.goodreads.com/review/show/7735080615
 ---
 
 - a peek into the rise of ren zhengfei
