@@ -10,39 +10,48 @@ const reviews = await getCollection('reviews');
 const sortedReviews = sortByDate(reviews);
 ---
 
-<Base title="Reviews" description="Cameron Otsuka's personal media reviews and ratings. Explore thoughtful critiques of media, ranging from classics to recent releases, with star ratings from 1 to 5.">
-    <h2>Reviews</h2>
-    <section>
-        <h3>Rating Distribution</h3>
-        <RatingDistribution />
-    </section>
-    <section>
-        <table>
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Title</th>
-                    <th>Rating</th>
-                </tr>
-            </thead>
-            <tbody>
-                {sortedReviews.map((review) => (
-                    <tr>
-                        <td>{review.data.category}</td>
-                        <td><a href={generateContentUrl(review)}>{review.data.title}</a></td>
-                        <td><Rating rating={review.data.rating} /></td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-    </section>
+<Base
+  title="Reviews"
+  description="Cameron Otsuka's personal media reviews and ratings. Explore thoughtful critiques of media, ranging from classics to recent releases, with star ratings from 1 to 5."
+>
+  <h2>Reviews</h2>
+  <section>
+    <h3>Rating Distribution</h3>
+    <RatingDistribution />
+  </section>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">Title</th>
+          <th scope="col">Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          sortedReviews.map((review) => (
+            <tr>
+              <td>{review.data.category}</td>
+              <td>
+                <a href={generateContentUrl(review)}>{review.data.title}</a>
+              </td>
+              <td>
+                <Rating rating={review.data.rating} />
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </section>
 </Base>
 
 <style>
-    table {
-        width: 100%;
-    }
-    td:nth-child(2) {
-        text-align: left;
-    }
+  table {
+    width: 100%;
+  }
+  td:nth-child(2) {
+    text-align: left;
+  }
 </style>

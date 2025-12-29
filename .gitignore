@@ -3,6 +3,12 @@ dist/
 # generated types
 .astro/
 
+# astro image cache
+.astro-cache/
+
+# opengraph image cache
+.og-cache/
+
 # dependencies
 node_modules/
 

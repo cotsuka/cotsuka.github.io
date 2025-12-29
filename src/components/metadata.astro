@@ -4,42 +4,58 @@ import formatDate from '@utils/formatDate';
 import Rating from '@components/ui/rating.astro';
 
 interface Props {
-    entryData: SiteEntrySchema
+  entryData: SiteEntrySchema;
 }
 
 const { entryData } = Astro.props;
 const publishedDate = formatDate(entryData.date);
-const modifiedDate = entryData.modified ? formatDate(entryData.modified) : publishedDate
+const modifiedDate = entryData.modified
+  ? formatDate(entryData.modified)
+  : publishedDate;
 ---
+
 <details>
-    <summary>Metadata</summary>
-    <ul>
-        {entryData.description && <li>Description: {entryData.description}</li>}
-        {'rating' in entryData && entryData.rating && <li>Rating: <Rating rating={entryData.rating} /></li>}
-        <li>Published: <time datetime={publishedDate}>{publishedDate}</time></li>
-        <li>Last Modified: <time datetime={modifiedDate}>{modifiedDate}</time></li>
-        {entryData.tags && <li>Tags: {entryData.tags.join(', ')}</li>}
-        {entryData.posse && <li>POSSE: {Object.entries(entryData.posse).map((site) => (
+  <summary>Metadata</summary>
+  <ul>
+    {entryData.description && <li>Description: {entryData.description}</li>}
+    {
+      'rating' in entryData && entryData.rating && (
+        <li>
+          Rating: <Rating rating={entryData.rating} />
+        </li>
+      )
+    }
+    <li>Published: <time datetime={publishedDate}>{publishedDate}</time></li>
+    <li>Last Modified: <time datetime={modifiedDate}>{modifiedDate}</time></li>
+    {entryData.tags && <li>Tags: {entryData.tags.join(', ')}</li>}
+    {
+      entryData.posse && (
+        <li>
+          POSSE:{' '}
+          {Object.entries(entryData.posse).map((site) => (
             <Fragment>
-                <a href={site[1]}>{site[0]}</a>&nbsp;
+              <a href={site[1]}>{site[0]}</a>&nbsp;
             </Fragment>
-        ))}</li>}
-    </ul>
+          ))}
+        </li>
+      )
+    }
+  </ul>
 </details>
 
 <style>
-    details {
-        margin-bottom: 1rem;
-        font-size: 0.8rem;
-        &::details-content {
-            opacity: 0;
-        }
-        &[open]::details-content {
-            opacity: 1;
-            transition: all 0.4s linear;
-        }
+  details {
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    &::details-content {
+      opacity: 0;
     }
-    summary:hover {
-        cursor: pointer;
+    &[open]::details-content {
+      opacity: 1;
+      transition: all 0.4s linear;
     }
+  }
+  summary:hover {
+    cursor: pointer;
+  }
 </style>

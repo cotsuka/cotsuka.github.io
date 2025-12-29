@@ -6,25 +6,25 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
-
 export default defineConfig({
   site: 'https://cameron.otsuka.systems',
+  cacheDir: './.astro-cache',
   integrations: [
     icon({
       include: {
-        mdi: ["*"]
-      }
+        mdi: ['rss'],
+      },
     }),
     mdx(),
     react(),
-    sitemap()
+    sitemap(),
   ],
   markdown: {
     remarkRehype: {
-      footnoteBackContent: "↩︎",
+      footnoteBackContent: '↩︎',
     },
     shikiConfig: {
-      theme: 'monokai'
+      theme: 'monokai',
     },
   },
 });

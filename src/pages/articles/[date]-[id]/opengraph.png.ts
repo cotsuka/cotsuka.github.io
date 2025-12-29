@@ -1,19 +1,10 @@
-import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
+import { createOgRoutes } from '@utils/createOgRoutes';
 import formatDate from '@utils/formatDate';
-import generateOpenGraphImage from '@utils/generateOpenGraphImage';
 
-export async function getStaticPaths() {
-    const articles = await getCollection('articles');
-    return articles.map(article => ({
-        params: { date: formatDate(article.data.date), id: article.id },
-        props: { article },
-    }));
-};
-
-export const GET: APIRoute = async ({ props }) => {
-    return generateOpenGraphImage(
-        props.article.data.title,
-        props.article.data.description
-    )
-};
+export const { getStaticPaths, GET } = createOgRoutes(
+  'articles',
+  (article) => ({
+    date: formatDate(article.data.date),
+    id: article.id,
+  }),
+);

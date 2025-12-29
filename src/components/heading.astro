@@ -1,14 +1,15 @@
 ---
 import Navigation from '@components/navigation.astro';
 ---
-<a href="/"><h1>Cameron Otsuka</h1></a>
+
+<h1><a href="/">Cameron Otsuka</a></h1>
 <Navigation />
 
 <style>
-    a {
-        color: light-dark(#000000, #e6e2d6);
-    }
-    a:hover {
-        text-decoration: none;
-    }
+  h1 a {
+    color: var(--color-text);
+  }
+  h1 a:hover {
+    text-decoration: none;
+  }
 </style>

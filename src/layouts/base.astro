@@ -10,8 +10,8 @@ import Heading from '@components/heading.astro';
 import Footer from '@components/footer.astro';
 
 interface Props {
-	title: string
-	description: string
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
@@ -19,17 +19,17 @@ const { title, description } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<HeadBase title={title} description={description} />
-		<slot name="post-head">
-			<HeadPage />
-		</slot>
-	</head>
-	<body>
-		<Heading />
-		<main>
-			<slot />
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <HeadBase title={title} description={description} />
+    <slot name="post-head">
+      <HeadPage />
+    </slot>
+  </head>
+  <body>
+    <Heading />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>

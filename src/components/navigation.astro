@@ -1,27 +1,22 @@
 ---
 import { menuItems } from '@utils/globals';
 ---
+
 <nav>
-    <menu>
-        {menuItems.map((menuItem) => {
-            return (
-                <li><a href={menuItem.url}>{menuItem.title}</a></li>
-            )
-        })}
-    </menu>
+  <menu class="inline-menu inline-menu--spaced">
+    {
+      menuItems.map((menuItem) => (
+        <li>
+          <a href={menuItem.url}>{menuItem.title}</a>
+        </li>
+      ))
+    }
+  </menu>
 </nav>
 
 <style>
-    nav {
-        font-family: "Public Sans Variable", sans-serif;
-        margin-bottom: 1rem;
-    }
-    menu {
-        margin-inline-start: 0;
-        padding-inline-start: 0;
-    }
-    li {
-        display: inline;
-        padding-right: 1rem;
-    }
+  nav {
+    font-family: 'Public Sans Variable', sans-serif;
+    margin-bottom: 1rem;
+  }
 </style>

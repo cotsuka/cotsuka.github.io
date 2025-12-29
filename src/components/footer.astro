@@ -4,42 +4,47 @@ import { Icon } from 'astro-icon/components';
 
 const currentYear = new Date().getFullYear();
 ---
+
 <footer>
-    <address>
-        <menu>
-            {Object.keys(socials).map((platform) => (
-                <li><a href={socials[platform].url} rel="me">{socials[platform].title}</a></li>
-            ))}
-        </menu>
-    </address>
-    <p>
-        &copy; {currentYear} {siteAuthor.name}. <a href="/feed.xml"><Icon name="mdi:rss" /></a>
-    </p>
-    <p>
-        All views my own. Not financial advice. Links, citations, and other references are not endorsements. Content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
-    </p>
+  <address>
+    <menu class="inline-menu inline-menu--compact">
+      {
+        Object.entries(socials).map(([, social]) => (
+          <li>
+            <a href={social.url} rel="me">
+              {social.title}
+            </a>
+          </li>
+        ))
+      }
+    </menu>
+  </address>
+  <p>
+    &copy; {currentYear}
+    {siteAuthor.name}.{' '}
+    <a href="/feed.xml" aria-label="RSS Feed"
+      ><Icon name="mdi:rss" aria-hidden="true" /></a
+    >
+  </p>
+  <p>
+    All views my own. Not financial advice. Links, citations, and other
+    references are not endorsements. Content is licensed under{' '}
+    <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+  </p>
 </footer>
 
 <style>
-    footer {
-        text-align: center;
-        border-top: 1px solid light-dark(#000000, #e6e2d6);
-        margin-top: 1rem;
-        padding-top: 1rem;
-    }
-    address {
-        font-family: "Public Sans Variable", sans-serif;
-    }
-    menu {
-        margin-inline-start: 0;
-        padding-inline-start: 0;
-    }
-    li {
-        display: inline;
-        padding-right: 0.5rem;
-    }
-    [data-icon="mdi:rss"] {
-        display: inline-block;
-        vertical-align: middle;
-    }
+  footer {
+    text-align: center;
+    border-top: 1px solid var(--color-text);
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  address {
+    font-family: 'Public Sans Variable', sans-serif;
+  }
+  [data-icon='mdi:rss'] {
+    display: inline-block;
+    vertical-align: middle;
+  }
 </style>

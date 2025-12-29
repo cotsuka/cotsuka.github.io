@@ -2,41 +2,55 @@
 import Base from '@layouts/base.astro';
 
 const contributions = [
-	{
-		"title": "Git",
-		"url": "https://git.otsuka.systems"
-	},
-	{
-		"title": "Arch User Repository",
-		"url": "https://aur.archlinux.org/packages?O=0&SeB=M&K=cotsuka&outdated=&SB=p&SO=d&PP=50&submit=Go"
-	},
-	{
-		"title": "ArchWiki",
-		"url": "https://wiki.archlinux.org/title/Special:Contributions/Cotsuka"
-	},
-	{
-		"title": "GitHub",
-		"url": "https://github.com/search?q=author%3Acotsuka&type=pullrequests"
-	},
-	{
-		"title": "Wikipedia",
-		"url": "https://en.wikipedia.org/wiki/Special:Contributions/Cotsuka"
-	}
+  {
+    title: 'Git',
+    url: 'https://git.otsuka.systems',
+  },
+  {
+    title: 'Arch User Repository',
+    url: 'https://aur.archlinux.org/packages?O=0&SeB=M&K=cotsuka&outdated=&SB=p&SO=d&PP=50&submit=Go',
+  },
+  {
+    title: 'ArchWiki',
+    url: 'https://wiki.archlinux.org/title/Special:Contributions/Cotsuka',
+  },
+  {
+    title: 'GitHub',
+    url: 'https://github.com/search?q=author%3Acotsuka&type=pullrequests',
+  },
+  {
+    title: 'Wikipedia',
+    url: 'https://en.wikipedia.org/wiki/Special:Contributions/Cotsuka',
+  },
 ];
 ---
 
-<Base title="Home" description="Personal site of Cameron Otsuka, Head of Data and Analytics at Build Asset Management. Writing on Bitcoin, cryptography, privacy, security, and technology.">
-	<section>
-		<p>I am <strong>Head of Data and Analytics</strong> at Build Asset Management, where I've helped launch a <a href="https://buildbitcoin.com/">private credit fund</a> investing into over-collateralized <a href="/bitcoin/">bitcoin</a>-backed loans, a <a href="https://bfix.fund/">fixed income ETF</a> and related vehicles, and built the internal tech stack that glues everything together.</p>
-	</section>
-    <section>
-		<h2>Contributions</h2>
-		<ul>
-			{contributions.map((contribution) => {
-				return (
-					<li><a href={contribution.url}>{contribution.title}</a></li>
-				)
-			})}
-		</ul>
-	</section>
+<Base
+  title="Home"
+  description="Personal site of Cameron Otsuka, Head of Data and Analytics at Build Asset Management. Writing on Bitcoin, cryptography, privacy, security, and technology."
+>
+  <section>
+    <p>
+      I am <strong>Head of Data and Analytics</strong> at Build Asset Management,
+      where I've helped launch a <a href="https://buildbitcoin.com/"
+        >private credit fund</a
+      > investing into over-collateralized <a href="/bitcoin/">bitcoin</a
+      >-backed loans, a <a href="https://bfix.fund/">fixed income ETF</a> and related
+      vehicles, and built the internal tech stack that glues everything together.
+    </p>
+  </section>
+  <section>
+    <h2>Contributions</h2>
+    <ul>
+      {
+        contributions.map((contribution) => {
+          return (
+            <li>
+              <a href={contribution.url}>{contribution.title}</a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
 </Base>

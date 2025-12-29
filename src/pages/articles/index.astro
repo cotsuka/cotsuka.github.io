@@ -1,21 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
 import Base from '@layouts/base.astro';
-import sortByDate from '@utils/sortByDate';
-import generateContentUrl from '@utils/generateContentUrl';
-
-const articles = await getCollection('articles');
-const sortedArticles = sortByDate(articles);
+import ContentList from '@components/ui/contentlist.astro';
 ---
 
-<Base title="Articles" description="Cameron Otsuka's articles exploring Bitcoin, technology, monetary systems, and technical insights.">
-    <h2>Articles</h2>
-    <dl>
-        {sortedArticles.map((article) => {
-            return (
-                <dt><a href={generateContentUrl(article)}>{article.data.title}</a></dt>
-                <dd>{article.data.description}</dd>
-            )
-        })}
-    </dl>
+<Base
+  title="Articles"
+  description="Cameron Otsuka's articles exploring Bitcoin, technology, monetary systems, and technical insights."
+>
+  <h2>Articles</h2>
+  <ContentList collection="articles" />
 </Base>

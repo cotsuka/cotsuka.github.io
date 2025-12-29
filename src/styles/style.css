@@ -1,5 +1,21 @@
 :root {
   color-scheme: light dark;
+
+  /* Primary colors */
+  --color-bg: light-dark(#e6e2d6, #000000);
+  --color-text: light-dark(#000000, #e6e2d6);
+  --color-link: light-dark(#82273d, #db7b8e);
+
+  /* Semantic colors */
+  --color-info: light-dark(#06458e, #5199e6);
+  --color-warn: light-dark(#703800, #f19e4c);
+  --color-error: light-dark(#900e1d, #ef6e7e);
+
+  /* Raw values for JS (needed for React components) */
+  --color-bg-light: #e6e2d6;
+  --color-bg-dark: #000000;
+  --color-text-light: #000000;
+  --color-text-dark: #e6e2d6;
 }
 
 @view-transition {
@@ -7,9 +23,9 @@
 }
 
 html {
-  background-color: light-dark(#e6e2d6, #000000);
-  color: light-dark(#000000, #e6e2d6);
-  font-family: "Source Serif 4 Variable", serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Source Serif 4 Variable', serif;
   font-kerning: normal;
   font-weight: 400;
   font-size: 100%;
@@ -23,8 +39,13 @@ body {
   font-size: 1rem;
   line-height: 1.6;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Public Sans Variable", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Public Sans Variable', sans-serif;
   font-weight: 700;
 }
 strong {
@@ -35,18 +56,33 @@ p {
 }
 a {
   text-decoration: none;
-  color: light-dark(#82273d, #db7b8e);
+  color: var(--color-link);
 }
 a:hover {
   text-decoration: underline;
 }
-dl, menu, ol, ul {
+dl,
+menu,
+ol,
+ul {
   margin-bottom: 0.5rem;
 }
-ul ul, ul ol, ul dl, ul menu,
-ol ul, ol ol, ol dl, ol menu,
-dl ul, dl ol, dl dl, dl menu,
-menu ul, menu ol, menu dl, menu menu {
+ul ul,
+ul ol,
+ul dl,
+ul menu,
+ol ul,
+ol ol,
+ol dl,
+ol menu,
+dl ul,
+dl ol,
+dl dl,
+dl menu,
+menu ul,
+menu ol,
+menu dl,
+menu menu {
   /* nested lists won't have margins*/
   margin-bottom: 0;
 }
@@ -75,24 +111,26 @@ table {
   border: 0.1rem solid;
   border-collapse: collapse;
 }
-th, td {
-  border: 0.1rem solid light-dark(#000000, #e6e2d6);
+th,
+td {
+  border: 0.1rem solid var(--color-text);
   text-align: center;
   vertical-align: middle;
   padding: 0.5rem;
 }
 code {
-  font-family: "Source Code Pro Variable", monospace;
+  font-family: 'Source Code Pro Variable', monospace;
   font-size: 0.9rem;
 }
-.astro-code, .astro-code span {
-  font-family: "Source Code Pro Variable", monospace;
+.astro-code,
+.astro-code span {
+  font-family: 'Source Code Pro Variable', monospace;
   margin-bottom: 1rem;
   padding: 0.1rem;
 }
 .footnotes {
   font-size: 0.9rem;
-  border-top: 1px dashed light-dark(#000000, #e6e2d6);
+  border-top: 1px dashed var(--color-text);
   margin-top: 1rem;
   padding-top: 1rem;
 }
@@ -107,8 +145,22 @@ code {
   border: 0;
 }
 details > summary {
-  list-style-type: "▸";
+  list-style-type: '▸';
 }
 details[open] > summary {
-  list-style-type: "▾";
+  list-style-type: '▾';
+}
+.inline-menu {
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+  list-style: none;
+}
+.inline-menu li {
+  display: inline;
+}
+.inline-menu--spaced li {
+  padding-right: 1rem;
+}
+.inline-menu--compact li {
+  padding-right: 0.5rem;
 }

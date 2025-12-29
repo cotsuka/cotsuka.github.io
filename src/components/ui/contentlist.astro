@@ -1,0 +1,26 @@
+---
+import { getCollection, type CollectionKey } from 'astro:content';
+import sortByDate from '@utils/sortByDate';
+import generateContentUrl from '@utils/generateContentUrl';
+
+interface Props {
+  collection: CollectionKey;
+}
+
+const { collection } = Astro.props;
+const entries = await getCollection(collection);
+const sorted = sortByDate(entries);
+---
+
+<dl>
+  {
+    sorted.map((entry) => (
+      <>
+        <dt>
+          <a href={generateContentUrl(entry)}>{entry.data.title}</a>
+        </dt>
+        {entry.data.description && <dd>{entry.data.description}</dd>}
+      </>
+    ))
+  }
+</dl>

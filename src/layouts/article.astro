@@ -3,23 +3,30 @@ import Base from '@layouts/base.astro';
 import HeadArticle from '@components/head/article.astro';
 
 interface Props {
-	title: string
-	description: string
-    publishedTime: string
-	modifiedTime: string
-	tags?: string[]
+  title: string;
+  description: string;
+  publishedTime: string;
+  modifiedTime: string;
+  tags?: string[];
 }
 
-const { title, description, publishedTime, modifiedTime, tags = [] } = Astro.props;
+const {
+  title,
+  description,
+  publishedTime,
+  modifiedTime,
+  tags = [],
+} = Astro.props;
 ---
+
 <Base title={title} description={description}>
-    <HeadArticle
-         slot="post-head"
-         publishedTime={publishedTime}
-         modifiedTime={modifiedTime}
-         tags={tags}
-    />
-    <article>
-        <slot />
-    </article>
+  <HeadArticle
+    slot="post-head"
+    publishedTime={publishedTime}
+    modifiedTime={modifiedTime}
+    tags={tags}
+  />
+  <article>
+    <slot />
+  </article>
 </Base>

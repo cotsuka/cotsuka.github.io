@@ -2,50 +2,51 @@
 type CalloutLevel = 'info' | 'warn' | 'error';
 
 interface Props {
-    level: CalloutLevel
-    label?: string
+  level: CalloutLevel;
+  label?: string;
 }
 
 const { level, label } = Astro.props;
 
 const calloutLabels: Record<CalloutLevel, string> = {
-    info: 'ⓘ Info',
-    warn: '⚠ Warning',
-    error: '! Error'
+  info: 'ⓘ Info',
+  warn: '⚠ Warning',
+  error: '! Error',
 };
 
 const calloutLabel = label ?? calloutLabels[level];
 ---
+
 <div class={`callout callout-${level}`}>
-    <div class={`callout-label`}>{calloutLabel}</div>
-    <div class="callout-content"><slot /></div>
+  <div class={`callout-label`}>{calloutLabel}</div>
+  <div class="callout-content"><slot /></div>
 </div>
 
 <style>
-    .callout {
-        margin-bottom: 1rem;
-        padding-left: 0.5rem;
-        border-left: 0.2rem solid;
-    }
-    .callout-info {
-        border-left: 0.2rem solid light-dark(#06458e, #5199e6);
-    }
-    .callout-info > .callout-label {
-        color: light-dark(#06458e, #5199e6);
-        font-weight: 700;
-    }
-    .callout-warn {
-        border-left: 0.2rem solid light-dark(#703800, #f19e4c);
-    }
-    .callout-warn > .callout-label {
-        color: light-dark(#703800, #f19e4c);
-        font-weight: 700;
-    }
-    .callout-error {
-        border-left: 0.2rem solid light-dark(#900e1d, #ef6e7e);
-    }
-    .callout-error > .callout-label {
-        color: light-dark(#900e1d, #ef6e7e);
-        font-weight: 700;
-    }
+  .callout {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    border-left: 0.2rem solid;
+  }
+  .callout-info {
+    border-left: 0.2rem solid var(--color-info);
+  }
+  .callout-info > .callout-label {
+    color: var(--color-info);
+    font-weight: 700;
+  }
+  .callout-warn {
+    border-left: 0.2rem solid var(--color-warn);
+  }
+  .callout-warn > .callout-label {
+    color: var(--color-warn);
+    font-weight: 700;
+  }
+  .callout-error {
+    border-left: 0.2rem solid var(--color-error);
+  }
+  .callout-error > .callout-label {
+    color: var(--color-error);
+    font-weight: 700;
+  }
 </style>
