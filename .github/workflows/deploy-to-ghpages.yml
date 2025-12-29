@@ -27,8 +27,8 @@ jobs:
       - name: Restore Astro image cache
         uses: actions/cache@v5
         with:
-          path: .astro-cache/assets
-          key: astro-images-${{ hashFiles('.astro-cache/assets/**/*') }}
+          path: .astro-cache/assets/
+          key: astro-images-${{ hashFiles('src/assets/**/*', 'src/content/**/*.{gif,jpg,png,svg,webp}') }}
           restore-keys: |
             astro-images-
 
@@ -36,7 +36,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: .og-cache/
-          key: og-images-${{ hashFiles('.og-cache/**/*') }}
+          key: og-images-${{ hashFiles('.og-cache/*') }}
           restore-keys: |
             og-images-
 
