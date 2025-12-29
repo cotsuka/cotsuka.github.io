@@ -10,7 +10,7 @@ posse:
 
 - noticing the little things in life
 - very shinto vibes:
-  - *komorebi*
+  - _komorebi_
   - god is in everything
   - the aya kōda reference; inspiration?
 - i have never seen this floor cleaning technique in my life

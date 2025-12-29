@@ -10,6 +10,6 @@ posse:
 
 - surrealism and asburdism galore
 - suprisingly strong directorial debut
-- tilda swinton was excellent as crazy, headstrong elizabeth 
+- tilda swinton was excellent as crazy, headstrong elizabeth
 - i stand with bank of america scene
 - personifying craigslist

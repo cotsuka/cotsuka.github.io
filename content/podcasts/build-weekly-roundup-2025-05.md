@@ -3,10 +3,10 @@ type: video
 title: Yield curve updates, looking forward to Yen meeting, more DeepSeek analysis
 date: 2025-01-30
 modified: 2025-06-19
-description: "Build Weekly Roundup - 2025 Week #5"
+description: 'Build Weekly Roundup - 2025 Week #5'
 tags:
-- ai
-- macro
+  - ai
+  - macro
 posse:
   𝕏: https://x.com/CameronOtsuka/status/1885111055158042704
 ---

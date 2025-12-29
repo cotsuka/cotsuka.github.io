@@ -1,6 +1,6 @@
 ---
 category: movie
-title: "The Lord of the Rings: The Fellowship of the Ring"
+title: 'The Lord of the Rings: The Fellowship of the Ring'
 date: 2025-11-26
 modified: 2025-11-30
 rating: 5

@@ -4,17 +4,24 @@ date: 2023-07-05
 modified: 2024-12-23
 description: If a drive is failing in an array, Btrfs could block attempts at removing the drive due to corrupted files. A quick write-up of how to get it removed.
 tags:
-- linux
+  - linux
 ---
+
 import Callout from '@components/ui/callout.astro';
 
 I recently ran into a situation where I knew one of the hard drives in my Btrfs array was failing. Simply following the [Btrfs wiki removing devices instructions](https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices.html#Removing_devices) was unsuccessful as the `btrfs delete device` command would throw an error, cancelling the device deletion process.
 
 At this point, I was okay with losing any corrupted/unrecoverable files. You should already be past the point of restoring from backup, attempting other recovery methods, etc. I just wanted to get the dying drive removed from the array since I knew I didn't have critical data on the array.
 
-<Callout level="warn">Make sure you've exhausted all other resources before continuing. Check the [ArchWiki](https://wiki.archlinux.org/title/Btrfs), [Btrfs mailing list](https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html), etc. This will lead to data loss!</Callout>
+<Callout level="warn">
+  Make sure you've exhausted all other resources before continuing. Check the
+  [ArchWiki](https://wiki.archlinux.org/title/Btrfs), [Btrfs mailing
+  list](https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list.html),
+  etc. This will lead to data loss!
+</Callout>
 
 ### Scrub the Array
+
 Start a scrub to identify files blocking the device from getting deleted:
 
 ```console
@@ -38,6 +45,7 @@ Error summary:    read=256
 ```
 
 ### Remove Uncorrectable Errors
+
 Btrfs was able to correct many of the errors it came across, but in this instance I was left with 18 uncorrectable errors. As the scrub identifies these, it will report them into the kernel ring buffer (`dmesg`). I found it nearly impossible to search through that, since the messages would either fall out of the log by the time I came back to the terminal to search. Instead, `journalctl` keeps a full enough history to search through:
 
 ```console
@@ -72,6 +80,7 @@ Now we need to translate those logicals into files we can actually attempt remov
 The output shows logical `32574079762432` refers to `/mnt/btrfs/P6300090.mov`. Remove the file, doing the same for all other logicals reported as uncorrectable errors. Several of the errors I received seemed to go away/not refer to a file. I just attempted removing any files that were identified, ignoring logicals that didn't resolve to anything.
 
 ### Delete the Device
+
 Now remount the Btrfs array, marking it as degraded. Then, delete the device you want to remove (in my case `/dev/sdd`):
 
 ```console

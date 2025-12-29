@@ -9,5 +9,5 @@ posse:
 ---
 
 - could see the plot points coming from a mile away
-- did the guy *need* to buy the one sim that looks like megan fox?
+- did the guy _need_ to buy the one sim that looks like megan fox?
 - acting was generally bad; megan fox is good at playing a creepy bot
