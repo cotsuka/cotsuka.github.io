@@ -3,7 +3,7 @@ import Base from '@layouts/base.astro';
 ---
 
 <Base title="Search" description="Search articles, reviews, and podcasts">
-  <div data-pagefind-ignore="all">
+  <div data-pagefind-ignore>
     <h2>Search</h2>
     <div id="searchContainer">
       <input
@@ -74,15 +74,27 @@ import Base from '@layouts/base.astro';
 </style>
 
 <script>
-  const searchField = document.querySelector('#searchInput');
-  const resultsContainer = document.querySelector('#searchResults');
-  const template = document.querySelector('#searchResultTemplate');
-  const fieldset = document.querySelector('fieldset');
-  let pagefind = null;
+  type SearchResult = {
+    url: string;
+    meta?: { title?: string };
+    excerpt: string;
+  };
+  type Pagefind = {
+    init: () => Promise<void>;
+    debouncedSearch: (
+      query: string,
+      options?: { filters?: { [key: string]: { any: string[] } } },
+    ) => Promise<{ results: { data: () => Promise<SearchResult> }[] } | null>;
+  };
 
-  if (!searchField || !resultsContainer || !template || !fieldset) {
-    throw new Error('Required DOM elements not found');
-  }
+  const searchField = document.querySelector<HTMLInputElement>('#searchInput')!;
+  const resultsContainer =
+    document.querySelector<HTMLDListElement>('#searchResults')!;
+  const template = document.querySelector<HTMLTemplateElement>(
+    '#searchResultTemplate',
+  )!;
+  const fieldset = document.querySelector<HTMLFieldSetElement>('fieldset')!;
+  let pagefind: Pagefind | null = null;
 
   async function loadPagefind() {
     if (pagefind) return pagefind;
@@ -95,6 +107,7 @@ import Base from '@layouts/base.astro';
     }
 
     try {
+      // @ts-expect-error - pagefind is generated at build time
       const pf = await import('/pagefind/pagefind.js');
       await pf.init();
       pagefind = pf;
@@ -105,25 +118,27 @@ import Base from '@layouts/base.astro';
     }
   }
 
-  function getSelectedFilters() {
+  function getSelectedFilters(): string[] {
     return Array.from(
-      fieldset.querySelectorAll('input[name="searchFilter"]:checked'),
+      fieldset.querySelectorAll<HTMLInputElement>(
+        'input[name="searchFilter"]:checked',
+      ),
     ).map((el) => el.value);
   }
 
-  function renderResult(data) {
+  function renderResult(data: SearchResult) {
     const clone = document.importNode(template.content, true);
-    const link = clone.querySelector('a');
-    const excerptEl = clone.querySelector('.excerpt');
+    const link = clone.querySelector('a')!;
+    const excerptEl = clone.querySelector('.excerpt')!;
 
     link.href = data.url;
     link.textContent = data.meta?.title || data.url;
-    excerptEl.innerHTML = data.excerpt;
+    (excerptEl as HTMLElement).innerHTML = data.excerpt;
 
     return clone;
   }
 
-  async function getSearchResults(query, filters) {
+  async function getSearchResults(query: string, filters: string[]) {
     if (!query.trim()) {
       resultsContainer.replaceChildren();
       return;
@@ -157,6 +172,7 @@ import Base from '@layouts/base.astro';
   searchField.addEventListener('input', triggerSearch);
 
   fieldset.addEventListener('change', (e) => {
-    if (e.target.name === 'searchFilter') triggerSearch();
+    if ((e.target as HTMLInputElement)?.name === 'searchFilter')
+      triggerSearch();
   });
 </script>
