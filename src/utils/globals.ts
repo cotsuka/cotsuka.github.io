@@ -18,6 +18,7 @@ export const menuItems: { title: string; url: string }[] = [
   { title: 'Articles', url: '/articles' },
   { title: 'Podcasts', url: '/podcasts' },
   { title: 'Reviews', url: '/reviews' },
+  { title: 'Search', url: '/search' },
 ];
 
 export const socials: {

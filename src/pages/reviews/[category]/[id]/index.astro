@@ -23,7 +23,13 @@ const { Content } = await render(entry);
     entry.data.date.toISOString()}
   tags={entry.data.tags}
 >
-  <h2>{entry.data.title}</h2>
+  <h2
+    data-pagefind-meta="title"
+    data-pagefind-ignore
+    data-pagefind-filter="category:review"
+  >
+    {entry.data.title}
+  </h2>
   <Metadata entryData={entry.data} />
   <Content />
 </Article>

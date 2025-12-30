@@ -14,7 +14,7 @@ const modifiedDate = entryData.modified
   : publishedDate;
 ---
 
-<details>
+<details data-pagefind-ignore>
   <summary>Metadata</summary>
   <ul>
     {entryData.description && <li>Description: {entryData.description}</li>}
@@ -26,7 +26,11 @@ const modifiedDate = entryData.modified
       )
     }
     <li>Published: <time datetime={publishedDate}>{publishedDate}</time></li>
-    <li>Last Modified: <time datetime={modifiedDate}>{modifiedDate}</time></li>
+    <li>
+      Last Modified: <time datetime={modifiedDate} data-pagefind-sort="date"
+        >{modifiedDate}</time
+      >
+    </li>
     {entryData.tags && <li>Tags: {entryData.tags.join(', ')}</li>}
     {
       entryData.posse && (

@@ -4,6 +4,8 @@ import Callout from '@components/ui/callout.astro';
 ---
 
 <Base title="404" description="Not Found">
-  <Callout level="error"> 404 Not Found </Callout>
-  <p>Oops! The page you requested is not found.</p>
+  <div data-pagefind-ignore>
+    <Callout level="error"> 404 Not Found </Callout>
+    <p>Oops! The page you requested is not found.</p>
+  </div>
 </Base>

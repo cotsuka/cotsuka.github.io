@@ -12,7 +12,12 @@ const { image, alt, formats = ['avif', 'webp'] } = Astro.props;
 ---
 
 <figure>
-  <Picture src={image} alt={alt} formats={formats} />
+  <Picture
+    src={image}
+    alt={alt}
+    formats={formats}
+    data-pagefind-index-attrs="alt"
+  />
   <figcaption><slot /></figcaption>
 </figure>
 
