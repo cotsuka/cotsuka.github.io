@@ -9,7 +9,7 @@ import Base from '@layouts/base.astro';
       <input
         type="search"
         id="searchInput"
-        placeholder="Enter search query..."
+        placeholder="Enter query..."
         autocomplete="off"
         aria-label="Search site content"
       />
@@ -77,12 +77,12 @@ import Base from '@layouts/base.astro';
   const searchField = document.querySelector('#searchInput');
   const resultsContainer = document.querySelector('#searchResults');
   const template = document.querySelector('#searchResultTemplate');
-
-  if (!searchField || !resultsContainer || !template) {
-    throw new Error('Search: Required DOM elements not found');
-  }
-
+  const fieldset = document.querySelector('fieldset');
   let pagefind = null;
+
+  if (!searchField || !resultsContainer || !template || !fieldset) {
+    throw new Error('Required DOM elements not found');
+  }
 
   async function loadPagefind() {
     if (pagefind) return pagefind;
@@ -107,23 +107,8 @@ import Base from '@layouts/base.astro';
 
   function getSelectedFilters() {
     return Array.from(
-      document.querySelectorAll('input[name="searchFilter"]:checked'),
+      fieldset.querySelectorAll('input[name="searchFilter"]:checked'),
     ).map((el) => el.value);
-  }
-
-  function safeExcerpt(html) {
-    const temp = document.createElement('template');
-    temp.innerHTML = html;
-
-    return Array.from(temp.content.childNodes).flatMap((node) => {
-      if (node.nodeType === Node.TEXT_NODE) return node.textContent || '';
-      if (node instanceof HTMLElement && node.tagName === 'MARK') {
-        const mark = document.createElement('mark');
-        mark.textContent = node.textContent || '';
-        return mark;
-      }
-      return [];
-    });
   }
 
   function renderResult(data) {
@@ -131,11 +116,10 @@ import Base from '@layouts/base.astro';
     const link = clone.querySelector('a');
     const excerptEl = clone.querySelector('.excerpt');
 
-    if (link && excerptEl) {
-      link.href = data.url;
-      link.textContent = data.meta?.title || data.url;
-      excerptEl.replaceChildren(...safeExcerpt(data.excerpt));
-    }
+    link.href = data.url;
+    link.textContent = data.meta?.title || data.url;
+    excerptEl.innerHTML = data.excerpt;
+
     return clone;
   }
 
@@ -147,6 +131,7 @@ import Base from '@layouts/base.astro';
 
     try {
       await loadPagefind();
+      if (!pagefind) return;
 
       const options = filters.length
         ? { filters: { category: { any: filters } } }
@@ -171,7 +156,7 @@ import Base from '@layouts/base.astro';
   searchField.addEventListener('focus', loadPagefind, { once: true });
   searchField.addEventListener('input', triggerSearch);
 
-  document.querySelector('fieldset').addEventListener('change', (e) => {
+  fieldset.addEventListener('change', (e) => {
     if (e.target.name === 'searchFilter') triggerSearch();
   });
 </script>
