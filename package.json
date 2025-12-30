@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "bunx --bun astro dev",
-    "build": "bunx --bun astro build && bunx --bun pagefind",
+    "build": "bunx --bun astro build",
     "preview": "bunx --bun astro preview",
     "astro": "bunx --bun astro",
+    "index": "bunx --bun pagefind",
     "lint": "bunx --bun eslint src/",
     "lint:fix": "bunx --bun eslint src/ --fix",
     "format": "bunx --bun prettier --write .",

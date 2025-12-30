@@ -17,47 +17,36 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v6
-
       - uses: oven-sh/setup-bun@v2
-
-      - name: Restore bun dependency cache
-        uses: actions/cache@v5
+      - uses: actions/cache@v5
         with:
           path: node_modules/
           key: bun-${{ hashFiles('bun.lock') }}
           restore-keys: |
             bun-
-
       - name: Install dependencies
         run: bun install --frozen-lockfile
-
       - name: Type check
         run: bun run typecheck
-
-      - name: Test
+      - name: Run tests
         run: bun run test:run
-
-      - name: Restore Astro image cache
-        uses: actions/cache@v5
+      - uses: actions/cache@v5
         with:
           path: .astro-cache/assets/
           key: astro-images-${{ hashFiles('src/assets/**/*', 'content/**/*.gif', 'content/**/*.jpg', 'content/**/*.png', 'content/**/*.svg', 'content/**/*.webp') }}
           restore-keys: |
             astro-images-
-
-      - name: Restore OpenGraph image cache
-        uses: actions/cache@v5
+      - uses: actions/cache@v5
         with:
           path: .og-cache/
           key: og-images-${{ hashFiles('content/**/*.md', 'content/**/*.mdx') }}
           restore-keys: |
             og-images-
-
-      - name: Build
+      - name: Build site pages
         run: bun run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+      - name: Build search index
+        run: bun run index
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: dist/
 
