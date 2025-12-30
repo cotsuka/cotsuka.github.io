@@ -8,6 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://cameron.otsuka.systems',
+  cacheDir: './.astro-cache',
   integrations: [
     icon({
       include: {
