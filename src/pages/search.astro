@@ -1,0 +1,162 @@
+---
+import Base from '@layouts/base.astro';
+---
+
+<Base title="Search" description="Search articles, reviews, and podcasts">
+  <div data-pagefind-ignore="all">
+    <h2>Search</h2>
+    <div id="searchContainer">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Enter query..."
+        autocomplete="off"
+        aria-label="Search site content"
+      />
+    </div>
+    <fieldset>
+      <legend>Search result filters</legend>
+      <ul>
+        <li>
+          <input
+            type="checkbox"
+            id="articleFilter"
+            name="searchFilter"
+            value="article"
+            checked
+          />
+          <label for="articleFilter">Articles</label>
+        </li>
+        <li>
+          <input
+            type="checkbox"
+            id="podcastFilter"
+            name="searchFilter"
+            value="podcast"
+            checked
+          />
+          <label for="podcastFilter">Podcasts</label>
+        </li>
+        <li>
+          <input
+            type="checkbox"
+            id="reviewFilter"
+            name="searchFilter"
+            value="review"
+            checked
+          />
+          <label for="reviewFilter">Reviews</label>
+        </li>
+      </ul>
+    </fieldset>
+    <dl id="searchResults" aria-live="polite"></dl>
+    <template id="searchResultTemplate">
+      <dt class="searchResult">
+        <a href=""></a>
+      </dt>
+      <dd class="excerpt"></dd>
+    </template>
+  </div>
+</Base>
+
+<style>
+  #searchInput {
+    width: 100%;
+  }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+  }
+  #searchResults {
+    margin-top: 1rem;
+  }
+</style>
+
+<script>
+  const searchField = document.querySelector('#searchInput');
+  const resultsContainer = document.querySelector('#searchResults');
+  const template = document.querySelector('#searchResultTemplate');
+  const fieldset = document.querySelector('fieldset');
+  let pagefind = null;
+
+  if (!searchField || !resultsContainer || !template || !fieldset) {
+    throw new Error('Required DOM elements not found');
+  }
+
+  async function loadPagefind() {
+    if (pagefind) return pagefind;
+
+    if (import.meta.env.DEV) {
+      console.warn(
+        'Search is unavailable in dev mode. Run `bun run build` first.',
+      );
+      return null;
+    }
+
+    try {
+      const pf = await import('/pagefind/pagefind.js');
+      await pf.init();
+      pagefind = pf;
+      return;
+    } catch (error) {
+      console.error('Failed to load Pagefind:', error);
+      throw error;
+    }
+  }
+
+  function getSelectedFilters() {
+    return Array.from(
+      fieldset.querySelectorAll('input[name="searchFilter"]:checked'),
+    ).map((el) => el.value);
+  }
+
+  function renderResult(data) {
+    const clone = document.importNode(template.content, true);
+    const link = clone.querySelector('a');
+    const excerptEl = clone.querySelector('.excerpt');
+
+    link.href = data.url;
+    link.textContent = data.meta?.title || data.url;
+    excerptEl.innerHTML = data.excerpt;
+
+    return clone;
+  }
+
+  async function getSearchResults(query, filters) {
+    if (!query.trim()) {
+      resultsContainer.replaceChildren();
+      return;
+    }
+
+    try {
+      await loadPagefind();
+      if (!pagefind) return;
+
+      const options = filters.length
+        ? { filters: { category: { any: filters } } }
+        : {};
+      const response = await pagefind.debouncedSearch(query, options);
+
+      if (!response) return; // superseded by newer search
+
+      const results = await Promise.all(
+        response.results.slice(0, 10).map((r) => r.data()),
+      );
+
+      resultsContainer.replaceChildren(...results.map(renderResult));
+    } catch (error) {
+      console.error('Search failed:', error);
+    }
+  }
+
+  const triggerSearch = () =>
+    getSearchResults(searchField.value, getSelectedFilters());
+
+  searchField.addEventListener('focus', loadPagefind, { once: true });
+  searchField.addEventListener('input', triggerSearch);
+
+  fieldset.addEventListener('change', (e) => {
+    if (e.target.name === 'searchFilter') triggerSearch();
+  });
+</script>

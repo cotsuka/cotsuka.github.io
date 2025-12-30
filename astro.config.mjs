@@ -27,4 +27,11 @@ export default defineConfig({
       theme: 'monokai',
     },
   },
+  vite: {
+    build: {
+      rollupOptions: {
+        external: '/pagefind/pagefind.js',
+      },
+    },
+  },
 });

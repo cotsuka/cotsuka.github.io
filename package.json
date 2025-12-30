@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "bunx --bun astro dev",
-    "build": "bunx --bun astro build",
+    "build": "bunx --bun astro build && bunx --bun pagefind",
     "preview": "bunx --bun astro preview",
     "astro": "bunx --bun astro",
     "lint": "bunx --bun eslint src/",
@@ -53,6 +53,7 @@
     "@vercel/og": "^0.8.6",
     "astro": "5.16.6",
     "astro-icon": "^1.1.5",
+    "pagefind": "^1.4.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "recharts": "^3.6.0"
