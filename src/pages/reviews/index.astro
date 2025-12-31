@@ -34,7 +34,9 @@ const sortedReviews = sortByDate(reviews);
             <tr>
               <td>{review.data.category}</td>
               <td>
-                <a href={generateContentUrl(review)}>{review.data.title}</a>
+                <h4>
+                  <a href={generateContentUrl(review)}>{review.data.title}</a>
+                </h4>
               </td>
               <td>
                 <Rating rating={review.data.rating} />
@@ -50,6 +52,9 @@ const sortedReviews = sortByDate(reviews);
 <style>
   table {
     width: 100%;
+  }
+  thead {
+    font-family: var(--font-sans);
   }
   td:nth-child(2) {
     text-align: left;

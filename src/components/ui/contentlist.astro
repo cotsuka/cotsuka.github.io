@@ -17,7 +17,9 @@ const sorted = sortByDate(entries);
     sorted.map((entry) => (
       <>
         <dt>
-          <a href={generateContentUrl(entry)}>{entry.data.title}</a>
+          <a href={generateContentUrl(entry)}>
+            <h4>{entry.data.title}</h4>
+          </a>
         </dt>
         {entry.data.description && <dd>{entry.data.description}</dd>}
       </>

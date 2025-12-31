@@ -1,6 +1,11 @@
 :root {
   color-scheme: light dark;
 
+  /* Fonts */
+  --font-serif: 'Source Serif 4 Variable', serif;
+  --font-sans: 'Public Sans Variable', sans-serif;
+  --font-mono: 'Source Code Pro Variable', monospace;
+
   /* Primary colors */
   --color-bg: light-dark(#e6e2d6, #000000);
   --color-text: light-dark(#000000, #e6e2d6);
@@ -25,7 +30,7 @@
 html {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: 'Source Serif 4 Variable', serif;
+  font-family: var(--font-serif);
   font-kerning: normal;
   font-weight: 400;
   font-size: 100%;
@@ -45,7 +50,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Public Sans Variable', sans-serif;
+  font-family: var(--font-sans);
   font-weight: 700;
 }
 strong {
@@ -119,12 +124,12 @@ td {
   padding: 0.5rem;
 }
 code {
-  font-family: 'Source Code Pro Variable', monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
 }
 .astro-code,
 .astro-code span {
-  font-family: 'Source Code Pro Variable', monospace;
+  font-family: var(--font-mono);
   margin-bottom: 1rem;
   padding: 0.1rem;
 }
