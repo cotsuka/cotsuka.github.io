@@ -2,7 +2,7 @@
 category: movie
 title: When Harry Met Sally...
 date: 2025-12-30
-modified: 2025-01-01
+modified: 2026-01-01
 rating: 3
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/when-harry-met-sally/

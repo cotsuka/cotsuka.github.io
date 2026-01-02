@@ -1,8 +1,8 @@
 ---
 category: movie
 title: Thunderbolts*
-date: 2025-01-01
-modified: 2025-01-01
+date: 2026-01-01
+modified: 2026-01-01
 rating: 2
 posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/thunderbolts/
