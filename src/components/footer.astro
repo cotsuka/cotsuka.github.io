@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
 
 <footer>
   <address>
-    <menu class="inline-menu inline-menu--compact">
+    <menu class="inline-menu">
       {
         Object.entries(socials).map(([, social]) => (
           <li>
@@ -42,6 +42,9 @@ const currentYear = new Date().getFullYear();
   }
   address {
     font-family: var(--font-sans);
+  }
+  li {
+    padding-right: 0.5rem;
   }
   [data-icon='mdi:rss'] {
     display: inline-block;

@@ -177,12 +177,6 @@ details[open] > summary {
 .inline-menu li {
   display: inline;
 }
-.inline-menu--spaced li {
-  padding-right: 1rem;
-}
-.inline-menu--compact li {
-  padding-right: 0.5rem;
-}
 picture {
   margin-bottom: 1rem;
 }

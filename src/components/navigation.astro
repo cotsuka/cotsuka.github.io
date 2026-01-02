@@ -3,7 +3,7 @@ import { menuItems } from '@utils/globals';
 ---
 
 <nav>
-  <menu class="inline-menu inline-menu--spaced">
+  <menu class="inline-menu">
     {
       menuItems.map((menuItem) => (
         <li>
@@ -18,5 +18,8 @@ import { menuItems } from '@utils/globals';
   nav {
     font-family: var(--font-sans);
     margin-bottom: 1rem;
+  }
+  li {
+    padding-right: 1rem;
   }
 </style>
