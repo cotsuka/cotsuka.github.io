@@ -4,21 +4,21 @@
   "version": "2.1.0",
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun astro dev",
-    "build": "bunx --bun astro build",
-    "preview": "bunx --bun astro preview",
-    "astro": "bunx --bun astro",
-    "index": "bunx --bun pagefind",
-    "lint": "bunx --bun eslint src/",
-    "lint:fix": "bunx --bun eslint src/ --fix",
-    "format": "bunx --bun prettier --write .",
-    "format:check": "bunx --bun prettier --check .",
-    "typecheck": "bunx --bun astro check",
+    "dev": "bun x --bun astro dev",
+    "build": "bun x --bun astro build",
+    "preview": "bun x --bun astro preview",
+    "astro": "bun x --bun astro",
+    "index": "bun x --bun pagefind",
+    "lint": "bun x --bun eslint src/",
+    "lint:fix": "bun x --bun eslint src/ --fix",
+    "format": "bun x --bun prettier --write .",
+    "format:check": "bun x --bun prettier --check .",
+    "typecheck": "bun x --bun astro check",
     "test": "bun test --watch",
     "test:run": "bun test"
   },
   "simple-git-hooks": {
-    "pre-commit": "bunx lint-staged"
+    "pre-commit": "bun x lint-staged"
   },
   "lint-staged": {
     "*.{ts,tsx,astro,js}": [
