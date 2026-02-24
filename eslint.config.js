@@ -13,6 +13,7 @@ export default [
       '.astro/',
       '.astro-cache/',
       '.og-cache/',
+      '.pi/',
     ],
   },
 ];

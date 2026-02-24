@@ -1,62 +1,46 @@
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
+/* Josh's Custom CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* Specificity updates by Cameron */
 
-*,
-*::before,
-*::after {
+:where(*, *::before, *::after) {
   box-sizing: border-box;
 }
 
-* {
+:where(*:not(dialog)) {
   margin: 0;
 }
 
-body {
+@media (prefers-reduced-motion: no-preference) {
+  :where(html) {
+    interpolate-size: allow-keywords;
+  }
+}
+
+:where(body) {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
+:where(img, picture, video, canvas, svg) {
   display: block;
   max-width: 100%;
 }
 
-input,
-button,
-textarea,
-select {
+:where(input, button, textarea, select) {
   font: inherit;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:where(p, h1, h2, h3, h4, h5, h6) {
   overflow-wrap: break-word;
 }
 
-p {
+:where(p) {
   text-wrap: pretty;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+:where(h1, h2, h3, h4, h5, h6) {
   text-wrap: balance;
 }
 
-#root,
-#__next {
+:where(#root, #__next) {
   isolation: isolate;
 }

@@ -1,5 +1,6 @@
 :root {
   color-scheme: light dark;
+  accent-color: var(--color-link);
 
   /* Fonts */
   --font-serif: 'Source Serif 4 Variable', serif;
@@ -52,7 +53,7 @@ h5,
 h6 {
   font-family: var(--font-sans);
   line-height: var(--line-height-heading);
-  margin-bottom: 0.2rem;
+  margin-block-end: 0.2rem;
 }
 h1,
 h2 {
@@ -84,7 +85,7 @@ strong {
   font-weight: 600;
 }
 p {
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
 }
 a {
   text-decoration: none;
@@ -97,13 +98,13 @@ dl,
 menu,
 ol,
 ul {
-  margin-bottom: 0.75rem;
+  margin-block-end: 0.75rem;
 }
 p:has(+ dl, + menu, + ol, + ul) {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 :is(ul, ol, dl, menu) :is(ul, ol, dl, menu) {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 img {
   height: auto;
@@ -114,17 +115,17 @@ img:hover {
   filter: grayscale(0);
 }
 dd {
-  margin-bottom: 0.5rem;
-  padding-left: 1.5rem;
+  margin-block-end: 0.5rem;
+  padding-inline-start: 1.5rem;
 }
 blockquote {
-  margin-bottom: 1rem;
-  padding-left: 0.5rem;
+  margin-block-end: 1rem;
+  padding-inline-start: 0.5rem;
   font-style: italic;
-  border-left: 0.2rem solid;
+  border-inline-start: 0.2rem solid;
 }
 table {
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
   margin-inline: auto;
   border: 0.1rem solid;
   border-collapse: collapse;
@@ -144,14 +145,14 @@ code {
   font-size: 0.9rem;
 }
 .astro-code {
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
   padding: 0.1rem;
 }
 .footnotes {
-  margin-top: 1rem;
-  padding-top: 1rem;
+  margin-block-start: 1rem;
+  padding-block-start: 1rem;
   font-size: 0.9rem;
-  border-top: 1px dashed var(--color-text);
+  border-block-start: 1px dashed var(--color-text);
 }
 .sr-only {
   position: absolute;
@@ -178,5 +179,5 @@ details[open] > summary {
   display: inline;
 }
 picture {
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
 }

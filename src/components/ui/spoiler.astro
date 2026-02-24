@@ -7,7 +7,7 @@
   details.spoiler {
     color: var(--color-bg);
     background-color: var(--color-text);
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
     padding: 0.5rem;
     &[open] {
       color: unset;
@@ -16,10 +16,15 @@
     }
     &::details-content {
       opacity: 0;
+      transition: opacity 0.4s linear;
     }
     &[open]::details-content {
       opacity: 1;
-      transition: all 0.4s linear;
+    }
+    @starting-style {
+      &[open]::details-content {
+        opacity: 0;
+      }
     }
   }
 </style>
