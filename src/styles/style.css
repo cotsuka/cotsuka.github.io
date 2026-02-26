@@ -86,7 +86,7 @@ strong {
   font-weight: 600;
 }
 mark {
-  color: var(--color-text);
+  color: var(--color-bg);
   background-color: var(--color-highlight);
 }
 p {
