@@ -20,6 +20,7 @@
   --color-info: light-dark(#06458e, #5199e6);
   --color-warn: light-dark(#703800, #f19e4c);
   --color-error: light-dark(#900e1d, #ef6e7e);
+  --color-highlight: light-dark(#a66a74, #8c4f5b);
 
   /* Raw values for JS (needed for React components) */
   --color-bg-light: #e6e2d6;
@@ -83,6 +84,10 @@ h6 {
 }
 strong {
   font-weight: 600;
+}
+mark {
+  color: var(--color-text);
+  background-color: var(--color-highlight);
 }
 p {
   margin-block-end: 1rem;
