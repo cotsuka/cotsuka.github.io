@@ -5,6 +5,7 @@ import '@fontsource-variable/source-code-pro';
 import '@fontsource-variable/source-serif-4';
 import '@styles/style.css';
 import HeadBase from '@components/head/base.astro';
+import PostHog from '@components/head/posthog.astro';
 import HeadPage from '@components/head/page.astro';
 import Heading from '@components/heading.astro';
 import Footer from '@components/footer.astro';
@@ -21,6 +22,7 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <HeadBase title={title} description={description} />
+    <PostHog />
     <slot name="post-head">
       <HeadPage />
     </slot>
