@@ -45,8 +45,6 @@ body {
   padding: 0.5rem 1rem;
   line-height: var(--line-height-body);
   text-rendering: optimizeLegibility;
-  text-wrap: pretty;
-  text-align: justify;
 }
 h1,
 h2,
@@ -93,6 +91,8 @@ mark {
 }
 p {
   margin-block-end: 1rem;
+  text-wrap: pretty;
+  text-align: justify;
 }
 a {
   text-decoration: none;
