@@ -1,34 +1,90 @@
 ---
 import { getCollection } from 'astro:content';
-import Chart from './chart.tsx';
 
 const reviews = await getCollection('reviews');
 
-const ratingCounts: { [rating: number]: number } = {
+const ratingCounts: Record<number, number> = {
   1: 0,
   2: 0,
   3: 0,
   4: 0,
   5: 0,
 };
+
 reviews.forEach((review) => {
-  const rating = review.data.rating;
-  ratingCounts[rating]++;
+  ratingCounts[review.data.rating]++;
 });
+
+const maxCount = Math.max(...Object.values(ratingCounts), 1);
+
 const chartData = Object.entries(ratingCounts).map(([rating, count]) => ({
   name: rating,
-  count: count,
+  count,
+  percentage: (count / maxCount) * 100,
 }));
-
-// Generate accessible text description
-const accessibleDescription = chartData
-  .map((d) => `${d.name} stars: ${d.count} reviews`)
-  .join(', ');
 ---
 
-<div
-  role="img"
-  aria-label={`Rating distribution chart. ${accessibleDescription}`}
->
-  <Chart chartData={chartData} client:load />
-</div>
+<ul class="rating-distribution" aria-label="Rating distribution">
+  {
+    chartData.map((entry) => (
+      <li class="rating-column">
+        <span class="rating-count">{entry.count}</span>
+        <div
+          class="rating-bar"
+          role="meter"
+          aria-label={`${entry.name} stars: ${entry.count} reviews`}
+          aria-valuemin="0"
+          aria-valuemax={maxCount}
+          aria-valuenow={entry.count}
+          aria-valuetext={`${entry.count} reviews`}
+          style={`--bar-height: ${entry.percentage}%;`}
+        >
+          <span class="rating-fill" />
+        </div>
+        <span class="rating-label">{entry.name}</span>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .rating-distribution {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    color: var(--color-text);
+    font-family: var(--font-sans);
+  }
+
+  .rating-column {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 0.5rem;
+    justify-items: center;
+  }
+
+  .rating-count {
+    font-style: italic;
+  }
+
+  .rating-label {
+    font-weight: 600;
+  }
+
+  .rating-bar {
+    inline-size: 4rem;
+    block-size: 8rem;
+    display: flex;
+    align-items: end;
+    border: 1px solid var(--color-text);
+    background: color-mix(in srgb, var(--color-text) 20%, var(--color-bg));
+    overflow: hidden;
+  }
+
+  .rating-fill {
+    inline-size: 100%;
+    block-size: var(--bar-height);
+    background: var(--color-text);
+  }
+</style>

@@ -54,7 +54,7 @@ I've selected 4 blocks to deep dive, based on their proximity to mempool peaks i
 </Figure>
 
 | **Fee Rate (sats/vB)** | **504000** | **680000** | **782400** | **801171** |
-| :--------------------: | :--------: | :--------: | :--------: | :--------: |
+| ---------------------- | ---------- | ---------- | ---------- | ---------- |
 |        Minimum         |     11     |     19     |     5      |     5      |
 |         Median         |    119     |    269     |     27     |     12     |
 |          Mode          |    118     |    269     |     27     |     12     |
@@ -83,7 +83,7 @@ I don't expect to see major differences in fee rates by script type, but since I
 Transactions are shifting towards the newer P2WPKH, P2WSH, and P2TR script types:
 
 | **Transactions (%)** | **504000** | **680000** | **782400** | **801171** |
-| :------------------: | :--------: | :--------: | :--------: | :--------: |
+| -------------------- | ---------- | ---------- | ---------- | ---------- |
 |        P2PKH         |    97%     |    51%     |    22%     |    32%     |
 |         P2SH         |     3%     |    41%     |    28%     |    26%     |
 |        P2WPKH        |     0%     |     7%     |    38%     |    38%     |
@@ -121,7 +121,7 @@ The total fees paid to move a given UTXO depend on the vBytes needed to construc
 The table below shows the amount of vBytes required by a transaction consisting of a single input being spent to a single output.
 
 | **Output →<br />Input ↓** | **P2PKH** | **P2SH** | **P2WPKH** | **P2WSH** | **P2TR** |
-| :-----------------------: | :-------: | :------: | :--------: | :-------: | :------: |
+| ------------------------- | --------- | -------- | ---------- | --------- | -------- |
 |           P2PKH           |    192    |   190    |    189     |    201    |   201    |
 |       P2SH (2-of-3)       |    341    |   339    |    338     |    350    |   350    |
 |          P2WPKH           |   112.5   |  110.5   |   109.5    |   121.5   |  121.5   |

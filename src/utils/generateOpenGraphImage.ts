@@ -3,28 +3,20 @@ import { type SatoriOptions } from 'satori';
 import { siteAuthor } from '@utils/globals';
 
 const OG_CACHE_DIR = '.og-cache';
+const NODE_MODULES_DIR = `${process.cwd()}/node_modules`;
 
-async function loadFont(fontName: string) {
-  let url: string;
-  switch (fontName) {
-    case 'Public Sans Variable':
-      url = `https://cdn.jsdelivr.net/fontsource/fonts/public-sans@latest/latin-400-normal.ttf`;
-      break;
-    case 'Source Serif 4':
-      url = `https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4@latest/latin-400-normal.ttf`;
-      break;
-    case 'DejaVu Mono':
-      url = `https://cdn.jsdelivr.net/fontsource/fonts/dejavu-mono@latest/latin-400-normal.ttf`;
-      break;
-    default:
-      throw new Error('font url not defined');
-  }
+const ogFontPaths = {
+  'Public Sans': `${NODE_MODULES_DIR}/@fontsource/public-sans/files/public-sans-latin-400-normal.woff`,
+  'Source Serif 4': `${NODE_MODULES_DIR}/@fontsource/source-serif-4/files/source-serif-4-latin-400-normal.woff`,
+  'DejaVu Mono': `${NODE_MODULES_DIR}/@fontsource/dejavu-mono/files/dejavu-mono-latin-400-normal.woff`,
+} as const;
 
-  const font = await fetch(url);
-  if (font.ok) {
+async function loadFont(fontName: keyof typeof ogFontPaths) {
+  const font = Bun.file(ogFontPaths[fontName]);
+  if (await font.exists()) {
     return await font.arrayBuffer();
   }
-  throw new Error('failed to load font data');
+  throw new Error(`failed to load font data for ${fontName}`);
 }
 
 // Lazy-loaded Satori options to avoid blocking module initialization
@@ -37,8 +29,8 @@ async function getSatoriOptions(): Promise<SatoriOptions> {
       height: 630,
       fonts: [
         {
-          name: 'Public Sans Variable',
-          data: await loadFont('Public Sans Variable'),
+          name: 'Public Sans',
+          data: await loadFont('Public Sans'),
           style: 'normal',
         },
         {
@@ -98,7 +90,7 @@ export default async function generateOpenGraphImage(
         width: '100%',
         height: '100%',
         padding: 80,
-        fontFamily: 'Public Sans Variable',
+        fontFamily: 'Public Sans',
       },
       children: [
         {

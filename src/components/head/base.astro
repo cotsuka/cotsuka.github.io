@@ -1,5 +1,5 @@
 ---
-import { getImage } from 'astro:assets';
+import { Font, getImage } from 'astro:assets';
 import { siteAuthor, siteTitle, socials } from '@utils/globals';
 import FavIcon from '@assets/favicon.ico';
 
@@ -18,6 +18,15 @@ const favIcon = await getImage({
 const { title, description } = Astro.props;
 ---
 
+<Font
+  cssVariable="--font-serif"
+  preload={[{ style: 'normal', subset: 'latin' }]}
+/>
+<Font
+  cssVariable="--font-sans"
+  preload={[{ style: 'normal', subset: 'latin' }]}
+/>
+<Font cssVariable="--font-mono" />
 <meta charset="utf-8" />
 <link rel="icon" type="image/x-icon" href={favIcon.src} />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
