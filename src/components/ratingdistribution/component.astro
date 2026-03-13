@@ -20,7 +20,6 @@ const maxCount = Math.max(...Object.values(ratingCounts), 1);
 const chartData = Object.entries(ratingCounts).map(([rating, count]) => ({
   name: rating,
   count,
-  percentage: (count / maxCount) * 100,
 }));
 ---
 
@@ -29,18 +28,15 @@ const chartData = Object.entries(ratingCounts).map(([rating, count]) => ({
     chartData.map((entry) => (
       <li class="rating-column">
         <span class="rating-count">{entry.count}</span>
-        <div
-          class="rating-bar"
-          role="meter"
+        <meter
+          class="rating-meter"
+          min="0"
+          max={maxCount}
+          value={entry.count}
           aria-label={`${entry.name} stars: ${entry.count} reviews`}
-          aria-valuemin="0"
-          aria-valuemax={maxCount}
-          aria-valuenow={entry.count}
-          aria-valuetext={`${entry.count} reviews`}
-          style={`--bar-height: ${entry.percentage}%;`}
         >
-          <span class="rating-fill" />
-        </div>
+          {entry.count} of {maxCount}
+        </meter>
         <span class="rating-label">{entry.name}</span>
       </li>
     ))
@@ -72,19 +68,31 @@ const chartData = Object.entries(ratingCounts).map(([rating, count]) => ({
     font-weight: 600;
   }
 
-  .rating-bar {
-    inline-size: 4rem;
-    block-size: 8rem;
-    display: flex;
-    align-items: end;
+  .rating-meter {
+    display: block;
+    width: 4rem;
+    height: 8rem;
+    margin: 0;
+    padding: 0;
+    writing-mode: vertical-lr;
+    -moz-orient: vertical;
+    appearance: none;
     border: 1px solid var(--color-text);
     background: color-mix(in srgb, var(--color-text) 20%, var(--color-bg));
     overflow: hidden;
   }
 
-  .rating-fill {
-    inline-size: 100%;
-    block-size: var(--bar-height);
+  .rating-meter::-webkit-meter-bar {
+    background: color-mix(in srgb, var(--color-text) 20%, var(--color-bg));
+  }
+
+  .rating-meter::-webkit-meter-optimum-value,
+  .rating-meter::-webkit-meter-suboptimum-value,
+  .rating-meter::-webkit-meter-even-less-good-value {
+    background: var(--color-text);
+  }
+
+  .rating-meter::-moz-meter-bar {
     background: var(--color-text);
   }
 </style>
