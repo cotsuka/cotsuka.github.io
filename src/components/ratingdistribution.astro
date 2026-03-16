@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+
+const reviews = await getCollection('reviews');
+const ratings = [1, 2, 3, 4, 5] as const;
+const counts = [0, 0, 0, 0, 0];
+
+for (const { data } of reviews) {
+  counts[data.rating - 1]++;
+}
+
+const maxCount = Math.max(...counts, 1);
+
+const chartData = ratings.map((rating, index) => ({
+  name: rating,
+  count: counts[index],
+  percent: (counts[index] / maxCount) * 100,
+}));
+---
+
+<ul class="rating-distribution">
+  {
+    chartData.map((entry) => (
+      <li class="rating-column">
+        <div class="rating-bar">
+          <span class="rating-bar-fill" style={`height: ${entry.percent}%`} />
+        </div>
+        <span class="rating-label">{entry.name}</span>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .rating-distribution {
+    list-style: none;
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
+    align-items: end;
+  }
+
+  .rating-column {
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+
+  .rating-bar {
+    display: flex;
+    align-items: end;
+    width: 100%;
+    height: clamp(4rem, 24vw, 8rem);
+    border: 1px solid var(--color-text);
+    overflow: hidden;
+  }
+
+  .rating-bar-fill {
+    width: 100%;
+    background-color: var(--color-text);
+  }
+
+  .rating-label {
+    justify-self: center;
+  }
+</style>
