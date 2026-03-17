@@ -75,7 +75,7 @@ export default defineConfig({
       ],
       scriptDirective: {
         resources: ["'self'", 'https://ph.otsuka.systems'],
-        strictDynamic: true,
+        strictDynamic: false,
       },
     },
   },
