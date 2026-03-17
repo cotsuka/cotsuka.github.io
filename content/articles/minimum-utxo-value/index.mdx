@@ -55,10 +55,10 @@ I've selected 4 blocks to deep dive, based on their proximity to mempool peaks i
 
 | **Fee Rate (sats/vB)** | **504000** | **680000** | **782400** | **801171** |
 | ---------------------- | ---------- | ---------- | ---------- | ---------- |
-|        Minimum         |     11     |     19     |     5      |     5      |
-|         Median         |    119     |    269     |     27     |     12     |
-|          Mode          |    118     |    269     |     27     |     12     |
-|        Maximum         |    1099    |    3578    |    301     |    1280    |
+| Minimum                | 11         | 19         | 5          | 5          |
+| Median                 | 119        | 269        | 27         | 12         |
+| Mode                   | 118        | 269        | 27         | 12         |
+| Maximum                | 1099       | 3578       | 301        | 1280       |
 
 The first visible difference based on the box and whisker plot is the noticeable decrease in fee rate variance, likely attributable to better fee estimations. Second, is the 86% decline in median fee rate with an average 194 sats/vB between blocks 504000 and 680000 vs. 27 sats/vB in block 782400.
 
@@ -84,11 +84,11 @@ Transactions are shifting towards the newer P2WPKH, P2WSH, and P2TR script types
 
 | **Transactions (%)** | **504000** | **680000** | **782400** | **801171** |
 | -------------------- | ---------- | ---------- | ---------- | ---------- |
-|        P2PKH         |    97%     |    51%     |    22%     |    32%     |
-|         P2SH         |     3%     |    41%     |    28%     |    26%     |
-|        P2WPKH        |     0%     |     7%     |    38%     |    38%     |
-|        P2WSH         |     0%     |     0%     |     1%     |     1%     |
-|         P2TR         |     0%     |     0%     |    12%     |     3%     |
+| P2PKH                | 97%        | 51%        | 22%        | 32%        |
+| P2SH                 | 3%         | 41%        | 28%        | 26%        |
+| P2WPKH               | 0%         | 7%         | 38%        | 38%        |
+| P2WSH                | 0%         | 0%         | 1%         | 1%         |
+| P2TR                 | 0%         | 0%         | 12%        | 3%         |
 
 Where the script types do differ is in the total size of the transaction and therefore, the total fees paid.
 
@@ -122,11 +122,11 @@ The table below shows the amount of vBytes required by a transaction consisting 
 
 | **Output →<br />Input ↓** | **P2PKH** | **P2SH** | **P2WPKH** | **P2WSH** | **P2TR** |
 | ------------------------- | --------- | -------- | ---------- | --------- | -------- |
-|           P2PKH           |    192    |   190    |    189     |    201    |   201    |
-|       P2SH (2-of-3)       |    341    |   339    |    338     |    350    |   350    |
-|          P2WPKH           |   112.5   |  110.5   |   109.5    |   121.5   |  121.5   |
-|      P2WSH (2-of-3)       |    149    |   147    |    146     |    158    |   158    |
-|      P2TR (Keypath)       |    102    |   100    |     99     |    111    |   111    |
+| P2PKH                     | 192       | 190      | 189        | 201       | 201      |
+| P2SH (2-of-3)             | 341       | 339      | 338        | 350       | 350      |
+| P2WPKH                    | 112.5     | 110.5    | 109.5      | 121.5     | 121.5    |
+| P2WSH (2-of-3)            | 149       | 147      | 146        | 158       | 158      |
+| P2TR (Keypath)            | 102       | 100      | 99         | 111       | 111      |
 
 So in ideal dust spending conditions, you would hold a P2TR UTXO and spend it to a P2WPKH output. An input requires more vBytes than an output, so the ideal will change if you are spending few inputs to many outputs.
 
