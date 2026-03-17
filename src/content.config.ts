@@ -8,7 +8,7 @@ const baseSchema = z.object({
   date: z.coerce.date(),
   modified: z.coerce.date().optional(),
   tags: z.array(z.string()).optional(),
-  posse: z.record(z.string(), z.string().url()).optional(),
+  posse: z.record(z.string(), z.url()).optional(),
 });
 
 const articles = defineCollection({
@@ -22,7 +22,7 @@ const podcasts = defineCollection({
     type: z.enum(['audio', 'video']),
     enclosure: z
       .object({
-        url: z.string().url(),
+        url: z.url(),
         length: z.number(),
         type: z.string(),
       })
@@ -33,7 +33,7 @@ const podcasts = defineCollection({
 const reviews = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/reviews' }),
   schema: baseSchema.extend({
-    rating: z.number().gt(0).lte(5).step(1),
+    rating: z.int().gt(0).lte(5),
     category: z.enum(['book', 'game', 'movie', 'music', 'show']),
   }),
 });
