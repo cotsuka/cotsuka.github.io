@@ -64,28 +64,7 @@ export default defineConfig({
     },
     syntaxHighlight: 'prism',
   },
-  security: {
-    csp: {
-      directives: [
-        "default-src 'self'",
-        "connect-src 'self' https://ph.otsuka.systems",
-        'frame-src https://www.youtube-nocookie.com',
-        "object-src 'none'",
-        "base-uri 'self'",
-      ],
-      styleDirective: {
-        resources: ["'self'", "'unsafe-inline'"],
-      },
-      scriptDirective: {
-        resources: [
-          "'self'",
-          'https://ph.otsuka.systems',
-          "'wasm-unsafe-eval'",
-        ],
-        strictDynamic: false,
-      },
-    },
-  },
+
   vite: {
     build: {
       rollupOptions: {
