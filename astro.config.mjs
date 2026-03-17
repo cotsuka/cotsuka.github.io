@@ -7,33 +7,45 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://cameron.otsuka.systems',
-  cacheDir: './.astro-cache',
   fonts: [
     {
       name: 'Public Sans',
       cssVariable: '--font-sans',
       provider: fontProviders.fontsource(),
-      weights: ['400 700'],
+      weights: [400, 600, 700],
       styles: ['normal'],
       subsets: ['latin'],
+      formats: ['woff'],
       fallbacks: ['sans-serif'],
     },
     {
       name: 'Source Serif 4',
       cssVariable: '--font-serif',
       provider: fontProviders.fontsource(),
-      weights: ['400 700'],
+      weights: [400, 600, 700],
       styles: ['normal', 'italic'],
       subsets: ['latin', 'latin-ext'],
+      formats: ['woff'],
       fallbacks: ['serif'],
     },
     {
       name: 'Source Code Pro',
       cssVariable: '--font-mono',
       provider: fontProviders.fontsource(),
-      weights: [400],
+      weights: [400, 700],
       styles: ['normal'],
       subsets: ['latin'],
+      formats: ['woff'],
+      fallbacks: ['monospace'],
+    },
+    {
+      name: 'DejaVu Mono',
+      cssVariable: '--font-fallback',
+      provider: fontProviders.fontsource(),
+      weights: [400],
+      styles: ['normal'],
+      subsets: ['latin', 'latin-ext'],
+      formats: ['woff'],
       fallbacks: ['monospace'],
     },
   ],
@@ -50,17 +62,14 @@ export default defineConfig({
     remarkRehype: {
       footnoteBackContent: '↩︎',
     },
-    syntaxHighlight: {
-      type: 'prism',
-      excludeLangs: ['math', 'console'],
-    },
+    syntaxHighlight: 'prism',
   },
   security: {
     csp: {
       directives: [
         "default-src 'self'",
         "connect-src 'self' https://ph.otsuka.systems",
-        "frame-src https://www.youtube-nocookie.com",
+        'frame-src https://www.youtube-nocookie.com',
         "object-src 'none'",
         "base-uri 'self'",
       ],

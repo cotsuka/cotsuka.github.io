@@ -17,7 +17,7 @@ export function createOgRoutes<T extends SiteCollection>(
     }));
   };
 
-  const GET: APIRoute = async ({ props }) => {
+  const GET: APIRoute = async ({ props, url }) => {
     if (!props.entry) {
       throw new Error('Missing entry prop in OG route');
     }
@@ -25,7 +25,7 @@ export function createOgRoutes<T extends SiteCollection>(
     const description = getDescription
       ? getDescription(entry)
       : ((entry.data as { description?: string }).description ?? '');
-    return generateOpenGraphImage(entry.data.title, description);
+    return generateOpenGraphImage(entry.data.title, description, url.origin);
   };
 
   return { getStaticPaths, GET };
