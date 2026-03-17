@@ -73,8 +73,15 @@ export default defineConfig({
         "object-src 'none'",
         "base-uri 'self'",
       ],
+      styleDirective: {
+        resources: ["'self'", "'unsafe-inline'"],
+      },
       scriptDirective: {
-        resources: ["'self'", 'https://ph.otsuka.systems'],
+        resources: [
+          "'self'",
+          'https://ph.otsuka.systems',
+          "'wasm-unsafe-eval'",
+        ],
         strictDynamic: false,
       },
     },
