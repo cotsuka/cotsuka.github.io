@@ -22,8 +22,18 @@ const { title, description } = Astro.props;
 <link rel="icon" type="image/x-icon" href={favIcon.src} />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="light dark" />
-<Font cssVariable="--font-serif" preload />
-<Font cssVariable="--font-sans" preload />
+<Font
+  cssVariable="--font-serif"
+  preload={[{ subset: 'latin', style: 'normal' }, { weight: '400' }]}
+/>
+<Font
+  cssVariable="--font-sans"
+  preload={[
+    { subset: 'latin', style: 'normal' },
+    { weight: '400' },
+    { weight: '700' },
+  ]}
+/>
 <Font cssVariable="--font-mono" />
 <meta name="title" property="og:title" content={title} />
 <meta name="description" property="og:description" content={description} />
