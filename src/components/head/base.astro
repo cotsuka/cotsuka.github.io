@@ -57,6 +57,7 @@ const { title, description } = Astro.props;
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:site_name" content={siteTitle} />
 <meta property="og:updated_time" content={new Date().toISOString()} />
+<meta name="robots" content="max-image-preview:large" />
 <title>{`${title} | ${siteTitle}`}</title>
 <link rel="canonical" href={canonicalURL} />
 <link rel="sitemap" href={new URL('sitemap-index.xml', Astro.site)} />

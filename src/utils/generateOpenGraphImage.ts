@@ -1,7 +1,7 @@
 import { fontData } from 'astro:assets';
 import { ImageResponse } from '@vercel/og';
 import type { Font } from 'satori';
-import { siteAuthor } from '@utils/globals';
+import { siteAuthor, siteTitle } from '@utils/globals';
 
 type ResolvedOgFont = {
   name: string;
@@ -9,6 +9,50 @@ type ResolvedOgFont = {
   weight: Font['weight'];
   style: Font['style'];
 };
+
+type WrappedOgText = {
+  text: string;
+  lineCount: number;
+};
+
+type ResolvedOgLayout = {
+  headline: WrappedOgText;
+  description: string | null;
+  isReviewRating: boolean;
+};
+
+const OG_IMAGE_WIDTH = 1200;
+const OG_IMAGE_HEIGHT = 630;
+const SAFE_TEXT_ZONE = {
+  x: 120,
+  y: Math.round((OG_IMAGE_HEIGHT - 460) / 2),
+  width: 960,
+  height: 460,
+};
+const CONTENT_BLOCK = {
+  x: 40,
+  y: 12,
+  width: 880,
+  height: 320,
+};
+const BRAND_BLOCK = {
+  x: 360,
+  y: 382,
+  width: 240,
+  height: 46,
+};
+const BACKGROUND_COLOR = '#e6e2d6';
+const TEXT_COLOR = '#000000';
+const ACCENT_COLOR = '#82273d';
+const TITLE_FONT_SIZE = 60;
+const TITLE_MAX_WIDTH = 860;
+const TITLE_MAX_LINES = 4;
+const TITLE_LINE_HEIGHT = 1.05;
+const DESCRIPTION_FONT_SIZE = 28;
+const DESCRIPTION_MAX_WIDTH = 860;
+const DESCRIPTION_LINE_HEIGHT = 1.28;
+const MAX_DESCRIPTION_LINES = 2;
+const TITLE_DESCRIPTION_GAP = 28;
 
 function getAstroFontVariant(
   name: string,
@@ -83,77 +127,320 @@ function createOgFonts(siteOrigin: string): Promise<Array<Font>> {
   );
 }
 
+function normalizeOgText(value: string): string {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+function countCharacters(value: string): number {
+  return Array.from(value).length;
+}
+
+function isReviewRatingDescription(value: string): boolean {
+  return /^[★☆]{5}$/.test(value);
+}
+
+function trimToLength(value: string, maxLength: number): string {
+  if (countCharacters(value) <= maxLength) {
+    return value;
+  }
+
+  const characters = Array.from(value)
+    .slice(0, maxLength - 1)
+    .join('');
+
+  return `${characters.trimEnd()}…`;
+}
+
+function estimateCharsPerLine(fontSize: number, maxWidth: number): number {
+  return Math.max(12, Math.floor(maxWidth / (fontSize * 0.54)));
+}
+
+function wrapTextIntoLines(value: string, maxCharsPerLine: number): string[] {
+  const normalized = normalizeOgText(value);
+
+  if (!normalized) {
+    return [];
+  }
+
+  const words = normalized.split(' ');
+  const lines: string[] = [];
+  let currentLine = '';
+
+  for (const word of words) {
+    const candidate = currentLine ? `${currentLine} ${word}` : word;
+
+    if (!currentLine || countCharacters(candidate) <= maxCharsPerLine) {
+      currentLine = candidate;
+      continue;
+    }
+
+    lines.push(currentLine);
+    currentLine = word;
+  }
+
+  if (currentLine) {
+    lines.push(currentLine);
+  }
+
+  return lines;
+}
+
+function formatTextToMaxLines(
+  value: string,
+  maxCharsPerLine: number,
+  maxLines: number,
+): WrappedOgText {
+  const lines = wrapTextIntoLines(value, maxCharsPerLine);
+
+  if (lines.length <= maxLines) {
+    return {
+      text: lines.join('\n'),
+      lineCount: lines.length,
+    };
+  }
+
+  const truncatedLines = lines.slice(0, maxLines);
+  truncatedLines[maxLines - 1] = trimToLength(
+    truncatedLines[maxLines - 1],
+    maxCharsPerLine,
+  );
+
+  if (!truncatedLines[maxLines - 1].endsWith('…')) {
+    truncatedLines[maxLines - 1] = `${truncatedLines[maxLines - 1].trimEnd()}…`;
+  }
+
+  return {
+    text: truncatedLines.join('\n'),
+    lineCount: truncatedLines.length,
+  };
+}
+
+function estimateContentHeight(
+  headlineLineCount: number,
+  descriptionLineCount: number,
+  descriptionFontSize = DESCRIPTION_FONT_SIZE,
+  descriptionLineHeight = DESCRIPTION_LINE_HEIGHT,
+): number {
+  let height = headlineLineCount * TITLE_FONT_SIZE * TITLE_LINE_HEIGHT;
+
+  if (descriptionLineCount > 0) {
+    height +=
+      TITLE_DESCRIPTION_GAP +
+      descriptionLineCount * descriptionFontSize * descriptionLineHeight;
+  }
+
+  return Math.ceil(height);
+}
+
+function resolveOgLayout(title: string, description: string): ResolvedOgLayout {
+  const normalizedTitle = normalizeOgText(title) || siteTitle;
+  const normalizedDescription = normalizeOgText(description);
+  const headline = formatTextToMaxLines(
+    normalizedTitle,
+    estimateCharsPerLine(TITLE_FONT_SIZE, TITLE_MAX_WIDTH),
+    TITLE_MAX_LINES,
+  );
+
+  if (!normalizedDescription) {
+    return { headline, description: null, isReviewRating: false };
+  }
+
+  if (isReviewRatingDescription(normalizedDescription)) {
+    if (
+      estimateContentHeight(
+        headline.lineCount,
+        1,
+        TITLE_FONT_SIZE,
+        TITLE_LINE_HEIGHT,
+      ) <= CONTENT_BLOCK.height
+    ) {
+      return {
+        headline,
+        description: normalizedDescription,
+        isReviewRating: true,
+      };
+    }
+
+    return {
+      headline,
+      description: null,
+      isReviewRating: true,
+    };
+  }
+
+  if (
+    estimateContentHeight(headline.lineCount, MAX_DESCRIPTION_LINES) <=
+    CONTENT_BLOCK.height
+  ) {
+    return {
+      headline,
+      description: normalizedDescription,
+      isReviewRating: false,
+    };
+  }
+
+  return {
+    headline,
+    description: null,
+    isReviewRating: false,
+  };
+}
+
 export default async function generateOpenGraphImage(
   title: string,
   description: string,
   siteOrigin: string,
 ) {
+  const layout = resolveOgLayout(title, description);
+
   return new ImageResponse(
     {
       type: 'div',
       props: {
         style: {
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: '#e6e2d6',
-          color: '#000000',
+          position: 'relative',
+          backgroundColor: BACKGROUND_COLOR,
+          color: TEXT_COLOR,
           width: '100%',
           height: '100%',
-          padding: 80,
           fontFamily: 'Public Sans',
         },
         children: [
           {
-            type: 'h1',
-            props: {
-              style: {
-                fontSize: 64,
-                fontWeight: 700,
-                marginBottom: 20,
-              },
-              children: title,
-            },
-          },
-          {
-            type: 'p',
-            props: {
-              style: {
-                fontSize: 32,
-                marginBottom: 40,
-                fontFamily: 'Source Serif 4, DejaVu Mono',
-              },
-              children: description,
-            },
-          },
-          {
             type: 'div',
             props: {
               style: {
-                marginTop: 'auto',
-                textTransform: 'uppercase',
-                fontSize: 20,
-                letterSpacing: '0.1em',
                 display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
+                position: 'absolute',
+                left: SAFE_TEXT_ZONE.x,
+                top: SAFE_TEXT_ZONE.y,
+                width: SAFE_TEXT_ZONE.width,
+                height: SAFE_TEXT_ZONE.height,
               },
               children: [
                 {
                   type: 'div',
                   props: {
                     style: {
-                      borderTop: '2px solid #82273d',
-                      width: 240,
-                      margin: '0 auto 8px',
                       display: 'flex',
-                      textAlign: 'center',
+                      position: 'absolute',
+                      left: CONTENT_BLOCK.x,
+                      top: CONTENT_BLOCK.y,
+                      width: CONTENT_BLOCK.width,
+                      height: CONTENT_BLOCK.height,
+                      flexDirection: 'column',
+                      alignItems: 'flex-start',
+                      justifyContent: 'center',
+                      textAlign: 'left',
                     },
+                    children: [
+                      {
+                        type: 'h1',
+                        props: {
+                          style: {
+                            margin: 0,
+                            maxWidth: TITLE_MAX_WIDTH,
+                            fontSize: TITLE_FONT_SIZE,
+                            fontWeight: 700,
+                            lineHeight: TITLE_LINE_HEIGHT,
+                            letterSpacing: '-0.04em',
+                            whiteSpace: 'pre-wrap',
+                          },
+                          children: layout.headline.text,
+                        },
+                      },
+                      ...(layout.description
+                        ? layout.isReviewRating
+                          ? [
+                              {
+                                type: 'div',
+                                props: {
+                                  style: {
+                                    display: 'flex',
+                                    width: '100%',
+                                    justifyContent: 'center',
+                                    marginTop: TITLE_DESCRIPTION_GAP,
+                                  },
+                                  children: [
+                                    {
+                                      type: 'p',
+                                      props: {
+                                        style: {
+                                          margin: 0,
+                                          fontSize: TITLE_FONT_SIZE,
+                                          fontWeight: 700,
+                                          lineHeight: TITLE_LINE_HEIGHT,
+                                          textAlign: 'center',
+                                        },
+                                        children: layout.description,
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            ]
+                          : [
+                              {
+                                type: 'p',
+                                props: {
+                                  style: {
+                                    margin: `${TITLE_DESCRIPTION_GAP}px 0 0`,
+                                    maxWidth: DESCRIPTION_MAX_WIDTH,
+                                    fontSize: DESCRIPTION_FONT_SIZE,
+                                    lineHeight: DESCRIPTION_LINE_HEIGHT,
+                                    fontFamily: 'Source Serif 4, DejaVu Mono',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis',
+                                    lineClamp: MAX_DESCRIPTION_LINES,
+                                  },
+                                  children: layout.description,
+                                },
+                              },
+                            ]
+                        : []),
+                    ],
                   },
                 },
-                siteAuthor.name,
+                {
+                  type: 'div',
+                  props: {
+                    style: {
+                      display: 'flex',
+                      position: 'absolute',
+                      left: BRAND_BLOCK.x,
+                      top: BRAND_BLOCK.y,
+                      width: BRAND_BLOCK.width,
+                      height: BRAND_BLOCK.height,
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      textTransform: 'uppercase',
+                    },
+                    children: [
+                      {
+                        type: 'div',
+                        props: {
+                          style: {
+                            borderTop: `2px solid ${ACCENT_COLOR}`,
+                            width: BRAND_BLOCK.width,
+                            marginBottom: 8,
+                          },
+                        },
+                      },
+                      {
+                        type: 'div',
+                        props: {
+                          style: {
+                            fontSize: 20,
+                            letterSpacing: '0.1em',
+                          },
+                          children: siteAuthor.name,
+                        },
+                      },
+                    ],
+                  },
+                },
               ],
             },
           },
@@ -162,8 +449,8 @@ export default async function generateOpenGraphImage(
       key: null,
     },
     {
-      width: 1200,
-      height: 630,
+      width: OG_IMAGE_WIDTH,
+      height: OG_IMAGE_HEIGHT,
       fonts: await createOgFonts(siteOrigin),
     },
   );
