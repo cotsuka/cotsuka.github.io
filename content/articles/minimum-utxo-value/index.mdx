@@ -33,7 +33,6 @@ The highest fee periods in Bitcoin history have been 2018, 2021, and 2023:
 <Figure
   image={minimumUTXOValueMempoolVBytesHistory}
   alt="Historical graph of Bitcoin mempool by vBytes"
-  formats={['svg']}
 >
   Source: [mempool.space](https://mempool.space/graphs/mempool#all).
 </Figure>
@@ -48,7 +47,6 @@ I've selected 4 blocks to deep dive, based on their proximity to mempool peaks i
 <Figure
   image={minimumUTXOValueBoxWhiskerOverall}
   alt="Box and whisker plot of fee rates across blocks"
-  formats={['svg']}
 >
   Outliers removed.
 </Figure>
@@ -74,7 +72,6 @@ I don't expect to see major differences in fee rates by script type, but since I
 <Figure
   image={minimumUTXOValueBoxWhiskerFeeRateScriptTypes}
   alt="Box and whiskper plot of fee rates by script type"
-  formats={['svg']}
 >
   Fee Rate axis capped at 50 sats/vB to better show the differences between
   script types.
@@ -95,7 +92,6 @@ Where the script types do differ is in the total size of the transaction and the
 <Figure
   image={minimumUTXOValueBoxWhiskerFeesScriptType}
   alt="Box and whisker plot of total fees by script type"
-  formats={['svg']}
 >
   Fee Rate axis capped at 300000 sats/vB to better show the differences between
   script types.
@@ -106,7 +102,6 @@ P2WSH and P2TR transactions appear to be paying higher median fees than other sc
 <Figure
   image={minimumUTXOValueBoxWhiskerFeesScriptTypeZoomed}
   alt="Box and whisker plot of total fees by script type, zoomed"
-  formats={['svg']}
 >
   Fee Rate axis capped at 18000 sats/vB to better show the differences between
   script types.

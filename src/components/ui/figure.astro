@@ -6,9 +6,10 @@ interface Props {
   image: ImageMetadata;
   alt: string;
   formats?: string[];
+  layout?: string;
 }
 
-const { image, alt, formats = ['avif', 'webp'] } = Astro.props;
+const { image, alt, formats = ['avif', 'webp'], layout } = Astro.props;
 ---
 
 <figure>
@@ -16,6 +17,7 @@ const { image, alt, formats = ['avif', 'webp'] } = Astro.props;
     src={image}
     alt={alt}
     formats={formats}
+    layout={layout}
     data-pagefind-index-attrs="alt"
   />
   <figcaption><slot /></figcaption>

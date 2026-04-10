@@ -64,7 +64,17 @@ export default defineConfig({
     },
     syntaxHighlight: 'prism',
   },
-
+  image: {
+    layout: 'constrained',
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        jpeg: { mozjpeg: true, progressive: true, quality: 75 },
+        webp: { quality: 75, effort: 4, alphaQuality: 80 },
+        avif: { quality: 50, effort: 2 },
+      }
+    }
+  },
   vite: {
     build: {
       rollupOptions: {
