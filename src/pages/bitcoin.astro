@@ -3,13 +3,15 @@ import Base from '@layouts/base.astro';
 ---
 
 <Base title="Bitcoin" description="Cameron Otsuka's Bitcoin resources.">
-  <h2>Bitcoin</h2>
-  <object data="/public/bitcoin.pdf" type="application/pdf" height="890">
-    <p>
-      Your browser doesn't support embedded PDFs.
-      <a href="/public/bitcoin.pdf">Download the PDF</a> instead.
-    </p>
-  </object>
+  <article data-pagefind-body data-pagefind-filter="category:page">
+    <h2 data-pagefind-meta="title">Bitcoin</h2>
+    <object data="/public/bitcoin.pdf" type="application/pdf" height="890">
+      <p>
+        Your browser doesn't support embedded PDFs.
+        <a href="/public/bitcoin.pdf">Download the PDF</a> instead.
+      </p>
+    </object>
+  </article>
 </Base>
 
 <style>

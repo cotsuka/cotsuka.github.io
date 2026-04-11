@@ -10,6 +10,7 @@
   --color-bg: light-dark(#e6e2d6, #000000);
   --color-text: light-dark(#000000, #e6e2d6);
   --color-link: light-dark(#82273d, #db7b8e);
+  --color-border: light-dark(#8f897d, #666666);
 
   /* Semantic colors */
   --color-info: light-dark(#06458e, #5199e6);

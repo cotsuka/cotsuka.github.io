@@ -1,178 +1,161 @@
 ---
 import Base from '@layouts/base.astro';
+
+const pagefindResultTemplate = String.raw`
+  <li class="searchResult">
+    <h4 class="searchResultTitle">
+      <a
+        class="searchResultLink"
+        href="{{ meta.url | safeUrl }}"
+      >{{ meta.title }}</a>
+    </h4>
+    <p class="searchResultExcerpt">{{+ excerpt +}}</p>
+  </li>
+`;
 ---
 
 <Base title="Search" description="Search articles, reviews, and podcasts">
-  <div data-pagefind-ignore>
+  <script>
+    import '@pagefind/component-ui';
+    import '@pagefind/component-ui/css';
+  </script>
+
+  <section class="searchUi" data-pagefind-ignore>
     <h2>Search</h2>
-    <div id="searchContainer">
-      <input
-        type="search"
-        id="searchInput"
-        placeholder="Enter query..."
-        autocomplete="off"
-        autofocus
-      />
+    <pagefind-config preload></pagefind-config>
+
+    <pagefind-input autofocus placeholder="Enter query..."></pagefind-input>
+
+    <div class="searchFilters" aria-label="Search result filters">
+      <pagefind-filter-dropdown filter="category" label="Category"
+      ></pagefind-filter-dropdown>
+      <pagefind-filter-dropdown
+        filter="tag"
+        label="Tag"
+        sort="alphabetical"
+        wrap></pagefind-filter-dropdown>
     </div>
-    <fieldset>
-      <legend>Search result filters</legend>
-      <ul>
-        <li>
-          <input
-            type="checkbox"
-            id="articleFilter"
-            name="searchFilter"
-            value="article"
-            checked
-          />
-          <label for="articleFilter">Articles</label>
-        </li>
-        <li>
-          <input
-            type="checkbox"
-            id="podcastFilter"
-            name="searchFilter"
-            value="podcast"
-            checked
-          />
-          <label for="podcastFilter">Podcasts</label>
-        </li>
-        <li>
-          <input
-            type="checkbox"
-            id="reviewFilter"
-            name="searchFilter"
-            value="review"
-            checked
-          />
-          <label for="reviewFilter">Reviews</label>
-        </li>
-      </ul>
-    </fieldset>
-    <dl id="searchResults"></dl>
-    <template id="searchResultTemplate">
-      <dt class="searchResult">
-        <h4><a href=""></a></h4>
-      </dt>
-      <dd class="excerpt"></dd>
-    </template>
-  </div>
+
+    <pagefind-summary default-message="Type to search the site."
+    ></pagefind-summary>
+
+    <pagefind-results max-results="10" hide-sub-results>
+      <script
+        type="text/pagefind-template"
+        set:html={pagefindResultTemplate}
+        is:inline
+      />
+    </pagefind-results>
+  </section>
 </Base>
 
 <style>
-  #searchInput {
-    width: 100%;
+  .searchUi {
+    --pf-text: var(--color-text);
+    --pf-text-secondary: var(--color-text);
+    --pf-text-muted: var(--color-text);
+    --pf-background: var(--color-bg);
+    --pf-border: var(--color-border);
+    --pf-border-focus: var(--color-link);
+    --pf-hover: none;
+    --pf-outline-focus: var(--color-link);
+    --pf-skeleton: var(--color-text);
+    --pf-skeleton-shine: var(--color-link);
+    --pf-shadow-sm: none;
+    --pf-shadow-md: none;
+    --pf-shadow-lg: none;
+    --pf-scroll-shadow: transparent;
+    --pf-font: var(--font-sans);
+    --pf-input-height: 2.5rem;
+    --pf-input-font-size: 1rem;
+    --pf-summary-font-size: 0.9rem;
+    --pf-results-gap: 0;
+    --pf-border-radius: 0;
   }
-  ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
+
+  .searchFilters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-block: 1rem;
   }
-  #searchResults {
+
+  .searchFilters > pagefind-filter-dropdown {
+    min-width: 0;
+  }
+
+  pagefind-summary,
+  pagefind-results {
     margin-block-start: 1rem;
   }
+
+  :global(.searchUi .pf-dropdown-wrapper) {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  :global(.searchUi .pf-dropdown-trigger) {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 1rem;
+  }
+
+  :global(.searchUi .pf-dropdown-menu) {
+    min-width: 100%;
+  }
+
+  :global(.searchUi .pf-dropdown-option),
+  :global(.searchUi .pf-dropdown-clear) {
+    font-size: 1rem;
+  }
+
+  :global(.searchUi .pf-summary) {
+    font-family: var(--font-serif);
+  }
+
+  :global(.searchUi .pf-dropdown-clear) {
+    color: var(--color-link);
+  }
+
+  :global(.searchUi .pf-dropdown-clear:hover) {
+    text-decoration: underline;
+  }
+
+  :global(.searchUi .pf-dropdown-selected-badge),
+  :global(.searchUi .pf-filter-group-count) {
+    background: var(--color-highlight);
+    color: var(--color-bg);
+    border-radius: 0;
+  }
+
+  :global(.searchUi .searchResult) {
+    padding-block: 1rem;
+    border-block-end: 1px dashed var(--color-text);
+  }
+
+  :global(.searchUi .searchResult:first-child) {
+    padding-block-start: 0;
+  }
+
+  :global(.searchUi .searchResultExcerpt) {
+    margin-block-end: 0;
+    color: var(--color-text);
+    font-family: var(--font-serif);
+  }
+
+  @media (max-width: 640px) {
+    .searchFilters {
+      grid-template-columns: 1fr;
+    }
+
+    :global(.searchUi :is(*, #\#):is(*, #\#):is(*, #\#) .pf-dropdown-menu) {
+      min-width: 100%;
+      width: 100%;
+      max-width: 100%;
+      inset-inline-start: 0;
+      left: auto;
+      transform: none;
+    }
+  }
 </style>
-
-<script>
-  type SearchResult = {
-    url: string;
-    meta?: { title?: string };
-    excerpt: string;
-  };
-  type Pagefind = {
-    init: () => Promise<void>;
-    debouncedSearch: (
-      query: string,
-      options?: { filters?: { [key: string]: { any: string[] } } },
-    ) => Promise<{ results: { data: () => Promise<SearchResult> }[] } | null>;
-  };
-
-  const searchField = document.querySelector<HTMLInputElement>('#searchInput')!;
-  const resultsContainer =
-    document.querySelector<HTMLDListElement>('#searchResults')!;
-  const template = document.querySelector<HTMLTemplateElement>(
-    '#searchResultTemplate',
-  )!;
-  const fieldset = document.querySelector<HTMLFieldSetElement>('fieldset')!;
-  let pagefind: Pagefind | null = null;
-
-  async function loadPagefind() {
-    if (pagefind) return pagefind;
-
-    if (import.meta.env.DEV) {
-      console.warn(
-        'Search is unavailable in dev mode. Run `bun run build` first.',
-      );
-      return null;
-    }
-
-    try {
-      // @ts-expect-error - pagefind is generated at build time
-      const pf = await import('/pagefind/pagefind.js');
-      await pf.init();
-      pagefind = pf;
-      return;
-    } catch (error) {
-      console.error('Failed to load Pagefind:', error);
-      throw error;
-    }
-  }
-
-  function getSelectedFilters(): string[] {
-    return Array.from(
-      fieldset.querySelectorAll<HTMLInputElement>(
-        'input[name="searchFilter"]:checked',
-      ),
-    ).map((el) => el.value);
-  }
-
-  function renderResult(data: SearchResult) {
-    const clone = document.importNode(template.content, true);
-    const link = clone.querySelector('a')!;
-    const excerptEl = clone.querySelector('.excerpt')!;
-
-    link.href = data.url;
-    link.textContent = data.meta?.title || data.url;
-    (excerptEl as HTMLElement).innerHTML = data.excerpt;
-
-    return clone;
-  }
-
-  async function getSearchResults(query: string, filters: string[]) {
-    if (!query.trim()) {
-      resultsContainer.replaceChildren();
-      return;
-    }
-
-    try {
-      await loadPagefind();
-      if (!pagefind) return;
-
-      const options = filters.length
-        ? { filters: { category: { any: filters } } }
-        : {};
-      const response = await pagefind.debouncedSearch(query, options);
-
-      if (!response) return; // superseded by newer search
-
-      const results = await Promise.all(
-        response.results.slice(0, 10).map((r) => r.data()),
-      );
-
-      resultsContainer.replaceChildren(...results.map(renderResult));
-    } catch (error) {
-      console.error('Search failed:', error);
-    }
-  }
-
-  const triggerSearch = () =>
-    getSearchResults(searchField.value, getSelectedFilters());
-
-  searchField.addEventListener('focus', loadPagefind, { once: true });
-  searchField.addEventListener('input', triggerSearch);
-
-  fieldset.addEventListener('change', (e) => {
-    if ((e.target as HTMLInputElement)?.name === 'searchFilter')
-      triggerSearch();
-  });
-</script>

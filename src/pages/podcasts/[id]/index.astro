@@ -23,11 +23,7 @@ const { Content } = await render(entry);
     entry.data.date.toISOString()}
   tags={entry.data.tags}
 >
-  <h2
-    data-pagefind-meta="title"
-    data-pagefind-ignore
-    data-pagefind-filter="category:podcast"
-  >
+  <h2 data-pagefind-meta="title" data-pagefind-filter="category:podcast">
     {entry.data.title}
   </h2>
   <Metadata entryData={entry.data} />
