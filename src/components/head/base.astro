@@ -36,7 +36,12 @@ const { title, description } = Astro.props;
 />
 <Font cssVariable="--font-mono" />
 <meta name="title" property="og:title" content={title} />
-<meta name="description" property="og:description" content={description} />
+<meta
+  name="description"
+  property="og:description"
+  content={description}
+  data-pagefind-meta="description[content]"
+/>
 <meta name="author" content={siteAuthor.name} />
 <meta name="generator" content={Astro.generator} />
 <meta name="fediverse:creator" content={socials.activitypub.username} />
