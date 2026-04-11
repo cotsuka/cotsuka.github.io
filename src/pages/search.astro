@@ -6,7 +6,7 @@ const pagefindResultTemplate = String.raw`
     <h4 class="searchResultTitle">
       <a
         class="searchResultLink"
-        href="{{ meta.url | safeUrl }}"
+        href="{{ meta.url | default(url) | safeUrl }}"
       >{{ meta.title }}</a>
     </h4>
     <p class="searchResultExcerpt">{{+ excerpt +}}</p>
