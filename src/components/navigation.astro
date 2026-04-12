@@ -2,6 +2,7 @@
 import { menuItems } from '@utils/globals';
 ---
 
+<h1 data-pagefind-ignore><a href="/">Cameron Otsuka</a></h1>
 <nav>
   <menu class="inline-menu">
     {
@@ -15,6 +16,12 @@ import { menuItems } from '@utils/globals';
 </nav>
 
 <style>
+  h1 a {
+    color: var(--color-text);
+  }
+  h1 a:hover {
+    text-decoration: none;
+  }
   nav {
     font-family: var(--font-sans);
     margin-block-end: 1rem;

@@ -2,6 +2,7 @@
 import { Font, getImage } from 'astro:assets';
 import { siteAuthor, siteTitle, socials } from '@utils/globals';
 import FavIcon from '@assets/favicon.ico';
+import PostHog from '@components/head/posthog.astro';
 
 interface Props {
   title: string;
@@ -72,3 +73,4 @@ const { title, description } = Astro.props;
   title={siteTitle}
   href={new URL('feed.xml', Astro.site)}
 />
+<PostHog />

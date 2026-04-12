@@ -3,9 +3,8 @@ import '@styles/reset.css';
 import '@styles/style.css';
 import '@styles/prism-a11y-dark.css';
 import HeadBase from '@components/head/base.astro';
-import PostHog from '@components/head/posthog.astro';
 import HeadPage from '@components/head/page.astro';
-import Heading from '@components/heading.astro';
+import Navigation from '@components/navigation.astro';
 import Footer from '@components/footer.astro';
 
 interface Props {
@@ -20,13 +19,12 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <HeadBase title={title} description={description} />
-    <PostHog />
     <slot name="post-head">
       <HeadPage />
     </slot>
   </head>
   <body>
-    <Heading />
+    <Navigation />
     <main>
       <slot />
     </main>
