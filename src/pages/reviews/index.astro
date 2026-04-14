@@ -23,7 +23,7 @@ const sortedReviews = sortByDate(reviews);
     <table>
       <thead>
         <tr>
-          <th scope="col">Category</th>
+          <th scope="col">Type</th>
           <th scope="col">Title</th>
           <th scope="col">Rating</th>
         </tr>
@@ -32,7 +32,7 @@ const sortedReviews = sortByDate(reviews);
         {
           sortedReviews.map((review) => (
             <tr>
-              <td>{review.data.category}</td>
+              <td>{review.data.type}</td>
               <td>
                 <h4>
                   <a href={generateContentUrl(review)}>{review.data.title}</a>

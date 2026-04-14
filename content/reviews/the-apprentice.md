@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: The Apprentice
 date: 2025-09-06
 modified: 2025-09-07

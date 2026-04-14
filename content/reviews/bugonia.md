@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Bugonia
 date: 2025-10-30
 modified: 2025-11-01

@@ -13,7 +13,9 @@ const baseSchema = z.object({
 
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/articles' }),
-  schema: baseSchema,
+  schema: baseSchema.extend({
+    type: z.enum(['marginalia', 'missive']),
+  }),
 });
 
 const podcasts = defineCollection({
@@ -34,7 +36,7 @@ const reviews = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/reviews' }),
   schema: baseSchema.extend({
     rating: z.int().gt(0).lte(5),
-    category: z.enum(['book', 'game', 'movie', 'music', 'show']),
+    type: z.enum(['book', 'game', 'movie', 'music', 'show']),
   }),
 });
 

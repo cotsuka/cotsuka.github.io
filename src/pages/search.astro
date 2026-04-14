@@ -29,6 +29,8 @@ const pagefindResultTemplate = String.raw`
     <div class="searchFilters" aria-label="Search result filters">
       <pagefind-filter-dropdown filter="category" label="Category"
       ></pagefind-filter-dropdown>
+      <pagefind-filter-dropdown filter="type" label="Type"
+      ></pagefind-filter-dropdown>
       <pagefind-filter-dropdown
         filter="tag"
         label="Tag"
@@ -75,7 +77,7 @@ const pagefindResultTemplate = String.raw`
 
   .searchFilters {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
     margin-block: 1rem;
   }

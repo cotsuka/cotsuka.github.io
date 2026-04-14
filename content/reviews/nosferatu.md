@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Nosferatu
 date: 2025-09-09
 modified: 2025-09-13

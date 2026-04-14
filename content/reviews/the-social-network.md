@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: The Social Network
 date: 2025-12-28
 modified: 2025-12-29

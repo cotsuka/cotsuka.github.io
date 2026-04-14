@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: When Harry Met Sally...
 date: 2025-12-30
 modified: 2026-01-01

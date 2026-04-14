@@ -31,6 +31,12 @@ const modifiedDate = entryData.modified
         >{modifiedDate}</time
       >
     </li>
+    <li
+      data-pagefind-meta={`type:${entryData.type}`}
+      data-pagefind-filter={`type:${entryData.type}`}
+    >
+      Type: {entryData.type}
+    </li>
     {entryData.tags && <li>Tags: {entryData.tags.join(', ')}</li>}
     {
       entryData.posse && (

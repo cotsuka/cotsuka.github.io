@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Mulholland Drive
 date: 2025-12-06
 modified: 2025-12-07

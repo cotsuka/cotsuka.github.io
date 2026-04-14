@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Sinners
 date: 2025-05-02
 modified: 2025-05-02

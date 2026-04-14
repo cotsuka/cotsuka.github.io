@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Materialists
 date: 2025-08-14
 modified: 2025-08-15

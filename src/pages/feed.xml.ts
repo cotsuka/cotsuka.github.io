@@ -29,9 +29,7 @@ export async function GET(context: APIContext) {
         const { Content } = await render(item);
         const content = await container.renderToString(Content);
         const categories = (item.data.tags ?? []).concat(item.collection);
-        if (item.collection === 'reviews') {
-          categories.push(item.data.category);
-        }
+        categories.push(item.data.type);
 
         let title: string;
         let description: string;

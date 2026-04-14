@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: People We Meet on Vacation
 date: 2026-02-12
 modified: 2026-02-14

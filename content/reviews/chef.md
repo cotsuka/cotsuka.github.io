@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Chef
 date: 2026-03-14
 modified: 2026-03-16

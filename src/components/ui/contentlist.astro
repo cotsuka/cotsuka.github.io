@@ -1,27 +1,34 @@
 ---
 import { getCollection, type CollectionKey } from 'astro:content';
+import Badge from '@components/ui/badge.astro';
 import sortByDate from '@utils/sortByDate';
 import generateContentUrl from '@utils/generateContentUrl';
 
 interface Props {
   collection: CollectionKey;
+  limit?: number;
 }
 
-const { collection } = Astro.props;
+const { collection, limit } = Astro.props;
 const entries = await getCollection(collection);
 const sorted = sortByDate(entries);
+const displayedEntries =
+  typeof limit === 'number' ? sorted.slice(0, limit) : sorted;
 ---
 
 <dl>
   {
-    sorted.map((entry) => (
+    displayedEntries.map((entry) => (
       <>
         <dt>
           <a href={generateContentUrl(entry)}>
             <h4>{entry.data.title}</h4>
           </a>
         </dt>
-        {entry.data.description && <dd>{entry.data.description}</dd>}
+        <dd>
+          <Badge>{entry.data.type}</Badge>
+          {entry.data.description && entry.data.description}
+        </dd>
       </>
     ))
   }

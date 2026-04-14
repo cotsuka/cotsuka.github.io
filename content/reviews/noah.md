@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Noah
 date: 2025-12-24
 modified: 2025-12-25

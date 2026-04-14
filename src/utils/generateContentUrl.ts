@@ -8,6 +8,6 @@ export default function generateContentUrl(item: SiteCollectionEntry): string {
     case 'podcasts':
       return `/podcasts/${item.id}/`;
     case 'reviews':
-      return `/reviews/${item.data.category}/${item.id}/`;
+      return `/reviews/${item.data.type}/${item.id}/`;
   }
 }

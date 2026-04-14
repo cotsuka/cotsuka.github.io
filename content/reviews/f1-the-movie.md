@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: 'F1: The Movie'
 date: 2025-10-16
 modified: 2025-10-17

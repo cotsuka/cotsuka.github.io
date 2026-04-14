@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Moulin Rouge!
 date: 2025-12-25
 modified: 2025-12-26

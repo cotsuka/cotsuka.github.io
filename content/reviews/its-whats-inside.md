@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: It's What's Inside
 date: 2025-03-01
 modified: 2025-03-02

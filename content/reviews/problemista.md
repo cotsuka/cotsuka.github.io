@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Problemista
 date: 2025-11-04
 modified: 2025-11-06

@@ -15,7 +15,7 @@ export const GET = (async ({ props, url }) => {
 export async function getStaticPaths() {
   const reviews = await getCollection('reviews');
   return reviews.map((review) => ({
-    params: { category: review.data.category, id: review.id },
+    params: { type: review.data.type, id: review.id },
     props: { entry: review },
   }));
 }

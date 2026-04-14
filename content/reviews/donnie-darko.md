@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Donnie Darko
 date: 2026-01-07
 modified: 2026-01-09

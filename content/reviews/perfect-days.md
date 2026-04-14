@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Perfect Days
 date: 2025-02-15
 modified: 2025-02-15

@@ -1,5 +1,5 @@
 ---
-category: book
+type: book
 title: House of Huawei
 date: 2025-07-13
 modified: 2025-12-27

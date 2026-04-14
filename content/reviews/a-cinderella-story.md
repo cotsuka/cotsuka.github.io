@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: A Cinderella Story
 date: 2026-03-15
 modified: 2026-03-16

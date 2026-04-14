@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Taipei Story
 date: 2025-12-27
 modified: 2025-12-28

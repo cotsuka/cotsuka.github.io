@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Thunderbolts*
 date: 2026-01-01
 modified: 2026-01-01

@@ -1,28 +1,6 @@
 ---
 import Base from '@layouts/base.astro';
-
-const contributions = [
-  {
-    title: 'Git',
-    url: 'https://git.otsuka.systems',
-  },
-  {
-    title: 'Arch User Repository',
-    url: 'https://aur.archlinux.org/packages?O=0&SeB=M&K=cotsuka&outdated=&SB=p&SO=d&PP=50&submit=Go',
-  },
-  {
-    title: 'ArchWiki',
-    url: 'https://wiki.archlinux.org/title/Special:Contributions/Cotsuka',
-  },
-  {
-    title: 'GitHub',
-    url: 'https://github.com/search?q=author%3Acotsuka&type=pullrequests',
-  },
-  {
-    title: 'Wikipedia',
-    url: 'https://en.wikipedia.org/wiki/Special:Contributions/Cotsuka',
-  },
-];
+import ContentList from '@components/ui/contentlist.astro';
 ---
 
 <Base
@@ -44,19 +22,9 @@ const contributions = [
         vehicles, and built the internal tech stack that glues everything together.
       </p>
     </section>
-    <section data-pagefind-body>
-      <h2>Contributions</h2>
-      <ul>
-        {
-          contributions.map((contribution) => {
-            return (
-              <li>
-                <a href={contribution.url}>{contribution.title}</a>
-              </li>
-            );
-          })
-        }
-      </ul>
+    <section data-pagefind-ignore>
+      <h2>Latest Articles</h2>
+      <ContentList collection="articles" limit={5} />
     </section>
   </article>
 </Base>

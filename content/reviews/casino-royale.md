@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Casino Royale
 date: 2025-12-14
 modified: 2025-12-16

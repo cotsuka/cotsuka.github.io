@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Marty Supreme
 date: 2026-01-21
 modified: 2026-01-23

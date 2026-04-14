@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Boiling Point
 date: 2026-04-11
 modified: 2026-04-11

@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Warfare
 date: 2025-04-11
 modified: 2025-04-11

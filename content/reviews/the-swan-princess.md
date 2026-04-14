@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: The Swan Princess
 date: 2026-03-17
 modified: 2026-03-18

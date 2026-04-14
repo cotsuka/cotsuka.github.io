@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Conclave
 date: 2025-03-02
 modified: 2025-03-18

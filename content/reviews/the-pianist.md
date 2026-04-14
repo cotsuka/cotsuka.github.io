@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: The Pianist
 date: 2026-04-11
 modified: 2026-04-11

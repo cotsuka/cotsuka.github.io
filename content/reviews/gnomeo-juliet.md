@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Gnomeo & Juliet
 date: 2026-03-01
 modified: 2026-03-02

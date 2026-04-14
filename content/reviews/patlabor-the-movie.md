@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: 'Patlabor: The Movie'
 date: 2026-01-11
 modified: 2026-01-11

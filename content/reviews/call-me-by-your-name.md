@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Call Me By Your Name
 date: 2026-03-22
 modified: 2026-03-23

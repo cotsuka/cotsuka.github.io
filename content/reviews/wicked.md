@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Wicked
 date: 2024-11-29
 modified: 2025-06-04

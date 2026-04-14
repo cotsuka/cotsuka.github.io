@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: Hamnet
 date: 2026-02-13
 modified: 2026-02-14

@@ -1,5 +1,5 @@
 ---
-category: movie
+type: movie
 title: 'Star Wars: Episode III - Revenge of the Sith'
 date: 2025-09-05
 modified: 2025-09-07
