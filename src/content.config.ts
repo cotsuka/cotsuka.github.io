@@ -14,7 +14,7 @@ const baseSchema = z.object({
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/articles' }),
   schema: baseSchema.extend({
-    type: z.enum(['note', 'memo']),
+    type: z.enum(['note', 'essay']),
   }),
 });
 
