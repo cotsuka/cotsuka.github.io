@@ -8,9 +8,9 @@ posse:
   Letterboxd: https://letterboxd.com/cotsuka/film/a-complete-unknown/
 ---
 
-import Rating from '@components/ui/rating.astro';
+import generateStarRating from '@utils/generateStarRating';
 
-- if i was rating timothée chalamet, edward norton, and monica barbaro for their performances, this would be <Rating rating={5} />
+- if i was rating timothée chalamet, edward norton, and monica barbaro for their performances, this would be {generateStarRating(5)}
 - bob dylan is self-absorbed, johnny cash likes him for it?
 - maybe stop introducing new musicians every 2 scenes
 - honestly not sure what more there is to this movie besides being a vehicle to let timmy tim perform dylan songs

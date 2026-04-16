@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '@layouts/base.astro';
 import RatingDistribution from '@components/ratingdistribution.astro';
-import Rating from '@components/ui/rating.astro';
+import generateStarRating from '@utils/generateStarRating';
 import sortByDate from '@utils/sortByDate';
 import generateContentUrl from '@utils/generateContentUrl';
 
@@ -38,9 +38,7 @@ const sortedReviews = sortByDate(reviews);
                   <a href={generateContentUrl(review)}>{review.data.title}</a>
                 </h4>
               </td>
-              <td>
-                <Rating rating={review.data.rating} />
-              </td>
+              <td>{generateStarRating(review.data.rating)}</td>
             </tr>
           ))
         }

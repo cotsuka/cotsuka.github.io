@@ -1,7 +1,7 @@
 ---
 import { type SiteEntrySchema } from '@utils/globals';
 import formatDate from '@utils/formatDate';
-import Rating from '@components/ui/rating.astro';
+import generateStarRating from '@utils/generateStarRating';
 
 interface Props {
   entryData: SiteEntrySchema;
@@ -20,9 +20,7 @@ const modifiedDate = entryData.modified
     {entryData.description && <li>Description: {entryData.description}</li>}
     {
       'rating' in entryData && entryData.rating && (
-        <li>
-          Rating: <Rating rating={entryData.rating} />
-        </li>
+        <li>Rating: {generateStarRating(entryData.rating)}</li>
       )
     }
     <li>Published: <time datetime={publishedDate}>{publishedDate}</time></li>
