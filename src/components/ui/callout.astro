@@ -17,10 +17,10 @@ const calloutLabels: Record<CalloutLevel, string> = {
 const calloutLabel = label ?? calloutLabels[level];
 ---
 
-<div class={`callout callout-${level}`}>
-  <div class={`callout-label`}>{calloutLabel}</div>
+<aside class={`callout callout-${level}`}>
+  <header class={`callout-label`}>{calloutLabel}</header>
   <div class="callout-content"><slot /></div>
-</div>
+</aside>
 
 <style>
   .callout {
