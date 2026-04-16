@@ -40,6 +40,8 @@ const { title, description } = Astro.props;
 <meta
   name="description"
   property="og:description"
+  property="og:image:alt"
+  property="twitter:image:alt"
   content={description}
   data-pagefind-meta="description[content]"
 />
@@ -53,6 +55,7 @@ const { title, description } = Astro.props;
 <meta
   name="twitter:image"
   property="og:image"
+  property="og:image:secure_url"
   content={new URL('opengraph.png', canonicalURL)}
   data-pagefind-default-meta="image[content]"
 />
