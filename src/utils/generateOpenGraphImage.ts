@@ -25,7 +25,7 @@ const OG_IMAGE_WIDTH = 1200;
 const OG_IMAGE_HEIGHT = 630;
 const SAFE_TEXT_ZONE = {
   x: 120,
-  y: Math.round((OG_IMAGE_HEIGHT - 460) / 2),
+  y: 85,
   width: 960,
   height: 460,
 };
