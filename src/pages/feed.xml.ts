@@ -45,7 +45,10 @@ export async function GET(context: APIContext) {
           }
           default:
             title = item.data.title;
-            description = item.data.description ?? '';
+            description =
+              'publication' in item.data && item.data.publication
+                ? `${item.data.publication.name} ${item.data.publication.issue}-${item.data.publication.volume}`
+                : (item.data.description ?? '');
             break;
         }
 
