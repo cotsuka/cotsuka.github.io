@@ -3,7 +3,10 @@ type: video
 title: we're ripping off-the-cuff about dollar rallying, rates, stargate, and deepseek. listen in 👇
 date: 2025-01-23
 modified: 2025-06-19
-description: 'Build Weekly Roundup - 2025 Week #4'
+publication:
+  name: Build Weekly Roundup
+  issue: 2025
+  volume: 4
 tags:
   - ai
   - macro
