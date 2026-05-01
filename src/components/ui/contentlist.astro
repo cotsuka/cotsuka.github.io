@@ -27,7 +27,9 @@ const displayedEntries =
         </dt>
         <dd>
           <Badge>{entry.data.type}</Badge>
-          {entry.data.description && entry.data.description}
+          {'publication' in entry.data && entry.data.publication
+            ? `${entry.data.publication.name} ${entry.data.publication.issue}-${entry.data.publication.volume}`
+            : entry.data.description}
         </dd>
       </>
     ))

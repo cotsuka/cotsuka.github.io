@@ -19,6 +19,17 @@ const modifiedDate = entryData.modified
   <ul>
     {entryData.description && <li>Description: {entryData.description}</li>}
     {
+      'publication' in entryData && entryData.publication && (
+        <li
+          data-pagefind-meta={`publication:${entryData.publication.name}`}
+          data-pagefind-filter={`publication:${entryData.publication.name}`}
+        >
+          Publication: {entryData.publication.name}{' '}
+          {entryData.publication.issue}-{entryData.publication.volume}
+        </li>
+      )
+    }
+    {
       'rating' in entryData && entryData.rating && (
         <li>Rating: {generateStarRating(entryData.rating)}</li>
       )
@@ -35,7 +46,7 @@ const modifiedDate = entryData.modified
     >
       Type: {entryData.type}
     </li>
-    {entryData.tags && <li>Tags: {entryData.tags.join(', ')}</li>}
+    {entryData.tags.length > 0 && <li>Tags: {entryData.tags.join(', ')}</li>}
     {
       entryData.posse && (
         <li>

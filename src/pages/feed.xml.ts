@@ -28,8 +28,11 @@ export async function GET(context: APIContext) {
         const link = generateContentUrl(item);
         const { Content } = await render(item);
         const content = await container.renderToString(Content);
-        const categories = (item.data.tags ?? []).concat(item.collection);
+        const categories = item.data.tags.concat(item.collection);
         categories.push(item.data.type);
+        if ('publication' in item.data && item.data.publication) {
+          categories.push(item.data.publication.name);
+        }
 
         let title: string;
         let description: string;
