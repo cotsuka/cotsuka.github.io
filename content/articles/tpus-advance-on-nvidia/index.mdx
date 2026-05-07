@@ -1,0 +1,89 @@
+---
+title: 'TPUs Advance on Nvidia'
+type: newsletter
+date: 2026-05-05
+modified: 2026-05-05
+description: What happens when AI accelerator demand is no longer synonymous with "Nvidia GPUs"?
+publication:
+  name: Inference Draft
+  issue: 2026
+  volume: 18
+tags:
+  - ai
+posse:
+  Substack: https://inferencedraft.substack.com/p/tpus-advance-on-nvidia
+---
+
+import { Picture } from 'astro:assets';
+import Callout from '@components/ui/callout.astro';
+import YouTube from '@components/youtube.astro';
+import supercomputers from './tpus-advance-on-nvidia.png';
+import nvda from './NVDA_2026-05-05.png';
+
+<Picture
+  src={supercomputers}
+  alt="Nvidia, Google, and Amazon depicted as supercomputers."
+/>
+
+What happens when AI accelerator demand is no longer synonymous with "Nvidia GPUs"? [Google (Alphabet) announced it is now delivering its TPUs to select customers' own data centers](https://abc.xyz/investor/events/event-details/2026/2026-Q1-Earnings-Call-2026-nW8kCrBAKS/default.aspx#:~:text=we%20will%20begin%20to%20deliver%20TPUs%20to%20a%20select%20group%20of%20customers%20in%20their%20own%20data%20centers%20in%20a%20hardware%20configuration%20to%20expand%20our%20addressable%20market%20opportunity). While Nvidia stock took a same-day leg down, likely on China export restriction revenue data they shared, I think there's also a medium-term story of a shifting mix away from Nvidia GPUs over time.
+
+<Picture src={nvda} alt="NVDA price chart from 2026-04-22 through 2026-05-05" />
+
+<Callout level="info">
+  TPUs are an ASIC developed by Google for neural network machine learning.
+  Compared to a GPU, TPUs are designed for a high volume of low precision
+  computation with more I/O operations per joule, without hardware for
+  rasterisation/texture mapping. —
+  [Wikipedia](https://en.wikipedia.org/wiki/Tensor_Processing_Unit)
+</Callout>
+
+### Why would Google's TPUs be a credible substitute for Nvidia GPUs?
+
+Google's [eighth-generation TPU architecture blog post](https://cloud.google.com/blog/products/compute/tpu-8t-and-tpu-8i-technical-deep-dive) offers some insight into where they might be best-used (emphasis mine):
+
+- **massive-scale** pre-training
+- **high-concurrency** reasoning
+
+Their wording obviously points towards hyperscalers, frontier labs, and massive organizations who have large, repetitive, well-optimized workloads. These TPUs aren't designed to be universal substitutes for GPUs across all workloads, but with scale and engineering talent they can improve cost efficiency versus GPU stacks.
+
+### Why would customers like Anthropic choose TPUs over (or alongside) Nvidia?
+
+The obvious answer is cost and power efficiency. The more interesting angle to consider is bargaining power: TPUs (and other AI accelerators) give customers optionality when selecting infrastructure for their workloads. The threat to Nvidia is then whether they are able to maintain pricing power despite competitors coming into the chip mix.
+
+### Why might Nvidia's moat remain intact despite AI accelerator advances?
+
+It's important to note that Nvidia's moat extends beyond its chips, inclusive of developer familiarity with CUDA and its related libraries, data centers designed specifically with Nvidia's rack-scale systems in mind, NVLink networking, the list goes on. Even Sundar mentions that [Nvidia GPUs are a core part of Google Cloud's AI accelerator portfolio in their earnings call](https://abc.xyz/investor/events/event-details/2026/2026-Q1-Earnings-Call-2026-nW8kCrBAKS/default.aspx#:~:text=we%20will%20be%20among%20the%20first%20to%20offer%20NVIDIA%20Vera%20Rubin%20NVL72%2C%20in%20addition%20to%20the%20Blackwell%2D%20and%20Hopper%2Dbased%20instances%20already%20available).
+
+It isn't as simple as buying a new set of chips and swapping them out in a rack as it's often necessary to both retool the data center and redevelop the software.
+
+### Anyone else?
+
+- Amazon's Trainium chips, which also have commitments signed with Anthropic, though [they have yet to announce whether they'll sell them to third parties](https://qz.com/amazon-trainium-ai-chips-third-party-sales-jassy-040926).
+- Cerebras' Wafer Scale Engine chips which [features a long list of big-name investors amidst its upcoming IPO](https://techcrunch.com/2026/05/04/openais-cozy-partner-cerebras-is-on-track-for-a-blockbuster-ipo/).
+- Huawei's Ascend chips which are [filling the void in China left by the export restrictions placed on Nvidia](https://www.ft.com/content/b82fa156-d1db-40e5-bce5-3c5f8f54069b).
+
+---
+
+## Mine Print Hash
+
+On last week's podcast, Matt and I go in-depth on the power struggle underway at the Fed, the UAE withdrawing from OPEC and its implications for the global dollar system, and round out the episode with a discussion of recent Chinese and American sovereign power plays within the AI space.
+
+<YouTube
+  title="The Trans Adriatic Pipeline: Eurasian Energy Corridor Chess Game"
+  videoURL="https://www.youtube.com/watch?v=RtN3Ww7RiDQ"
+/>
+
+---
+
+## Open Threads
+
+On privacy, or should I say, surveillance:
+
+- Instagram shuts down end-to-end encrypted messaging. [Link](https://www.macrumors.com/2026/05/05/psa-instagram-encrypted-messaging-ends-may-8/)
+- German Bundestag admin recommends using Wire over Signal, because it "has certification from the Federal Office for Information Security (BSI)". Because the government-sponsored messaging app _certainly_ has no backdoors. [Link](https://www.heise.de/en/news/Digital-Sovereignty-Wire-to-Replace-Signal-as-Standard-in-the-Bundestag-11275755.html)
+- Russia continues creating its own "sovereign national internet," similar to China's Great Firewall, EU's Digital Sovereignty initiative, and... [Utah's VPN law](https://www.tomshardware.com/software/vpn/utah-becomes-first-us-state-to-target-vpn-use-with-age-verification-law)? [Link](https://jamestown.org/russia-continues-creation-of-sovereign-national-internet/)
+
+Agentic AI:
+
+- Microsoft launches Agent 365, which gives agents similar roles, permissions, and governance to a human employee. An important step in unlocking agentic AI for corporates. [Link](https://www.microsoft.com/en-us/microsoft-agent-365)
+- I'm still unconvinced any of these Anthropic-released agents have actually moved the needle much, but [if you view them as sales demos they make more sense](https://www.reuters.com/legal/transactional/anthropic-nears-15-billion-ai-joint-venture-with-wall-street-firms-wsj-reports-2026-05-04/). [Link](https://www.bloomberg.com/news/articles/2026-05-05/anthropic-unveils-ai-agents-to-field-financial-services-tasks?srnd=homepage-americas)
