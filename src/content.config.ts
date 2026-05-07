@@ -14,7 +14,7 @@ const baseSchema = (image: SchemaContext['image']) =>
   });
 
 const publication = z.object({
-  name: z.enum(['Build Weekly Roundup', 'Mine Print Hash', 'First Pass']),
+  name: z.enum(['Build Weekly Roundup', 'Mine Print Hash', 'Inference Draft']),
   issue: z.coerce.number().positive(),
   volume: z.coerce.number().positive(),
 });

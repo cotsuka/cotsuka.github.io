@@ -178,3 +178,8 @@ details[open] > summary {
 picture {
   margin-block-end: 1rem;
 }
+hr {
+  margin-block: 1rem;
+  border: transparent;
+  border-block-start: 1px dashed var(--color-text);
+}
