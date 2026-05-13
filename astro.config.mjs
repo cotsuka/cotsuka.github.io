@@ -74,6 +74,7 @@ export default defineConfig({
         avif: { quality: 50, effort: 2 },
       },
     },
+    dangerouslyProcessSVG: true,
   },
   vite: {
     build: {
