@@ -42,13 +42,13 @@
     "bun": ">=1.0.0"
   },
   "dependencies": {
-    "@astrojs/mdx": "5.0.5",
+    "@astrojs/mdx": "5.0.6",
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.2",
     "@iconify-json/mdi": "^1.2.3",
     "@pagefind/component-ui": "^1.5.2",
     "@vercel/og": "^0.8.6",
-    "astro": "6.3.2",
+    "astro": "6.3.7",
     "astro-icon": "^1.1.5",
     "pagefind": "^1.5.2"
   },
@@ -63,6 +63,6 @@
     "prettier-plugin-astro": "^0.14.1",
     "simple-git-hooks": "^2.13.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.59.3"
+    "typescript-eslint": "^8.59.4"
   }
 }
