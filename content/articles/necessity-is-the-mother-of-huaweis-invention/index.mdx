@@ -1,0 +1,76 @@
+---
+title: "Necessity Is the Mother of Huawei's Invention"
+type: newsletter
+date: 2026-05-26
+modified: 2026-05-28
+description: Will Chinese chipmakers innovate themselves around US sanctions and re-level the AI lab race?
+publication:
+  name: Inference Draft
+  issue: 2026
+  volume: 22
+tags:
+  - ai
+posse:
+  Substack: https://inferencedraft.substack.com/p/necessity-is-the-mother-of-huaweis
+---
+
+import { Picture } from 'astro:assets';
+import YouTube from '@components/youtube.astro';
+import necessity from './necessity-is-the-mother-of-huaweis-invention.png';
+import capability from './1-Overall-AI-Capability.png';
+
+<Picture src={necessity} alt="Abstract circuit board spiral sculpture" />
+
+Chip microarchitectures are often talked about as the arbiter of performance: Nvidia's chip succession from Ampere to its current Rubin Ultra offerings are compared in PFLOPs of performance[^1]. Less talked about are all of the surrounding parts and optimizations that are needed to make these high performance chips usable.
+
+PC enthusiasts may remember Nvidia's GeForce GT 1030 debacle, where two versions of the graphics card were manufactured using the same GPU and name, but swapping its GDDR5 memory down to DDR4. It led to a [reviewer calling them the "GT 1030" and the "GT 1030 Bad Edition"](https://gamersnexus.net/hwreviews/3330-gt-1030-ddr4-vs-gt-1030-gddr5-benchmark-worst-graphics-card-2018) to differentiate.
+
+So in today's world where [access to the most advanced chip manufacturing processes are geopolitical issues](https://www.asml.com/en/news/press-releases/2023/statement-regarding-additional-export-controls#:~:text=As%20a%20reminder%2C%20sales%20of%20ASML%E2%80%99s%20EUV%20tools%20have%20already%20been%20restricted%20since%202019), finding a way to make a competitive package on last-generation tooling is more necessary than ever. Despite the sanctions, Chinese labs have managed to stay [within 8 months of the frontier](https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro).
+
+<Picture
+  src={capability}
+  alt="Comparison of aggregate capabilities over time of the most capable publicly released U.S. and PRC models according to a suite of benchmarks covering five domains."
+/>
+
+[From Huawei](https://www.huawei.com/en/news/2026/5/ieee-iscas-tau-scaling) (emphasis mine):
+
+> ...[The Tau (τ) Scaling Law] aims to systematically shorten the time constant τ in order to drive up performance, energy efficiency, and transistor density at each level...
+
+> The Kirin chips scheduled to launch in Fall 2026 will be the first ever to adopt the LogicFolding architecture, which will considerably enhance the chips' performance. By 2031, the high-end chips HUAWEI designs based on the τ Scaling Law are expected to feature a transistor density that is **equivalent to 14 Å (1.4 nm) processes**.
+
+I don't pretend to be an expert on chip design, but [Huawei Central compares the Kirin claims to prior improvements](https://www.huaweicentral.com/huawei-kirin-2026-chip-performance-clock/):
+
+> The 2026 version of the [Kirin](https://www.huaweicentral.com/huawei-kirin-2026-chip/) chip will consist of 238 mtr/mm2, or 240 million transistors per square millimeter, a 53.5% jump compared to the conventional 2D chip design. This is around 40 million short of TSMC's 3nm chip's transistor density.
+>
+> It is worth mentioning that TSMC and Intel's transistor density improvement for each generation of process after 10nm is only around 20%-30%, and after 2nm, TSMC only saw a density improvement of around 10%.
+
+If Huawei is able to use the LogicFolding design from its mobile-targeted Kirin chips with its Ascend AI accelerators and along with [domestically-developed DUV machines coming online in the next year](https://www.tomshardware.com/tech-industry/semiconductors/chinas-largest-foundry-testing-first-domestic-immersion-duv-lithography-tool-smic-takes-significant-step-on-road-to-wafer-fab-equipment-self-sufficiency), we may soon be looking at frontier-competitive Chinese chips. I'd watch for where the next red dot lands on the capability chart to see whether the sanctions will have a lasting impact on China.
+
+---
+
+## Mine Print Hash
+
+Matt and I check in on Bessent's plan to "monetize the asset side of the US balance sheet" by tracking progress-to-date across several executive orders, policy changes, and congressional acts. What we find is a steady march towards accomplishing this goal, with stablecoins playing a key role in the strategy while internationally, there are signs of differing openness to onboarding onto dollar stablecoin monetary rails.
+
+<YouTube
+  title="Treasury Supremacy: Stablecoins, Bitcoin, and the Building New Dollar Rails"
+  videoURL="https://www.youtube.com/watch?v=6SA40886B5Q"
+/>
+
+---
+
+## Open Threads
+
+Nation-states continue to exert their influence on AI development:
+
+- After China's rejection of the Meta-Manus deal, the Manus founders are looking to buy back the company for a potential Hong Kong IPO. [Link](https://www.reuters.com/technology/chinas-manus-founders-seek-1-billion-undo-meta-takeover-bloomberg-news-reports-2026-05-21/)
+- Don't forget, Vatican City is a sovereign city-state. Apparently the Pope is a Claude guy. [Link](https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html)
+  - And some notes on the encyclical from Simon Willison. [Link](https://simonwillison.net/2026/May/25/encyclical-on-ai/)
+
+Inference usage and costs:
+
+- xAI will also provide Colossus 2 compute to Anthropic. Is this xAI throwing in the towel on its model ambitions and pivoting towards data centers? [Link](https://x.com/nottombrown/status/2057194829986300375)
+- Google joint venture with Blackstone to create more TPU data centers. [Link](https://www.blackstone.com/news/press/blackstone-announces-joint-venture-with-google-to-create-new-tpu-cloud/)
+- Uber's COO starts to realize tokenmaxxing is the zeitgeist's version of lines of code written. [Link](https://www.blackstone.com/news/press/blackstone-announces-joint-venture-with-google-to-create-new-tpu-cloud/)
+
+[^1]: A petaflop, measuring [floating point operations per second](https://en.wikipedia.org/wiki/Floating_point_operations_per_second).
