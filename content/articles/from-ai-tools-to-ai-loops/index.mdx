@@ -1,0 +1,89 @@
+---
+title: From AI Tools to AI Loops
+type: newsletter
+date: 2026-06-09
+modified: 2026-06-10
+description: The move away from prompting and towards crafting the AI ouroboros.
+publication:
+  name: Inference Draft
+  issue: 2026
+  volume: 24
+tags:
+  - ai
+posse:
+  Substack: https://inferencedraft.substack.com/p/from-ai-tools-to-ai-loops
+---
+
+import { Picture } from 'astro:assets';
+import YouTube from '@components/youtube.astro';
+import ouroboros from './from-ai-tools-to-ai-loops.png';
+
+<Picture
+  src={ouroboros}
+  alt="Robot Ouroboros Artwork"
+/>
+
+I wrote [last week](03%20Projects/Inference%20Draft/2026/Tokenmaxxing%20as%20Management%20Theory.md) about tokenmaxxing as the awkward adoption phase of AI inside companies: first you get everyone using the tool, then you figure out whether any of that usage is actually enhancing output.
+
+Looping is the next phase. The question is no longer, "Can an employee use AI at each step of the workflow?" The question becomes, "Can the *entire workflow* turn into an automated loop?"
+
+A (naive) workflow in one of today's software engineering companies might look something like:
+
+1. client requests new feature
+2. write specification document
+3. implement feature in code
+4. conduct tests and code review
+5. make fixes
+6. deploy feature
+7. monitor for bugs
+
+Software engineers are already using AI at each of these steps through a mix of autocompletions, chat interfaces, and coding agents. You may notice there are some natural places where automation already speeds this up: continuous integration/continuous deployment (CI/CD) already handles parts of the build-test-deploy process, and observability tools already notify teams of issues or roll back failed releases. But these are mostly point solutions.
+
+What if you could create an automated loop out of the *entire* software engineering workflow? Boris Cherny (Anthropic) [certainly thinks so](https://youtu.be/SlGRN8jh2RI), as does Peter Steinberger (OpenAI):
+
+> Here’s your monthly reminder that you shouldn’t be prompting coding agents anymore.
+> 
+> You should be designing loops that prompt your agents.
+> 
+> — Peter Steinberger (@steipete) [June 7, 2026](https://x.com/steipete/status/2063697162748260627)
+
+There are already several examples and functional versions of loops that can be implemented today. Claude Code and Codex have `/goal` functions that continue working on a task until a final stopping condition is reached. In other words: don't just answer one prompt; keep working until the condition is true. Andrej Karpathy's [autoresearch](https://github.com/karpathy/autoresearch) is the research version of the same idea: edit the code, train for five minutes, compare the result, keep or discard, repeat.
+
+In a hypothetical near-future, the software engineering workflow may be:
+
+1. client requests new feature
+2. write specification document
+3. hand that specification to a loop
+4. decide whether the result should be deployed
+5. fine-tune loop to improve its output
+
+Loops change the dynamic away from engineers designing elegant code solutions for feature designs and towards building the instrumentation needed to define measurable stopping conditions. Or maybe, [this is already old news](https://open.substack.com/pub/oneusefulthing/p/what-it-feels-like-to-work-with-mythos?selection=22c40ceb-5f2c-4191-ad82-90998ef70f00).
+
+---
+
+## Mine Print Hash
+
+The four-week T-bill exhibited a big swing over Memorial Day, which highlighted the reason behind why the ECB is likely to hike rates at their next meeting. Matt Dines explains why this is troublesome for the EU and how the CFTC's approval of Kalshi's Bitcoin perpetual futures is a further indication of where monetary rails are heading.
+
+<YouTube
+  title="Hawkish Weakness: ECB Hikes, Dollar Flows, and Kalshi/Polymarket as Stablecoin Demand Markets"
+  videoURL="https://www.youtube.com/watch?v=T52WKvQSu50"
+/>
+
+---
+
+## Open Threads
+
+Governments continue controlling who gets compute, who gets chips, who can work where, and which firms become part of national industrial strategy.
+
+- Bernie Sanders wants to seize the means of AI production. [Link](https://www.nytimes.com/2026/06/01/opinion/artificial-intelligence-bernie-sanders.html)
+- Trump wants to invest in the means of  AI production. [Link](https://www.bloomberg.com/news/articles/2026-06-05/us-exploring-government-partnerships-with-ai-firms-trump-says)
+- Possibly an 18-month loophole China exploited to access export controlled chips? [Link](https://www.techtimes.com/articles/317905/20260606/bis-closed-china-ai-chip-loophole-trump-officials-dispute-whether-gap-ever-existed.htm)
+- China won't let top AI talent travel. [Link](https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms)
+- Claude Mythos - Neutered Version (aka Fable 5) limits its capabilities opaquely to the user depending on the type of question asked. [Link](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf)
+
+Building things...
+
+- China starts a prefabricated power hub for data centers. [Link](https://www.bloomberg.com/news/articles/2026-06-07/china-starts-prefabricated-power-hub-for-data-centers-cctv-says)
+- Google selects Intel as a TPU manufacturer [Link](https://qz.com/google-intel-tpu-order-tsmc-capacity-2028-060826)
+- SpaceX has solved the datacenters in space heat problem? Big if true. [Link](https://x.com/SpaceX/status/2064099405758906727)
