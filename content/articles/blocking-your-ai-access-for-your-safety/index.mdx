@@ -1,0 +1,73 @@
+---
+title: Blocking Your AI Access — For Your Safety
+type: newsletter
+date: 2026-06-16
+modified: 2026-06-18
+description: If the frontier AI models are too dangerous for the public, then who gets access to them and what does the public get to use?
+publication:
+  name: Inference Draft
+  issue: 2026
+  volume: 25
+tags:
+  - ai
+posse:
+  Substack: https://inferencedraft.substack.com/p/blocking-your-ai-access-for-your
+---
+
+import { Picture } from 'astro:assets';
+import YouTube from '@components/youtube.astro';
+import denarius from './blocking-your-ai-access-for-your-safety.png';
+
+<Picture
+  src={denarius}
+  alt="Silver Denarius Depiction"
+/>
+
+Anthropic released Fable 5, a version of Mythos with safety gates, intended to stop bad actors from using the model's full capabilities. The full details are not public, but reporting seems to suggest that Andy Jassy, Amazon's CEO, [contacted the US government to report Fable 5 was easily jailbroken](https://www.wsj.com/tech/ai/amazon-ceos-talks-with-u-s-officials-triggered-crackdown-on-anthropic-models-dcc90578) and led to the US slapping export controls onto Fable 5 and Mythos. This is an interesting chain of events because Anthropic is [both an Amazon investment and an AWS customer](https://www.aboutamazon.com/news/company-news/amazon-invests-additional-5-billion-anthropic-ai). 
+
+A bit of schadenfreude as Anthropic has repeatedly said Mythos is dangerous, ["[t]he fallout—for economies, public safety, and national security—could be severe,"](https://www.anthropic.com/glasswing#:~:text=The%20fallout%E2%80%94for%20economies%2C%20public%20safety%2C%20and%20national%20security%E2%80%94could%20be%20severe%2E) and called for a [pause to AI development](https://www.anthropic.com/institute/recursive-self-improvement#:~:text=We%20believe,technology%2E):
+
+> We believe it would be good for the world to have the _option_ to slow or temporarily pause frontier AI development to enable societal structures and alignment research to keep up with the advance of the technology.
+
+And in Dario's [own words](https://darioamodei.com/post/policy-on-the-ai-exponential#1-regulation-and-public-safety:~:text=Frontier,I):
+
+> Frontier AI models, like airplanes, should be required to go through technical testing and auditing, and their release should be blocked or reversed as a threat to public safety if they do not meet high standards of safety.
+
+General opinions seem to range between the following arguments:
+1. Dario and Anthropic are genuinely worried about the pace of AI advancement, believe institutions are moving too slowly, but intend to advance AI anyways until everyone promises they'll stop.
+2. The current administration has a political agenda against Anthropic and is slapping export controls on them in retaliation. This is the same line of thought from when Anthropic was [designated a supply chain risk](https://www.politico.com/news/2026/06/04/hegseth-anthropic-designation-supply-chain-risk-00951183).
+3. Dario and Anthropic (and maybe Amazon?) are putting together a marketing campaign that paints Mythos as so capable, it's dangerous — a la Apple's Power Mac G4 ad:
+
+<YouTube
+  title="PowerMac G4 Ad - Tanks"
+  videoURL="https://www.youtube.com/watch?v=l2ThMmgQdpE"
+/>
+
+Likely some mixture of all three are at play here, but the through line across all of the messaging from Anthropic, the US government, and even opponents to AI, is **safety**. And safety gates, said another way, are an access-control system. Some authority decides who gains access, and to what.
+
+I've [previously written on political bias within models](https://open.substack.com/pub/inferencedraft/p/soft-wars-for-hard-infrastructure?r=5uso31&selection=f1c6855c-c82e-41bf-a9ce-cfceecc3c20a&utm_campaign=post-share-selection&utm_medium=web&aspectRatio=instagram&textColor=%23ffffff&bgImage=true), which is a direct way to repress information. Central bank digital currencies (CBDCs) are often used as an [example that would enable easy, widespread financial repression](https://en.wikipedia.org/wiki/Central_bank_digital_currency#Criticism). As AI capabilities continue to advance, gating access to certain levels of intelligence would be another way to repress.
+
+Whether the target is social media platforms, bank accounts, intelligence, or any number of products, the regulatory question is continually formulated around the state knowing best. Whether in the form of the UK [banning social media for children under the age of 16](https://www.theguardian.com/uk-news/2026/jun/12/uk-to-ban-under-16s-from-high-risk-social-media-apps) in the name of safety[^1] or ensuring AI is [safe for minors](https://www.nytimes.com/2026/06/13/technology/states-investigating-openai.html), everything is a nail for the ID verification hammer.
+
+To see if you're allowed to read the next article, scan your ID. To keep you safe, so you don't read something you shouldn't have, because ultimately this is about safety from wrongthink. The fight spilling into public view is over who controls the thought.
+
+---
+## Mine Print Hash
+
+Tokenized assets have been a hot topic, alongside stablecoins, which plays right into the Mine Print Hash thesis. Matt Dines and I discuss how tokenized assets are competing with traditional financial rails via GENIUS Act stablecoins on last week's podcast.
+
+<YouTube
+  title="Tokenized Assets: The Market Plumbing Contest"
+  videoURL="https://www.youtube.com/watch?v=AWLzsyVYDb0"
+/>
+
+---
+
+## Open Threads
+
+A little bit of everything this week:
+- China's cross-border digital payments system. [Link](https://www.ft.com/content/76de5ca6-9ae8-49ae-a0cb-64d09040f327)
+- Nvidia taps the bond market. [Link](https://www.ft.com/content/c0e7cc58-e309-4f47-b466-d577c06cbeec)
+- Another US-Iran deal? [Link](https://www.cnbc.com/2026/06/15/us-iran-deal-hormuz-markets.html)
+
+[^1]: Except for Bluesky, because apparently that's not social media?
