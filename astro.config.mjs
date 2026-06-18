@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
-
+import { unified } from '@astrojs/markdown-remark';
 import icon from 'astro-icon';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
@@ -55,15 +55,14 @@ export default defineConfig({
         mdi: ['rss'],
       },
     }),
-    mdx(),
+    mdx({
+      syntaxHighlight: 'prism',
+      processor: unified({
+        remarkRehype: { footnoteBackContent: '↩︎' }
+      })
+    }),
     sitemap(),
   ],
-  markdown: {
-    remarkRehype: {
-      footnoteBackContent: '↩︎',
-    },
-    syntaxHighlight: 'prism',
-  },
   image: {
     layout: 'constrained',
     service: {
