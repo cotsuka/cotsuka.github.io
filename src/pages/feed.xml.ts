@@ -1,4 +1,4 @@
-import { getContainerRenderer as getMDXRenderer } from '@astrojs/mdx';
+import { getContainerRenderer as getMDXRenderer } from '@astrojs/mdx/container-renderer';
 import rss, { type RSSFeedItem } from '@astrojs/rss';
 import { siteDescription, siteTitle } from '@utils/globals';
 import { type APIContext } from 'astro';
