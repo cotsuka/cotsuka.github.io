@@ -1,0 +1,79 @@
+---
+title: Circle's Float Problem
+type: newsletter
+date: 2026-06-30
+modified: 2026-07-01
+description: Open USD's challenge to the issuer-led stablecoin model.
+publication:
+  name: Inference Draft
+  issue: 2026
+  volume: 27
+tags:
+  - ai
+posse:
+  Substack: https://inferencedraft.substack.com/p/circles-float-problem
+---
+
+import { Picture } from 'astro:assets';
+import YouTube from '@components/youtube.astro';
+import bilbo from './circles-float-problem.png';
+import meme from './after-all-why-not-why-shouldnt-i-keep-it.jpg';
+
+<Picture
+  src={bilbo}
+  alt="Contemplating the golden ring"
+/>
+
+Stablecoins are a pretty easy concept to wrap your head around: you give the stablecoin issuer a dollar, they invest that dollar into some specified mix of "safe" assets, and in return they give you a digital token. That digital token has some magical properties that I won't get into today, but they theoretically enable use cases that you aren't able to achieve on traditional monetary rails.
+
+There have been many people who have noted this is kind of similar to what banks do, with one key difference: the stablecoin issuer doesn't return that interest back to you, but instead pockets it for itself. This has led Tether, issuer of USDT, to become [one of the most profitable companies per employee](https://bridgeharris.substack.com/p/the-most-profitable-business-per).
+
+Circle follows the same pattern, issuing its USDC dollar stablecoin, managing its reserve in cash and US Treasuries, and earning profits via the yields on its reserve. Circle [partnered with Coinbase](https://www.circle.com/blog/ushering-in-the-next-chapter-for-usdc) as a key distribution partner, reportedly [entering a revenue sharing agreement](https://www.sec.gov/Archives/edgar/data/1876042/000187604226000062/crcl-20251231.htm#:~:text=We%20incur%20costs%20to%20incentivize%20distributors%20to%20use%20and%20distribute%20Circle%20Digital%20Assets). This setup is issuer-led, making the stablecoin issuer the main profit driver, and everyone else hoping to get a small cut of whatever the issuer is willing to provide.
+
+<Picture
+  src={meme}
+  alt="After All, Why Not? Why Shouldn't I Keep It? meme"
+/>
+
+An obvious challenge to this model would be the creation of a consortium of partners that jointly issue a stablecoin, sharing the profits amongst themselves. Enter [Open Standard](https://joinopenstandard.com/):
+
+> Today we announced Open USD together with Visa, Mastercard, Coinbase, BlackRock, BBVA, Shopify, DoorDash, and 140+ other partners.
+>
+> Much like the mobile industry needed Android, financial services needs Open USD to scale stablecoin adoption.
+>
+> The stablecoin space has come a long way since we started Bridge nearly 5 years ago. Total volume is now approaching that of the ACH network and nearly every major financial institution from banks to fintechs is leaning in.
+>
+> But cost and governance have limited utility and put core payments use cases out of reach. Businesses need a stablecoin that's open, low-cost, high-throughput, broadly accessible, and aligned to their interests. 
+>
+> We'll be launching later this year. 
+>
+> Visit joinopenstandard[.]com to learn more and participate.
+> — [@zcabrams](https://x.com/zcabrams/status/2071966580142125175)
+
+The partner list is already enormous (140+ at launch) and took me by surprise, but the incentives make sense: the issuer-led models concentrate all of the economics with the issuer, but the distribution channels are the ones helping to grow the stablecoin's user base. It stands to reason they may prefer a model that balances the scales more towards themselves.
+
+It remains to be seen whether Open Standard's governance structure will stand the test of time. With so many partners, it could implode in on itself under the weight of bureaucracy. That said, Coinbase and other distribution partners (e.g., payment processors) seem like the obvious winners on this news, as the threat of OUSD has tipped the scales at the revenue share negotiating table with stablecoin issuer incumbents.
+
+---
+
+## Mine Print Hash
+
+SpaceX's $25B bond offering is just the latest reminder that the AI buildout is part of the dollar-credit story. Matt Dines and I walk through how and why SpaceX and FHLB borrowing are signposts for non-bank dollar liquidity. All this admist the backdrop of continuing progress on the Digital Euro, Digital Yuan, and stablecoin dollar projects.
+
+<YouTube
+  title="SpaceX, FHLB Lending, and the Dollar Liquidity Scramble"
+  videoURL="https://www.youtube.com/watch?v=vmhEnnHV49I"
+/>
+
+---
+
+## Open Threads
+
+Private AI usage:
+- The [National Design Studio](https://ndstudio.gov/)'s first model, Rampart, is an on-device PII-redactor. [Link](https://ndstudio.gov/posts/say-hello-to-rampart)
+- Codex and Claude Desktop competitor that routes its model calls through [Venice](https://venice.ai/), a privacy-focused inference provider. [Link](https://github.com/open-software-network/os-june)
+- Attempting to distribute model inference compute in a sort of [Folding@Home](https://en.wikipedia.org/wiki/Folding%40home) way. [Link](https://meshllm.cloud/)
+
+Legislative branch pushes back on a few Executive branch moves (just a few):
+- Lisa Cook retains Fed Governor job, for now. Notably, the Supreme Court really is saying the Executive needs to follow the right procedures. [Link](https://apnews.com/article/supreme-court-executive-power-trump-firing-cook-7b7676e5a066f8df41077a0920b9f334)
+- Birthright citizenship executive order is struck down. Argument over the definition of "citizen," the 14th amendment author's intention, and England's version of the law from which this was borrowed, abounds. [Link](https://www.scotusblog.com/2026/06/supreme-court-strikes-down-trumps-order-ending-birthright-citizenship/)
