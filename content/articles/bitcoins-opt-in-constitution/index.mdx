@@ -1,0 +1,79 @@
+---
+title: "Bitcoin's Opt-In Constitution"
+type: newsletter
+date: 2026-07-28
+modified: 2026-07-30
+description: Bitcoin's rules are enforced by adoption, not decree.
+publication:
+  name: Inference Draft
+  issue: 2026
+  volume: 31
+tags:
+  - bitcoin
+posse:
+  Substack: https://inferencedraft.substack.com/p/bitcoins-opt-in-constitution
+---
+
+import { Picture } from 'astro:assets';
+import YouTube from '@components/youtube.astro';
+import whichway from './bitcoins-opt-in-constitution.png';
+import situation from './situation-monitor.png';
+
+<Picture
+  src={whichway}
+  alt="Choosing the path ahead"
+/>
+
+While protocols are generally all agreed upon and adhered to, it is extremely common to have competing pieces of software adhering to said protocol with slightly different understandings of how specifics are implemented.
+
+For example, we all use the [HTTP (Hypertext Transfer Protocol)](https://en.wikipedia.org/wiki/HTTP_request_smuggling) daily. The protocol is updated over time by first proposing a new change via an [RFC (Request for Comments)](https://en.wikipedia.org/wiki/Request_for_Comments). These RFCs describe how changes to the HTTP protocol are intended to work: methods, behaviors, terminology, etc. They are then debated, tested, implemented, and (sometimes) reach enough widespread adoption that they become "standards."
+
+These "standards" are almost always considered the base set of features that should be implemented by any software purporting to support HTTP, but software can also choose to implement additional features or remove/change functionality, at the potential cost of interoperability. This semi-decentralized approach allows ideas without enough demand or interest to be left out of software implementations and thus additional engineering effort doesn't need to be spent supporting them.
+
+Changes to the Bitcoin protocol generally follow a similar proposal process: ideas are formalized into [Bitcoin Improvement Proposals (BIPs)](https://github.com/bitcoin/bips), which are then further discussed and tested, including the specific activation method that will enable the BIP, and Bitcoin node software implements the BIP.
+
+One such proposal, [BIP-110, titled "Reduced Data Temporary Softfork,"](https://github.com/bitcoin/bips/blob/master/bip-0110.mediawiki) intends to reduce the amount of data stored on the Bitcoin blockchain to "correct distorted incentives caused by standardizing support for arbitrary data, and to refocus priorities on improving Bitcoin as money." This BIP essentially stems from a configuration change made by Bitcoin Core (the most common Bitcoin node implementation at this time), which raised the default size for one of the Bitcoin transaction fields (`OP_RETURN`) to 100,000 bytes, up from 83 bytes. While this was a widely accepted limit, it was not a part of the protocol, and thus can vary between implementations.
+
+This configuration change by Bitcoin Core made it easier to add ["spam", memes, and NFTs](https://www.coindesk.com/tech/2023/02/02/giant-bitcoin-taproot-wizard-nft-minted-in-collaboration-with-luxor-mining-pool) onto the Bitcoin blockchain[^1]. The anti-BIP-110 crowd argues that Bitcoin transactions adhering to protocol rules and pay the associated transaction fee are valid: regardless of whether you think the data is tasteful, useful, or appropriate on the blockchain.
+
+The pro-BIP-110 crowd believes limiting the maximum allowed size for `OP_RETURN` data within the protocol rules is the best way to reduce data storage requirements for the Bitcoin blockchain over time.
+
+So recall back to the HTTP RFCs I mentioned before: while the discussion, reviews, documentation, and testing are all useful in creating consensus, it is still up to the software to implement these features and for enough users to agree to switch. There are already [forked versions of the Bitcoin Core node software](https://github.com/bitcoinknots/bitcoin) which implement BIP-110, but so far they are not gaining much interest.
+
+<Picture
+  src={situation}
+  alt="BIP110 Situation Monitor"
+/>
+
+My guess is that BIP-110 will likely not become a part of the "standard" Bitcoin protocol unless a large number of users decide they really care about limiting data sizes. And specifically, they [need a large enough of percentage of economic nodes to signal support for the BIP](https://bitcoinmagazine.com/news/foundry-asks-bitcoin-miners-vote-bip-110).
+
+While this can seem like a messy, uncoordinated exercise when dealing with money, it also highlights how consensus cannot be driven by a limited set of decision makers within Bitcoin. Nobody has absolute authority to impose or change rules upon the protocol. Everyone opts into the protocol of their choosing (at their own risk). How many monetary systems in today's world let their users decide its future?
+
+---
+
+## Mine Print Hash
+
+Last week was a Matt Dines-driven episode, connecting rising sovereign debt yields to resource scarcity, choke points, and competing monetary spheres of influence. While many of the headlines sound negative, there are glimpses of a path the US has begun working on: deals with Iraq and conversations with China.
+
+<YouTube
+  title="Houthis, the Red Sea, and Sovereign Debt Repricing"
+  videoURL="https://www.youtube.com/watch?v=V0KMqsdnYHE"
+/>
+
+---
+
+## Open Threads
+
+Open-weights and security:
+- OpenAI's pre-release model hacked Hugging Face to cheat on an evaluation. [Link](https://openai.com/index/hugging-face-model-evaluation-security-incident/)
+- Everyone except OpenAI and Anthropic sign open letter in favor of open-source models. [Link](https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/)
+- Refuting claims that distilling American models is how Kimi K3 took a leap. [Link](https://techcrunch.com/2026/07/23/experts-say-exploiting-anthropics-fable-isnt-how-kimi-k3-got-so-good/)
+- Judicial examples that even if they did, distilling may be considered legal. [Link](https://searchengineland.com/google-loses-key-dmca-claims-against-serpapi-in-scraping-lawsuit-483185)
+
+AI valuations:
+- "Unnamed state-backed manufacturer" starts delivering DUV machines to key Chinese chipmakers. [Link](https://www.tomshardware.com/tech-industry/semiconductors/china-begins-mass-production-of-domestic-immersion-duv-lithography-machines)
+- Oracle needs ~$7B for energy infrastructure collateral in Wisconsin. [Link](https://finance.yahoo.com/technology/ai/articles/oracle-faces-potential-7-billion-104844370.html)
+	- DOW awards $7B to Oracle. [Link](https://www.war.gov/News/Releases/Release/Article/4554042/dow-awards-a-nearly-7-billion-oracle-agreement-to-accelerate-the-arsenal-of-fre/)
+- Nvidia to guarantee $250B in financing for OpenAI data center. [Link](https://www.wsj.com/tech/ai/nvidia-in-talks-with-openai-to-guarantee-250-billion-financing-for-data-center-3dd6eae3)
+
+[^1]: They most definitely didn't, but it's an easy timestamp to point to.
