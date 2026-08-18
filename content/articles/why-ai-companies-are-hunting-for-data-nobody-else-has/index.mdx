@@ -1,0 +1,62 @@
+---
+title: Why AI Companies Are Hunting for Data Nobody Else Has
+type: newsletter
+date: 2026-08-18
+modified: 2026-08-18
+description: The next AI race is for data that hasn’t already been consumed.
+publication:
+  name: Inference Draft
+  issue: 2026
+  volume: 34
+tags:
+  - ai
+posse:
+  Substack: https://inferencedraft.substack.com/p/why-ai-companies-are-hunting-for
+---
+
+import { Picture } from 'astro:assets';
+import YouTube from '@components/youtube.astro';
+import cube from './why-ai-companies-are-hunting-for-data-nobody-else-has.png';
+
+<Picture
+  src={cube}
+  alt="Glowing Unique Data Cube"
+/>
+
+The first question you would probably ask if I told you that [Google bought Spirit Airlines' data at auction](https://www.cnn.com/2026/08/18/business/google-spirit-airlines-data), including internal emails, documents, booking information, and other corporate data, is whether Google would use it to improve Google Flights (Google's flight booking tool) or start its own airliner.
+
+The answer, is no. As far as I'm aware, Google is not planning to launch Google Airlines anytime soon. Instead, the data provides Google with a large corpus of real, internal, corporate communication. LLMs have already been trained on countless "business communication" articles, management books, and email templates. The harder data to find is a complete record of the communications between employees of a company over time and the decisions that were enacted because of them.
+
+When someone asks AI for help drafting an email, a model trained on this Spirit Airlines data could provide outputs that better consider second order effects: how particular phrases are interpreted by others, the type of response it will likely receive, and how it should be worded to optimally reach your stated goal.
+
+A day earlier, 404 Media revealed an investigation they had conducted on Amazon's purchases of rare books. From [404 Media](https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility/):
+
+> We placed a tracking device in a shipment of rare books to see which AI company was buying it, and found an Amazon facility where Amazon scans and destroys books.
+
+The point of this operation isn't to destroy the books themselves, but in the process of scanning and OCRing the text, the book will be destroyed. [Anthropic has a similar initiative, Project Panama](https://www.ibtimes.co.uk/anthropic-secret-book-scanning-operation-1811155). These texts provide new, human-generated data untouched by AI outputs. In the case of rare books, they may even predate the internet and therefore have text that has never been seen online or used to train a competitor's model.
+
+A commodity market is emerging where datasets are priced based on uniqueness, cleanliness, and provenance. If the 2010s were the decade of "Big Data," then the 2030s may be the decade of "Unique Data."
+
+---
+
+## Mine Print Hash
+
+At the end of August, G20 finance and central bank ministers will gather in Asheville, NC for what may be the start of discussions towards a Bretton Woods for the stablecoin dollar era. Matt Dines and I touch on trade routing around the Hormuz and Red Sea choke points, including China's recent "Ice Silk Road," and early attempts across the globe at moving capital onto new rails.
+
+<YouTube
+  title="Asheville: Bretton Woods for the Stablecoin Dollar Era"
+  videoURL="https://www.youtube.com/watch?v=BGVIf5ZiCKI"
+/>
+
+---
+
+## Open Threads
+
+China participates more deeply in the global order:
+- China intends to expand the use of the RMB for international trade. [Link](https://www.gov.cn/lianbo/202608/content_7077845.htm)
+- Z.ai's GLM-5.3 will have a staggered rollout like Mythos and GPT-5.6. [Link](https://www.wired.com/story/zai-open-weight-ai-models-release-cybersecurity-hacking/)
+- Apple urged by the US against using China's CXMT for chips. [Link](https://www.wsj.com/tech/apple-china-memory-chip-plan-57773a83)
+
+US tries to build infrastructure:
+- Washington state tells Kalshi to stop operating within the state. Related to a similar push by New York. Both are being fought by the CFTC. [Link](https://www.seattletimes.com/business/kalshi-ordered-to-stop-most-operations-in-wa/)
+- OpenAI 10GW data center in Ohio with SoftBank's SB Energy, partially backed by Nvidia. [Link](https://www.wsj.com/articles/openai-locks-in-lease-for-huge-data-center-in-ohio-with-backing-from-nvidia-7474bb9c)
