@@ -10,6 +10,7 @@ interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('opengraph.png', canonicalURL);
 const favIcon = await getImage({
   src: FavIcon,
   width: 48,
@@ -54,14 +55,11 @@ const { title, description } = Astro.props;
 <meta name="twitter:description" content={description} />
 <meta
   name="twitter:image"
-  content={new URL('opengraph.png', canonicalURL)}
+  content={ogImageURL}
   data-pagefind-default-meta="image[content]"
 />
-<meta property="og:image" content={new URL('opengraph.png', canonicalURL)} />
-<meta
-  property="og:image:secure_url"
-  content={new URL('opengraph.png', canonicalURL)}
-/>
+<meta property="og:image" content={ogImageURL} />
+<meta property="og:image:secure_url" content={ogImageURL} />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />

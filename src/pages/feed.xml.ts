@@ -1,11 +1,12 @@
 import { getContainerRenderer as getMDXRenderer } from '@astrojs/mdx/container-renderer';
 import rss, { type RSSFeedItem } from '@astrojs/rss';
-import { siteDescription, siteTitle } from '@utils/globals';
+import { SITE_COLLECTIONS, siteDescription, siteTitle } from '@utils/globals';
 import { type APIContext } from 'astro';
 import { getCollection, render } from 'astro:content';
 import { loadRenderers } from 'astro:container';
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import generateContentUrl from '@utils/generateContentUrl';
+import getEntrySubtitle from '@utils/getEntrySubtitle';
 import generateStarRating from '@utils/generateStarRating';
 import resolveRelativeUrls from '@utils/resolveRelativeUrls';
 
@@ -14,10 +15,9 @@ export async function GET(context: APIContext) {
     throw new Error('Site URL is required for RSS feed generation');
   }
 
-  const articles = await getCollection('articles');
-  const podcasts = await getCollection('podcasts');
-  const reviews = await getCollection('reviews');
-  const collections = [...articles, ...podcasts, ...reviews];
+  const collections = (
+    await Promise.all(SITE_COLLECTIONS.map((name) => getCollection(name)))
+  ).flat();
 
   const renderers = await loadRenderers([getMDXRenderer()]);
   const container = await AstroContainer.create({ renderers });
@@ -46,10 +46,7 @@ export async function GET(context: APIContext) {
       }
       default:
         title = item.data.title;
-        description =
-          'publication' in item.data && item.data.publication
-            ? `${item.data.publication.name} ${item.data.publication.issue}-${item.data.publication.volume}`
-            : (item.data.description ?? '');
+        description = getEntrySubtitle(item.data);
         break;
     }
 

@@ -1,9 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
+import { RATINGS } from '@utils/generateStarRating';
 
 const reviews = await getCollection('reviews');
-const ratings = [1, 2, 3, 4, 5] as const;
-const counts = [0, 0, 0, 0, 0];
+const ratings = RATINGS;
+const counts = Array.from<number>({ length: ratings.length }).fill(0);
 
 for (const { data } of reviews) {
   counts[data.rating - 1]++;

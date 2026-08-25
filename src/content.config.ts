@@ -1,6 +1,7 @@
 import { defineCollection, type SchemaContext } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { RATINGS } from '@utils/generateStarRating';
 
 const baseSchema = (image: SchemaContext['image']) =>
   z.object({
@@ -48,7 +49,10 @@ const reviews = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/reviews' }),
   schema: ({ image }) =>
     baseSchema(image).extend({
-      rating: z.int().gt(0).lte(5),
+      rating: z
+        .int()
+        .gt(Math.min(...RATINGS) - 1)
+        .lte(Math.max(...RATINGS)),
       type: z.enum(['book', 'game', 'movie', 'music', 'show']),
     }),
 });

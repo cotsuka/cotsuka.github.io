@@ -1,33 +1,14 @@
 ---
-import { getCollection, render } from 'astro:content';
-import Article from '@layouts/article.astro';
-import Metadata from '@components/metadata.astro';
+import { render } from 'astro:content';
+import EntryArticle from '@components/entryarticle.astro';
+import { getContentStaticPaths } from '@utils/generateContentUrl';
 
-export async function getStaticPaths() {
-  const podcasts = await getCollection('podcasts');
-  return podcasts.map((podcast) => ({
-    params: { id: podcast.id },
-    props: { entry: podcast },
-  }));
-}
+export const getStaticPaths = getContentStaticPaths('podcasts');
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<Article
-  title={entry.data.title}
-  description={'publication' in entry.data && entry.data.publication
-    ? `${entry.data.publication.name} ${entry.data.publication.issue}-${entry.data.publication.volume}`
-    : (entry.data.description ?? '')}
-  publishedTime={entry.data.date.toISOString()}
-  modifiedTime={entry.data.modified?.toISOString() ??
-    entry.data.date.toISOString()}
-  tags={entry.data.tags}
->
-  <h2 data-pagefind-meta="title" data-pagefind-filter="category:podcast">
-    {entry.data.title}
-  </h2>
-  <Metadata entryData={entry.data} />
+<EntryArticle entry={entry} category="podcast">
   <Content />
-</Article>
+</EntryArticle>

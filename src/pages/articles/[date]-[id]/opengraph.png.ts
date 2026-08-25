@@ -1,20 +1,13 @@
 import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
-import formatDate from '@utils/formatDate';
 import generateOpenGraphImage from '@utils/generateOpenGraphImage';
+import { getContentStaticPaths } from '@utils/generateContentUrl';
+import getEntrySubtitle from '@utils/getEntrySubtitle';
 
-export const GET = (async ({ props, url }) => {
-  const entry = props.entry;
-  const subtitle = entry.data.publication
-    ? `${entry.data.publication.name} ${entry.data.publication.issue}-${entry.data.publication.volume}`
-    : entry.data.description;
-  return generateOpenGraphImage(entry.data.title, subtitle, url.origin);
-}) satisfies APIRoute;
+export const getStaticPaths = getContentStaticPaths('articles');
 
-export async function getStaticPaths() {
-  const articles = await getCollection('articles');
-  return articles.map((article) => ({
-    params: { date: formatDate(article.data.date), id: article.id },
-    props: { entry: article },
-  }));
-}
+export const GET = (({ props, url }) =>
+  generateOpenGraphImage(
+    props.entry.data.title,
+    getEntrySubtitle(props.entry.data),
+    url.origin,
+  )) satisfies APIRoute;

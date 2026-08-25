@@ -7,12 +7,11 @@ export const siteAuthor = {
   name: 'Cameron Otsuka',
   email: 'cameron@otsuka.haus',
 };
-export type SiteCollectionEntry = CollectionEntry<
-  'articles' | 'podcasts' | 'reviews'
->;
-export type SiteEntrySchema = InferEntrySchema<
-  'articles' | 'podcasts' | 'reviews'
->;
+export const SITE_COLLECTIONS = ['articles', 'podcasts', 'reviews'] as const;
+
+export type SiteCollection = (typeof SITE_COLLECTIONS)[number];
+export type SiteCollectionEntry = CollectionEntry<SiteCollection>;
+export type SiteEntrySchema = InferEntrySchema<SiteCollection>;
 
 export const menuItems: { title: string; url: string }[] = [
   { title: 'Articles', url: '/articles' },
