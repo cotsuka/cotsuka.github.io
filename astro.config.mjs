@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
-import { unified } from '@astrojs/markdown-remark';
-import icon from 'astro-icon';
+import { satteri } from '@astrojs/markdown-satteri';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
@@ -49,18 +48,20 @@ export default defineConfig({
       fallbacks: ['monospace'],
     },
   ],
-  integrations: [
-    icon({
-      include: {
-        mdi: ['rss'],
+  markdown: {
+    syntaxHighlight: 'prism',
+    processor: satteri({
+      features: {
+        gfm: {
+          footnotes: {
+            backContent: '↩︎',
+          },
+        },
       },
     }),
-    mdx({
-      syntaxHighlight: 'prism',
-      processor: unified({
-        remarkRehype: { footnoteBackContent: '↩︎' }
-      })
-    }),
+  },
+  integrations: [
+    mdx(),
     sitemap(),
   ],
   image: {
