@@ -39,12 +39,12 @@ const { title, description } = Astro.props;
 <meta name="title" property="og:title" content={title} />
 <meta
   name="description"
-  property="og:description"
-  property="og:image:alt"
-  property="twitter:image:alt"
   content={description}
   data-pagefind-meta="description[content]"
 />
+<meta property="og:description" content={description} />
+<meta property="og:image:alt" content={description} />
+<meta name="twitter:image:alt" content={description} />
 <meta name="author" content={siteAuthor.name} />
 <meta name="generator" content={Astro.generator} />
 <meta name="fediverse:creator" content={socials.activitypub.username} />
@@ -54,10 +54,13 @@ const { title, description } = Astro.props;
 <meta name="twitter:description" content={description} />
 <meta
   name="twitter:image"
-  property="og:image"
-  property="og:image:secure_url"
   content={new URL('opengraph.png', canonicalURL)}
   data-pagefind-default-meta="image[content]"
+/>
+<meta property="og:image" content={new URL('opengraph.png', canonicalURL)} />
+<meta
+  property="og:image:secure_url"
+  content={new URL('opengraph.png', canonicalURL)}
 />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
