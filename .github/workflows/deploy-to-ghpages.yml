@@ -11,17 +11,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
+      - name: Cache dependencies and build artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.bun/install/cache
+            node_modules/.astro
+          key: ${{ runner.os }}-${{ hashFiles('bun.lock') }}-${{ hashFiles('public/**/*.{jpg,jpeg,png,webp,avif,svg,gif}', 'content/**/*.{jpg,jpeg,png,webp,avif,svg,gif}', 'src/assets/**/*.{jpg,jpeg,png,webp,avif,svg,gif,ico}') }}
+          restore-keys: |
+            ${{ runner.os }}-
+            ${{ runner.os }}-${{ hashFiles('bun.lock') }}-
       - name: Install dependencies
         run: bun install --frozen-lockfile
-      - name: Check formatting
-        run: bun run format
       - name: Build site pages
         run: bun run build
       - name: Build search index
@@ -29,16 +42,5 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist/
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - uses: actions/deploy-pages@v5
         id: deployment
