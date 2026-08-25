@@ -19,10 +19,7 @@ import YouTube from '@components/youtube.astro';
 import whichway from './bitcoins-opt-in-constitution.png';
 import situation from './situation-monitor.png';
 
-<Picture
-  src={whichway}
-  alt="Choosing the path ahead"
-/>
+<Picture src={whichway} alt="Choosing the path ahead" />
 
 While protocols are generally all agreed upon and adhered to, it is extremely common to have competing pieces of software adhering to said protocol with slightly different understandings of how specifics are implemented.
 
@@ -40,10 +37,7 @@ The pro-BIP-110 crowd believes limiting the maximum allowed size for `OP_RETURN`
 
 So recall back to the HTTP RFCs I mentioned before: while the discussion, reviews, documentation, and testing are all useful in creating consensus, it is still up to the software to implement these features and for enough users to agree to switch. There are already [forked versions of the Bitcoin Core node software](https://github.com/bitcoinknots/bitcoin) which implement BIP-110, but so far they are not gaining much interest.
 
-<Picture
-  src={situation}
-  alt="BIP110 Situation Monitor"
-/>
+<Picture src={situation} alt="BIP110 Situation Monitor" />
 
 My guess is that BIP-110 will likely not become a part of the "standard" Bitcoin protocol unless a large number of users decide they really care about limiting data sizes. And specifically, they [need a large enough of percentage of economic nodes to signal support for the BIP](https://bitcoinmagazine.com/news/foundry-asks-bitcoin-miners-vote-bip-110).
 
@@ -65,15 +59,17 @@ Last week was a Matt Dines-driven episode, connecting rising sovereign debt yiel
 ## Open Threads
 
 Open-weights and security:
+
 - OpenAI's pre-release model hacked Hugging Face to cheat on an evaluation. [Link](https://openai.com/index/hugging-face-model-evaluation-security-incident/)
 - Everyone except OpenAI and Anthropic sign open letter in favor of open-source models. [Link](https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/)
 - Refuting claims that distilling American models is how Kimi K3 took a leap. [Link](https://techcrunch.com/2026/07/23/experts-say-exploiting-anthropics-fable-isnt-how-kimi-k3-got-so-good/)
 - Judicial examples that even if they did, distilling may be considered legal. [Link](https://searchengineland.com/google-loses-key-dmca-claims-against-serpapi-in-scraping-lawsuit-483185)
 
 AI valuations:
+
 - "Unnamed state-backed manufacturer" starts delivering DUV machines to key Chinese chipmakers. [Link](https://www.tomshardware.com/tech-industry/semiconductors/china-begins-mass-production-of-domestic-immersion-duv-lithography-machines)
 - Oracle needs ~$7B for energy infrastructure collateral in Wisconsin. [Link](https://finance.yahoo.com/technology/ai/articles/oracle-faces-potential-7-billion-104844370.html)
-	- DOW awards $7B to Oracle. [Link](https://www.war.gov/News/Releases/Release/Article/4554042/dow-awards-a-nearly-7-billion-oracle-agreement-to-accelerate-the-arsenal-of-fre/)
+  - DOW awards $7B to Oracle. [Link](https://www.war.gov/News/Releases/Release/Article/4554042/dow-awards-a-nearly-7-billion-oracle-agreement-to-accelerate-the-arsenal-of-fre/)
 - Nvidia to guarantee $250B in financing for OpenAI data center. [Link](https://www.wsj.com/tech/ai/nvidia-in-talks-with-openai-to-guarantee-250-billion-financing-for-data-center-3dd6eae3)
 
 [^1]: They most definitely didn't, but it's an easy timestamp to point to.

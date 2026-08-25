@@ -1,5 +1,5 @@
 ---
-title: "Formal Verification: When Intention Is Not Enough"
+title: 'Formal Verification: When Intention Is Not Enough'
 type: newsletter
 date: 2026-08-11
 modified: 2026-08-11
@@ -19,17 +19,14 @@ import { Picture } from 'astro:assets';
 import YouTube from '@components/youtube.astro';
 import gem from './formal-verification-when-intention-is-not-enough.png';
 
-<Picture
-  src={gem}
-  alt="Formal Verification in AI"
-/>
+<Picture src={gem} alt="Formal Verification in AI" />
 
 I'll start today's article off with a definition of formal verification as provided by [Keagan McLelland on the Bitcoin Development Mailing List](https://groups.google.com/g/bitcoindev/c/OIml9stwbGQ/m/EWZUz9-7AQAJ):
 
 > Formal Verification is a practice in software development that gives greater assurances than typical testing procedures or forum arguments on how various schemes, protocols, and implementations behave. When we argue about how Bitcoin is designed or how it ought to be designed, engineers will make statements of fact about how the system works, but depending on how much effort is put into the presentation of that argument, it can be difficult to tell if a statement is true, or if it is, why it is true. By formally specifying these statements of fact on how the Bitcoin protocol works we can be precise about what we are saying, what properties we have, what properties we want, and whether the system actually delivers those properties or not.
-> 
+>
 > Normal programming languages do this to an extent, and indeed one of the best ways to settle a dispute is to look at how the code is implemented. However, the nature of C++ can make it difficult to get certainty over certain claims about the behavior of the protocol due to its type system being comparatively weak when judged against the tools typically tasked with this responsibility.
-> 
+>
 > If you want to be able to make specific arbitrary logical statements about Bitcoin or any other software you typically need to specify it in a language with a Dependent Type Theory. The class of tools used for this is called an Interactive Theorem Prover (ITP).
 
 Formal verification has existed for decades, but is not commonly used to verify software protocols for one simple reason: it's expensive. Designing a model that accurately represents a protocol, its rules, and allowed inputs requires specialized skill and a massive amount of work. For most projects until recently, the potential risks didn't justify the cost.
@@ -45,32 +42,32 @@ From [Anthropic's blog post on the papers](https://www.anthropic.com/research/di
 It is no longer enough to create tests and inspect a project's codebase. A motivated attacker with a large enough financial incentive will throw AI resources at relentlessly scanning for weaknesses to exploit. Look no further than recent attacks on the Lightning network:
 
 > Statement
-> 
+>
 > We regret to inform you that the day we never wanted to come has finally arrived: @lnp2pBot has come to an end.
-> 
+>
 > As we announced a few days ago, @lnp2pBot has been under attack since day one. We have absorbed the losses we suffered for the simple reason that we wanted to continue providing our loyal users with the service they deserve. However, events have escalated, and although we have spent months working to improve the bot’s security, we simply do not have the resources required to fight an army of script kiddies armed with AI models.
-> 
+>
 > For all these reasons, we have made the difficult and painful decision to indefinitely suspend all @lnp2pBot activity, effective immediately.
-> 
+>
 > Once again, the losses are ours to bear. We will contact the few users who still have pending payments in order to resolve those individual cases. Not a single user will suffer any financial loss.
-> 
+>
 > The bot was born as our legitimate form of defense against authoritarian governments that seek to force users to hand over all kinds of personal information under the excuse that it is for their own good. Many times, we thought they would be the ones who would eventually manage to shut the bot down. Ironically, it was not an authoritarian government that succeeded, but most likely some of our own users.
-> 
+>
 > Thank you for everything!
 > — [@negrunch](https://x.com/negrunch/status/2086899005355704703)
 
 > **Update: Boltz will stay disabled until further notice.**
-> 
+>
 > Our API remains available to process refunds cooperatively. In any case, unilateral refunds will work, as they do not depend on our infrastructure.
-> 
+>
 > Our support team stays reachable.
-> 
+>
 > To be clear: this is not a response to a single incident. Over the past months we have seen a steady rise in automated, AI-assisted probing of our infrastructure, and we have dealt with several exploits. Each was contained, but the pattern is clear: attackers now iterate faster than a team our size can find and patch. In the past few days alone we saw a drastic acceleration, and we do not believe this asymmetry will reverse. After reviewing the results of our own recent security scans, we cannot responsibly re-enable Boltz swaps, especially as we are being actively targeted by what appear to be multiple resourceful groups while we race to deploy fixes.
-> 
+>
 > What we are seeing is a major paradigm shift for Bitcoin services operating on an open source stack, and it needs careful analysis. Do not expect swap services to resume shortly.
-> 
+>
 > To be explicit: no user funds were ever at risk. Boltz is non-custodial by design. And as a fully bootstrapped company, the losses were ours alone.
-> 
+>
 > We don't know yet how things will continue from here, but we'll keep you posted as soon as we have had the time to catch our breath and make a decision 🙏
 > — [@Boltzhq](https://x.com/Boltzhq/status/2084311537502630319)
 
@@ -96,6 +93,7 @@ The US recently intervened in Japan's Yen market, which is a generational action
 ## Open Threads
 
 Geopolitical maneuvers to test boundaries and create new trade routes:
+
 - China bypasses shipping chokepoints via "Ice Silk Road". [Link](https://www.ft.com/content/4456f475-f2c8-4cb7-8312-0c47c5f781b8)
 - Pentagon drafting new nuclear strike strategy. [Link](https://www.nbcnews.com/politics/national-security/pentagon-drafting-new-us-nuclear-strategy-case-regional-war-china-russ-rcna587370)
 - Component in British naval drones sent signals back to China. [Link](https://www.wsj.com/world/uk/u-k-discovers-component-in-its-naval-drones-sent-signals-to-china-6ae60578)
@@ -103,6 +101,7 @@ Geopolitical maneuvers to test boundaries and create new trade routes:
 - Syria recontrols its air fields, pushing Russia out of key bases for African missions. [Link](https://www.ft.com/content/df62a69e-aa53-4cde-8a02-4d2cd465a370)
 
 Building monetary networks:
+
 - Russia's A7 payment network. [Link](https://www.wsj.com/world/russia/russias-hottest-startup-is-a-state-backed-sanctions-evasion-network-7afc488c)
 - UK's tokenized gold. [Link](https://www.ft.com/content/9973f186-5834-4b66-8faa-e8b2e8711466)
 - Bank behind China's AI listings. [Link](https://www.ft.com/content/657249de-f5bd-4648-9a1c-77315cd5a1c9)

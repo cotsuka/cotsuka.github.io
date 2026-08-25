@@ -14,13 +14,14 @@
     "format": "bun x --bun prettier --check .",
     "format:fix": "bun x --bun prettier --write .",
     "typecheck": "bun x --bun astro check",
-    "test": "bun test"
+    "test": "bun test",
+    "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
     "pre-commit": "bun x --bun lint-staged"
   },
   "lint-staged": {
-    "*.{ts,tsx,astro,js}": [
+    "*.{ts,tsx,astro,js,mjs,cjs}": [
       "eslint --fix",
       "prettier --write"
     ],

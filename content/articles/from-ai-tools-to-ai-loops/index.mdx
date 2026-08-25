@@ -18,14 +18,11 @@ import { Picture } from 'astro:assets';
 import YouTube from '@components/youtube.astro';
 import ouroboros from './from-ai-tools-to-ai-loops.png';
 
-<Picture
-  src={ouroboros}
-  alt="Robot Ouroboros Artwork"
-/>
+<Picture src={ouroboros} alt="Robot Ouroboros Artwork" />
 
 I wrote [last week](/articles/2026-06-02-tokenmaxxing-as-management-theory/) about tokenmaxxing as the awkward adoption phase of AI inside companies: first you get everyone using the tool, then you figure out whether any of that usage is actually enhancing output.
 
-Looping is the next phase. The question is no longer, "Can an employee use AI at each step of the workflow?" The question becomes, "Can the *entire workflow* turn into an automated loop?"
+Looping is the next phase. The question is no longer, "Can an employee use AI at each step of the workflow?" The question becomes, "Can the _entire workflow_ turn into an automated loop?"
 
 A (naive) workflow in one of today's software engineering companies might look something like:
 
@@ -39,12 +36,12 @@ A (naive) workflow in one of today's software engineering companies might look s
 
 Software engineers are already using AI at each of these steps through a mix of autocompletions, chat interfaces, and coding agents. You may notice there are some natural places where automation already speeds this up: continuous integration/continuous deployment (CI/CD) already handles parts of the build-test-deploy process, and observability tools already notify teams of issues or roll back failed releases. But these are mostly point solutions.
 
-What if you could create an automated loop out of the *entire* software engineering workflow? Boris Cherny (Anthropic) [certainly thinks so](https://youtu.be/SlGRN8jh2RI), as does Peter Steinberger (OpenAI):
+What if you could create an automated loop out of the _entire_ software engineering workflow? Boris Cherny (Anthropic) [certainly thinks so](https://youtu.be/SlGRN8jh2RI), as does Peter Steinberger (OpenAI):
 
 > Here’s your monthly reminder that you shouldn’t be prompting coding agents anymore.
-> 
+>
 > You should be designing loops that prompt your agents.
-> 
+>
 > — Peter Steinberger (@steipete) [June 7, 2026](https://x.com/steipete/status/2063697162748260627)
 
 There are already several examples and functional versions of loops that can be implemented today. Claude Code and Codex have `/goal` functions that continue working on a task until a final stopping condition is reached. In other words: don't just answer one prompt; keep working until the condition is true. Andrej Karpathy's [autoresearch](https://github.com/karpathy/autoresearch) is the research version of the same idea: edit the code, train for five minutes, compare the result, keep or discard, repeat.
@@ -77,7 +74,7 @@ The four-week T-bill exhibited a big swing over Memorial Day, which highlighted 
 Governments continue controlling who gets compute, who gets chips, who can work where, and which firms become part of national industrial strategy.
 
 - Bernie Sanders wants to seize the means of AI production. [Link](https://www.nytimes.com/2026/06/01/opinion/artificial-intelligence-bernie-sanders.html)
-- Trump wants to invest in the means of  AI production. [Link](https://www.bloomberg.com/news/articles/2026-06-05/us-exploring-government-partnerships-with-ai-firms-trump-says)
+- Trump wants to invest in the means of AI production. [Link](https://www.bloomberg.com/news/articles/2026-06-05/us-exploring-government-partnerships-with-ai-firms-trump-says)
 - Possibly an 18-month loophole China exploited to access export controlled chips? [Link](https://www.techtimes.com/articles/317905/20260606/bis-closed-china-ai-chip-loophole-trump-officials-dispute-whether-gap-ever-existed.htm)
 - China won't let top AI talent travel. [Link](https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms)
 - Claude Mythos - Neutered Version (aka Fable 5) limits its capabilities opaquely to the user depending on the type of question asked. [Link](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf)

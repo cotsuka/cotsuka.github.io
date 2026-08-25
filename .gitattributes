@@ -1,0 +1,16 @@
+# Normalize line endings: LF in the working tree everywhere.
+# Prettier enforces endOfLine: "lf", so git must not inject CRLF on checkout
+# (core.autocrlf=true would otherwise re-break formatting on stash, merge, etc.)
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
