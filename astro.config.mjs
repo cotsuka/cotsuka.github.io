@@ -63,6 +63,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   image: {
     layout: 'constrained',
+    breakpoints: [640, 960, 1280],
     service: {
       entrypoint: 'astro/assets/services/sharp',
       config: {

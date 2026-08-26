@@ -9,16 +9,14 @@
     "preview": "bun x --bun astro preview",
     "astro": "bun x --bun astro",
     "index": "bun x --bun pagefind",
-    "lint": "bun x --bun eslint src/",
+    "check": "bun x --bun astro check && bun x --bun eslint src/ && bun x --bun prettier --check .",
     "lint:fix": "bun x --bun eslint src/ --fix",
-    "format": "bun x --bun prettier --check .",
     "format:fix": "bun x --bun prettier --write .",
-    "typecheck": "bun x --bun astro check",
     "test": "bun test",
     "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
-    "pre-commit": "bun x --bun lint-staged"
+    "pre-commit": "bun scripts/rightsize-images.mjs --staged && bun x --bun lint-staged && bun run check"
   },
   "lint-staged": {
     "*.{ts,tsx,astro,js,mjs,cjs}": [

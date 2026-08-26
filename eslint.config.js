@@ -7,6 +7,12 @@ export default [
   ...tseslint.configs.recommended,
   ...astroPlugin.configs.recommended,
   {
+    languageOptions: {
+      globals: {
+        process: 'readonly',
+        console: 'readonly',
+      },
+    },
     ignores: [
       'dist/',
       'node_modules/',
