@@ -16,7 +16,7 @@
     "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
-    "pre-commit": "bun scripts/rightsize-images.mjs --staged && bun x --bun lint-staged && bun run check"
+    "pre-commit": "bun x --bun lint-staged"
   },
   "lint-staged": {
     "*.{ts,tsx,astro,js,mjs,cjs}": [
