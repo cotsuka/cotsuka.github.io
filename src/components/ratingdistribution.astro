@@ -1,8 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import { RATINGS } from '@utils/generateStarRating';
 
-const reviews = await getCollection('reviews');
+interface Props {
+  reviews: CollectionEntry<'reviews'>[];
+}
+
+const { reviews } = Astro.props;
 const ratings = RATINGS;
 const counts = Array.from<number>({ length: ratings.length }).fill(0);
 
@@ -23,10 +27,13 @@ const chartData = ratings.map((rating, index) => ({
   {
     chartData.map((entry) => (
       <li class="rating-column">
-        <div class="rating-bar">
+        <div class="rating-bar" aria-hidden="true">
           <span class="rating-bar-fill" style={`height: ${entry.percent}%`} />
         </div>
-        <span class="rating-label">{entry.name}</span>
+        <span class="rating-label">
+          {entry.name}
+          <span class="sr-only"> stars: {entry.count} reviews</span>
+        </span>
       </li>
     ))
   }

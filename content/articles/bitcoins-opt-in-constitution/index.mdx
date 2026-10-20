@@ -1,21 +1,22 @@
 ---
 title: "Bitcoin's Opt-In Constitution"
-type: newsletter
-date: 2026-07-28
-modified: 2026-07-30
+format: newsletter
+publishedAt: 2026-07-28
+updatedAt: 2026-07-30
 description: Bitcoin's rules are enforced by adoption, not decree.
 publication:
   name: Inference Draft
   issue: 2026
   volume: 31
 tags:
-  - bitcoin
+  - systems
 posse:
-  Substack: https://inferencedraft.substack.com/p/bitcoins-opt-in-constitution
+  substack: https://inferencedraft.substack.com/p/bitcoins-opt-in-constitution
+relatedPodcast: mine-print-hash-2026-30
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import whichway from './bitcoins-opt-in-constitution.png';
 import situation from './situation-monitor.png';
 
@@ -49,10 +50,7 @@ While this can seem like a messy, uncoordinated exercise when dealing with money
 
 Last week was a Matt Dines-driven episode, connecting rising sovereign debt yields to resource scarcity, choke points, and competing monetary spheres of influence. While many of the headlines sound negative, there are glimpses of a path the US has begun working on: deals with Iraq and conversations with China.
 
-<YouTube
-  title="Houthis, the Red Sea, and Sovereign Debt Repricing"
-  videoURL="https://www.youtube.com/watch?v=V0KMqsdnYHE"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

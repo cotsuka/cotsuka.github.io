@@ -1,37 +1,33 @@
 ---
 title: 'G20 Ministers Watching Their Yields'
-type: newsletter
-date: 2026-09-01
-modified: 2026-09-01
+format: newsletter
+publishedAt: 2026-09-01
+updatedAt: 2026-09-01
 description: Sovereign yields are back at their highs just as the political and geopolitical backdrop gets messier.
 publication:
   name: Inference Draft
   issue: 2026
   volume: 36
 tags:
-  - macro
+  - markets
+  - sovereignty
 posse:
-  Substack: https://inferencedraft.substack.com/p/g20-ministers-watching-their-yields
+  substack: https://inferencedraft.substack.com/p/g20-ministers-watching-their-yields
+relatedPodcast: mine-print-hash-2026-35
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import g20 from './g20-ministers-watching-their-yields.png';
 import yields from './sovereign-bond-yields.png';
 
-<Picture
-  src={g20}
-  alt="Fractured World Network Control Screen"
-/>
+<Picture src={g20} alt="Fractured World Network Control Screen" />
 
 I am attending the G20 finance ministers and central bank governors, so look to my upcoming Mine Print Hash episode for my take on what I heard and saw at the summit. Today is just a quick post.
 
 The charts we all the ministers are referring to when they talk about yields, "borrowing costs," sovereign debt, etc.:
 
-<Picture
-  src={yields}
-  alt="Sovereign Bond 10-Year Yields Over the Past Year"
-/>
+<Picture src={yields} alt="Sovereign Bond 10-Year Yields Over the Past Year" />
 
 ---
 
@@ -39,15 +35,11 @@ The charts we all the ministers are referring to when they talk about yields, "b
 
 On last week's episode, we discuss Bessent's "economic D-Day," Operation Economic Outcast. We follow the sanctions through the banking layer, connecting everything back to the infrastructure competition for the stablecoin dollar era.
 
-<YouTube
-  title="Operation Economic Outcast: Bessent's D-Day and the Race to Build New Dollar Infrastructure"
-  videoURL="https://www.youtube.com/watch?v=cc3QDnSYHB8"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 
 ## Open Threads
-
 
 UK making headlines:
 

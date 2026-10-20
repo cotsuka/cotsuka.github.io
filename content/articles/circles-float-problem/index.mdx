@@ -1,21 +1,22 @@
 ---
 title: Circle's Float Problem
-type: newsletter
-date: 2026-06-30
-modified: 2026-07-01
+format: newsletter
+publishedAt: 2026-06-30
+updatedAt: 2026-07-01
 description: Open USD's challenge to the issuer-led stablecoin model.
 publication:
   name: Inference Draft
   issue: 2026
   volume: 27
 tags:
-  - ai
+  - markets
 posse:
-  Substack: https://inferencedraft.substack.com/p/circles-float-problem
+  substack: https://inferencedraft.substack.com/p/circles-float-problem
+relatedPodcast: mine-print-hash-2026-26
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import bilbo from './circles-float-problem.png';
 import meme from './after-all-why-not-why-shouldnt-i-keep-it.jpg';
 
@@ -54,10 +55,7 @@ It remains to be seen whether Open Standard's governance structure will stand th
 
 SpaceX's $25B bond offering is just the latest reminder that the AI buildout is part of the dollar-credit story. Matt Dines and I walk through how and why SpaceX and FHLB borrowing are signposts for non-bank dollar liquidity. All this admist the backdrop of continuing progress on the Digital Euro, Digital Yuan, and stablecoin dollar projects.
 
-<YouTube
-  title="SpaceX, FHLB Lending, and the Dollar Liquidity Scramble"
-  videoURL="https://www.youtube.com/watch?v=vmhEnnHV49I"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

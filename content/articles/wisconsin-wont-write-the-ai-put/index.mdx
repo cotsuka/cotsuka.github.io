@@ -1,21 +1,22 @@
 ---
 title: "Wisconsin Won't Write the AI Put"
-type: newsletter
-date: 2026-07-21
-modified: 2026-07-22
+format: newsletter
+publishedAt: 2026-07-21
+updatedAt: 2026-07-22
 description: Wisconsin is making Oracle secure the power plants behind its AI data center
 publication:
   name: Inference Draft
   issue: 2026
   volume: 30
 tags:
-  - ai
+  - markets
 posse:
-  Substack: https://inferencedraft.substack.com/p/wisconsin-wont-write-the-ai-put
+  substack: https://inferencedraft.substack.com/p/wisconsin-wont-write-the-ai-put
+relatedPodcast: mine-print-hash-2026-29
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import bag from './wisconsin-wont-write-the-ai-put.png';
 import delta from './database-of-emerging-large-load-tariffs.png';
 
@@ -41,10 +42,7 @@ In Oracle's situation, the tightening data center rules made matters worse, [cau
 
 Energy disinflation is easing CPI pressure, which Matt Dines views as making housing affordability the Fed’s next battle. Circle’s OCC charter advances the regulated digital-dollar stack and China’s open-source AI gains are turning up the heat in the geopolitical competition with the US.
 
-<YouTube
-  title="GENIUS Act Deadlines, Kimi K3, and the China Competition"
-  videoURL="https://www.youtube.com/watch?v=PwSdaxZ7_-Q"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

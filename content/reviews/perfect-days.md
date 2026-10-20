@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Perfect Days
-date: 2025-02-15
-modified: 2025-02-15
+publishedAt: 2025-02-15
+updatedAt: 2025-02-15
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/perfect-days-2023/
+  letterboxd: https://letterboxd.com/cotsuka/film/perfect-days-2023/
 ---
 
 - noticing the little things in life

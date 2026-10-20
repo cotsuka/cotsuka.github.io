@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Materialists
-date: 2025-08-14
-modified: 2025-08-15
+publishedAt: 2025-08-14
+updatedAt: 2025-08-15
 rating: 2
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/materialists/
+  letterboxd: https://letterboxd.com/cotsuka/film/materialists/
 ---
 
 - i can't help but feel this is celine song monologuing her conflicting internal views on relationships/dating rather than watching a story unfold

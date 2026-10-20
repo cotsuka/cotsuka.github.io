@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Wake Up Dead Man
-date: 2025-12-15
-modified: 2025-12-16
+publishedAt: 2025-12-15
+updatedAt: 2025-12-16
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/wake-up-dead-man/
+  letterboxd: https://letterboxd.com/cotsuka/film/wake-up-dead-man/
 ---
 
 - the contrast between wicks' and duplenticy's views on their place within the faith made for a slightly interesting morality take. not deep enough to really go anywhere, but this movie is supposed to be a light, fun mystery thriller.

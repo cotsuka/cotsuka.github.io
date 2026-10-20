@@ -1,73 +1,43 @@
-import { getContainerRenderer as getMDXRenderer } from '@astrojs/mdx/container-renderer';
 import rss, { type RSSFeedItem } from '@astrojs/rss';
-import { SITE_COLLECTIONS, siteDescription, siteTitle } from '@utils/globals';
+import { siteDescription, siteTitle } from '@utils/globals';
 import { type APIContext } from 'astro';
-import { getCollection, render } from 'astro:content';
-import { loadRenderers } from 'astro:container';
-import { experimental_AstroContainer as AstroContainer } from 'astro/container';
+import getAllEntries from '@utils/getAllEntries';
+import createContentContainer from '@utils/createContentContainer';
+import EntryContent from '@components/entrycontent.astro';
 import generateContentUrl from '@utils/generateContentUrl';
-import getEntrySubtitle from '@utils/getEntrySubtitle';
-import generateStarRating from '@utils/generateStarRating';
+import getEntryPresentation from '@utils/getEntryPresentation';
+import sortByDate from '@utils/sortByDate';
 import resolveRelativeUrls from '@utils/resolveRelativeUrls';
 
 export async function GET(context: APIContext) {
-  if (!context.site) {
-    throw new Error('Site URL is required for RSS feed generation');
-  }
+  const entries = sortByDate(await getAllEntries()).slice(0, 10);
 
-  const collections = (
-    await Promise.all(SITE_COLLECTIONS.map((name) => getCollection(name)))
-  ).flat();
-
-  const renderers = await loadRenderers([getMDXRenderer()]);
-  const container = await AstroContainer.create({ renderers });
+  const container = await createContentContainer(context.site!);
 
   const feedItems: RSSFeedItem[] = [];
-  for (const item of collections) {
-    const link = generateContentUrl(item);
+  for (const entry of entries) {
+    const link = generateContentUrl(entry);
     const itemUrl = new URL(link, context.site);
-    const { Content } = await render(item);
-    const renderedContent = await container.renderToString(Content);
+    const renderedContent = await container.renderToString(EntryContent, {
+      props: { entry },
+    });
     const content = resolveRelativeUrls(renderedContent, itemUrl);
-    const categories = item.data.tags.concat(item.collection);
-    categories.push(item.data.type);
-    if ('publication' in item.data && item.data.publication) {
-      categories.push(item.data.publication.name);
-    }
-
-    let title: string;
-    let description: string;
-    switch (item.collection) {
-      case 'reviews': {
-        const starRating = generateStarRating(item.data.rating);
-        title = `${item.data.title} - ${starRating}`;
-        description = starRating;
-        break;
-      }
-      default:
-        title = item.data.title;
-        description = getEntrySubtitle(item.data);
-        break;
-    }
+    const presentation = getEntryPresentation(entry);
 
     feedItems.push({
-      title: title,
-      link: link,
-      pubDate: item.data.date,
-      description: description,
-      content: content,
-      categories: categories,
+      title: presentation.feedTitle,
+      link,
+      pubDate: entry.data.publishedAt,
+      description: presentation.feedDescription,
+      content,
+      categories: presentation.categories,
     });
   }
-
-  const sortedFeedItems = feedItems.sort(
-    (a, b) => (b.pubDate?.getTime() ?? 0) - (a.pubDate?.getTime() ?? 0),
-  );
 
   return rss({
     title: siteTitle,
     description: siteDescription,
-    site: context.site,
-    items: sortedFeedItems.slice(0, 10),
+    site: context.site!,
+    items: feedItems,
   });
 }

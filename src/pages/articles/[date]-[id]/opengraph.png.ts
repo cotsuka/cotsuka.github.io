@@ -1,13 +1,4 @@
-import type { APIRoute } from 'astro';
-import generateOpenGraphImage from '@utils/generateOpenGraphImage';
-import { getContentStaticPaths } from '@utils/generateContentUrl';
-import getEntrySubtitle from '@utils/getEntrySubtitle';
+import getContentStaticPaths from '@utils/getContentStaticPaths';
 
-export const getStaticPaths = getContentStaticPaths('articles');
-
-export const GET = (({ props, url }) =>
-  generateOpenGraphImage(
-    props.entry.data.title,
-    getEntrySubtitle(props.entry.data),
-    url.origin,
-  )) satisfies APIRoute;
+export { GET } from '@utils/getEntryOpenGraphImage';
+export const getStaticPaths = getContentStaticPaths('articles', true);

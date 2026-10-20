@@ -1,25 +1,25 @@
 ---
 import { Picture } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import type { ComponentProps } from 'astro/types';
 
 interface Props {
   image: ImageMetadata;
   alt: string;
-  formats?: string[];
-  layout?: 'constrained' | 'full-width' | 'fixed' | 'none';
+  formats?: ComponentProps<typeof Picture>['formats'];
+  layout?: ComponentProps<typeof Picture>['layout'];
   /** Serve the image as-is (no variants). Required for animated images
    *  and recommended for SVGs, which are already resolution-independent. */
   plain?: boolean;
 }
 
-const { image, alt, formats = ['webp'], layout, plain = false } = Astro.props;
+const { image, alt, formats, layout, plain = false } = Astro.props;
 
 // SVGs are vector-based: generating per-breakpoint raster-style copies
 // multiplies the shipped bytes with no visual gain. Animated images
 // cannot be resized by the image service and balloon into huge
 // lossless fallbacks. Both are served as-is.
-const isSvg = image.src?.endsWith('.svg');
-const serveAsIs = plain || isSvg;
+const serveAsIs = plain || image.format === 'svg';
 ---
 
 <figure>
@@ -27,6 +27,8 @@ const serveAsIs = plain || isSvg;
     serveAsIs ? (
       <img
         src={image.src}
+        width={image.width}
+        height={image.height}
         alt={alt}
         data-pagefind-index-attrs="alt"
         loading="lazy"

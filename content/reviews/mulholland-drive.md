@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Mulholland Drive
-date: 2025-12-06
-modified: 2025-12-07
+publishedAt: 2025-12-06
+updatedAt: 2025-12-07
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/mulholland-drive/
+  letterboxd: https://letterboxd.com/cotsuka/film/mulholland-drive/
 ---
 
 - classic lynch film where i wonder whether i'm dumb or just not creative enough to see all the symbolism

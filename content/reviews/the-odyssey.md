@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: The Odyssey
-date: 2026-08-09
-modified: 2026-08-09
+publishedAt: 2026-08-09
+updatedAt: 2026-08-09
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/the-odyssey-2026/
+  letterboxd: https://letterboxd.com/cotsuka/film/the-odyssey-2026/
 ---
 
 - the movie making magic is on display here. the cyclops, the moving trees, guys getting picked off the ship, etc.

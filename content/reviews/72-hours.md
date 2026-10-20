@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: 72 Hours
-date: 2026-08-01
-modified: 2026-08-04
+publishedAt: 2026-08-01
+updatedAt: 2026-08-04
 rating: 2
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/72-hours-2026/
+  letterboxd: https://letterboxd.com/cotsuka/film/72-hours-2026/
 ---
 
 - main takeaway is i'm getting too old for bachelor parties

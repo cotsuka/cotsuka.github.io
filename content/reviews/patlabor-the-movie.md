@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: 'Patlabor: The Movie'
-date: 2026-01-11
-modified: 2026-01-11
+publishedAt: 2026-01-11
+updatedAt: 2026-01-11
 rating: 2
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/patlabor-the-movie/
+  letterboxd: https://letterboxd.com/cotsuka/film/patlabor-the-movie/
 ---
 
 - some of the scenes have incredible detail. 80s mecha animation looks incredible

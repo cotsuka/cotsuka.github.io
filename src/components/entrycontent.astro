@@ -1,0 +1,17 @@
+---
+import { render } from 'astro:content';
+import YouTube from '@components/youtube.astro';
+import type { SiteCollectionEntry } from '@utils/globals';
+
+interface Props {
+  entry: SiteCollectionEntry;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const videoUrl =
+  entry.collection === 'podcasts' ? entry.data.videoUrl : undefined;
+---
+
+<Content />
+{videoUrl && <YouTube title={entry.data.title} videoUrl={videoUrl} />}

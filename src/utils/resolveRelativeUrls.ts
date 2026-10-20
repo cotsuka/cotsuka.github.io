@@ -1,6 +1,5 @@
-import { parseFragment, serialize, type DefaultTreeAdapterMap } from 'parse5';
-
-type HtmlNode = DefaultTreeAdapterMap['node'];
+import { ELEMENT_NODE, renderSync, walkSync, type Node } from 'ultrahtml';
+import { decodeHtml, escapeHtml, parseHtml } from '@utils/html';
 
 const asciiWhitespacePattern = /[ \t\n\f\r]/;
 
@@ -84,33 +83,29 @@ function resolveSrcset(srcset: string, baseUrl: URL): string {
   return resolvedSrcset + srcset.slice(previousEnd);
 }
 
-function resolveNodeUrls(node: HtmlNode, baseUrl: URL): void {
-  if ('attrs' in node) {
-    for (const attribute of node.attrs) {
-      if (attribute.name === 'srcset') {
-        attribute.value = resolveSrcset(attribute.value, baseUrl);
-      } else if (attribute.name === 'href' || attribute.name === 'src') {
-        attribute.value = resolveUrl(attribute.value, baseUrl);
-      }
+/** Rewrite URLs in an existing trusted Astro HTML tree in place. */
+export function resolveRelativeUrlsInTree(node: Node, baseUrl: URL): Node {
+  walkSync(node, (node) => {
+    if (node.type !== ELEMENT_NODE) return;
+    for (const name of ['href', 'src', 'srcset']) {
+      const original = node.attributes[name];
+      if (original === undefined) continue;
+      const value = decodeHtml(original);
+      const resolved =
+        name === 'srcset'
+          ? resolveSrcset(value, baseUrl)
+          : resolveUrl(value, baseUrl);
+      // ultrahtml preserves raw attribute strings; escape modified values once.
+      node.attributes[name] = escapeHtml(resolved);
     }
-  }
-
-  if ('content' in node) {
-    resolveNodeUrls(node.content, baseUrl);
-  }
-
-  if ('childNodes' in node) {
-    for (const child of node.childNodes) {
-      resolveNodeUrls(child, baseUrl);
-    }
-  }
+  });
+  return node;
 }
 
+/** String wrapper for rendered RSS fragments. */
 export default function resolveRelativeUrls(
   html: string,
   baseUrl: URL,
 ): string {
-  const fragment = parseFragment(html);
-  resolveNodeUrls(fragment, baseUrl);
-  return serialize(fragment);
+  return renderSync(resolveRelativeUrlsInTree(parseHtml(html), baseUrl));
 }

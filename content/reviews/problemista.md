@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Problemista
-date: 2025-11-04
-modified: 2025-11-06
+publishedAt: 2025-11-04
+updatedAt: 2025-11-06
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/problemista/
+  letterboxd: https://letterboxd.com/cotsuka/film/problemista/
 ---
 
 - surrealism and asburdism galore

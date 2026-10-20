@@ -10,11 +10,6 @@
       "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"]
     },
-    "allowSyntheticDefaultImports": true,
-    "allowImportingTsExtensions": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "resolveJsonModule": true,
-    "types": ["bun"]
+    "types": ["node"]
   }
 }

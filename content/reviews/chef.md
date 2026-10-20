@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Chef
-date: 2026-03-14
-modified: 2026-03-16
+publishedAt: 2026-03-14
+updatedAt: 2026-03-16
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/chef/
+  letterboxd: https://letterboxd.com/cotsuka/film/chef/
 ---
 
 - makes you love cooking and the process

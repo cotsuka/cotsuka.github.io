@@ -17,17 +17,6 @@
   --color-warn: light-dark(#703800, #f19e4c);
   --color-error: light-dark(#900e1d, #ef6e7e);
   --color-highlight: light-dark(#a66a74, #8c4f5b);
-
-  /* Syntax highlighting */
-  --color-code-bg: light-dark(#f3efe5, #272822);
-  --color-code-text: light-dark(#2b2320, #f8f8f2);
-  --color-code-border: light-dark(#c9bfae, #545454);
-  --color-code-comment: light-dark(#6c7680, #8292a2);
-  --color-code-keyword: light-dark(#0f6aa6, #66d9ef);
-  --color-code-string: light-dark(#3f7f1f, #a6e22e);
-  --color-code-number: light-dark(#9a2f72, #ae81ff);
-  --color-code-function: light-dark(#8a5b00, #e6db74);
-  --color-code-important: light-dark(#b25a00, #fd971f);
 }
 
 @view-transition {

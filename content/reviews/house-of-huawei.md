@@ -1,11 +1,11 @@
 ---
-type: book
+format: book
 title: House of Huawei
-date: 2025-07-13
-modified: 2025-12-27
+publishedAt: 2025-07-13
+updatedAt: 2025-12-27
 rating: 4
 posse:
-  Goodreads: https://www.goodreads.com/review/show/7735080615
+  goodreads: https://www.goodreads.com/review/show/7735080615
 ---
 
 - a peek into the rise of ren zhengfei

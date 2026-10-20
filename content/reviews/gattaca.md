@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Gattaca
-date: 2026-07-18
-modified: 2026-07-20
+publishedAt: 2026-07-18
+updatedAt: 2026-07-20
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/gattaca/
+  letterboxd: https://letterboxd.com/cotsuka/film/gattaca/
 ---
 
 - "de-gene-erates" is hilarious

@@ -6,6 +6,12 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://cameron.otsuka.systems',
+  experimental: {
+    contentIntellisense: true,
+    incrementalBuild: true,
+    // Two workers reduce static rendering time without using every CPU core.
+    parallelPrerender: { workers: 2 },
+  },
   fonts: [
     {
       name: 'Public Sans',
@@ -43,13 +49,35 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       weights: [400],
       styles: ['normal'],
-      subsets: ['latin', 'latin-ext'],
+      subsets: ['latin'],
       formats: ['woff'],
       fallbacks: ['monospace'],
     },
+    {
+      // OG-only fallback: load the complete emoji subset, not individual glyphs.
+      name: 'Noto Emoji',
+      cssVariable: '--font-emoji',
+      provider: fontProviders.fontsource(),
+      weights: [400],
+      styles: ['normal'],
+      subsets: ['emoji'],
+      // Sharp/Pango requires a native font file to shape joined emoji.
+      formats: ['ttf'],
+      fallbacks: [],
+    },
   ],
   markdown: {
-    syntaxHighlight: 'prism',
+    shikiConfig: {
+      themes: { light: 'github-light', dark: 'github-dark' },
+      transformers: [
+        {
+          code(node) {
+            // Keep language labels when Turndown exports fenced Markdown.
+            this.addClassToHast(node, `language-${this.options.lang}`);
+          },
+        },
+      ],
+    },
     processor: satteri({
       features: {
         gfm: {
@@ -60,7 +88,7 @@ export default defineConfig({
       },
     }),
   },
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx({ optimize: true }), sitemap()],
   image: {
     layout: 'constrained',
     breakpoints: [640, 960, 1280],

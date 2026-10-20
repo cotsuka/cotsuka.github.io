@@ -23,6 +23,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.3
       - name: Cache dependencies and build artifacts
         uses: actions/cache@v5
         with:
@@ -30,10 +32,10 @@ jobs:
             node_modules/.astro
           key: ${{ runner.os }}-${{ hashFiles('bun.lock') }}-${{ hashFiles('public/**/*.{jpg,jpeg,png,webp,avif,svg,gif}', 'content/**/*.{jpg,jpeg,png,webp,avif,svg,gif}', 'src/assets/**/*.{jpg,jpeg,png,webp,avif,svg,gif,ico}') }}
           restore-keys: |
-            ${{ runner.os }}-
             ${{ runner.os }}-${{ hashFiles('bun.lock') }}-
+            ${{ runner.os }}-
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        run: bun install --frozen-lockfile --production
       - name: Build site pages
         run: bun run build
       - name: Build search index

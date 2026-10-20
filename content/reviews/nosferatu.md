@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Nosferatu
-date: 2025-09-09
-modified: 2025-09-13
+publishedAt: 2025-09-09
+updatedAt: 2025-09-13
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/nosferatu-2024/
+  letterboxd: https://letterboxd.com/cotsuka/film/nosferatu-2024/
 ---
 
 - bill skarsgård and lily-rose depp did great jobs

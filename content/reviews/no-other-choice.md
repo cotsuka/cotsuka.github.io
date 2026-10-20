@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: No Other Choice
-date: 2026-04-28
-modified: 2026-04-30
+publishedAt: 2026-04-28
+updatedAt: 2026-04-30
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/no-other-choice-2025/
+  letterboxd: https://letterboxd.com/cotsuka/film/no-other-choice-2025/
 ---
 
 - commentary on men self-isolating and trying to take everything on themselves

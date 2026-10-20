@@ -1,4 +1,5 @@
 import { siteTitle } from '@utils/globals';
+import type { EntrySubtitle } from '@utils/getEntryPresentation';
 
 export type WrappedOgText = {
   text: string;
@@ -31,8 +32,10 @@ export function normalizeOgText(value: string): string {
   return value.replace(/\s+/g, ' ').trim();
 }
 
+const graphemeSegmenter = new Intl.Segmenter('en', { granularity: 'grapheme' });
+
 function countCharacters(value: string): number {
-  return Array.from(value).length;
+  return [...graphemeSegmenter.segment(value)].length;
 }
 
 function trimToLength(value: string, maxLength: number): string {
@@ -40,8 +43,9 @@ function trimToLength(value: string, maxLength: number): string {
     return value;
   }
 
-  const characters = Array.from(value)
+  const characters = [...graphemeSegmenter.segment(value)]
     .slice(0, maxLength - 1)
+    .map(({ segment }) => segment)
     .join('');
 
   return `${characters.trimEnd()}…`;
@@ -131,16 +135,12 @@ export function estimateContentHeight(
   return Math.ceil(height);
 }
 
-function isReviewRatingDescription(value: string): boolean {
-  return /^[★☆]{5}$/.test(value);
-}
-
 export function resolveOgLayout(
   title: string,
-  description: string,
+  subtitle: EntrySubtitle,
 ): ResolvedOgLayout {
   const normalizedTitle = normalizeOgText(title) || siteTitle;
-  const normalizedDescription = normalizeOgText(description);
+  const normalizedDescription = normalizeOgText(subtitle.text);
   const headline = formatTextToMaxLines(
     normalizedTitle,
     estimateCharsPerLine(TITLE_FONT_SIZE, TITLE_MAX_WIDTH),
@@ -151,7 +151,7 @@ export function resolveOgLayout(
     return { headline, description: null, isReviewRating: false };
   }
 
-  if (isReviewRatingDescription(normalizedDescription)) {
+  if (subtitle.kind === 'rating') {
     if (
       estimateContentHeight(
         headline.lineCount,

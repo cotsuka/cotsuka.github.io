@@ -1,4 +1,4 @@
-import { fontData } from 'astro:assets';
+import { fontData, experimental_getFontFileURL } from 'astro:assets';
 import type { Font } from 'satori';
 
 type ResolvedOgFont = {
@@ -16,22 +16,10 @@ function getAstroFontVariant(
 ): ResolvedOgFont {
   const font = fontData[cssVariable].find(
     (font) => font.weight === weight && font.style === style,
-  );
-
-  if (!font?.weight || !font.style) {
-    throw new Error(
-      `Could not find font for ${cssVariable} with weight=${weight} and style=${style}`,
-    );
-  }
-
-  const source = font.src.find((src) => src.format === 'woff');
-  const assetUrl = source?.url;
-
-  if (!assetUrl?.startsWith('/_astro/fonts/')) {
-    throw new Error(
-      `Could not find a WOFF Astro font URL for ${cssVariable} with weight=${weight} and style=${style}: ${JSON.stringify(font.src)}`,
-    );
-  }
+  )!;
+  const assetUrl = font.src.find(
+    (src) => src.format === 'woff' || src.format === 'truetype',
+  )!.url;
 
   return {
     name,
@@ -45,18 +33,12 @@ async function loadAstroFontData(
   assetUrl: string,
   siteOrigin: string,
 ): Promise<ArrayBuffer> {
-  const buildPath = `dist${assetUrl}`;
-  const buildFile = Bun.file(buildPath);
-
-  if (await buildFile.exists()) {
-    return buildFile.arrayBuffer();
-  }
-
-  const response = await fetch(new URL(assetUrl, siteOrigin));
-
+  // Astro resolves its font server in dev and during static builds.
+  const fontUrl = experimental_getFontFileURL(assetUrl, new URL(siteOrigin));
+  const response = await fetch(fontUrl);
   if (!response.ok) {
     throw new Error(
-      `Failed to fetch Astro font asset: ${assetUrl} (${response.status} ${response.statusText})`,
+      `Font request failed: HTTP ${response.status} (${assetUrl})`,
     );
   }
 
@@ -69,6 +51,7 @@ export function createOgFonts(siteOrigin: string): Promise<Array<Font>> {
     getAstroFontVariant('Public Sans', '--font-sans', '700', 'normal'),
     getAstroFontVariant('Source Serif 4', '--font-serif', '400', 'normal'),
     getAstroFontVariant('DejaVu Mono', '--font-fallback', '400', 'normal'),
+    getAstroFontVariant('Noto Emoji', '--font-emoji', '400', 'normal'),
   ];
 
   return Promise.all(

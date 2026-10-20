@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Noah
-date: 2025-12-24
-modified: 2025-12-25
+publishedAt: 2025-12-24
+updatedAt: 2025-12-25
 rating: 2
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/noah/
+  letterboxd: https://letterboxd.com/cotsuka/film/noah/
 ---
 
 - certainly not the account of noah i got as a child

@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: KPop Demon Hunters
-date: 2026-08-01
-modified: 2026-08-04
+publishedAt: 2026-08-01
+updatedAt: 2026-08-04
 rating: 2
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/kpop-demon-hunters/
+  letterboxd: https://letterboxd.com/cotsuka/film/kpop-demon-hunters/
 ---
 
 - the songs are so good, i wish i hadn't seen this

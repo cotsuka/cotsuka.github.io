@@ -1,22 +1,23 @@
 ---
 title: 'Soft Wars for Hard Infrastructure'
-type: newsletter
-date: 2026-05-19
-modified: 2026-05-21
+format: newsletter
+publishedAt: 2026-05-19
+updatedAt: 2026-05-21
 description: Are we manufacturing anxiety for the next truth machine?
 publication:
   name: Inference Draft
   issue: 2026
   volume: 21
 tags:
-  - ai
+  - systems
 posse:
-  Substack: https://inferencedraft.substack.com/p/soft-wars-for-hard-infrastructure
+  substack: https://inferencedraft.substack.com/p/soft-wars-for-hard-infrastructure
+relatedPodcast: mine-print-hash-2026-20
 ---
 
 import { Picture } from 'astro:assets';
 import Callout from '@components/ui/callout.astro';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import veiled from './soft-wars-for-hard-infrastructure.png';
 import buildout from './us-china-electricity-buildout.png';
 import letmein from './let-me-in.png';
@@ -58,10 +59,7 @@ I am interested to know whether there are other think tanks with counter-researc
 
 Matt Dines and I go deep into warning signs from the SOFR futures market, how it impacts money markets and the underpinnings of leveraged finance, and round out with a discussion on the newly announced compute futures, which may unlock financing for the next wave of AI compute construction.
 
-<YouTube
-  title="The Funding Squeeze: Sovereigns, Money Markets, and AI Compute"
-  videoURL="https://www.youtube.com/watch?v=uLZpQf__oK0"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

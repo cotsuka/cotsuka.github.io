@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Warfare
-date: 2025-04-11
-modified: 2025-04-11
+publishedAt: 2025-04-11
+updatedAt: 2025-04-11
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/warfare/
+  letterboxd: https://letterboxd.com/cotsuka/film/warfare/
 ---
 
 - 90 minutes of pure combat, no cuts, no exposition, no preaching. i thought we were getting a rah america movie but this was something else.

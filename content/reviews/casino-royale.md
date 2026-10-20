@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Casino Royale
-date: 2025-12-14
-modified: 2025-12-16
+publishedAt: 2025-12-14
+updatedAt: 2025-12-16
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/casino-royale-2006/
+  letterboxd: https://letterboxd.com/cotsuka/film/casino-royale-2006/
 ---
 
 - they found a way to make poker relatively exciting to watch. could do without mathis constantly telling me how big the pot is.

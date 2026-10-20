@@ -18,7 +18,7 @@ const calloutLabel = label ?? calloutLabels[level];
 ---
 
 <aside class={`callout callout-${level}`}>
-  <header class={`callout-label`}>{calloutLabel}</header>
+  <header class="callout-label">{calloutLabel}</header>
   <div class="callout-content"><slot /></div>
 </aside>
 
@@ -26,27 +26,19 @@ const calloutLabel = label ?? calloutLabels[level];
   .callout {
     margin-block-end: 1rem;
     padding-inline-start: 0.5rem;
-    border-inline-start: 0.2rem solid;
+    border-inline-start: 0.2rem solid var(--callout-color);
+  }
+  .callout-label {
+    color: var(--callout-color);
+    font-weight: 700;
   }
   .callout-info {
-    border-inline-start: 0.2rem solid var(--color-info);
-  }
-  .callout-info > .callout-label {
-    color: var(--color-info);
-    font-weight: 700;
+    --callout-color: var(--color-info);
   }
   .callout-warn {
-    border-inline-start: 0.2rem solid var(--color-warn);
-  }
-  .callout-warn > .callout-label {
-    color: var(--color-warn);
-    font-weight: 700;
+    --callout-color: var(--color-warn);
   }
   .callout-error {
-    border-inline-start: 0.2rem solid var(--color-error);
-  }
-  .callout-error > .callout-label {
-    color: var(--color-error);
-    font-weight: 700;
+    --callout-color: var(--color-error);
   }
 </style>

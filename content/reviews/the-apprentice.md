@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: The Apprentice
-date: 2025-09-06
-modified: 2025-09-07
+publishedAt: 2025-09-06
+updatedAt: 2025-09-07
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/the-apprentice-2024/
+  letterboxd: https://letterboxd.com/cotsuka/film/the-apprentice-2024/
 ---
 
 - clearly had a political pov they wanted to push, but they don't do a good job of proving it with the story they showed on the screen

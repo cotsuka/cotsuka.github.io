@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Moulin Rouge!
-date: 2025-12-25
-modified: 2025-12-26
+publishedAt: 2025-12-25
+updatedAt: 2025-12-26
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/moulin-rouge-2001/
+  letterboxd: https://letterboxd.com/cotsuka/film/moulin-rouge-2001/
 ---
 
 - fun remixes of songs to weave into the overarching love story

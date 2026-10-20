@@ -1,22 +1,22 @@
 ---
 title: 'Formal Verification: When Intention Is Not Enough'
-type: newsletter
-date: 2026-08-11
-modified: 2026-08-11
+format: newsletter
+publishedAt: 2026-08-11
+updatedAt: 2026-08-11
 description: As AI gets better at exploiting the gap between intentions and implementations, formal verification becomes hard to ignore.
 publication:
   name: Inference Draft
   issue: 2026
   volume: 33
 tags:
-  - ai
-  - bitcoin
+  - systems
 posse:
-  Substack: https://inferencedraft.substack.com/p/formal-verification-when-intention
+  substack: https://inferencedraft.substack.com/p/formal-verification-when-intention
+relatedPodcast: mine-print-hash-2026-32
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import gem from './formal-verification-when-intention-is-not-enough.png';
 
 <Picture src={gem} alt="Formal Verification in AI" />
@@ -83,10 +83,7 @@ The future of protocols and software is likely one where those critical claims a
 
 The US recently intervened in Japan's Yen market, which is a generational action. Matt Dines reviews those historical intervention to help us understand how this "Yentervention" compares, why it was deemed important to intervene now, and why Japan is a critical nexus in the stablecoin dollar future.
 
-<YouTube
-  title="Yentervention: Japan as a Critical Nexus in US Monetary and Resource Policy"
-  videoURL="https://www.youtube.com/watch?v=YHwBp2RLPCg"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

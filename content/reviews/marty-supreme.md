@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Marty Supreme
-date: 2026-01-21
-modified: 2026-01-23
+publishedAt: 2026-01-21
+updatedAt: 2026-01-23
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/marty-supreme/
+  letterboxd: https://letterboxd.com/cotsuka/film/marty-supreme/
 ---
 
 - this is a vampire movie?

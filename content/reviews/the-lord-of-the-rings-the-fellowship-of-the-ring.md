@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: 'The Lord of the Rings: The Fellowship of the Ring'
-date: 2025-11-26
-modified: 2025-11-30
+publishedAt: 2025-11-26
+updatedAt: 2025-11-30
 rating: 5
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/the-lord-of-the-rings-the-fellowship-of-the-ring/
+  letterboxd: https://letterboxd.com/cotsuka/film/the-lord-of-the-rings-the-fellowship-of-the-ring/
 ---
 
 - the extended edition is clearly for the lotr nerds. multiple scenes that are probably unnecessary to drive the story forward, but keep the movie closer to the book

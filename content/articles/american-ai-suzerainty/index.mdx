@@ -1,21 +1,22 @@
 ---
 title: American AI Suzerainty
-type: newsletter
-date: 2026-06-24
-modified: 2026-06-24
+format: newsletter
+publishedAt: 2026-06-24
+updatedAt: 2026-06-24
 description: What if export controls on Anthropic were the "right decision?"
 publication:
   name: Inference Draft
   issue: 2026
   volume: 26
 tags:
-  - ai
+  - sovereignty
 posse:
-  Substack: https://inferencedraft.substack.com/p/american-ai-suzerainty
+  substack: https://inferencedraft.substack.com/p/american-ai-suzerainty
+relatedPodcast: mine-print-hash-2026-25
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import suzerainty from './american-ai-suzerainty.png';
 
 <Picture src={suzerainty} alt="Ceremonial scene under the American flag" />
@@ -43,10 +44,7 @@ While AI export controls won't and can't preserve the prior global order, they i
 
 The Kevin Warsh era of the Fed has begun, bringing with him a slew of institutional changes already that Matt Dines talks through. I cover the Anthropic export controls and what they could mean as countries continue their push for AI sovereignty.
 
-<YouTube
-  title="AI Export Controls and the Warsh Era: Fed Regime Change Amidst AI Sovereignty Challenges"
-  videoURL="https://www.youtube.com/watch?v=ZHXXUaQQFFo"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

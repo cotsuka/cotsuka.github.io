@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Donnie Darko
-date: 2026-01-07
-modified: 2026-01-09
+publishedAt: 2026-01-07
+updatedAt: 2026-01-09
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/donnie-darko/
+  letterboxd: https://letterboxd.com/cotsuka/film/donnie-darko/
 ---
 
 - i read an analysis that compares donnie to christ, which made me rethink the framing of the story

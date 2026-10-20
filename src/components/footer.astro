@@ -1,5 +1,6 @@
 ---
 import { siteAuthor, socials } from '@utils/globals';
+import { getPlatformLabel } from '@utils/platforms';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -8,10 +9,10 @@ const currentYear = new Date().getFullYear();
   <address>
     <menu class="inline-menu">
       {
-        Object.entries(socials).map(([, social]) => (
+        Object.entries(socials).map(([platform, social]) => (
           <li>
             <a href={social.url} rel="me">
-              {social.title}
+              {getPlatformLabel(platform)}
             </a>
           </li>
         ))

@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: The Godfather
-date: 2025-11-16
-modified: 2025-11-19
+publishedAt: 2025-11-16
+updatedAt: 2025-11-19
 rating: 5
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/the-godfather/
+  letterboxd: https://letterboxd.com/cotsuka/film/the-godfather/
 ---
 
 - a reminder that we rarely linger on scenes with little to no action anymore

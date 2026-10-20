@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: It's What's Inside
-date: 2025-03-01
-modified: 2025-03-02
+publishedAt: 2025-03-01
+updatedAt: 2025-03-02
 rating: 2
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/its-whats-inside/
+  letterboxd: https://letterboxd.com/cotsuka/film/its-whats-inside/
 ---
 
 - thought this would just be another boring mindswap concept but the final act musical chairs was entertaining

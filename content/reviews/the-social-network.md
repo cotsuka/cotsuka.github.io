@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: The Social Network
-date: 2025-12-28
-modified: 2025-12-29
+publishedAt: 2025-12-28
+updatedAt: 2025-12-29
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/the-social-network/
+  letterboxd: https://letterboxd.com/cotsuka/film/the-social-network/
 ---
 
 - sorkin transforms the rise of facebook into a warning about "trading morals for glory" and class struggle that overexaggerates the reality

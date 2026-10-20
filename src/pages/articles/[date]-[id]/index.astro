@@ -1,14 +1,10 @@
 ---
-import { render } from 'astro:content';
 import EntryArticle from '@components/entryarticle.astro';
-import { getContentStaticPaths } from '@utils/generateContentUrl';
+import getContentStaticPaths from '@utils/getContentStaticPaths';
 
 export const getStaticPaths = getContentStaticPaths('articles');
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
 ---
 
-<EntryArticle entry={entry} category="article">
-  <Content />
-</EntryArticle>
+<EntryArticle entry={entry} />

@@ -1,0 +1,24 @@
+---
+import { getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import YouTube from '@components/youtube.astro';
+import generateContentUrl from '@utils/generateContentUrl';
+
+interface Props {
+  // MDX frontmatter contains the raw ID; schema-loaded references contain an object.
+  episode: string | { collection: 'podcasts'; id: string };
+}
+
+const { episode } = Astro.props;
+const id = typeof episode === 'string' ? episode : episode.id;
+const podcast = (await getEntry('podcasts', id)) as CollectionEntry<'podcasts'>;
+---
+
+<p class="podcast-episode-link">
+  <a href={generateContentUrl(podcast)}>{podcast.data.title}</a>
+</p>
+{
+  podcast.data.videoUrl && (
+    <YouTube title={podcast.data.title} videoUrl={podcast.data.videoUrl} />
+  )
+}

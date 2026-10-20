@@ -1,0 +1,10 @@
+---
+import EntryArticle from '@components/entryarticle.astro';
+import getContentStaticPaths from '@utils/getContentStaticPaths';
+
+export const getStaticPaths = getContentStaticPaths('reviews');
+
+const { entry } = Astro.props;
+---
+
+<EntryArticle entry={entry} />

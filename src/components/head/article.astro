@@ -2,17 +2,18 @@
 import { siteAuthor } from '@utils/globals';
 
 interface Props {
-  publishedTime: string;
-  modifiedTime: string;
+  publishedAt: string;
+  updatedAt: string;
   tags?: string[];
 }
 
-const { publishedTime, modifiedTime, tags = [] } = Astro.props;
+const { publishedAt, updatedAt, tags = [] } = Astro.props;
 ---
 
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content={publishedTime} />
-<meta property="article:modified_time" content={modifiedTime} />
+<meta property="article:published_time" content={publishedAt} />
+<meta property="article:modified_time" content={updatedAt} />
+<meta property="og:updated_time" content={updatedAt} />
 <meta property="article:author" content={siteAuthor.name} />
 <meta
   name="pagefind:tags"

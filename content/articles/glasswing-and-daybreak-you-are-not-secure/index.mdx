@@ -1,21 +1,23 @@
 ---
 title: 'Glasswing & Daybreak: You Are (Not) Secure'
-type: newsletter
-date: 2026-05-12
-modified: 2026-05-21
+format: newsletter
+publishedAt: 2026-05-12
+updatedAt: 2026-05-21
 description: What if frontier labs can turn constrained compute into market leverage?
 publication:
   name: Inference Draft
   issue: 2026
   volume: 20
 tags:
-  - ai
+  - markets
+  - systems
 posse:
-  Substack: https://inferencedraft.substack.com/p/glasswing-and-daybreak-you-are-not
+  substack: https://inferencedraft.substack.com/p/glasswing-and-daybreak-you-are-not
+relatedPodcast: mine-print-hash-2026-19
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import hacker from './daybreak-hacker.png';
 import bugs from './firefox-security-bug-fixes-by-month.png';
 
@@ -66,10 +68,7 @@ The uncomfortable vision here is a future where model access is not open or wide
 
 The Trans Adriatic Pipeline is now delivering natural gas to Europe, aligning just in time with the recent EU summit held in Armenia. Matt and I discuss the geopolitical risks at stake in the EU periphery and why China has finally weighed in on the Iran situation, all related to critical energy corridors.
 
-<YouTube
-  title="The Trans Adriatic Pipeline: Eurasian Energy Corridor Chess Game"
-  videoURL="https://www.youtube.com/watch?v=RtN3Ww7RiDQ"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

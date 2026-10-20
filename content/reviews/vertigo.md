@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Vertigo
-date: 2026-05-15
-modified: 2026-05-16
+publishedAt: 2026-05-15
+updatedAt: 2026-05-16
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/vertigo/
+  letterboxd: https://letterboxd.com/cotsuka/film/vertigo/
 ---
 
 - cinematography absolutely furthers the themes of obsession, the subconscious, anxiety

@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Death Becomes Her
-date: 2025-10-02
-modified: 2025-10-07
+publishedAt: 2025-10-02
+updatedAt: 2025-10-07
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/death-becomes-her/
+  letterboxd: https://letterboxd.com/cotsuka/film/death-becomes-her/
 ---
 
 - the things we do to ourselves in the pursuit of eternal youth

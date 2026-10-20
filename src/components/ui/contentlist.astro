@@ -1,12 +1,12 @@
 ---
-import { getCollection, type CollectionKey } from 'astro:content';
-import Badge from '@components/ui/badge.astro';
+import { getCollection } from 'astro:content';
+import type { SiteCollection } from '@utils/globals';
+import ContentListHeading from '@components/ui/contentlistheading.astro';
 import sortByDate from '@utils/sortByDate';
-import generateContentUrl from '@utils/generateContentUrl';
-import getEntrySubtitle from '@utils/getEntrySubtitle';
+import getEntryPresentation from '@utils/getEntryPresentation';
 
 interface Props {
-  collection: CollectionKey;
+  collection: SiteCollection;
   limit?: number;
 }
 
@@ -22,14 +22,9 @@ const displayedEntries =
     displayedEntries.map((entry) => (
       <>
         <dt>
-          <a href={generateContentUrl(entry)}>
-            <h4>{entry.data.title}</h4>
-          </a>
+          <ContentListHeading entry={entry} />
         </dt>
-        <dd>
-          <Badge>{entry.data.type}</Badge>
-          {getEntrySubtitle(entry.data, true)}
-        </dd>
+        <dd>{getEntryPresentation(entry).listSubtitle}</dd>
       </>
     ))
   }

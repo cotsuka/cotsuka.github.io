@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: People We Meet on Vacation
-date: 2026-02-12
-modified: 2026-02-14
+publishedAt: 2026-02-12
+updatedAt: 2026-02-14
 rating: 2
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/people-we-meet-on-vacation/
+  letterboxd: https://letterboxd.com/cotsuka/film/people-we-meet-on-vacation/
 ---
 
 - the vacation conceit got tired quick

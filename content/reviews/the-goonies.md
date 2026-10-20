@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: The Goonies
-date: 2026-09-07
-modified: 2026-09-08
+publishedAt: 2026-09-07
+updatedAt: 2026-09-08
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/the-goonies/
+  letterboxd: https://letterboxd.com/cotsuka/film/the-goonies/
 ---
 
 - everybody is yelling the entire time

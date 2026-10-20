@@ -1,59 +1,64 @@
 ---
-import { type SiteEntrySchema } from '@utils/globals';
-import formatDate from '@utils/formatDate';
-import generateStarRating from '@utils/generateStarRating';
+import type { SiteCollectionEntry } from '@utils/globals';
+import type getEntryPresentation from '@utils/getEntryPresentation';
+import { getPlatformLabel } from '@utils/platforms';
 
 interface Props {
-  entryData: SiteEntrySchema;
+  entry: SiteCollectionEntry;
+  presentation: ReturnType<typeof getEntryPresentation>;
 }
 
-const { entryData } = Astro.props;
-const publishedDate = formatDate(entryData.date);
-const modifiedDate = entryData.modified
-  ? formatDate(entryData.modified)
-  : publishedDate;
+const { entry, presentation } = Astro.props;
+const { data } = entry;
+const {
+  publicationName,
+  publicationLabel,
+  ratingText,
+  publishedDate,
+  updatedDate,
+  publishedAt,
+  updatedAt,
+  posse,
+} = presentation;
 ---
 
 <details data-pagefind-ignore>
   <summary>Metadata</summary>
   <ul>
-    {entryData.description && <li>Description: {entryData.description}</li>}
+    {data.description && <li>Description: {data.description}</li>}
     {
-      'publication' in entryData && entryData.publication && (
+      publicationName && (
         <li
-          data-pagefind-meta={`publication:${entryData.publication.name}`}
-          data-pagefind-filter={`publication:${entryData.publication.name}`}
+          data-pagefind-meta={`publication:${publicationName}`}
+          data-pagefind-filter={`publication:${publicationName}`}
         >
-          Publication: {entryData.publication.name}{' '}
-          {entryData.publication.issue}-{entryData.publication.volume}
+          Publication: {publicationLabel}
         </li>
       )
     }
-    {
-      'rating' in entryData && entryData.rating && (
-        <li>Rating: {generateStarRating(entryData.rating)}</li>
-      )
-    }
-    <li>Published: <time datetime={publishedDate}>{publishedDate}</time></li>
+    {ratingText && <li>Rating: {ratingText}</li>}
     <li>
-      Last Modified: <time datetime={modifiedDate} data-pagefind-sort="date"
-        >{modifiedDate}</time
-      >
+      Published: <time datetime={publishedAt} data-pagefind-sort="publishedAt">
+        {publishedDate}
+      </time>
+    </li>
+    <li>
+      Last Updated: <time datetime={updatedAt}>{updatedDate}</time>
     </li>
     <li
-      data-pagefind-meta={`type:${entryData.type}`}
-      data-pagefind-filter={`type:${entryData.type}`}
+      data-pagefind-meta={`format:${data.format}`}
+      data-pagefind-filter={`format:${data.format}`}
     >
-      Type: {entryData.type}
+      Format: {data.format}
     </li>
-    {entryData.tags.length > 0 && <li>Tags: {entryData.tags.join(', ')}</li>}
+    {data.tags.length > 0 && <li>Tags: {data.tags.join(', ')}</li>}
     {
-      entryData.posse && (
+      Object.keys(posse).length > 0 && (
         <li>
           POSSE:{' '}
-          {Object.entries(entryData.posse).map((site) => (
+          {Object.entries(posse).map(([name, url]) => (
             <Fragment>
-              <a href={site[1]}>{site[0]}</a>&nbsp;
+              <a href={url}>{getPlatformLabel(name)}</a>&nbsp;
             </Fragment>
           ))}
         </li>

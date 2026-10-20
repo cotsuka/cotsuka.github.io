@@ -1,0 +1,43 @@
+---
+import type { SiteCollectionEntry } from '@utils/globals';
+import Badge from '@components/ui/badge.astro';
+import generateContentUrl from '@utils/generateContentUrl';
+
+interface Props {
+  entry: SiteCollectionEntry;
+}
+
+const { entry } = Astro.props;
+const badges =
+  entry.collection === 'articles' ? entry.data.tags : [entry.data.format];
+---
+
+<div class="title-row">
+  <a href={generateContentUrl(entry)}>
+    <h4>{entry.data.title}</h4>
+  </a>
+  <span class="badges">
+    {badges.map((badge) => <Badge>{badge}</Badge>)}
+  </span>
+</div>
+
+<style>
+  .title-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) fit-content(45%);
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-inline-start: auto;
+  }
+
+  .badges :global(.badge) {
+    margin-inline-end: 0;
+  }
+</style>

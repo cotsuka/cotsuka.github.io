@@ -1,60 +1,86 @@
 ---
 import { getCollection } from 'astro:content';
-import Base from '@layouts/base.astro';
+import Collection from '@layouts/collection.astro';
 import RatingDistribution from '@components/ratingdistribution.astro';
-import generateStarRating from '@utils/generateStarRating';
+import ContentListHeading from '@components/ui/contentlistheading.astro';
+import getEntryPresentation from '@utils/getEntryPresentation';
 import sortByDate from '@utils/sortByDate';
-import generateContentUrl from '@utils/generateContentUrl';
 
 const reviews = await getCollection('reviews');
 const sortedReviews = sortByDate(reviews);
 ---
 
-<Base
-  title="Reviews"
-  description="Cameron Otsuka's personal media reviews and ratings. Explore thoughtful critiques of media, ranging from classics to recent releases, with star ratings from 1 to 5."
->
-  <h2>Reviews</h2>
-  <section>
+<Collection collection="reviews">
+  <section slot="before-list">
     <h3>Rating Distribution</h3>
-    <RatingDistribution />
+    <RatingDistribution reviews={reviews} />
   </section>
   <section>
     <table>
       <thead>
         <tr>
-          <th scope="col">Type</th>
           <th scope="col">Title</th>
           <th scope="col">Rating</th>
         </tr>
       </thead>
       <tbody>
         {
-          sortedReviews.map((review) => (
-            <tr>
-              <td>{review.data.type}</td>
-              <td>
-                <h4>
-                  <a href={generateContentUrl(review)}>{review.data.title}</a>
-                </h4>
-              </td>
-              <td>{generateStarRating(review.data.rating)}</td>
-            </tr>
-          ))
+          sortedReviews.map((review) => {
+            const { listSubtitle, ratingText } = getEntryPresentation(review);
+            return (
+              <tr>
+                <td>
+                  <ContentListHeading entry={review} />
+                  {listSubtitle && <p class="subtitle">{listSubtitle}</p>}
+                </td>
+                <td
+                  class="rating"
+                  aria-label={`${review.data.rating} out of 5 stars`}
+                >
+                  {ratingText}
+                </td>
+              </tr>
+            );
+          })
         }
       </tbody>
     </table>
   </section>
-</Base>
+</Collection>
 
 <style>
   table {
     width: 100%;
+    border: 0;
   }
+
   thead {
     font-family: var(--font-sans);
   }
-  td:nth-child(2) {
+
+  th,
+  td {
+    border: 0;
+    padding: 0.75rem 0;
     text-align: left;
+    vertical-align: baseline;
+  }
+
+  tbody tr:not(:last-child) {
+    border-block-end: 1px dotted var(--color-border);
+  }
+
+  .subtitle {
+    margin: 0;
+    padding-inline-start: 1.5rem;
+    text-align: start;
+  }
+
+  th:last-child,
+  .rating {
+    width: 1%;
+    padding-inline-start: 1rem;
+    text-align: right;
+    white-space: nowrap;
   }
 </style>

@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Digger
-date: 2026-10-13
-modified: 2026-10-14
+publishedAt: 2026-10-13
+updatedAt: 2026-10-14
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/digger-2026/
+  letterboxd: https://letterboxd.com/cotsuka/film/digger-2026/
 ---
 
 - while i had seen many reviews saying this was an overly annoying climate narrative, i think that misses the broader question they're trying to ask: what does it mean to make art when its benefactors have approved it?

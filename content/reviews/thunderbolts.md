@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Thunderbolts*
-date: 2026-01-01
-modified: 2026-01-01
+publishedAt: 2026-01-01
+updatedAt: 2026-01-01
 rating: 2
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/thunderbolts/
+  letterboxd: https://letterboxd.com/cotsuka/film/thunderbolts/
 ---
 
 - the writing and acting is very uneven. valentina goes from supervillain to bad jokester

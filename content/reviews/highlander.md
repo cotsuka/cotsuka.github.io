@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Highlander
-date: 2026-08-13
-modified: 2026-08-13
+publishedAt: 2026-08-13
+updatedAt: 2026-08-13
 rating: 2
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/highlander/
+  letterboxd: https://letterboxd.com/cotsuka/film/highlander/
 ---
 
 - queen, wwe, sean connery as a spaniard with a samurai sword? this movie has it all

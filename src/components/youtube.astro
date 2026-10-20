@@ -1,28 +1,18 @@
 ---
+import getYouTubeVideoId from '@utils/getYouTubeVideoId';
+
 interface Props {
   title: string;
-  videoURL: string;
+  videoUrl: string;
 }
 
-const { title, videoURL } = Astro.props;
-
-const url = new URL(videoURL);
-const videoID = url.searchParams.get('v');
-
-// Validate videoID exists and is exactly 11 characters (YouTube standard)
-if (!videoID || videoID.length !== 11) {
-  throw new Error('Invalid YouTube video ID: must be exactly 11 characters.');
-}
-
-// Validate videoID contains only safe characters (alphanumeric, dash, underscore)
-if (!/^[a-zA-Z0-9_-]+$/.test(videoID)) {
-  throw new Error('Invalid YouTube video ID format.');
-}
+const { title, videoUrl } = Astro.props;
+const videoId = getYouTubeVideoId(videoUrl);
 ---
 
 <iframe
   class="youtube-embed"
-  src={`https://www.youtube-nocookie.com/embed/${videoID}`}
+  src={`https://www.youtube-nocookie.com/embed/${videoId}`}
   title={title}
   loading="lazy"
   allow="fullscreen"

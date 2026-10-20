@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Hamnet
-date: 2026-02-13
-modified: 2026-02-14
+publishedAt: 2026-02-13
+updatedAt: 2026-02-14
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/hamnet/
+  letterboxd: https://letterboxd.com/cotsuka/film/hamnet/
 ---
 
 - the first fourth of the movie went a bit long. i think tightening those scenes up would still keep the emotional tie to agnes without dragging

@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Rental Family
-date: 2026-04-28
-modified: 2026-04-30
+publishedAt: 2026-04-28
+updatedAt: 2026-04-30
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/rental-family-2025/
+  letterboxd: https://letterboxd.com/cotsuka/film/rental-family-2025/
 ---
 
 - brendan fraser's lost in translation

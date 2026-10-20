@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: 'Den of Thieves: Pantera'
-date: 2025-10-18
-modified: 2025-10-19
+publishedAt: 2025-10-18
+updatedAt: 2025-10-19
 rating: 1
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/den-of-thieves-2-pantera/
+  letterboxd: https://letterboxd.com/cotsuka/film/den-of-thieves-2-pantera/
 ---
 
 - absolute tone shift from the first movie. this is more of an ocean's 11, caper-style movie than the heat remake the first was

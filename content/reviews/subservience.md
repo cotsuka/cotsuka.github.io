@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Subservience
-date: 2024-12-25
-modified: 2024-12-26
+publishedAt: 2024-12-25
+updatedAt: 2024-12-26
 rating: 2
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/subservience-2024/
+  letterboxd: https://letterboxd.com/cotsuka/film/subservience-2024/
 ---
 
 - could see the plot points coming from a mile away

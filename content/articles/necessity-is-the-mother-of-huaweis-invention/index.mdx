@@ -1,21 +1,23 @@
 ---
 title: "Necessity Is the Mother of Huawei's Invention"
-type: newsletter
-date: 2026-05-26
-modified: 2026-05-28
+format: newsletter
+publishedAt: 2026-05-26
+updatedAt: 2026-05-28
 description: Will Chinese chipmakers innovate themselves around US sanctions and re-level the AI lab race?
 publication:
   name: Inference Draft
   issue: 2026
   volume: 22
 tags:
-  - ai
+  - systems
+  - sovereignty
 posse:
-  Substack: https://inferencedraft.substack.com/p/necessity-is-the-mother-of-huaweis
+  substack: https://inferencedraft.substack.com/p/necessity-is-the-mother-of-huaweis
+relatedPodcast: mine-print-hash-2026-21
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import necessity from './necessity-is-the-mother-of-huaweis-invention.png';
 import capability from './1-Overall-AI-Capability.png';
 
@@ -52,10 +54,7 @@ If Huawei is able to use the LogicFolding design from its mobile-targeted Kirin 
 
 Matt and I check in on Bessent's plan to "monetize the asset side of the US balance sheet" by tracking progress-to-date across several executive orders, policy changes, and congressional acts. What we find is a steady march towards accomplishing this goal, with stablecoins playing a key role in the strategy while internationally, there are signs of differing openness to onboarding onto dollar stablecoin monetary rails.
 
-<YouTube
-  title="Treasury Supremacy: Stablecoins, Bitcoin, and the Building New Dollar Rails"
-  videoURL="https://www.youtube.com/watch?v=6SA40886B5Q"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

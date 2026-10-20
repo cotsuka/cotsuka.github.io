@@ -1,21 +1,22 @@
 ---
 title: From AI Tools to AI Loops
-type: newsletter
-date: 2026-06-09
-modified: 2026-06-18
+format: newsletter
+publishedAt: 2026-06-09
+updatedAt: 2026-06-18
 description: The move away from prompting and towards crafting the AI ouroboros.
 publication:
   name: Inference Draft
   issue: 2026
   volume: 24
 tags:
-  - ai
+  - systems
 posse:
-  Substack: https://inferencedraft.substack.com/p/from-ai-tools-to-ai-loops
+  substack: https://inferencedraft.substack.com/p/from-ai-tools-to-ai-loops
+relatedPodcast: mine-print-hash-2026-23
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import ouroboros from './from-ai-tools-to-ai-loops.png';
 
 <Picture src={ouroboros} alt="Robot Ouroboros Artwork" />
@@ -62,10 +63,7 @@ Loops change the dynamic away from engineers designing elegant code solutions fo
 
 The four-week T-bill exhibited a big swing over Memorial Day, which highlighted the reason behind why the ECB is likely to hike rates at their next meeting. Matt Dines explains why this is troublesome for the EU and how the CFTC's approval of Kalshi's Bitcoin perpetual futures is a further indication of where monetary rails are heading.
 
-<YouTube
-  title="Hawkish Weakness: ECB Hikes, Dollar Flows, and Kalshi/Polymarket as Stablecoin Demand Markets"
-  videoURL="https://www.youtube.com/watch?v=T52WKvQSu50"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

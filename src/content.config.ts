@@ -1,60 +1,58 @@
-import { defineCollection, type SchemaContext } from 'astro:content';
+import { defineCollection, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { RATINGS } from '@utils/generateStarRating';
+import normalizeEntryDates from '@utils/normalizeEntryDates';
+import { contentTagsSchema } from './schemas/contentTags';
+import { posseSchema } from './schemas/posse';
 
-const baseSchema = (image: SchemaContext['image']) =>
-  z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    date: z.coerce.date(),
-    modified: z.coerce.date().optional(),
-    tags: z.array(z.string()).default([]),
-    posse: z.record(z.string(), z.url()).optional(),
-    image: image().optional(),
-  });
+const baseSchema = z.object({
+  title: z.string(),
+  description: z.string().optional(),
+  publishedAt: z.coerce.date(),
+  updatedAt: z.coerce.date().optional(),
+  tags: z.array(z.string()).default([]),
+  posse: posseSchema.optional(),
+});
 
 const publication = z.object({
   name: z.enum(['Build Weekly Roundup', 'Mine Print Hash', 'Inference Draft']),
-  issue: z.coerce.number().positive(),
-  volume: z.coerce.number().positive(),
+  issue: z.coerce.number(),
+  volume: z.coerce.number(),
+});
+
+const editorialSchema = baseSchema.extend({
+  tags: contentTagsSchema,
+  publication: publication.optional(),
 });
 
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/articles' }),
-  schema: ({ image }) =>
-    baseSchema(image).extend({
-      type: z.enum(['essay', 'newsletter', 'note']),
-      publication: publication.optional(),
-    }),
+  schema: editorialSchema
+    .extend({
+      format: z.enum(['essay', 'newsletter', 'note']),
+      relatedPodcast: reference('podcasts').optional(),
+    })
+    .transform(normalizeEntryDates),
 });
 
 const podcasts = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/podcasts' }),
-  schema: ({ image }) =>
-    baseSchema(image).extend({
-      type: z.enum(['audio', 'video']),
-      publication: publication.optional(),
-      enclosure: z
-        .object({
-          url: z.url(),
-          length: z.coerce.number().int().nonnegative(),
-          type: z.string(),
-        })
-        .optional(),
-    }),
+  schema: editorialSchema
+    .extend({
+      format: z.enum(['audio', 'video']),
+      videoUrl: z.url().optional(),
+    })
+    .transform(normalizeEntryDates),
 });
 
 const reviews = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: 'content/reviews' }),
-  schema: ({ image }) =>
-    baseSchema(image).extend({
-      rating: z
-        .int()
-        .gt(Math.min(...RATINGS) - 1)
-        .lte(Math.max(...RATINGS)),
-      type: z.enum(['book', 'game', 'movie', 'music', 'show']),
-    }),
+  schema: baseSchema
+    .extend({
+      rating: z.int().min(1).max(5),
+      format: z.enum(['book', 'game', 'movie', 'music', 'show']),
+    })
+    .transform(normalizeEntryDates),
 });
 
 export const collections = { articles, podcasts, reviews };

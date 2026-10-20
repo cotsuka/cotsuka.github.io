@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Burning
-date: 2025-02-28
-modified: 2025-03-02
+publishedAt: 2025-02-28
+updatedAt: 2025-03-02
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/burning-2018/
+  letterboxd: https://letterboxd.com/cotsuka/film/burning-2018/
 ---
 
 - the maybe it exists/maybe it doesn't theme throughout is interesting, but the movie pushes towards a certain reading

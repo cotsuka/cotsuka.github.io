@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Wicked
-date: 2024-11-29
-modified: 2025-06-04
+publishedAt: 2024-11-29
+updatedAt: 2025-06-04
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/wicked-2024/
+  letterboxd: https://letterboxd.com/cotsuka/film/wicked-2024/
 ---
 
 - they've got pipes

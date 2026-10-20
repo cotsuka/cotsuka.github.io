@@ -1,28 +1,39 @@
 ---
-import Article from '@layouts/article.astro';
+import Base from '@layouts/base.astro';
+import HeadArticle from '@components/head/article.astro';
 import Metadata from '@components/metadata.astro';
-import getEntrySubtitle from '@utils/getEntrySubtitle';
-import { type SiteCollectionEntry } from '@utils/globals';
+import EntryContent from '@components/entrycontent.astro';
+import getEntryPresentation from '@utils/getEntryPresentation';
+import { getSocialImage } from '@utils/socialImage';
+import type { SiteCollectionEntry } from '@utils/globals';
 
 interface Props {
   entry: SiteCollectionEntry;
-  category: string;
 }
 
-const { entry, category } = Astro.props;
+const { entry } = Astro.props;
+const presentation = getEntryPresentation(entry);
 ---
 
-<Article
+<Base
   title={entry.data.title}
-  description={getEntrySubtitle(entry.data)}
-  publishedTime={entry.data.date.toISOString()}
-  modifiedTime={entry.data.modified?.toISOString() ??
-    entry.data.date.toISOString()}
-  tags={entry.data.tags}
+  description={presentation.metaDescription}
+  socialImage={getSocialImage(entry, presentation)}
 >
-  <h2 data-pagefind-meta="title" data-pagefind-filter={`category:${category}`}>
-    {entry.data.title}
-  </h2>
-  <Metadata entryData={entry.data} />
-  <slot />
-</Article>
+  <HeadArticle
+    slot="post-head"
+    publishedAt={presentation.publishedAt}
+    updatedAt={presentation.updatedAt}
+    tags={entry.data.tags}
+  />
+  <article data-pagefind-body>
+    <h2
+      data-pagefind-meta="title"
+      data-pagefind-filter={`collection:${entry.collection}`}
+    >
+      {entry.data.title}
+    </h2>
+    <Metadata entry={entry} presentation={presentation} />
+    <EntryContent entry={entry} />
+  </article>
+</Base>

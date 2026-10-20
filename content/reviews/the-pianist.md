@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: The Pianist
-date: 2026-04-11
-modified: 2026-04-11
+publishedAt: 2026-04-11
+updatedAt: 2026-04-11
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/the-pianist/
+  letterboxd: https://letterboxd.com/cotsuka/film/the-pianist/
 ---
 
 - surviving the war comes down to luck across so many circumstances

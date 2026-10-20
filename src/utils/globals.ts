@@ -1,4 +1,13 @@
-import type { CollectionEntry, InferEntrySchema } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import {
+  COLLECTIONS,
+  SITE_COLLECTIONS,
+  type SiteCollection,
+} from '@utils/collections';
+import type { PlatformId } from '@utils/platforms';
+
+export { SITE_COLLECTIONS } from '@utils/collections';
+export type { SiteCollection } from '@utils/collections';
 
 export const siteTitle = 'Cameron Otsuka';
 export const siteDescription =
@@ -7,40 +16,31 @@ export const siteAuthor = {
   name: 'Cameron Otsuka',
   email: 'cameron@otsuka.haus',
 };
-export const SITE_COLLECTIONS = ['articles', 'podcasts', 'reviews'] as const;
-
-export type SiteCollection = (typeof SITE_COLLECTIONS)[number];
 export type SiteCollectionEntry = CollectionEntry<SiteCollection>;
-export type SiteEntrySchema = InferEntrySchema<SiteCollection>;
 
-export const menuItems: { title: string; url: string }[] = [
-  { title: 'Articles', url: '/articles' },
-  { title: 'Podcasts', url: '/podcasts' },
-  { title: 'Reviews', url: '/reviews' },
+export const menuItems = [
+  ...SITE_COLLECTIONS.map((name) => ({
+    title: COLLECTIONS[name].label,
+    url: COLLECTIONS[name].basePath,
+  })),
   { title: 'Search', url: '/search' },
 ];
 
-export const socials: {
-  [platform: string]: { title: string; url: string; username: string };
-} = {
+export const socials = {
   x: {
-    title: '𝕏',
     url: 'https://x.com/CameronOtsuka',
     username: '@CameronOtsuka',
   },
   linkedin: {
-    title: 'LinkedIn',
     url: 'https://www.linkedin.com/in/cotsuka',
     username: 'cotsuka',
   },
   activitypub: {
-    title: 'ActivityPub',
     url: 'https://social.otsuka.systems/@cameron',
     username: '@cameron@otsuka.systems',
   },
   nostr: {
-    title: 'Nostr',
     url: 'https://primal.net/profile/npub1hzssq7wewjztvglpdvku92htx3sv2x5r9ycvqhvl9xrtt5fn629s3np693',
     username: 'cameron@otsuka.systems',
   },
-};
+} satisfies Partial<Record<PlatformId, { url: string; username: string }>>;

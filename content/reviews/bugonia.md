@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Bugonia
-date: 2025-10-30
-modified: 2025-11-01
+publishedAt: 2025-10-30
+updatedAt: 2025-11-01
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/bugonia/
+  letterboxd: https://letterboxd.com/cotsuka/film/bugonia/
 ---
 
 - routine commentary on class disparity at this point

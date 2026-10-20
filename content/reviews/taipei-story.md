@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Taipei Story
-date: 2025-12-27
-modified: 2025-12-28
+publishedAt: 2025-12-27
+updatedAt: 2025-12-28
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/tick-tick-boom-2021/
+  letterboxd: https://letterboxd.com/cotsuka/film/tick-tick-boom-2021/
 ---
 
 - every scene can be a photo on its own. the color grading (and natural taiwan backdrop) are stunning

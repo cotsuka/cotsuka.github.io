@@ -1,21 +1,23 @@
 ---
 title: Why AI Companies Are Hunting for Data Nobody Else Has
-type: newsletter
-date: 2026-08-18
-modified: 2026-08-18
+format: newsletter
+publishedAt: 2026-08-18
+updatedAt: 2026-08-18
 description: The next AI race is for data that hasn’t already been consumed.
 publication:
   name: Inference Draft
   issue: 2026
   volume: 34
 tags:
-  - ai
+  - markets
+  - systems
 posse:
-  Substack: https://inferencedraft.substack.com/p/why-ai-companies-are-hunting-for
+  substack: https://inferencedraft.substack.com/p/why-ai-companies-are-hunting-for
+relatedPodcast: mine-print-hash-2026-33
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import cube from './why-ai-companies-are-hunting-for-data-nobody-else-has.png';
 
 <Picture src={cube} alt="Glowing Unique Data Cube" />
@@ -40,10 +42,7 @@ A commodity market is emerging where datasets are priced based on uniqueness, cl
 
 At the end of August, G20 finance and central bank ministers will gather in Asheville, NC for what may be the start of discussions towards a Bretton Woods for the stablecoin dollar era. Matt Dines and I touch on trade routing around the Hormuz and Red Sea choke points, including China's recent "Ice Silk Road," and early attempts across the globe at moving capital onto new rails.
 
-<YouTube
-  title="Asheville: Bretton Woods for the Stablecoin Dollar Era"
-  videoURL="https://www.youtube.com/watch?v=BGVIf5ZiCKI"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

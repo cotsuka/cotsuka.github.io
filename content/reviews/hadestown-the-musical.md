@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: 'Hadestown: The Musical'
-date: 2026-10-14
-modified: 2026-10-15
+publishedAt: 2026-10-14
+updatedAt: 2026-10-15
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/hadestown-the-musical/
+  letterboxd: https://letterboxd.com/cotsuka/film/hadestown-the-musical/
 ---
 
 - class politics addition adds depth

@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Sinners
-date: 2025-05-02
-modified: 2025-05-02
+publishedAt: 2025-05-02
+updatedAt: 2025-05-02
 rating: 4
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/sinners-2025/
+  letterboxd: https://letterboxd.com/cotsuka/film/sinners-2025/
 ---
 
 - i had no clue this was a vampire movie going in

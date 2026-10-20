@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: 'Star Wars: Episode III - Revenge of the Sith'
-date: 2025-09-05
-modified: 2025-09-07
+publishedAt: 2025-09-05
+updatedAt: 2025-09-07
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/star-wars-episode-iii-revenge-of-the-sith/
+  letterboxd: https://letterboxd.com/cotsuka/film/star-wars-episode-iii-revenge-of-the-sith/
 ---
 
 - easily the best of the prequels.

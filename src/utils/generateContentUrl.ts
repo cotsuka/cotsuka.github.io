@@ -1,44 +1,34 @@
-import { getCollection } from 'astro:content';
 import formatDate from '@utils/formatDate';
-import { type SiteCollection, type SiteCollectionEntry } from '@utils/globals';
+import type { SiteCollectionEntry } from '@utils/globals';
+import { COLLECTIONS } from '@utils/collections';
 
 export function getContentParams(
   item: SiteCollectionEntry,
 ): Record<string, string> {
   switch (item.collection) {
     case 'articles':
-      return { date: formatDate(item.data.date), id: item.id };
+      return { date: formatDate(item.data.publishedAt), id: item.id };
     case 'podcasts':
       return { id: item.id };
     case 'reviews':
-      return { type: item.data.type, id: item.id };
+      return { format: item.data.format, id: item.id };
   }
 }
 
 export default function generateContentUrl(item: SiteCollectionEntry): string {
+  const { basePath } = COLLECTIONS[item.collection];
   switch (item.collection) {
     case 'articles': {
       const { date, id } = getContentParams(item);
-      return `/articles/${date}-${id}/`;
+      return `${basePath}/${date}-${id}/`;
     }
     case 'podcasts': {
       const { id } = getContentParams(item);
-      return `/podcasts/${id}/`;
+      return `${basePath}/${id}/`;
     }
     case 'reviews': {
-      const { type, id } = getContentParams(item);
-      return `/reviews/${type}/${id}/`;
+      const { format, id } = getContentParams(item);
+      return `${basePath}/${format}/${id}/`;
     }
   }
-}
-
-/** Builds an Astro `getStaticPaths` export for a collection's detail routes. */
-export function getContentStaticPaths(collection: SiteCollection) {
-  return async () => {
-    const entries = await getCollection(collection);
-    return entries.map((entry) => ({
-      params: getContentParams(entry),
-      props: { entry },
-    }));
-  };
 }

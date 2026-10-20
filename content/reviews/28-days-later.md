@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: 28 Days Later
-date: 2025-06-06
-modified: 2025-12-07
+publishedAt: 2025-06-06
+updatedAt: 2025-12-07
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/28-days-later/
+  letterboxd: https://letterboxd.com/cotsuka/film/28-days-later/
 ---
 
 - soundtrack is just as good as i remember with brian eno and godspeed you! black emperor

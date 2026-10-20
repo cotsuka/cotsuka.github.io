@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Jurassic Park
-date: 2025-09-10
-modified: 2025-09-13
+publishedAt: 2025-09-10
+updatedAt: 2025-09-13
 rating: 5
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/jurassic-park/
+  letterboxd: https://letterboxd.com/cotsuka/film/jurassic-park/
 ---
 
 - malcolm was right straight out the gates

@@ -1,21 +1,22 @@
 ---
 title: 'Tokenmaxxing as Management Theory'
-type: newsletter
-date: 2026-06-02
-modified: 2026-06-02
+format: newsletter
+publishedAt: 2026-06-02
+updatedAt: 2026-06-02
 description: or, I sure hope finance doesn't this bill...
 publication:
   name: Inference Draft
   issue: 2026
   volume: 23
 tags:
-  - ai
+  - markets
 posse:
-  Substack: https://inferencedraft.substack.com/p/tokenmaxxing-as-management-theory
+  substack: https://inferencedraft.substack.com/p/tokenmaxxing-as-management-theory
+relatedPodcast: mine-print-hash-2026-22
 ---
 
 import { Picture } from 'astro:assets';
-import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import tokenmaxxing from './tokenmaxxing-as-management-theory.png';
 
 <Picture src={tokenmaxxing} alt="Corporate tech hub in cyberpunk workspace" />
@@ -42,10 +43,7 @@ So ultimately, the tokenmaxxing craze will likely be a passing fad. Companies ne
 
 The EU is in a tough position, with the Hormuz energy shock now weighing heavily upon their sovereign bond market. Matt Dines and I review the ECB's Financial Stability Review report, where they warn of an "abrupt repricing" in sovereign bonds. We also go through Japan's decision to integrate dollar stablecoins, which has massive implications for Eurodollar and SWIFT monetary rails.
 
-<YouTube
-  title="The Yen Battlefront: Europe's Weak Hand and the Dollar Stablecoin Hierarchy"
-  videoURL="https://www.youtube.com/watch?v=8gZXTUm53zE"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

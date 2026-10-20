@@ -1,5 +1,8 @@
-import { ImageResponse } from '@vercel/og';
+import satori from 'satori';
+import sharp from 'sharp';
 import { siteAuthor } from '@utils/globals';
+import { SOCIAL_IMAGE } from '@utils/socialImage';
+import type { EntrySubtitle } from '@utils/getEntryPresentation';
 import {
   CONTENT_BLOCK,
   DESCRIPTION_FONT_SIZE,
@@ -12,9 +15,8 @@ import {
   resolveOgLayout,
 } from '@utils/ogLayout';
 import { createOgFonts } from '@utils/ogFonts';
+import { createOgEmojiImages } from '@utils/ogEmoji';
 
-const OG_IMAGE_WIDTH = 1200;
-const OG_IMAGE_HEIGHT = 630;
 const SAFE_TEXT_ZONE = {
   x: 120,
   y: 85,
@@ -52,10 +54,10 @@ function el(
 
 export default async function generateOpenGraphImage(
   title: string,
-  description: string,
+  subtitle: EntrySubtitle,
   siteOrigin: string,
 ) {
-  const layout = resolveOgLayout(title, description);
+  const layout = resolveOgLayout(title, subtitle);
 
   const headline = el(
     'h1',
@@ -99,7 +101,7 @@ export default async function generateOpenGraphImage(
       maxWidth: DESCRIPTION_MAX_WIDTH,
       fontSize: DESCRIPTION_FONT_SIZE,
       lineHeight: DESCRIPTION_LINE_HEIGHT,
-      fontFamily: 'Source Serif 4, DejaVu Mono',
+      fontFamily: 'Source Serif 4, DejaVu Mono, Noto Emoji',
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       lineClamp: MAX_DESCRIPTION_LINES,
@@ -175,14 +177,25 @@ export default async function generateOpenGraphImage(
       color: TEXT_COLOR,
       width: '100%',
       height: '100%',
-      fontFamily: 'Public Sans',
+      fontFamily: 'Public Sans, Noto Emoji',
     },
     safeZone,
   );
 
-  return new ImageResponse(root, {
-    width: OG_IMAGE_WIDTH,
-    height: OG_IMAGE_HEIGHT,
-    fonts: await createOgFonts(siteOrigin),
+  const fonts = await createOgFonts(siteOrigin);
+  const graphemeImages = await createOgEmojiImages(
+    `${layout.headline.text} ${layout.description ?? ''}`,
+    fonts,
+  );
+  const svg = await satori(root, {
+    width: SOCIAL_IMAGE.width,
+    height: SOCIAL_IMAGE.height,
+    fonts,
+    graphemeImages,
+  });
+  const png = await sharp(Buffer.from(svg)).png().toBuffer();
+
+  return new Response(new Uint8Array(png), {
+    headers: { 'Content-Type': SOCIAL_IMAGE.contentType },
   });
 }

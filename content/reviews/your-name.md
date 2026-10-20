@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Your Name.
-date: 2026-05-09
-modified: 2026-05-11
+publishedAt: 2026-05-09
+updatedAt: 2026-05-11
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/your-name/
+  letterboxd: https://letterboxd.com/cotsuka/film/your-name/
 ---
 
 - beautiful hand-drawn scenes. detail is incredible

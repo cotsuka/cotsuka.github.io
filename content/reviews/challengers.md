@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: Challengers
-date: 2024-12-24
-modified: 2024-12-26
+publishedAt: 2024-12-24
+updatedAt: 2024-12-26
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/challengers/
+  letterboxd: https://letterboxd.com/cotsuka/film/challengers/
 ---
 
 - ads everywhere

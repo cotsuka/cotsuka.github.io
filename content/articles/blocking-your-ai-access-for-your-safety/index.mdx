@@ -1,21 +1,23 @@
 ---
 title: Blocking Your AI Access — For Your Safety
-type: newsletter
-date: 2026-06-16
-modified: 2026-06-18
+format: newsletter
+publishedAt: 2026-06-16
+updatedAt: 2026-06-18
 description: If the frontier AI models are too dangerous for the public, then who gets access to them and what does the public get to use?
 publication:
   name: Inference Draft
   issue: 2026
   volume: 25
 tags:
-  - ai
+  - sovereignty
 posse:
-  Substack: https://inferencedraft.substack.com/p/blocking-your-ai-access-for-your
+  substack: https://inferencedraft.substack.com/p/blocking-your-ai-access-for-your
+relatedPodcast: mine-print-hash-2026-24
 ---
 
 import { Picture } from 'astro:assets';
 import YouTube from '@components/youtube.astro';
+import PodcastEpisode from '@components/podcastepisode.astro';
 import denarius from './blocking-your-ai-access-for-your-safety.png';
 
 <Picture src={denarius} alt="Silver Denarius Depiction" />
@@ -38,7 +40,7 @@ General opinions seem to range between the following arguments:
 
 <YouTube
   title="PowerMac G4 Ad - Tanks"
-  videoURL="https://www.youtube.com/watch?v=l2ThMmgQdpE"
+  videoUrl="https://www.youtube.com/watch?v=l2ThMmgQdpE"
 />
 
 Likely some mixture of all three are at play here, but the through line across all of the messaging from Anthropic, the US government, and even opponents to AI, is **safety**. And safety gates, said another way, are an access-control system. Some authority decides who gains access, and to what.
@@ -55,10 +57,7 @@ To see if you're allowed to read the next article, scan your ID. To keep you saf
 
 Tokenized assets have been a hot topic, alongside stablecoins, which plays right into the Mine Print Hash thesis. Matt Dines and I discuss how tokenized assets are competing with traditional financial rails via GENIUS Act stablecoins on last week's podcast.
 
-<YouTube
-  title="Tokenized Assets: The Market Plumbing Contest"
-  videoURL="https://www.youtube.com/watch?v=AWLzsyVYDb0"
-/>
+<PodcastEpisode episode={frontmatter.relatedPodcast} />
 
 ---
 

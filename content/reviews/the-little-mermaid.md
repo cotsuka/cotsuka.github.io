@@ -1,11 +1,11 @@
 ---
-type: movie
+format: movie
 title: The Little Mermaid
-date: 2026-01-01
-modified: 2026-01-01
+publishedAt: 2026-01-01
+updatedAt: 2026-01-01
 rating: 3
 posse:
-  Letterboxd: https://letterboxd.com/cotsuka/film/the-little-mermaid/
+  letterboxd: https://letterboxd.com/cotsuka/film/the-little-mermaid/
 ---
 
 - part of your world is iconic
