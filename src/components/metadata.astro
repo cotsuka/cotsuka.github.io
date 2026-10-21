@@ -1,4 +1,5 @@
 ---
+import Disclosure from '@components/ui/disclosure.astro';
 import type { SiteCollectionEntry } from '@utils/globals';
 import type getEntryPresentation from '@utils/getEntryPresentation';
 import { getPlatformLabel } from '@utils/platforms';
@@ -13,7 +14,6 @@ const { data } = entry;
 const {
   publicationName,
   publicationLabel,
-  ratingText,
   publishedDate,
   updatedDate,
   publishedAt,
@@ -22,64 +22,105 @@ const {
 } = presentation;
 ---
 
-<details data-pagefind-ignore>
-  <summary>Metadata</summary>
-  <ul>
-    {data.description && <li>Description: {data.description}</li>}
-    {
-      publicationName && (
-        <li
-          data-pagefind-meta={`publication:${publicationName}`}
-          data-pagefind-filter={`publication:${publicationName}`}
-        >
-          Publication: {publicationLabel}
-        </li>
-      )
-    }
-    {ratingText && <li>Rating: {ratingText}</li>}
-    <li>
-      Published: <time datetime={publishedAt} data-pagefind-sort="publishedAt">
-        {publishedDate}
-      </time>
-    </li>
-    <li>
-      Last Updated: <time datetime={updatedAt}>{updatedDate}</time>
-    </li>
-    <li
-      data-pagefind-meta={`format:${data.format}`}
-      data-pagefind-filter={`format:${data.format}`}
-    >
-      Format: {data.format}
-    </li>
-    {data.tags.length > 0 && <li>Tags: {data.tags.join(', ')}</li>}
-    {
-      Object.keys(posse).length > 0 && (
-        <li>
-          POSSE:{' '}
-          {Object.entries(posse).map(([name, url]) => (
-            <Fragment>
-              <a href={url}>{getPlatformLabel(name)}</a>&nbsp;
-            </Fragment>
-          ))}
-        </li>
-      )
-    }
-  </ul>
-</details>
+<div class="metadata-section">
+  <Disclosure summary="Metadata" data-pagefind-ignore>
+    <dl class="metadata">
+      {
+        publicationName && (
+          <div
+            data-pagefind-meta={`publication:${publicationName}`}
+            data-pagefind-filter={`publication:${publicationName}`}
+          >
+            <dt>Publication</dt>
+            <dd>{publicationLabel}</dd>
+          </div>
+        )
+      }
+      <div>
+        <dt>Published</dt>
+        <dd>
+          <time datetime={publishedAt} data-pagefind-sort="publishedAt">
+            {publishedDate}
+          </time>
+        </dd>
+      </div>
+      <div>
+        <dt>Last updated</dt>
+        <dd><time datetime={updatedAt}>{updatedDate}</time></dd>
+      </div>
+      <div
+        data-pagefind-meta={`format:${data.format}`}
+        data-pagefind-filter={`format:${data.format}`}
+      >
+        <dt>Format</dt>
+        <dd>{data.format}</dd>
+      </div>
+      {
+        data.tags.length > 0 && (
+          <div>
+            <dt>Tags</dt>
+            <dd>{data.tags.join(', ')}</dd>
+          </div>
+        )
+      }
+      {
+        Object.keys(posse).length > 0 && (
+          <div>
+            <dt>POSSE</dt>
+            <dd class="platforms">
+              {Object.entries(posse).map(([name, url]) => (
+                <a href={url}>{getPlatformLabel(name)}</a>
+              ))}
+            </dd>
+          </div>
+        )
+      }
+    </dl>
+  </Disclosure>
+</div>
 
 <style>
-  details {
-    margin-block-end: 1rem;
+  .metadata-section {
     font-size: 0.8rem;
-    &::details-content {
-      opacity: 0;
-    }
-    &[open]::details-content {
-      opacity: 1;
-      transition: all 0.4s linear;
-    }
   }
-  summary:hover {
-    cursor: pointer;
+
+  .metadata {
+    margin-block: 0.5rem 0;
+  }
+
+  .metadata > div {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: 0.25rem 1rem;
+  }
+
+  .metadata > div + div {
+    margin-block-start: 0.35rem;
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+    padding: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+  }
+
+  @media (max-width: 30rem) {
+    .metadata > div {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .metadata > div + div {
+      margin-block-start: 0.65rem;
+    }
   }
 </style>

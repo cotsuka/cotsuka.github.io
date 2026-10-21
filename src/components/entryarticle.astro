@@ -33,7 +33,28 @@ const presentation = getEntryPresentation(entry);
     >
       {entry.data.title}
     </h2>
+    {
+      (entry.data.description || presentation.ratingText) && (
+        <p class="subtitle">
+          {presentation.ratingText && (
+            <span class="rating">{presentation.ratingText}</span>
+          )}
+          {entry.data.description}
+        </p>
+      )
+    }
     <Metadata entry={entry} presentation={presentation} />
     <EntryContent entry={entry} />
   </article>
 </Base>
+
+<style>
+  .subtitle {
+    margin-block-end: 0.2rem;
+    text-align: start;
+  }
+
+  .rating {
+    display: block;
+  }
+</style>

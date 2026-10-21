@@ -1,0 +1,57 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'details'> {
+  summary: string;
+}
+
+const { summary, class: className, ...attributes } = Astro.props;
+---
+
+<details {...attributes} class:list={['disclosure', className]}>
+  <summary>{summary}</summary>
+  <slot />
+</details>
+
+<style>
+  details.disclosure {
+    color: var(--color-bg);
+    background-color: var(--color-text);
+    margin-block-end: 1rem;
+    padding: 0.5rem;
+    &[open] {
+      color: unset;
+      background-color: unset;
+      border: 0.1rem solid;
+    }
+    &::details-content {
+      opacity: 0;
+      transition: opacity 0.4s linear;
+    }
+    &[open]::details-content {
+      opacity: 1;
+    }
+    @starting-style {
+      &[open]::details-content {
+        opacity: 0;
+      }
+    }
+  }
+
+  summary {
+    cursor: pointer;
+  }
+
+  .disclosure
+    > :global(
+      :not(summary, ul, ol, menu, table, blockquote, figure, pre, details)
+    ) {
+    margin-inline-start: 1.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    details.disclosure::details-content {
+      transition: none;
+    }
+  }
+</style>
