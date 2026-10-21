@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import getAllEntries from '@utils/getAllEntries';
+import getEntryCacheKey from '@utils/getEntryCacheKey';
 import { build } from 'astro:config/server';
 import createContentContainer from '@utils/createContentContainer';
 import Home from '../index.astro';
@@ -28,10 +29,13 @@ export async function getStaticPaths() {
     ...Object.keys(pages).map((pagePath) => ({ pagePath })),
     ...entries.map((entry) => ({ pagePath: generateContentUrl(entry), entry })),
   ];
-  return paths.map((props) => ({
-    params: { path: props.pagePath.replace(/^\/|\/$/g, '') || undefined },
-    props,
-  }));
+  return Promise.all(
+    paths.map(async (props) => ({
+      params: { path: props.pagePath.replace(/^\/|\/$/g, '') || undefined },
+      props,
+      cacheKey: props.entry ? await getEntryCacheKey(props.entry) : undefined,
+    })),
+  );
 }
 
 // A real Astro endpoint: rendered on demand in dev and emitted as a file in builds.

@@ -1,20 +1,24 @@
 import { getCollection } from 'astro:content';
 import type { SiteCollection } from '@utils/globals';
 import { getContentParams } from '@utils/generateContentUrl';
+import getEntryCacheKey from '@utils/getEntryCacheKey';
 
 /** Build an Astro `getStaticPaths` export for a collection's detail routes. */
 export default function getContentStaticPaths(
   collection: SiteCollection,
-  cacheOutput = false,
+  imageOnly = false,
 ) {
   return async () => {
     const entries = await getCollection(collection);
-    return entries.map((entry) => ({
-      params: getContentParams(entry),
-      props: { entry },
-      // Only OG routes opt in: their output depends on data, not body/related entries.
-      // Astro separately invalidates changes to imported code and configuration.
-      cacheKey: cacheOutput ? JSON.stringify(entry.data) : undefined,
-    }));
+    return Promise.all(
+      entries.map(async (entry) => ({
+        params: getContentParams(entry),
+        props: { entry },
+        // OG images use only metadata; HTML also reads prose and related entries.
+        cacheKey: imageOnly
+          ? JSON.stringify(entry.data)
+          : await getEntryCacheKey(entry),
+      })),
+    );
   };
 }

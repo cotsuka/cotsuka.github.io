@@ -25,15 +25,13 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.4.3
-      - name: Cache dependencies and build artifacts
+      - name: Cache Astro build artifacts
         uses: actions/cache@v5
         with:
-          path: |
-            node_modules/.astro
-          key: ${{ runner.os }}-${{ hashFiles('bun.lock') }}-${{ hashFiles('public/**/*.{jpg,jpeg,png,webp,avif,svg,gif}', 'content/**/*.{jpg,jpeg,png,webp,avif,svg,gif}', 'src/assets/**/*.{jpg,jpeg,png,webp,avif,svg,gif,ico}') }}
+          path: node_modules/.astro
+          key: ${{ runner.os }}-${{ hashFiles('bun.lock') }}-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-${{ hashFiles('bun.lock') }}-
-            ${{ runner.os }}-
       - name: Install dependencies
         run: bun install --frozen-lockfile --production
       - name: Build site pages
