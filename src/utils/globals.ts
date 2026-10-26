@@ -35,10 +35,6 @@ export const socials = {
     url: 'https://www.linkedin.com/in/cotsuka',
     username: 'cotsuka',
   },
-  activitypub: {
-    url: 'https://social.otsuka.systems/@cameron',
-    username: '@cameron@otsuka.systems',
-  },
   nostr: {
     url: 'https://primal.net/profile/npub1hzssq7wewjztvglpdvku92htx3sv2x5r9ycvqhvl9xrtt5fn629s3np693',
     username: 'cameron@otsuka.systems',

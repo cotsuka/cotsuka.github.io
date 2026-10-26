@@ -2,7 +2,6 @@
 export const PLATFORMS = {
   x: '𝕏',
   linkedin: 'LinkedIn',
-  activitypub: 'ActivityPub',
   nostr: 'Nostr',
   youtube: 'YouTube',
   substack: 'Substack',
