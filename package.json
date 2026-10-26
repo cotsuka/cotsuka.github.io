@@ -35,7 +35,7 @@
     "astro": "7.4.2",
     "html-escaper": "3.0.3",
     "pagefind": "^1.5.2",
-    "satori": "0.25.0",
+    "satori": "0.63.2",
     "sharp": "^0.35.5",
     "turndown": "^7.2.4",
     "turndown-plugin-gfm": "^1.0.2",
